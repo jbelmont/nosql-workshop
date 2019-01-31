@@ -1,0 +1,24 @@
+{
+  "name": "nosql-workshop",
+  "version": "1.0.0",
+  "description": "A workshop on NoSQL databases such as MongoDb that explores both theory and practice by using MongoDb and Neo4j databases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbelmont/nosql-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbelmont/nosql-workshop/issues"
+  },
+  "homepage": "https://github.com/jbelmont/nosql-workshop#readme",
+  "devDependencies": {
+    "gitbook": "^2.6.9",
+    "gitbook-cli": "^2.3.2"
+  }
+}
