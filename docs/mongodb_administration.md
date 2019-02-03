@@ -1,4 +1,4 @@
-NoSQL Workshop - BSON Data Types
+NoSQL Workshop - Mongo Administration
 
 ## Sections:
 
@@ -10,4 +10,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [BSON Specification](./bson-specification.md) | [Mongo Shell](./mongo-shell.md) →
+← [MongoDB Sharding](./mongodb_sharding.md) | [MongoDB Storage](./mongodb_storage.md) →

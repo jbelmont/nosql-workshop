@@ -1,4 +1,4 @@
-NoSQL Workshop - BSON Data Types
+NoSQL Workshop - Mongo Transactions
 
 ## Sections:
 
@@ -10,4 +10,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [BSON Specification](./bson-specification.md) | [Mongo Shell](./mongo-shell.md) →
+← [MongoDB Data Models](./mongodb_data_models.md) | [MongoDB Indexes](./mongodb_indexes.md) →
