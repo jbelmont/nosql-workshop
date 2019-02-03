@@ -10,3 +10,4 @@
 * [NoSQL Databases](docs/nosql-databases.md)
     * [Types of NoSQL Databases](docs/types-of-nosql-databases.md)
     * [BSON Specification](docs/bson-specification.md)
+    * [BSON Data Types](docs/bson-data-types.md)

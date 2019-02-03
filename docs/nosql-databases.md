@@ -10,4 +10,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [Base Consistency Model](./base-consistency-model.md) | [NoSQL Databases](./nosql-databases.md) →
+← [Base Consistency Model](./base-consistency-model.md) | [Types of NoSQL Databases](./types-of-nosql-databases.md) →

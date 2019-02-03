@@ -1,4 +1,4 @@
-NoSQL Workshop - BSON Specification
+NoSQL Workshop - BSON Data Types
 
 ## Sections:
 
@@ -10,4 +10,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [Types of NoSQL Databases](./types-of-nosql-databases.md) | [BSON Data Types](./bson-data-types.md) →
+← [BSON Specification](./bson-specification.md) | [somewhere](./somewhere.md) →
