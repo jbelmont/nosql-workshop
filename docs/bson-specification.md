@@ -1,4 +1,4 @@
-NoSQL Workshop - Base Consistency Model
+NoSQL Workshop - BSON Specification
 
 ## Sections:
 
@@ -10,4 +10,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [CAP Thereom](./cap.md) | [NoSQL Databases](./nosql-databases.md) →
+← [Types of NoSQL Databases](./types-of-nosql-databases.md) | [somewhere](./somewhere.md) →

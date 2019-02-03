@@ -1,4 +1,4 @@
-NoSQL Workshop - Base Consistency Model
+NoSQL Workshop - NoSQL Databases
 
 ## Sections:
 
@@ -10,4 +10,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [CAP Thereom](./cap.md) | [NoSQL Databases](./nosql-databases.md) →
+← [Base Consistency Model](./base-consistency-model.md) | [NoSQL Databases](./nosql-databases.md) →
