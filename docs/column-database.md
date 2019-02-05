@@ -1,13 +1,12 @@
-NoSQL Workshop - MongoDB
+NoSQL Workshop - Column Database
 
 ## Sections:
 
 * [Bread Crumb Navigation](#bread-crumb-navigation)
-
 
 #### Bread Crumb Navigation
 _________________________
 
 Previous | Next
 :------- | ---:
-← [Graph Database](./graph-database.md) | [BSON Specification](./bson-specification.md) →
+← [Key-Value Database](./key-value-database.md) | [Document Database](./document-database.md) →
