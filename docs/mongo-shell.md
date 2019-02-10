@@ -418,7 +418,110 @@ ObjectId("5c603570e97a475d5b92d7ac")
 
 #### Write Scripts for the mongo Shell
 
-Content
+#### Opening New Connections
+
+From the mongo shell or from a JavaScript file, you can instantiate database connections using the `Mongo()` constructor:
+
+```bash
+db = new Mongo("localhost:27017").getDB("test")
+test
+```
+
+Here we create a new local database connection to the test database.
+
+> If connecting to a MongoDB instance that enforces access control, you can use the db.auth() method to authenticate.
+
+> Additionally, you can use the connect() method to connect to the MongoDB instance.
+
+```bash
+db = connect("localhost:27017/test")
+connecting to: mongodb://localhost:27017/test
+Implicit session: session { "id" : UUID("11921e8f-706d-4b7e-9f09-fd70578846e6") }
+MongoDB server version: 4.0.5
+test
+```
+
+*The following example connects to the MongoDB instance to the test database that is running on localhost and sets the global db variable.*
+
+#### Differences Between Interactive and Scripted mongo
+
+[Differences Between Interactive and Script Mongo](https://docs.mongodb.com/manual/tutorial/write-scripts-for-the-mongo-shell/#differences-between-interactive-and-scripted-mongo)
+
+> When writing scripts for the mongo shell, consider the following:
+
+> To set the db global variable, use the getDB() method or the connect() method. You can assign the database reference to a variable other than db.
+
+> Write operations in the mongo shell use a write concern of { w: 1 } by default. If performing bulk operations, use the Bulk() methods. See Write Method Acknowledgements for more information.
+
+> You cannot use any shell helper (e.g. use `<dbname>`, show dbs, etc.) inside the JavaScript file because they are not valid JavaScript.
+
+The following table maps the most common mongo shell helpers to their JavaScript equivalents.
+
+| Shell Helpers | JavaScript Equivalents |
+| --- | --- |
+| show dbs, show databases | db.adminCommand('listDatabases') |
+| use &lt;db&gt; | db = db.getSiblingDB('&lt;db&gt;') |
+| show collections | db.getCollectionNames() |
+| show users | db.getUsers() |
+| show roles | db.getRoles({showBuiltinRoles: true}) |
+| show log &lt;logname&gt; | db.adminCommand({ 'getLog' : '&lt;logname&gt;' }) |
+| show logs | db.adminCommand({ 'getLog' : '*' }) |
+| it | cursor = db.collection.find() if ( cursor.hasNext() ){cursor.next(); } | 
+
+> In interactive mode, mongo prints the results of operations including the content of all cursors. In scripts, either use the JavaScript `print()` function or the mongo specific `printjson()` function which returns formatted JSON.
+
+> To print all items in a result cursor in mongo shell scripts, use the following idiom:
+
+```js
+cursor = db.numbers.find();
+while ( cursor.hasNext() ) {
+   printjson( cursor.next() );
+}
+```
+
+#### Scripting
+
+From the system prompt, use mongo to evaluate JavaScript.
+
+![mongo eval javascript](../images/mongo-eval-js.png)
+
+Notice that the screenshot show the collections that exist on the localhost/nosql_workshop connection on port 27017.
+
+###### Executing a Javascript file on the mongo shell
+
+You can specify a .js file to the mongo shell, and mongo will execute the JavaScript directly. Consider the following example:
+
+![js file to execute](../images/mongo-shell-js.png)
+
+> Alternately, you can specify the mongodb connection parameters inside of the javascript file using the `Mongo()` constructor.
+
+*You can execute a .js file from within the mongo shell, using the load() function.*
+
+```bash
+load("scripts/show_collections.js")
+
+show_collections script:
+
+inventory,json,numbers,people
+true
+```
+
+Here is the contents of the show_collections.js script:
+
+```js
+"use strict";
+
+// equivalent for "use <db>" command in mongo shell
+var db = db.getSiblingDB('nosql_workshop');
+ 
+// print the collections present in nosql_workshop db
+print("\nshow_collections script:\n")
+print(db.getCollectionNames());
+```
+
+> The `load()` method accepts relative and absolute paths.
+
+> There is no search path for the load() function. If the desired script is not in the current working directory or the full specified path, mongo will not be able to access the file.
 
 #### Data Types in the mongo Shell
 
