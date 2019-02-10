@@ -372,13 +372,18 @@ function () {
 
 *Some useful methods for handling cursors are:*
 
-1. [`hasNext()`](https://docs.mongodb.com/manual/reference/method/cursor.hasNext/#cursor.hasNext)   1. hasNext checks whether the cursor has more documents to return.
+1. [`hasNext()`](https://docs.mongodb.com/manual/reference/method/cursor.hasNext/#cursor.hasNext)   
+	
+	1. hasNext checks whether the cursor has more documents to return.
 
 2. [`next()`](https://docs.mongodb.com/manual/reference/method/cursor.next/#cursor.next)
-    1. next returns the next document and advances the cursor position forward by one.
+    	
+	1. next returns the next document and advances the cursor position forward by one.
 
 3. [`forEach(<function>)`](https://docs.mongodb.com/manual/reference/method/cursor.forEach/#cursor.forEach) 
-    1. forEach iterates the whole cursor and applies the `<function>` to each document returned by the cursor. The `<function>` expects a single argument which corresponds to the document from each iteration.
+    	
+	1. forEach iterates the whole cursor and applies the `<function>` to each document returned by the cursor. 
+	2. The `<function>` expects a single argument which corresponds to the document from each iteration.
 
 ###### Wrapper Object Help
 
