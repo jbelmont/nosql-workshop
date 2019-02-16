@@ -525,11 +525,417 @@ print(db.getCollectionNames());
 
 #### Data Types in the mongo Shell
 
-Content
+> MongoDB BSON provides support for additional data types than JSON. Drivers provide native support for these data types in host languages and the mongo shell also provides several helper classes to support the use of these data types in the mongo JavaScript shell. 
 
-#### mongo Shell Quick Reference
+The mongo shell provides various methods to return the date, either as a string or as a Date object:
 
-Content
+* [Date()]()
+	* method which returns the current date as a string.
+	* new Date() constructor which returns a Date object using the ISODate() wrapper.
+
+* [ISODate()]() 
+	* constructor which returns a Date object using the ISODate() wrapper.
+
+###### Types
+
+###### Dates
+
+> Internally, Date objects are stored as a signed 64-bit integer representing the number of milliseconds since the Unix epoch (Jan 1, 1970).
+
+Here is a shell session using Date and ISODate:
+
+![date shell](../images/date-shell.png)
+
+###### ObjectIds
+
+The mongo shell provides the ObjectId() wrapper class around the ObjectId data type. To generate a new ObjectId, use the following operation in the mongo shell.
+
+Returns a new ObjectId value. The 12-byte ObjectId value consists of:
+
+a 4-byte value representing the seconds since the Unix epoch,
+a 5-byte random value, and
+a 3-byte counter, starting with a random value.
+
+```bash
+> new ObjectId()
+ObjectId("5c68614d90753389f07190a9")
+```
+
+###### NumberLong
+
+The mongo shell treats all numbers as floating-point values by default. The mongo shell provides the NumberLong() wrapper to handle 64-bit integers.
+
+The NumberLong() wrapper accepts the long as a string:
+
+```bash
+> NumberLong("2090845886855")
+NumberLong("2090845886855")
+```
+
+Here is an example session with NumberLong:
+
+```bash
+> db.numbers.insertOne( { _id: 6, calc: NumberLong("2090845886852") } )
+{ "acknowledged" : true, "insertedId" : 6 }
+> db.numbers.updateOne( { _id: 6 },
+...                       { $set:  { calc: NumberLong("2555555000000") } } )
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.numbers.updateOne( { _id: 6 },
+...                       { $inc: { calc: NumberLong(5) } } )
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.numbers.find({
+... "_id": 6
+... }).pretty()
+{ "_id" : 6, "calc" : NumberLong("2555555000005") }
+```
+
+###### NumberInt
+
+The mongo shell treats all numbers as floating-point values by default. The mongo shell provides the NumberInt() constructor to explicitly specify 32-bit integers.
+
+Here is an example session:
+
+```bash
+> NumberInt(100)
+NumberInt(100)
+> NumberInt(1.5)
+NumberInt(1)
+```
+
+Notice how `NumberInt(1.5)` got casted into 32-bit integer.
+
+###### NumberDecimal
+
+New in version 3.4.
+
+The mongo shell treats all numbers as 64-bit floating-point double values by default. The mongo shell provides the NumberDecimal() constructor to explicitly specify 128-bit decimal-based floating-point values capable of emulating decimal rounding with exact precision. This functionality is intended for applications that handle monetary data, such as financial, tax, and scientific computations.
+
+The decimal BSON type uses the IEEE 754 decimal128 floating-point numbering format which supports 34 decimal digits (i.e. significant digits) and an exponent range of −6143 to +6144.
+
+The NumberDecimal() constructor accepts the decimal value as a string:
+
+> The NumberDecimal() constructor also accepts double values from the mongo shell (i.e. without quotes), although this is not recommended due to the risk of losing precision. The constructor creates a binary-based double precision representation of the decimal-based parameter (potentially losing precision), then converts that value to a decimal value with a precision of 15 digits. The following example passes the value implicitly as a double and shows how it is created with a precision of 15 digits:
+
+Here is an example session:
+
+```bash
+> NumberDecimal(1000.55)
+NumberDecimal("1000.55000000000")
+```
+
+Notice the loss in precision here.
+
+###### Equality and Sort Order
+
+Here is an example session showing equality and sort order:
+
+```bash
+> db.numbers2.insertMany([
+... { "_id" : 1, "val" : NumberDecimal( "9.99" ), "description" : "Decimal" },
+... { "_id" : 2, "val" : 9.99, "description" : "Double" },
+... { "_id" : 3, "val" : 10, "description" : "Double" },
+... { "_id" : 4, "val" : NumberLong(10), "description" : "Long" },
+... { "_id" : 5, "val" : NumberDecimal( "10.0" ), "description" : "Decimal" }
+... ])
+{ "acknowledged" : true, "insertedIds" : [ 1, 2, 3, 4, 5 ] }
+> db.numbers2.find({})
+{ "_id" : 1, "val" : NumberDecimal("9.99"), "description" : "Decimal" }
+{ "_id" : 2, "val" : 9.99, "description" : "Double" }
+{ "_id" : 3, "val" : 10, "description" : "Double" }
+{ "_id" : 4, "val" : NumberLong(10), "description" : "Long" }
+{ "_id" : 5, "val" : NumberDecimal("10.0"), "description" : "Decimal" }
+> db.numbers2.find({
+... val: 9.99
+... })
+{ "_id" : 2, "val" : 9.99, "description" : "Double" }
+```
+
+> The first query, { "val": 9.99 }, implicitly searches for the double representation of 9.99 which is not equal to the decimal representation of the value.
+
+###### Checking for decimal type
+
+To test for decimal type, use the $type operator with the string alias "decimal" or 19, the numeric code for the decimal type.
+
+```bash
+> db.inventory.insertOne({
+...     "_id": new ObjectId(),
+...     "item" : "postcard",
+...     "qty" : 60,
+...     "status" : "A",
+...     "size" : {
+...         "h" : 10,
+...         "w" : NumberDecimal("15.25"),
+...         "uom" : "cm" },
+...         "tags" : [     "blue" ]
+...     }
+... )
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("5c6865d8035949476a06ce05")
+}
+> db.inventory.find({
+... "size.w": {
+... "$type": "decimal"
+... }})
+{
+	"_id" : ObjectId("5c68656090753389f07190aa"),
+	"item" : "postcard",
+	"qty" : 59,
+	"status" : "A",
+	"size" : {
+		"h" : 10,
+		"w" : NumberDecimal("15.25"),
+		"uom" : "cm"
+	},
+	"tags" : [
+		"blue"
+	]
+}
+{
+	"_id" : ObjectId("5c6865d8035949476a06ce05"),
+	"item" : "postcard",
+	"qty" : 60,
+	"status" : "A",
+	"size" : {
+		"h" : 10,
+		"w" : NumberDecimal("15.25"),
+		"uom" : "cm"
+	},
+	"tags" : [
+		"blue"
+	]
+}
+```
+
+###### Check Types in the mongo Shell
+
+To determine the type of fields, the mongo shell provides the instanceof and typeof operators.
+
+*instanceof*
+
+instanceof returns a boolean to test if a value is an instance of some type.
+
+Let us look at an example in the mongo shell:
+
+```bash
+> db.inventory.find({ "size.w": {  "$type": "decimal" }})[0]._id instanceof ObjectId
+true
+```
+
+*typeof*
+
+typeof returns the type of a field.
+
+Let us look at the type of the _id field in the shell:
+
+```bash
+> typeof db.inventory.find({ "size.w": {  "$type": "decimal" }})[0]._id
+object
+```
+
+In this case typeof will return the more generic object type rather than ObjectId type.
+
+###### Mongo Shell Quick Reference
+
+###### mongo Shell Command History
+
+> You can retrieve previous commands issued in the mongo shell with the up and down arrow keys. Command history is stored in ~/.dbshell file.
+
+###### Command Line Options
+
+The mongo shell can be started with numerous options.
+
+The following table displays some common options for mongo:
+
+| Command Line Option | Command Line Description |
+| --- | --- |
+| --help | Show command line options |
+| --nodb | Start mongo shell without connecting to a database. To connect later, see Opening New Connections. |
+| --shell | Used in conjunction with a JavaScript file (i.e. &lt;script.js&gt;) to continue in the mongo shell after running the JavaScript file. |
+
+## Basic Commands
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| Connect to local host on default port 27017 | mongo | mongo |
+| Connect to remote host on specified port | mongo --host &lt;hostname or ip address&gt; --port &lt;port no&gt; | mongo --host 192.168.65.23 --port 27020 |
+| Connect to a database | mongo &lt;host&gt;/&lt;database&gt; | mongo 192.168.65.23/api |
+| Show current database | db | db |
+| Select or switch database | use &lt;database name&gt; | use api |
+| Execute a JavaScript file | load(&lt;filename&gt;) | load (program.js) |
+| Display help | help | help |
+| Display help on DB methods | db.help() | db.help() |
+| Display help on Collection | db.mycol.help() | db.mycol.help() |
+
+## Show Commands
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| Show all databases | show dbs | show dbs |
+| Show all collections in current database | show collections | show collections |
+| Show all users on current database | show users | show users |
+| Show all roles on current database | show roles | show roles |
+
+## CRUD Operations
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| If running in secure mode, authenticate the user. | db.auth() | db.auth() |
+| Insert a new document in a collection | db.collection.insert( &lt;document&gt; ) | db.heroes.insert({"name": "Batman", "powers": ["Super Rich","Tech Gadgets","Batmobile","Martial Artists","Super Style","Alfred"], "gender": "male" }) |
+| Insert multiple documents into a collection | db.collection.insertMany([ &lt;document1&gt;, &lt;document2&gt;, ... ]) or db.collection.insert([&lt;document1&gt;, &lt;document2&gt;, ... ])` | db.heroes.insertMany( [{"name": "Batman", "powers": ["Super Rich","Tech Gadgets","Batmobile","Martial Artists","Super Style","Alfred"], "gender": "male" }, {"name": "Aquaman", "powers", ["Superhuman Strength", "Telepathic Abilities"], "gender": "male"}]) |
+| Show all documents in the collection | db.collection.find() | db.heroes.find() |
+| Filter documents by field value condition | db.collection.find(&lt;query&gt;) | db.heroes.find({"_id": ObjectId("507f1f77bcf86cd799439011")}) |
+| Show only some fields of matching documents | db.collection.find(&lt;query&gt;, &lt;projection&gt;) | db.heroes.find({"_id": "507f1f77bcf86cd799439011"}, {name: true}) |
+| Show the first document that matches the query condition | db.collection.findOne(&lt;query&gt;, &lt;projection&gt;) | db.heroes.findOne({}, {_id:false}) |
+| Update specific fields of a single document that match the query condition | db.collection.update(&lt;query&gt;, &lt;update&gt; ) | db.heores.update({name: "Aquaman"}, {$set : {name :"Aquaman Crisis"}}) |
+| Remove certain fields of a single document the query condition | db.collection.update(&lt;query&gt;, &lt;update&gt;) | db.heroes.update({name: "Aquaman"}, {$unset : {gender:""}}) |
+| Remove certain fields of all documents that match the query condition | db.collection.update(&lt;query&gt;, &lt;update&gt;, {multi:true} ) | db.heroes.update({gender : "male"}, {$unset : {name:""}}, {multi:true}) |
+| Delete a single document that match the query condition | db.collection.remove(&lt;query&gt;, {justOne:true}) | db.heroes.remove({gender : "male"}, {justOne:true}) |
+| Delete all documents matching a query condition | db.collection.remove(&lt;query&gt;) | db.heroes.remove({gender : "male"}) |
+| Delete all documents in a collection | db.collection.remove({}) | db.heroes.remove({}) |
+
+## Index Methods
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| Create an index | db.collection.createIndex( {indexField:type} ) "type" can be 1 for ascending and -1 for descending | db.heroes.createIndex({organization:1}) |
+| Create a unique index | db.collection.createIndex( {indexField:type}, {unique:true} ) | db.heroes.createIndex( {crisisMode:1},{unique:true} ) |
+| Create a index on multiple fields (compound index) | db.collection.createIndex({indexField1:type1, indexField2:type2, ...}) | db.heroes.createIndex({name:1, gender:-1}) |
+| Show all indexes in a collection | db.collection.getIndexes() | db.heroes.getIndexes() |
+| Drop an index | db.collection.dropIndex( {indexField:type} ) | db.heroes.dropIndex({author:-1}) |
+| Show index statistics | db.collection.stats() | db.heroes.stats() |
+
+## Cursor Methods
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| Show number of documents in the collection | cursor.count() | db.heroes.find().count() |
+| Limit the number of documents to return | cursor.limit(&lt;n&gt;) | db.heroes.find().limit(2) |
+| Return the result set after skipping the first n number of documents | cursor.skip(&lt;n&gt;) | db.heroes.find().skip(2) |
+| Sort the documents in a result set in ascending or descending order of field values | cursor.sort( &lt;{field : value}&gt; ) where value = 1 for ascending and -1 for descending | db.heroes.find().sort( {name : 1} ) |
+| Display formatted (more readable) result | cursor.pretty() | db.heroes.find({}).pretty() |
+
+## Comparison Operators
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| equals to | {&lt;field&gt;: { $eq: &lt;value&gt; }} | db.heroes.find({name: {$eq: "Aquaman"}}) |
+| less than | {&lt;field&gt;: { $lt: &lt;value&gt; }} | db.heroes.find({year: {$lt: 1981}}) |
+| less than or equal to | {&lt;field&gt;: { $lte: &lt;value&gt; }} | db.heroes.find({year: | {$lte: 1985}}) |
+| greater than | {&lt;field&gt;: { $gt: &lt;value&gt; }} | db.heroes.find({year: {$gt: 1985}}) |
+| greater than or equal to | {&lt;field&gt;: { $gte: &lt;value&gt; }} | db.heroes.find({year: {$gte: 2008}}) |
+| not equal to | {&lt;field&gt;: { $ne: &lt;value&gt; }} | db.heroes.find({year: {$ne: 2008}}) |
+| value in | {&lt;field&gt;: { $in: [ &lt;value1&gt;, &lt;value2&gt;, ... }} | db.heroes.find({year: {$in: [1985, 1991]}}) |
+| value not in | {&lt;field&gt;: { $nin: [ &lt;value1&gt;, &lt;value2&gt;, ... }} | db.heroes.find({year: {$nin: [1981, 1992]}}) |
+
+## Logical Operators
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| OR | { $or: [&lt;expression1&gt;, &lt;expression2&gt;,...]} | db.heroes.find( { $or: [{year: {$lte: 1981}}, {year: {$eq: 1991}}]} ) |
+| AND | { $and: [&lt;expression1&gt;, &lt;expression2&gt;,...]} | db.heroes.find( { $and: [{year: {$eq: 1981}}, {gender: {$eq: "male"}}]} ) |
+| NOT | { $not: {&lt;expression&gt;}} | db.heroes.find( {$not: {year: {$eq: 1981} }}) |
+| NOR | { $nor: [&lt;expression1&gt;, &lt;expression2&gt;,...]} | db.heroes.find( { $nor: [{year: {$lte: 1981}}, {year: {$eq: 1993}}]} ) |
+
+## Element Operators
+
+| Action | Run Command | Example |
+| --- | --- | --- |
+| Match documents that contains that specified field | {&lt;field&gt;: {$exists:true}} | db.heroes.find({ powers: {$exists: true }}) |
+| Match documents whose field value is of the specified BSON data type | {&lt;field&gt;: {$type:value}} | db.heroes.find({name: {$type: 2 }}) |
+
+## MongoDB Server Status
+| Action | Run Command | Example |
+| --- | --- | --- |
+| Returns the number of mongo connections | db.serverStatus() | db.serverStatus().connections
+
+###### Keyboard Shortcuts
+
+| Keystroke | Function |
+| --- | --- |
+| Up-arrow | previous-history |
+| Down-arrow | next-history |
+| Home | beginning-of-line |
+| End | end-of-line |
+| Tab | autocomplete |
+| Left-arrow | b |
+| Right-arrow | forward-char |
+| Ctrl-left-arrow | b |
+| Ctrl-right-arrow | forward-word |
+| Meta-left-arrow | b |
+| Meta-right-arrow | forward-word |
+| Ctrl-A | beginning-of-line |
+| Ctrl-B | b |
+| Up-arrow | previous-history |
+| Down-arrow | next-history |
+| Home | beginning-of-line |
+| End | end-of-line |
+| Tab | autocomplete |
+| Left-arrow | backward-character |
+| Right-arrow | forward-character |
+| Ctrl-left-arrow | backward-word |
+| Ctrl-right-arrow | forward-word |
+| Meta-left-arrow | backward-word |
+| Meta-right-arrow | forward-word |
+| Ctrl-A | beginning-of-line |
+| Ctrl-B | backward-char |
+| Ctrl-C | exit-shell |
+| Ctrl-D | delete-char (or | exit | shell) |
+| Ctrl-E | end-of-line |
+| Ctrl-F | forward-char |
+| Ctrl-G | abort |
+| Ctrl-J | accept-line |
+| Ctrl-K | kill-line |
+| Ctrl-L | clear-screen |
+| Ctrl-M | accept-line |
+| Ctrl-N | next-history |
+| Ctrl-P | previous-history |
+| Ctrl-R | reverse-search-history |
+| Ctrl-S | forward-search-history |
+| Ctrl-T | transpose-chars |
+| Ctrl-U | unix-line-discard |
+| Ctrl-W | unix-word-rubout |
+| Ctrl-Y | yank |
+| Ctrl-Z | Suspend (job control works in linux) |
+| Ctrl-H (i.e. Backspace) | backward-delete-char |
+| Ctrl-I (i.e. Tab) | complete |
+| Meta-B | backward-word |
+| Meta-C | capitalize-word |
+| Meta-D | kill-word |
+| Meta-F | forward-word |
+| Meta-L | downcase-word |
+| Meta-U | upcase-word |
+| Meta-Y | yank-pop |
+| Meta-&#91;Backspace&#93; | backward-kill-word |
+| Meta-< | beginning-of-history |
+| Meta-> | end-of-history |
+
+###### Error Checking Methods
+
+> The mongo shell write methods now integrates the Write Concern directly into the method execution rather than with a separate `db.getLastError()` method. As such, the write methods now return a WriteResult() object that contains the results of the operation, including any write errors and write concern errors.
+
+Previous versions used `db.getLastError()` and `db.getLastErrorObj()` methods to return error information.
+
+###### Administrative Command Helpers
+
+| JavaScript Database Administration Methods | Description |
+| --- | --- |
+| db.cloneDatabase(&lt;host&gt;) | Clone the current database from the &lt;host&gt; specified. The &lt;host&gt; database instance must be in noauth mode.|
+| db.copyDatabase(&lt;from&gt;, &lt;to&gt;, &lt;host&gt;) | Copy the &lt;from&gt; database from the &lt;host&gt; to the &lt;to&gt; database on the current server. The &lt;host&gt; database instance must be in noauth mode. |
+| db.fromColl.renameCollection(&lt;toColl&gt;) | Rename collection from fromColl to &lt;toColl&gt;. |
+| db.getCollectionNames() | Get the list of all collections in the current database. |
+| db.dropDatabase() | Drops the current database. |
+
+###### Opening Additional Connections
+
+> You can create new connections within the mongo shell.
+
+The following table displays the methods to create the connections:
+
+| JavaScript Connection Create Methods | Description |
+| --- | --- |
+| db = connect("&lt;host&gt;&lt;:port&gt;/&lt;dbname&gt;") | Open a new database connection. |
+| conn = new Mongo() &#59; db = conn.getDB("dbname") | Open a connection to a new server using new Mongo(). Use getDB() method of the connection to select a database. |
 
 #### Bread Crumb Navigation
 _________________________
