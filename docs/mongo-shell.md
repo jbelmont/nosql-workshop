@@ -821,7 +821,7 @@ The following table displays some common options for mongo:
 | --- | --- | --- |
 | equals to | {&lt;field&gt;: { $eq: &lt;value&gt; }} | db.heroes.find({name: {$eq: "Aquaman"}}) |
 | less than | {&lt;field&gt;: { $lt: &lt;value&gt; }} | db.heroes.find({year: {$lt: 1981}}) |
-| less than or equal to | {&lt;field&gt;: { $lte: &lt;value&gt; }} | db.heroes.find({year: | {$lte: 1985}}) |
+| less than or equal to | {&lt;field&gt;: { $lte: &lt;value&gt; }} | db.heroes.find({year: {$lte: 1985}}) |
 | greater than | {&lt;field&gt;: { $gt: &lt;value&gt; }} | db.heroes.find({year: {$gt: 1985}}) |
 | greater than or equal to | {&lt;field&gt;: { $gte: &lt;value&gt; }} | db.heroes.find({year: {$gte: 2008}}) |
 | not equal to | {&lt;field&gt;: { $ne: &lt;value&gt; }} | db.heroes.find({year: {$ne: 2008}}) |
@@ -880,7 +880,7 @@ The following table displays some common options for mongo:
 | Ctrl-A | beginning-of-line |
 | Ctrl-B | backward-char |
 | Ctrl-C | exit-shell |
-| Ctrl-D | delete-char (or | exit | shell) |
+| Ctrl-D | delete-char (or exit shell) |
 | Ctrl-E | end-of-line |
 | Ctrl-F | forward-char |
 | Ctrl-G | abort |
