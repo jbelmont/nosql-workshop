@@ -2,6 +2,7 @@ NoSQL Workshop - Mongo Crud Operations
 
 ## Sections:
 
+* [CRUD Operations](#crud-operations)
 * [Insert Documents](#insert_documents)
 * [Query Documents](#query_documents)
 * [Update Documents](#update_documents)
@@ -17,7 +18,9 @@ NoSQL Workshop - Mongo Crud Operations
 
 *All of this information is gathered from the official mongodb docs in https://docs.mongodb.com/manual/crud/*
 
-### CRUD operations create, read, update, and delete documents.
+### CRUD operations
+
+* CRUD ==> Create, Read, Update, and Delete Documents.
 
 Create or insert operations add new documents to a collection. 
 
@@ -95,7 +98,23 @@ Let us look at some examples in the mongo shell:
 
 ###### Insert Documents
 
-Content
+[Insert Documents](https://docs.mongodb.com/manual/tutorial/insert-documents/)
+
+*If the collection does not currently exist, insert operations will create the collection.*
+
+![images/db-insert-one](../images/db-insert-one.png)
+
+`db.collection.insertMany()` can insert multiple documents into a collection. 
+
+Pass an array of documents to the method.
+
+![images/db-insertmany](../images/db-insertmany.png)
+
+Notice in the screenshot above that we created arrays in the mongo shell and then passed the numbers array into the insertMany collection method.
+
+Also notice that the `insertMany()` method returns a document that includes the newly inserted documents _id field values.
+
+*All write operations in MongoDB are atomic on the level of a single document.*
 
 ###### Query Documents
 
