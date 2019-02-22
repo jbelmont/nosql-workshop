@@ -116,9 +116,90 @@ Also notice that the `insertMany()` method returns a document that includes the 
 
 *All write operations in MongoDB are atomic on the level of a single document.*
 
+###### Insert Methods in mongodb
+
+![images/db-insert-methods1](../images/db-insert-methods1.png)
+
+Notice that in this screenshot we use insertOne to insert one document and insertMany to insert an array of documents.
+
+![images/db-insert-methods2](../images/db-insert-methods2.png)
+
+Notice that here we were able to pass an array into the `insert()` method as well like we did in the `insertMany()` method.
+
+![images/db-insert-methods3](../images/db-insert-methods3.png)
+
+Notice that in this screenshot we used an options object with a field of `upsert: true` to create a document that it did not exist already.
+
+You can use the upsert option with the other write methods to create a document as well:
+
+* [db.collection.updateOne()](https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/#db.collection.updateOne)
+* [db.collection.updateMany()](https://docs.mongodb.com/manual/reference/method/db.collection.updateMany/#db.collection.updateMany)
+* [db.collection.findAndModify()](https://docs.mongodb.com/manual/reference/method/db.collection.findAndModify/#db.collection.findAndModify)
+* [db.collection.findOneAndUpdate()](https://docs.mongodb.com/manual/reference/method/db.collection.findOneAndUpdate/#db.collection.findOneAndUpdate)
+* [db.collection.findOneAndReplace()](https://docs.mongodb.com/manual/reference/method/db.collection.findOneAndReplace/#db.collection.findOneAndReplace)
+* [db.collection.save()](https://docs.mongodb.com/manual/reference/method/db.collection.save/#db.collection.save)
+* [db.collection.bulkWrite()](https://docs.mongodb.com/manual/reference/method/db.collection.bulkWrite/#db.collection.bulkWrite)
+
 ###### Query Documents
 
-Content
+The most common method to query documents in mongodb is the `find()` method.
+
+###### Select All Documents in a Collection
+
+We can select all the documents in the numbers collection with the following query:
+
+```js
+db.numbers.find({})
+```
+
+This command is the equivalent to the following SQL command: `SELECT * FROM numbers`
+
+###### Specify Equality Condition
+
+You can pass in a query object to specify an equality condition in mongodb.
+
+![images/db-find-query](../images/db-find-query.png)
+
+*Notice that we only got back the number documents that match this query.*
+
+###### Specify AND Conditions
+
+![images/db-find-query2](../images/db-find-query2.png)
+
+Notice that here we specified an additional condition here and in SQL this would be the equivalent query:
+
+```sql
+SELECT * FROM numbers WHERE type = "Decimal" AND value > 4.5
+```
+
+###### Specify OR Conditions
+
+![images/db-find-query3](../images/db-find-query3.png)
+
+Notice that in this query we specified an or condition and in SQL this would be the equivalent query:
+
+```sql
+SELECT * FROM numbers WHERE type = "Dont know" OR "val" = 19.8
+```
+
+###### Specify AND and OR Conditions
+
+```js
+db.inventory.find( {
+     status: "A",
+     $or: [ { qty: { $lt: 30 } }, { item: /^p/ } ]
+} )
+```
+
+This query will check the status of A and use the or condition of whether qty is less than 30 or item field starts with p
+
+In SQL this would be the equivalent query:
+
+```sql
+SELECT * FROM inventory WHERE status = "A" AND ( qty < 30 OR item LIKE "p%")
+```
+
+*MongoDB supports regular expressions $regex queries to perform string pattern matches.*
 
 ###### Update Documents
 
