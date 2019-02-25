@@ -46,29 +46,52 @@ Remember that in BNF Form the pipe (|) stands for an or operation.
 document	&#58;&#58;&#61;	int32 e_list "\x00"	BSON Document. int32 is the total number of bytes comprising the document.
 
 e_list	&#58;&#58;&#61;	element e_list
+
         &#124;	""
 
 element	&#58;&#58;&#61;	"\x01" e_name   double	        64-bit binary floating point
+
         &#124;	"\x02" e_name   string	        UTF-8 string
+
         &#124;	"\x03" e_name   document	    Embedded document
+
         &#124;	"\x04" e_name   document	    Array
+
         &#124;	"\x05" e_name   binary	        Binary data
+
         &#124;	"\x06" e_name   Undefined (value) — Deprecated
+
         &#124;	"\x07" e_name   (byte*12)	    ObjectId
+
         &#124;	"\x08" e_name   "\x00"	        Boolean "false"
+
         &#124;	"\x08" e_name   "\x01"	        Boolean "true"
+
         &#124;	"\x09" e_name   int64	UTC     datetime
+
         &#124;	"\x0A" e_name   Null            value
-        &#124;	"\x0B" e_name   cstring         cstring	    Regular expression - The first cstring is the regex pattern, the second is the regex options string. Options are identified by characters, which must be stored in alphabetical order. Valid options are 'i' for case insensitive matching, 'm' for multiline matching, 'x' for verbose mode, 'l' to make \w, \W, etc. locale dependent, 's' for dotall mode ('.' matches everything), and 'u' to make \w, \W, etc. match unicode.
+
+        &#124;	"\x0B" e_name   cstring         cstring	    Regular expression - The first 
+        cstring is the regex pattern, the second is the regex options string. Options are identified by characters, which must be stored in alphabetical order. Valid options are 'i' for case insensitive matching, 'm' for multiline matching, 'x' for verbose mode, 'l' to make \w, \W, etc. locale dependent, 's' for dotall mode ('.' matches everything), and 'u' to make \w, \W, etc. match unicode.
+
         &#124;	"\x0C" e_name string (byte*12)	DBPointer — Deprecated
+
         &#124;	"\x0D" e_name string	        JavaScript code
+
         &#124;	"\x0E" e_name string	        Symbol. Deprecated
+
         &#124;	"\x0F" e_name code_w_s	        JavaScript code w/ scope
+
         &#124;	"\x10" e_name int32	            32-bit integer
+
         &#124;	"\x11" e_name uint64	        Timestamp
+
         &#124;	"\x12" e_name int64	            64-bit integer
+
         &#124;	"\x13" e_name decimal128	    128-bit decimal floating point
+
         &#124;	"\xFF" e_name Min key
+
         &#124;	"\x7F" e_name Max key
 
 *Here an element is defined as double or a string, or a document, etc*
