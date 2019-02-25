@@ -35,7 +35,7 @@ Each BSON type has both integer and string identifiers as listed in the followin
 | 32-bit integer | 16 | "int" | None |
 | Timestamp | 17 | "timestamp" | None |
 | 64-bit integer | 18 | "long" | None |
-| Decimal128 | | 19 | "decimal" New in version 3.4. | None |
+| Decimal128 | 19 | "decimal" New in version 3.4. | None |
 | Min key | -1 | "minKey" | None |
 | Max key | 127 | "maxKey" | None |
 
@@ -49,9 +49,9 @@ We can check the type using the mongo shell like this:
 
 [ObjectId](https://docs.mongodb.com/manual/reference/bson-types/#objectid)
 
-* * * > ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId values consist of 12 bytes, where the first four bytes are a timestamp that reflect the ObjectId’s creation. Specifically:
-* * * 
-* * * * a 4-byte value representing the seconds since the Unix epoch,
+> ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId values consist of 12 bytes, where the first four bytes are a timestamp that reflect the ObjectId’s creation. Specifically:
+
+* a 4-byte value representing the seconds since the Unix epoch,
 * a 5-byte random value, and
 * a 3-byte counter, starting with a random value.
 
