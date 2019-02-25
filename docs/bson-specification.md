@@ -47,52 +47,52 @@ document	&#58;&#58;&#61;	int32 e_list "\x00"	BSON Document. int32 is the total n
 
 e_list	&#58;&#58;&#61;	element e_list
 
-        &#124;	""
+        |	""
 
 element	&#58;&#58;&#61;	"\x01" e_name   double	        64-bit binary floating point
 
-        &#124;	"\x02" e_name   string	        UTF-8 string
+        |	"\x02" e_name   string	        UTF-8 string
 
-        &#124;	"\x03" e_name   document	    Embedded document
+        |	"\x03" e_name   document	    Embedded document
 
-        &#124;	"\x04" e_name   document	    Array
+        |	"\x04" e_name   document	    Array
 
-        &#124;	"\x05" e_name   binary	        Binary data
+        |	"\x05" e_name   binary	        Binary data
 
-        &#124;	"\x06" e_name   Undefined (value) — Deprecated
+        |	"\x06" e_name   Undefined (value) — Deprecated
 
-        &#124;	"\x07" e_name   (byte*12)	    ObjectId
+        |	"\x07" e_name   (byte*12)	    ObjectId
 
-        &#124;	"\x08" e_name   "\x00"	        Boolean "false"
+        |	"\x08" e_name   "\x00"	        Boolean "false"
 
-        &#124;	"\x08" e_name   "\x01"	        Boolean "true"
+        |	"\x08" e_name   "\x01"	        Boolean "true"
 
-        &#124;	"\x09" e_name   int64	UTC     datetime
+        |	"\x09" e_name   int64	UTC     datetime
 
-        &#124;	"\x0A" e_name   Null            value
+        |	"\x0A" e_name   Null            value
 
-        &#124;	"\x0B" e_name   cstring         cstring	    Regular expression - The first 
+        |	"\x0B" e_name   cstring         cstring	    Regular expression - The first 
         cstring is the regex pattern, the second is the regex options string. Options are identified by characters, which must be stored in alphabetical order. Valid options are 'i' for case insensitive matching, 'm' for multiline matching, 'x' for verbose mode, 'l' to make \w, \W, etc. locale dependent, 's' for dotall mode ('.' matches everything), and 'u' to make \w, \W, etc. match unicode.
 
-        &#124;	"\x0C" e_name string (byte*12)	DBPointer — Deprecated
+        |	"\x0C" e_name string (byte*12)	DBPointer — Deprecated
 
-        &#124;	"\x0D" e_name string	        JavaScript code
+        |	"\x0D" e_name string	        JavaScript code
 
-        &#124;	"\x0E" e_name string	        Symbol. Deprecated
+        |	"\x0E" e_name string	        Symbol. Deprecated
 
-        &#124;	"\x0F" e_name code_w_s	        JavaScript code w/ scope
+        |	"\x0F" e_name code_w_s	        JavaScript code w/ scope
 
-        &#124;	"\x10" e_name int32	            32-bit integer
+        |	"\x10" e_name int32	            32-bit integer
 
-        &#124;	"\x11" e_name uint64	        Timestamp
+        |	"\x11" e_name uint64	        Timestamp
 
-        &#124;	"\x12" e_name int64	            64-bit integer
+        |	"\x12" e_name int64	            64-bit integer
 
-        &#124;	"\x13" e_name decimal128	    128-bit decimal floating point
+        |	"\x13" e_name decimal128	    128-bit decimal floating point
 
-        &#124;	"\xFF" e_name Min key
+        |	"\xFF" e_name Min key
 
-        &#124;	"\x7F" e_name Max key
+        |	"\x7F" e_name Max key
 
 *Here an element is defined as double or a string, or a document, etc*
 
@@ -105,12 +105,18 @@ cstring	&#58;&#58;&#61;	(byte*) "\x00"	Zero or more modified UTF-8 encoded chara
 binary	&#58;&#58;&#61;	int32 subtype (byte*)	Binary - The int32 is the number of bytes in the (byte*).
 
 subtype	&#58;&#58;&#61;	"\x00"	Generic binary subtype
-    &#124;	"\x01"	Function
-    &#124;	"\x02"	Binary (Old)
-    &#124;	"\x03"	UUID (Old)
-    &#124;	"\x04"	UUID
-    &#124;	"\x05"	MD5
-    &#124;	"\x80"	User defined
+
+    |	"\x01"	Function
+
+    |	"\x02"	Binary (Old)
+
+    |	"\x03"	UUID (Old)
+
+    |	"\x04"	UUID
+
+    |	"\x05"	MD5
+    
+    |	"\x80"	User defined
 
 code_w_s	&#58;&#58;&#61;	int32 string document	Code w/ scope
 
