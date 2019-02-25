@@ -43,51 +43,53 @@ All Information gleaned from official [bson specification](http://bsonspec.org/s
 
 Remember that in BNF Form the pipe (|) stands for an or operation.
 
-document	::=	int32 e_list "\x00"	BSON Document. int32 is the total number of bytes comprising the document.
-e_list	::=	element e_list	
-        |	""	
-element	::=	"\x01" e_name   double	        64-bit binary floating point
-        |	"\x02" e_name   string	        UTF-8 string
-        |	"\x03" e_name   document	    Embedded document
-        |	"\x04" e_name   document	    Array
-        |	"\x05" e_name   binary	        Binary data
-        |	"\x06" e_name   Undefined (value) — Deprecated
-        |	"\x07" e_name   (byte*12)	    ObjectId
-        |	"\x08" e_name   "\x00"	        Boolean "false"
-        |	"\x08" e_name   "\x01"	        Boolean "true"
-        |	"\x09" e_name   int64	UTC     datetime
-        |	"\x0A" e_name   Null            value
-        |	"\x0B" e_name   cstring         cstring	    Regular expression - The first cstring is the regex pattern, the second is the regex options string. Options are identified by characters, which must be stored in alphabetical order. Valid options are 'i' for case insensitive matching, 'm' for multiline matching, 'x' for verbose mode, 'l' to make \w, \W, etc. locale dependent, 's' for dotall mode ('.' matches everything), and 'u' to make \w, \W, etc. match unicode.
-        |	"\x0C" e_name string (byte*12)	DBPointer — Deprecated
-        |	"\x0D" e_name string	        JavaScript code
-        |	"\x0E" e_name string	        Symbol. Deprecated
-        |	"\x0F" e_name code_w_s	        JavaScript code w/ scope
-        |	"\x10" e_name int32	            32-bit integer
-        |	"\x11" e_name uint64	        Timestamp
-        |	"\x12" e_name int64	            64-bit integer
-        |	"\x13" e_name decimal128	    128-bit decimal floating point
-        |	"\xFF" e_name Min key
-        |	"\x7F" e_name Max key
+document	&#58;&#58;&#61;	int32 e_list "\x00"	BSON Document. int32 is the total number of bytes comprising the document.
+
+e_list	&#58;&#58;&#61;	element e_list
+        &#124;	""
+
+element	&#58;&#58;&#61;	"\x01" e_name   double	        64-bit binary floating point
+        &#124;	"\x02" e_name   string	        UTF-8 string
+        &#124;	"\x03" e_name   document	    Embedded document
+        &#124;	"\x04" e_name   document	    Array
+        &#124;	"\x05" e_name   binary	        Binary data
+        &#124;	"\x06" e_name   Undefined (value) — Deprecated
+        &#124;	"\x07" e_name   (byte*12)	    ObjectId
+        &#124;	"\x08" e_name   "\x00"	        Boolean "false"
+        &#124;	"\x08" e_name   "\x01"	        Boolean "true"
+        &#124;	"\x09" e_name   int64	UTC     datetime
+        &#124;	"\x0A" e_name   Null            value
+        &#124;	"\x0B" e_name   cstring         cstring	    Regular expression - The first cstring is the regex pattern, the second is the regex options string. Options are identified by characters, which must be stored in alphabetical order. Valid options are 'i' for case insensitive matching, 'm' for multiline matching, 'x' for verbose mode, 'l' to make \w, \W, etc. locale dependent, 's' for dotall mode ('.' matches everything), and 'u' to make \w, \W, etc. match unicode.
+        &#124;	"\x0C" e_name string (byte*12)	DBPointer — Deprecated
+        &#124;	"\x0D" e_name string	        JavaScript code
+        &#124;	"\x0E" e_name string	        Symbol. Deprecated
+        &#124;	"\x0F" e_name code_w_s	        JavaScript code w/ scope
+        &#124;	"\x10" e_name int32	            32-bit integer
+        &#124;	"\x11" e_name uint64	        Timestamp
+        &#124;	"\x12" e_name int64	            64-bit integer
+        &#124;	"\x13" e_name decimal128	    128-bit decimal floating point
+        &#124;	"\xFF" e_name Min key
+        &#124;	"\x7F" e_name Max key
 
 *Here an element is defined as double or a string, or a document, etc*
 
-e_name	::=	cstring	Key name
+e_name	&#58;&#58;&#61;	cstring	Key name
 
-string	::=	int32 (byte*) "\x00"	String - The int32 is the number bytes in the (byte*) + 1 (for the trailing '\x00'). The (byte*) is zero or more UTF-8 encoded characters.
+string	&#58;&#58;&#61;	int32 (byte*) "\x00"	String - The int32 is the number bytes in the (byte*) + 1 (for the trailing '\x00'). The (byte*) is zero or more UTF-8 encoded characters.
 
-cstring	::=	(byte*) "\x00"	Zero or more modified UTF-8 encoded characters followed by '\x00'. The (byte*) MUST NOT contain '\x00', hence it is not full UTF-8.
+cstring	&#58;&#58;&#61;	(byte*) "\x00"	Zero or more modified UTF-8 encoded characters followed by '\x00'. The (byte*) MUST NOT contain '\x00', hence it is not full UTF-8.
 
-binary	::=	int32 subtype (byte*)	Binary - The int32 is the number of bytes in the (byte*).
+binary	&#58;&#58;&#61;	int32 subtype (byte*)	Binary - The int32 is the number of bytes in the (byte*).
 
-subtype	::=	"\x00"	Generic binary subtype
-    |	"\x01"	Function
-    |	"\x02"	Binary (Old)
-    |	"\x03"	UUID (Old)
-    |	"\x04"	UUID
-    |	"\x05"	MD5
-    |	"\x80"	User defined
+subtype	&#58;&#58;&#61;	"\x00"	Generic binary subtype
+    &#124;	"\x01"	Function
+    &#124;	"\x02"	Binary (Old)
+    &#124;	"\x03"	UUID (Old)
+    &#124;	"\x04"	UUID
+    &#124;	"\x05"	MD5
+    &#124;	"\x80"	User defined
 
-code_w_s	::=	int32 string document	Code w/ scope
+code_w_s	&#58;&#58;&#61;	int32 string document	Code w/ scope
 
 #### Notes Section
 
