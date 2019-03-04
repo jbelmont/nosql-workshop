@@ -18,6 +18,7 @@
     * [BSON Data Types](docs/bson-data-types.md)
     * [Mongo Shell](docs/mongo-shell.md)
     * [Mongo CRUD Operations](docs/mongo-crud-operations.md)
+    * [Mongo CRUD Operations Part II](docs/mongo-crud-operations-part2.md)
     * [MongoDB Aggregation](docs/mongodb-aggregation.md)
     * [MongoDB Data Models](docs/mongodb_data_models.md)
     * [MongoDB Transactions](docs/mongodb_transactions.md)
