@@ -60,8 +60,6 @@ Windows requirements:
 - Windows 10 Anniversary Update or better
 - Access to your machine's BIOS to turn on virtualization
 
-[Install Docker](https://docs.docker.com/engine/installation/)
-
 ### Install Mongo Docker Image
 
 Please run the following command to pull the official mongo docker image:
