@@ -226,7 +226,96 @@ Notice that we didn't get any views for this query
 
 #### Geospatial Queries
 
-Content
+*MongoDB supports query operations on geospatial data.*
+
+###### Geospatial Data
+
+In MongoDB, you can store geospatial data as GeoJSON objects or as legacy coordinate pairs.
+
+###### GeoJSON Data
+
+[GeoJSON](https://docs.mongodb.com/manual/geospatial-queries/#geospatial-geojson)
+
+> To specify GeoJSON data, use an embedded document with:
+
+* a field named type that specifies the GeoJSON object type and
+
+* a field named coordinates that specifies the object’s coordinates.
+
+If specifying latitude and longitude coordinates, list the longitude first and then latitude:
+
+* Valid longitude values are between -180 and 180, both inclusive.
+* Valid latitude values are between -90 and 90 (both inclusive).
+
+###### Geospatial Indexes
+
+MongoDB provides the following geospatial index types to support the geospatial queries.
+
+[2d sphere](https://docs.mongodb.com/manual/geospatial-queries/#dsphere)
+
+> 2dsphere indexes support queries that calculate geometries on an earth-like sphere.
+
+To create a 2dsphere index, use the db.collection.createIndex() method and specify the string literal "2dsphere" as the index type:
+
+`db.collection.createIndex( { <location field> : "2dsphere" } )`
+
+where the &#60;location field&#62; is a field whose value is either a GeoJSON object or a legacy coordinates pair.
+
+For more information on the 2dsphere index, see 2dsphere Indexes.
+
+[2d](https://docs.mongodb.com/manual/geospatial-queries/#d)
+
+2d indexes support queries that calculate geometries on a two-dimensional plane. Although the index can support $nearSphere queries that calculate on a sphere, if possible, use the 2dsphere index for spherical queries.
+
+To create a 2d index, use the `db.collection.createIndex()` method, specifying the location field as the key and the string literal "2d" as the index type:
+
+`db.collection.createIndex( { <location field> : "2d" } )`
+
+[Geospatial Indexes and Sharded Collections](https://docs.mongodb.com/manual/geospatial-queries/#geospatial-indexes-and-sharded-collections)
+
+> You cannot use a geospatial index as a shard key when sharding a collection. However, you can create a geospatial index on a sharded collection by using a different field as the shard key.
+
+
+###### Geospatial Queries
+
+*Geospatial Query Operators:*
+
+| Name | Description | 
+| --- | --- |
+| $geoIntersects | Selects geometries that intersect with a GeoJSON geometry. The 2dsphere index supports $geoIntersects. | 
+| $geoWithin | Selects geometries within a bounding GeoJSON geometry. The 2dsphere and 2d indexes support $geoWithin. | 
+| $near | Returns geospatial objects in proximity to a point. Requires a geospatial index. The 2dsphere and 2d indexes support $near. | 
+| $nearSphere | Returns geospatial objects in proximity to a point on a sphere. Requires a geospatial index. The 2dsphere and 2d indexes support $nearSphere. | 
+
+[Geospatial Command](https://docs.mongodb.com/manual/geospatial-queries/#geospatial-command)
+
+| Command | Description | 
+| --- | --- |
+| geoNear (Deprecated in MongoDB 4.0) | Performs a geospatial query that returns the documents closest to a given point. The deprecated geoNear command requires a geospatial index. | 
+
+[Geospatial Aggregation Stage](https://docs.mongodb.com/manual/geospatial-queries/#geospatial-aggregation-stage)
+
+| Stage | Description | 
+| --- | --- |
+| $geoNear | Returns an ordered stream of documents based on the proximity to a geospatial point. Incorporates the functionality of $match, $sort, and $limit for geospatial data. The output documents include an additional distance field and can include a location identifier field.  $geoNear requires a geospatial index. | 
+
+###### Geospatial Models
+
+> MongoDB geospatial queries can interpret geometry on a flat surface or a sphere.
+
+> 2dsphere indexes support only spherical queries (i.e. queries that interpret geometries on a spherical surface).
+
+> 2d indexes support flat queries (i.e. queries that interpret geometries on a flat surface) and some spherical queries. While 2d indexes support some spherical queries, the use of 2d indexes for these spherical queries can result in error. If possible, use 2dsphere indexes for spherical queries.
+
+###### GeoSpatial Query Examples
+
+Let us populate a new mongodb collection called geospatial with some geospatial data:
+
+Please run the following mongo script in the root of the repository:
+
+```bash
+mongo scripts/create-geospatial-collection.js
+```
 
 #### Read Isolation (Read Concern)
 
