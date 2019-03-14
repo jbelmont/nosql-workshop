@@ -317,6 +317,205 @@ Please run the following mongo script in the root of the repository:
 mongo scripts/create-geospatial-collection.js
 ```
 
+###### Find Restaurants with Geospatial Queries
+
+Let us use the datasets provided by [Geospatial Tutorial in MongoDB Site](https://docs.mongodb.com/manual/tutorial/geospatial-tutorial/)
+
+I have added the 2 datasets in the datasets directory in the root of the repository.
+
+Please make sure that mongo is running by running the following script:
+
+```bash
+sh scripts/run-mongo-shell.sh
+```
+
+Next to import the 2 datasets run the following commands:
+
+![images/mongo-datasets](../images/mongo-datasets.png)
+
+Notice that we should have 2 new collections in the nosql_workshop database now.
+
+Now run the following mongo script to create indexes for the new collections:
+
+```bash
+mongo scripts/create-restaurants-neighborhoods-indexes.js
+```
+
+Now let us look at one particular document in the restaurants collection:
+
+```js
+> db.restaurants.findOne()
+{
+	"_id" : ObjectId("55cba2476c522cafdb053ae4"),
+	"location" : {
+		"coordinates" : [
+			-74.00528899999999,
+			40.628886
+		],
+		"type" : "Point"
+	},
+	"name" : "Regina Caterers"
+}
+```
+
+Now let us look at one particular document in the restaurants collection:
+
+```js
+db.neighborhoods.findOne()
+{
+	"_id" : ObjectId("55cb9c666c522cafdb053a1b"),
+	"geometry" : {
+		"coordinates" : [
+			[
+				[
+					-73.94732672160579,
+					40.62916656720943
+                ],
+                .......................
+				[
+					-73.94732672160579,
+					40.62916656720943
+				]
+			]
+		],
+		"type" : "Polygon"
+	},
+	"name" : "Midwood"
+}
+```
+
+###### Find the Current Neighborhood
+
+Assuming the user’s mobile device can give a reasonably accurate location for the user, it is simple to find the user’s current neighborhood with $geoIntersects.
+
+> Suppose the user is located at -73.93414657 longitude and 40.82302903 latitude. To find the current neighborhood, you will specify a point using the special $geometry field in GeoJSON format:
+
+![images/mongo-geointersects](../images/mongo-geointersects.png)
+
+> This query will tell you that there are 127 restaurants in the requested neighborhood, visualized in the following figure:
+
+[Find all restaurants in the neighborhood Mongo Picture](https://docs.mongodb.com/manual/tutorial/geospatial-tutorial/#find-all-restaurants-in-the-neighborhood)
+
+###### Find Restaurants within a Distance
+
+To find restaurants within a specified distance of a point, you can use either $geoWithin with $centerSphere to return results in unsorted order, or nearSphere with $maxDistance if you need results sorted by distance.
+
+###### Unsorted with $geoWithin
+
+To find restaurants within a circular region, use $geoWithin with $centerSphere. $centerSphere is a MongoDB-specific syntax to denote a circular region by specifying the center and the radius in radians.
+
+$geoWithin does not return the documents in any specific order, so it may show the user the furthest documents first.
+
+The following will find all restaurants within five miles of the user:
+
+```js
+db.restaurants.find({ location:
+   { $geoWithin:
+      { $centerSphere: [ [ -73.93414657, 40.82302903 ], 5 / 3963.2 ] } } })
+```
+
+###### Sorted with $nearSphere
+
+You may also use $nearSphere and specify a $maxDistance term in meters. This will return all restaurants within five miles of the user in sorted order from nearest to farthest:
+
+![images/mongo-geointersects-sorted](../images/mongo-geointersects-sorted.png)
+
+###### GeoJSON Objects
+
+[GeoJSON Objects MongoDB Docs](https://docs.mongodb.com/manual/reference/geojson/#geojson-objects)
+
+* Point
+
+```js
+{ type: "Point", coordinates: [ 40, 5 ] }
+```
+
+* LineString
+
+```js
+{ type: "LineString", coordinates: [ [ 40, 5 ], [ 41, 6 ] ] }
+```
+
+* Polygon
+
+> Polygons consist of an array of GeoJSON LinearRing coordinate arrays. These LinearRings are closed LineStrings. Closed LineStrings have at least four coordinate pairs and specify the same position as the first and last coordinates.
+
+```js
+{
+  type: "Polygon",
+  coordinates: [ [ [ 0 , 0 ] , [ 3 , 6 ] , [ 6 , 1 ] , [ 0 , 0  ] ] ]
+}
+```
+
+* MultiPoint
+
+```js
+{
+  type: "MultiPoint",
+  coordinates: [
+     [ -73.9580, 40.8003 ],
+     [ -73.9498, 40.7968 ],
+     [ -73.9737, 40.7648 ],
+     [ -73.9814, 40.7681 ]
+  ]
+}
+```
+
+* MultiLineString
+
+```js
+{
+  type: "MultiLineString",
+  coordinates: [
+     [ [ -73.96943, 40.78519 ], [ -73.96082, 40.78095 ] ],
+     [ [ -73.96415, 40.79229 ], [ -73.95544, 40.78854 ] ],
+     [ [ -73.97162, 40.78205 ], [ -73.96374, 40.77715 ] ],
+     [ [ -73.97880, 40.77247 ], [ -73.97036, 40.76811 ] ]
+  ]
+}
+```
+
+* MultiPolygon
+
+```js
+{
+  type: "MultiPolygon",
+  coordinates: [
+     [ [ [ -73.958, 40.8003 ], [ -73.9498, 40.7968 ], [ -73.9737, 40.7648 ], [ -73.9814, 40.7681 ], [ -73.958, 40.8003 ] ] ],
+     [ [ [ -73.958, 40.8003 ], [ -73.9498, 40.7968 ], [ -73.9737, 40.7648 ], [ -73.958, 40.8003 ] ] ]
+  ]
+}
+```
+
+* GeometryCollection
+
+```js
+{
+  type: "GeometryCollection",
+  geometries: [
+     {
+       type: "MultiPoint",
+       coordinates: [
+          [ -73.9580, 40.8003 ],
+          [ -73.9498, 40.7968 ],
+          [ -73.9737, 40.7648 ],
+          [ -73.9814, 40.7681 ]
+       ]
+     },
+     {
+       type: "MultiLineString",
+       coordinates: [
+          [ [ -73.96943, 40.78519 ], [ -73.96082, 40.78095 ] ],
+          [ [ -73.96415, 40.79229 ], [ -73.95544, 40.78854 ] ],
+          [ [ -73.97162, 40.78205 ], [ -73.96374, 40.77715 ] ],
+          [ [ -73.97880, 40.77247 ], [ -73.97036, 40.76811 ] ]
+       ]
+     }
+  ]
+}
+```
+
+
 #### Read Isolation (Read Concern)
 
 Content
