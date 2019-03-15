@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jbelmont/nosql-workshop#readme",
   "devDependencies": {
+    "chance-cli": "^1.0.7",
     "faker": "^4.1.0",
     "gitbook": "^2.6.9",
     "gitbook-cli": "^2.3.2",
