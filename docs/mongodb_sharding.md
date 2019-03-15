@@ -2,15 +2,15 @@ NoSQL Workshop - Mongo Sharding
 
 ## Sections:
 
-* [Sharded Cluster Components](#sharded_cluster_components)
-* [Shard Keys](#shard_keys)
-* [Hashed Sharding](#hashed_sharding)
-* [Ranged Sharding](#ranged_sharding)
+* [Sharded Cluster Components](#sharded-cluster-components)
+* [Shard Keys](#shard-keys)
+* [Hashed Sharding](#hashed-sharding)
+* [Ranged Sharding](#ranged-sharding)
 * [Zones](#zones)
-* [Data Partitioning with Chunks](#data_partitioning_with_chunks)
+* [Data Partitioning with Chunks](#data-partitioning-with-chunks)
 * [Balancer](#balancer)
 * [Administration](#administration)
-* [Sharding Reference](#sharding_reference)
+* [Sharding Reference](#sharding-reference)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 ###### Sharded Cluster Components

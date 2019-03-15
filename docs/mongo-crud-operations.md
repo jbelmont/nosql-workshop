@@ -3,10 +3,10 @@ NoSQL Workshop - Mongo Crud Operations
 ## Sections:
 
 * [CRUD Operations](#crud-operations)
-* [Insert Documents](#insert_documents)
-* [Query Documents](#query_documents)
-* [Update Documents](#update_documents)
-* [Delete Documents](#delete_documents)
+* [Insert Documents](#insert-documents)
+* [Query Documents](#query-documents)
+* [Update Documents](#update-documents)
+* [Delete Documents](#delete-documents)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 *All of this information is gathered from the official mongodb docs in https://docs.mongodb.com/manual/crud/*

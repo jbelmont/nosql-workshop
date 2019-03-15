@@ -2,11 +2,11 @@ NoSQL Workshop - Mongo Shell
 
 ## Sections:
 
-* [Configure the mongo Shell](#configure_the_mongo_shell)
-* [Access the mongo Shell Help](access_the_mongo_shell_help)
-* [Write Scripts for the mongo Shell](write_scripts_for_the_mongo_shell)
-* [Data Types in the mongo Shell](data_types_in_the_mongo_shell)
-* [mongo Shell Quick Reference](mongo_shell_quick_reference)
+* [Configure the mongo Shell](#configure-the-mongo-shell)
+* [Access the mongo Shell Help](access-the-mongo-shell-help)
+* [Write Scripts for the mongo Shell](write-scripts-for-the-mongo-shell)
+* [Data Types in the mongo Shell](data-types-in-the-mongo-shell)
+* [mongo Shell Quick Reference](mongo-shell-quick-reference)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 **These information is all gleaned from the official [mongodb docs](https://docs.mongodb.com/manual/tutorial/access-mongo-shell-help/)**

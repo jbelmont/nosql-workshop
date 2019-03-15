@@ -2,10 +2,10 @@ NoSQL Workshop - Mongo Crud Operations Part III
 
 ## Sections:
 
-* [Text Search](#text_search)
-* [Geospatial Queries](#geospatial_queries)
-* [Read Isolation (Read Concern)](#read_isolation_(read_concern))
-* [Write Acknowledgement (Write Concern)](#write_acknowledgement_(write_concern))
+* [Text Search](#text-search)
+* [Geospatial Queries](#geospatial-queries)
+* [Read Isolation (Read Concern)](#read-isolation-(read-concern))
+* [Write Acknowledgement (Write Concern)](#write-acknowledgement-(write-concern))
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 *All of this information is gathered from the official mongodb docs in https://docs.mongodb.com/manual/crud/*
@@ -518,15 +518,57 @@ You may also use $nearSphere and specify a $maxDistance term in meters. This wil
 
 #### Read Isolation (Read Concern)
 
-Content
+**This table information comes from mongodb site**
+
+[Read Concern Levels](https://docs.mongodb.com/manual/reference/read-concern/#read-concern-levels)
+
+Read Concert Levels:
+
+| level | Description | 
+| --- | --- |
+| "local" | The query returns data from the instance with no guarantee that the data has been written to a majority of the replica set members (i.e. may be rolled back). \nDefault \n for: 
+reads against primary reads against secondaries if the reads are associated with causally consistent sessions. Read concern local is available for use with causally consistent sessions and transactions.
+| For more information, see the "local" reference page. |
+| "available" | The query returns data from the instance with no guarantee that the data has been written to a majority of the replica set members (i.e. may be rolled back). \nDefault for reads against secondaries if the reads are not associated with causally consistent sessions.\nFor sharded collections, "available" read concern provides the lowest latency reads possible among the various read concerns but at the expense of consistency as "available" read concern can return orphaned documents. Read concern available is unavailable for use with causally consistent sessions. For more information, see the "available" reference page. |
+| "majority" | The query returns the data that has been acknowledged by a majority of the replica set members. The documents returned by the read operation are durable, even in the event of failure. To use read concern level of "majority", replica sets must use WiredTiger storage engine.\nFor MongoDB 4.0.3+ (and 3.6.1+), you can disable read concern "majority". For more information, see Disable Read Concern Majority. | 
+| "linearizable" | The query returns data that reflects all successful majority-acknowledged writes that completed prior to the start of the read operation. The query may wait for concurrently executing writes to propagate to a majority of replica set members before returning results.\nIf a majority of your replica set members crash and restart after the read operation, documents returned by the read operation are durable if writeConcernMajorityJournalDefault is set to the default state of true. With writeConcernMajorityJournalDefault set to false, MongoDB does not wait for w: "majority" writes to be written to the on-disk journal before acknowledging the writes. As such, majority write operations could possibly roll back in the event of a transient loss (e.g. crash and restart) of a majority of nodes in a given replica set. You can specify linearizable read concern for read operations on the primary only. Read concern linearizable is unavailable for use with causally consistent sessions. | 
+| Linearizable | read concern guarantees only apply if read operations specify a query filter that uniquely identifies a single document. For more information, see the "linearizable" reference page. |
+| "snapshot" | Only available for operations within multi-document transactions. If the transaction is not part of a causally consistent session, upon transaction commit with write concern "majority", the transaction operations are guaranteed to have read from a snapshot of majority-committed data. If the transaction is part of a causally consistent session, upon transaction commit with write concern "majority", the transaction operations are guaranteed to have read from a snapshot of majority-committed data that provides causal consistency with the operation immediately preceding the transaction start. | 
+
+
+```js
+db.restaurants.find({ _id: 5 }).readConcern("linearizable").maxTimeMS(10000)
+
+db.runCommand({
+     find: "restaurants",
+     filter: { _id: 5 },
+     readConcern: { level: "linearizable" },
+     maxTimeMS: 10000
+})
+```
 
 #### Write Acknowledgement (Write Concern)
 
-Content
+[Write Concern](https://docs.mongodb.com/manual/reference/write-concern/)
+
+> Write concern describes the level of acknowledgment requested from MongoDB for write operations to a standalone mongod or to replica sets or to sharded clusters. In sharded clusters, mongos instances will pass the write concern on to the shards.
+
+###### Write Concern Specification
+
+[Write Concern Specification](https://docs.mongodb.com/manual/reference/write-concern/#write-concern-specification)
+
+`{ w: <value>, j: <boolean>, wtimeout: <number> }`
+
+* the w option to request acknowledgment that the write operation has propagated to a specified number of mongod instances or to mongod instances with specified tags.
+
+* the j option to request acknowledgment that the write operation has been written to the on-disk journal, and
+
+* the wtimeout option to specify a time limit to prevent write operations from blocking indefinitely.
+
 
 #### Bread Crumb Navigation
 _________________________
 
 Previous | Next
 :------- | ---:
-← [Mongo CRUD Operations Part II](./mongo-crud-operations-part2.md) → | [MongoDB Aggregation](./mongodb-aggregation.md) →
+← [Mongo CRUD Operations Part II](./mongo-crud-operations-part2.md) → | [Mongo Crud Concepts](./mongo-crud-concepts.md) →

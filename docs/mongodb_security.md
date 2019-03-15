@@ -2,17 +2,17 @@ NoSQL Workshop - Mongo Security
 
 ## Sections:
 
-* [Security Checklist](#security_checklist)
+* [Security Checklist](#security-checklist)
 * [Authentication](#authentication)
-* [Enable Auth](#enable_auth)
-* [Role-Based Access Control](#role-based_access_control)
-* [TLS/SSL (Transport Encryption)](#tls/ssl_(transport_encryption))
-* [Encryption at Rest](#encryption_at_rest)
+* [Enable Auth](#enable-auth)
+* [Role-Based Access Control](#role-based-access-control)
+* [TLS/SSL (Transport Encryption)](#tls/ssl-(transport-encryption))
+* [Encryption at Rest](#encryption-at-rest)
 * [Auditing](#auditing)
-* [Security Hardening](#security_hardening)
-* [Implement Field Level Redaction](#implement_field_level_redaction)
-* [Security Reference](#security_reference)
-* [Create a Vulnerability Report](#create_a_vulnerability_report)
+* [Security Hardening](#security-hardening)
+* [Implement Field Level Redaction](#implement-field-level-redaction)
+* [Security Reference](#security-reference)
+* [Create a Vulnerability Report](#create-a-vulnerability-report)
 * [Appendix](#appendix)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 

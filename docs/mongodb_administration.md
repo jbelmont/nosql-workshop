@@ -2,14 +2,14 @@ NoSQL Workshop - Mongo Administration
 
 ## Sections:
 
-* [Production Notes](#production_notes)
-* [Operations Checklist](#operations_checklist)
-* [Development Checklist](#development_checklist)
+* [Production Notes](#production-notes)
+* [Operations Checklist](#operations-checklist)
+* [Development Checklist](#development-checklist)
 * [Performance](#performance)
-* [Configuration and Maintenance](#configuration_and_maintenance)
-* [Data Center Awareness](#data_center_awareness)
-* [MongoDB Backup Methods](#mongodb_backup_methods)
-* [Monitoring for MongoDB](#monitoring_for_mongodb)
+* [Configuration and Maintenance](#configuration-and-maintenance)
+* [Data Center Awareness](#data-center-awareness)
+* [MongoDB Backup Methods](#mongodb-backup-methods)
+* [Monitoring for MongoDB](#monitoring-for-mongodb)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 ###### Production Notes

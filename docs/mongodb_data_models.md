@@ -2,11 +2,11 @@ NoSQL Workshop - Mongo Data Models
 
 ## Sections:
 
-* [Data Modeling Introduction](#data_modeling_introduction)
-* [Schema Validation](#schema_validation)
-* [Data Modeling Concepts](#data_modeling_concepts)
-* [Data Model Examples and Patterns](#data_model_examples_and_patterns)
-* [Data Model Reference](#data_model_reference)
+* [Data Modeling Introduction](#data-modeling-introduction)
+* [Schema Validation](#schema-validation)
+* [Data Modeling Concepts](#data-modeling-concepts)
+* [Data Model Examples and Patterns](#data-model-examples-and-patterns)
+* [Data Model Reference](#data-model-reference)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 ###### Data Modeling Introduction

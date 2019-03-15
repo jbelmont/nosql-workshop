@@ -2,9 +2,9 @@ NoSQL Workshop - Mongo Crud Operations Part II
 
 ## Sections:
 
-* [Bulk Write Operations](#bulk_write_operations)
-* [Retryable Writes](#retryable_writes)
-* [SQL to MongoDB Mapping Chart](#sql_to_mongodb_mapping_chart)
+* [Bulk Write Operations](#bulk-write-operations)
+* [Retryable Writes](#retryable-writes)
+* [SQL to MongoDB Mapping Chart](#sql-to-mongodb-mapping-chart)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 *All of this information is gathered from the official mongodb docs in https://docs.mongodb.com/manual/crud/*

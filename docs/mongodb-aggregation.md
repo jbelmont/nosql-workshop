@@ -2,9 +2,9 @@ NoSQL Workshop - Mongo Aggregations
 
 ## Sections:
 
-* [Aggregation Pipeline](#aggregation_pipeline)
+* [Aggregation Pipeline](#aggregation-pipeline)
 * [Map-Reduce](#map-reduce)
-* [Aggregation Reference](#aggregation_reference)
+* [Aggregation Reference](#aggregation-reference)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 ###### Aggregation Pipeline
@@ -24,4 +24,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [Mongo CRUD Operations](./mongo-crud-operations.md) | [MongoDB Data Models](./mongodb_data_models.md) →
+← [Mongo CRUD Concepts](./mongo-crud-concepts.md) | [MongoDB Data Models](./mongodb_data_models.md) →

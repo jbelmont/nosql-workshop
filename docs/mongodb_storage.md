@@ -2,10 +2,10 @@ NoSQL Workshop - Mongo Storage
 
 ## Sections:
 
-* [Storage Engines](#storage_engines)
+* [Storage Engines](#storage-engines)
 * [Journaling](#journaling)
 * [GridFS](#gridfs)
-* [FAQ: MongoDB Storage](#faq:_mongodb_storage)
+* [FAQ: MongoDB Storage](#faq:-mongodb-storage)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 ###### Storage Engines
