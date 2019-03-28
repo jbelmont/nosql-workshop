@@ -35,3 +35,6 @@ common.env
 
 # Gitbook files
 /_book
+
+# useful scripts for personal use only
+.scripts/
