@@ -300,6 +300,8 @@ The pipeline begins with all documents in the users collection, and passes these
 
 ## Map-Reduce
 
+*All of the examples stem from the official docs at [Map Reduce Examples](https://docs.mongodb.com/manual/tutorial/map-reduce-examples/#map-reduce-examples)
+
 [Map-Reduce](https://docs.mongodb.com/manual/aggregation/#map-reduce)
 
 > MongoDB also provides map-reduce operations to perform aggregation. In general, map-reduce operations have two phases: a map stage that processes each document and emits one or more objects for each input document, and reduce phase that combines the output of the map operation. Optionally, map-reduce can have a finalize stage to make final modifications to the result. Like other aggregation operations, map-reduce can specify a query condition to select the input documents as well as sort and limit the results.
@@ -307,6 +309,20 @@ The pipeline begins with all documents in the users collection, and passes these
 > Map-reduce uses custom JavaScript functions to perform the map and reduce operations, as well as the optional finalize operation. While the custom JavaScript provide great flexibility compared to the aggregation pipeline, in general, map-reduce is less efficient and more complex than the aggregation pipeline.
 
 > Map-reduce can operate on a sharded collection. Map-reduce operations can also output to a sharded collection. See Aggregation Pipeline and Sharded Collections and Map-Reduce and Sharded Collections for details.
+
+> Map-reduce is a data processing paradigm for condensing large volumes of data into useful aggregated results. For map-reduce operations, MongoDB provides the mapReduce database command.
+
+Let us create a collection called ordersv2 with the following mongo script:
+
+```bash
+mongo scripts/create-ordersv2-collection.js
+```
+
+###### Return the Total Price Per Customer
+
+[Return the Total Price Per Customer](https://docs.mongodb.com/manual/tutorial/map-reduce-examples/#return-the-total-price-per-customer)
+
+
 
 #### Single Purpose Aggregation Operations
 
