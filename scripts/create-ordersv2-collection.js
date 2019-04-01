@@ -11,7 +11,7 @@ for (let i = 0; i < 100; i ++) {
         amount: Number(orders[i].amount),
         status: orders[i].status,
         price: Number(orders[i].price),
-        ord_date: orders[i].ord_date,
+        ord_date: new ISODate(orders[i].ord_date),
         items: orders[i].items
     });
 }
