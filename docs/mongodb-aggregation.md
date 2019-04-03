@@ -1217,4 +1217,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [Mongo CRUD Concepts](./mongo-crud-concepts.md) | [MongoDB Data Models](./mongodb_data_models.md) →
+← [Mongo CRUD Concepts](./mongo-crud-concepts.md) | [MongoDB Data Models Part I](./mongodb_data_models_part_I.md) →
