@@ -309,9 +309,13 @@ References provides more flexibility than embedding. However, client-side applic
 
 *Notice that we use the name of the publisher here "oreilly"*
 
+#### MongoDB Data Models Tree Structures
+
+Please read the official docs on [MongoDB Data Models Tree Structures](https://docs.mongodb.com/manual/applications/data-models-tree-structures/)
+
 ## Data Model Reference
 
-Content
+Please read the official docs for [Data Model References](https://docs.mongodb.com/manual/reference/database-references/)
 
 ## Bread Crumb Navigation
 _________________________
