@@ -9,7 +9,7 @@ NoSQL Workshop - BSON Data Types
 * [Date](#date)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
-#### BSON Types
+## BSON Types
 
 > BSON is a binary serialization format used to store documents and make remote procedure calls in MongoDB.
 
@@ -45,7 +45,7 @@ We can check the type using the mongo shell like this:
 
 ![images/mongo-bson-types](../images/mongo-bson-types.png)
 
-###### ObjectId
+#### ObjectId
 
 [ObjectId](https://docs.mongodb.com/manual/reference/bson-types/#objectid)
 
@@ -68,14 +68,14 @@ Using ObjectIds for the _id field provides the following additional benefits:
 * sorting on an _id field that stores ObjectId values is roughly equivalent to sorting by creation time.
 
 
-###### String
+#### String
 
 [String](https://docs.mongodb.com/manual/reference/bson-types/#string)
 
 > BSON strings are UTF-8. In general, drivers for each programming language convert from the language’s string format to UTF-8 when serializing and deserializing BSON. This makes it possible to store most international characters in BSON strings with ease. In addition, MongoDB $regex queries support UTF-8 in the regex string.
 
 
-###### Timestamps
+#### Timestamps
 
 [Timestamps](https://docs.mongodb.com/manual/reference/bson-types/#timestamps)
 
@@ -86,7 +86,7 @@ Using ObjectIds for the _id field provides the following additional benefits:
 
 ![images/mongo-timestamp](../images/mongo-timestamp.png)
 
-###### Date
+#### Date
 
 [Date](https://docs.mongodb.com/manual/reference/bson-types/#date)
 
@@ -97,7 +97,7 @@ Using ObjectIds for the _id field provides the following additional benefits:
 ![images/datetime](../images/datetime.png)
 
 
-#### Bread Crumb Navigation
+## Bread Crumb Navigation
 _________________________
 
 Previous | Next

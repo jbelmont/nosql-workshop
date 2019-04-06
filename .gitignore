@@ -38,3 +38,8 @@ common.env
 
 # useful scripts for personal use only
 .scripts/
+
+# Mongo data files
+mongo-rs0-1/
+mongo-rs0-2/
+mongo-rs0-3/

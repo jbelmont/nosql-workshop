@@ -13,11 +13,11 @@ NoSQL Workshop - Mongo Crud Concepts
 * [Tailable Cursors](#tailable)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
-###### Atomicity and Transactions
+## Atomicity and Transactions
 
 > In MongoDB, a write operation is atomic on the level of a single document, even if the operation modifies multiple embedded documents within a single document.
 
-###### Multi-Document Transactions
+#### Multi-Document Transactions
 
 > When a single write operation (e.g. db.collection.updateMany()) modifies multiple documents, the modification of each document is atomic, but the operation as a whole is not atomic.
 
@@ -25,14 +25,14 @@ NoSQL Workshop - Mongo Crud Concepts
 
 > Starting in version 4.0, for situations that require atomicity for updates to multiple documents or consistency between reads to multiple documents, MongoDB provides multi-document transactions for replica sets.
 
-###### Concurrency Control
+#### Concurrency Control
 
 > Concurrency control allows multiple applications to run concurrently without causing data inconsistency or conflicts.
 
 > One approach is to create a unique index on a field that can only have unique values. This prevents insertions or updates from creating duplicate data. Create a unique index on multiple fields to force uniqueness on that combination of field values. For examples of use cases, see update() and Unique Index and findAndModify() and Unique Index.
 
 
-###### Read Isolation, Consistency, and Recency
+#### Read Isolation, Consistency, and Recency
 
 Please read the offical docs at [Read Isolation Consistency Recency](https://docs.mongodb.com/manual/core/read-isolation-consistency-recency/)
 
@@ -312,11 +312,11 @@ db.inventory.find({
 }).hint({ quantity: 1, type: 1 }).explain("executionStats")
 ```
 
-###### Tailable Cursors
+#### Tailable Cursors
 
 Please read the official docs at [Tailable Cursors](https://docs.mongodb.com/manual/core/tailable-cursors/)
 
-###### Bread Crumb Navigation
+#### Bread Crumb Navigation
 _________________________
 
 Previous | Next
