@@ -35,7 +35,7 @@ Now you should have 3 running mongo replica sets like this:
 
 ![images/mongo-replicaset](../images/mongo-replicaset.png)
 
-Now go ahead and try to run the following script:
+Now here is the script that the mongodb docs partly use:
 
 ```js
 "use strict";
@@ -69,6 +69,28 @@ session.commitTransaction();
 
 session.endSession();
 ```
+
+Let us get into the first replica set like this:
+
+```bash
+> docker exec -it $(docker ps -a | grep "nosql-workshop_mongo-rs0-1_1" | awk '{print $1}') /bin/bash
+
+> mongo
+```
+
+Here is a screenshot of a possible shell session:
+
+![images/mongodb-replicaset](../images/mongodb-replicaset.png)
+
+We can check on the replica set status with the following command:
+
+```js
+rs.status()
+```
+
+Let us make another one of the replica sets secondary: 
+
+![images/mongodb-replicaset-secondary](../images/mongodb-replicaset-secondary.png)
 
 ## Transactions and Operations
 
