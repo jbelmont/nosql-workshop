@@ -6,7 +6,7 @@
     * [Data Normalization](docs/data-normalization.md)
     * [ACID](docs/acid.md)
     * [CAP Thereom](docs/cap.md)
-    * [Base Consistency Model](docs/base-consistency-model.md)
+    * [Eventual Consistency](docs/eventual-consistency.md)
 * [NoSQL Databases](docs/nosql-databases.md)
     * [Types of NoSQL Databases](docs/types-of-nosql-databases.md)
     * [Key-Value Database](docs/key-value-database.md)

@@ -4,6 +4,7 @@ NoSQL Workshop - ACID
 
 * [ACID Computer Science Definition](#acid-computer-science-definition)
 * [4 Characteristics of ACID](#4-characteristics-of-acid)
+* [Implementing ACID Properties](#implementing-acid-properties)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 ## ACID Computer Science Definition 
@@ -42,9 +43,31 @@ The characteristics of these four properties as defined by Reuter and Härder ar
 
 > Durability guarantees that once a transaction has been committed, it will remain committed even in the case of a system failure (e.g., power outage or crash). This usually means that completed transactions (or their effects) are recorded in non-volatile memory.
 
+#### Implementing ACID Properties
+
+[Implementation ACID](https://en.wikipedia.org/wiki/ACID_%28computer_science%29#Implementation)
+
+> Processing a transaction often requires a sequence of operations that is subject to failure for a number of reasons. For instance, the system may have no room left on its disk drives, or it may have used up its allocated CPU time. There are two popular families of techniques: write-ahead logging and shadow paging. In both cases, locks must be acquired on all information to be updated, and depending on the level of isolation, possibly on all data that may be read as well. In write ahead logging, atomicity is guaranteed by copying the original (unchanged) data to a log before changing the database. That allows the database to return to a consistent state in the event of a crash. In shadowing, updates are applied to a partial copy of the database, and the new copy is activated when the transaction commits.
+
+#### Locking vs Multiversioning
+
+[Locking vs Multiversioning](https://en.wikipedia.org/wiki/ACID_%28computer_science%29#Locking_vs_multiversioning)
+
+> Many databases rely upon locking to provide ACID capabilities. Locking means that the transaction marks the data that it accesses so that the DBMS knows not to allow other transactions to modify it until the first transaction succeeds or fails. The lock must always be acquired before processing data, including data that is read but not modified. Non-trivial transactions typically require a large number of locks, resulting in substantial overhead as well as blocking other transactions. For example, if user A is running a transaction that has to read a row of data that user B wants to modify, user B must wait until user A's transaction completes. Two phase locking is often applied to guarantee full isolation.
+
+> An alternative to locking is multiversion concurrency control, in which the database provides each reading transaction the prior, unmodified version of data that is being modified by another active transaction. This allows readers to operate without acquiring locks, i.e., writing transactions do not block reading transactions, and readers do not block writers. Going back to the example, when user A's transaction requests data that user B is modifying, the database provides A with the version of that data that existed when user B started his transaction. User A gets a consistent view of the database even if other users are changing data. One implementation, namely snapshot isolation, relaxes the isolation property.
+
+#### Distributed Transactions
+
+[Distributed Transactions](https://en.wikipedia.org/wiki/ACID_(computer_science)#Distributed_transactions)
+
+> Guaranteeing ACID properties in a distributed transaction across a distributed database, where no single node is responsible for all data affecting a transaction, presents additional complications. Network connections might fail, or one node might successfully complete its part of the transaction and then be required to roll back its changes because of a failure on another node. The two-phase commit protocol (not to be confused with two-phase locking) provides atomicity for distributed transactions to ensure that each participant in the transaction agrees on whether the transaction should be committed or not. Briefly, in the first phase, one node (the coordinator) interrogates the other nodes (the participants) and only when all reply that they are prepared does the coordinator, in the second phase, formalize the transaction.
+
+*Please read the [Two-phase commit protocol Wikipedia Post](https://en.wikipedia.org/wiki/Two-phase_commit_protocol)*
+
 ## Bread Crumb Navigation
 _________________________
 
 Previous | Next
 :------- | ---:
-← [Database Normalization](./data-normalization.md) | [CAP Thereom](./cap-thereom.md) →
+← [Database Normalization](./data-normalization.md) | [CAP Thereom](./cap.md) →
