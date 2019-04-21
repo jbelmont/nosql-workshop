@@ -16,6 +16,7 @@ NoSQL Workshop - Mongo Indexes
 * [Manage Indexes](#manage-indexes)
 * [Measure Index Use](#measure-index-use)
 * [Indexing Strategies](#indexing-strategies)
+* [Load collection with large amount of data](#load-collection-with-large-amount-of-data)
 * [Indexing Reference](#indexing-reference)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
@@ -280,6 +281,12 @@ Here is a sample run session using hint and explain in a query:
 ## Indexing Strategies
 
 Please read the official docs on [Indexing Strategies](https://docs.mongodb.com/manual/applications/indexes/)
+
+## Load collection with large amount of data
+
+We will load a collection named 'large' with large amount of data into the nosql_workshop database.
+
+
 
 ## Indexing Reference
 
