@@ -1,4 +1,4 @@
-NoSQL Workshop - Mongo Indexes
+NoSQL Workshop - Mongo Indexes Part I
 
 ## Sections:
 
@@ -338,4 +338,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [MongoDB Transactions](./mongodb_transactions.md) | [MongoDB Security](./mongodb_security.md) →
+← [MongoDB Transactions](./mongodb_transactions.md) | [MongoDB Indexes Part II](./mongodb_indexes_partII.md) →

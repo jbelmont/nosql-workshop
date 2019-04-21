@@ -101,4 +101,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [MongoDB Data Models](./mongodb_data_models.md) | [MongoDB Indexes](./mongodb_indexes.md) →
+← [MongoDB Data Models](./mongodb_data_models.md) | [MongoDB Indexes Part I](./mongodb_indexes_partI.md) →
