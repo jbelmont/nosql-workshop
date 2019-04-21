@@ -69,4 +69,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [MongoDB Indexes](./mongodb_indexes.md) | [MongoDB Change Streams](./mongodb_change_streams.md) →
+← [MongoDB Indexes Part II](./mongodb_indexes_partII.md) | [MongoDB Change Streams](./mongodb_change_streams.md) →
