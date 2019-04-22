@@ -18,6 +18,11 @@ Please checkout the file in *scripts/create-large-collection.js*
 
 Content
 
+#### Understanding the Query Plan Information relationship with indexes
+
+Content
+
+
 ## Bread Crumb Navigation
 _________________________
 
