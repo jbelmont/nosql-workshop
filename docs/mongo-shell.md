@@ -115,10 +115,10 @@ I would suggest to create the following directory:
 ```bash
 sudo mkdir -p /data/db
 
-sudo chown -R jean-marcelbelmont:staff /data
+sudo chown -R $(whoami):staff /data
 ```
 
-The 2nd command should be your username and this is for a Mac OS X specifically.
+The 2nd command uses your username and is for a Mac OS X specifically.
 
 The */data/db* directory is for [WiredTiger Storage Engine](https://docs.mongodb.com/manual/core/wiredtiger/) which is the default storage engine anyways.
 

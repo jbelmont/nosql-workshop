@@ -7,6 +7,7 @@ NoSQL Workshop - Mongo Crud Operations
 * [Query Documents](#query-documents)
 * [Update Documents](#update-documents)
 * [Delete Documents](#delete-documents)
+* [Workshop Questions](#workshop-questions)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 *All of this information is gathered from the official mongodb docs in https://docs.mongodb.com/manual/crud/*
@@ -669,6 +670,24 @@ db.inventory.deleteOne( { status: "D" } )
 *Delete operations do not drop indexes, even if deleting all documents from a collection.*
 
 > All write operations in MongoDB are atomic on the level of a single document. For more information on MongoDB and atomicity, see Atomicity and Transactions.
+
+#### Workshop Questions
+
+Run the following script in your terminal:
+
+```bash
+# At the base of the repository
+mongo scripts/create-numbers-collection.js
+```
+
+###### Write a MongoDB query using the numbers collection to find numbers between 150 and 175 (151 till 174).
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+      db.numbers.find({ count: { $gt: 150, $lt: 175 } })
+   </pre>
+</details>
 
 #### Bread Crumb Navigation
 _________________________
