@@ -88,6 +88,24 @@ docker run --name mongo-image-4 \
   -d mongo:4.0.5
 ```
 
+### Install the Mongo client
+
+#### Ubuntu/Debian via apt
+```
+sudo apt install mongodb-clients
+```
+
+#### OSX via [Homebrew](https://brew.sh/)
+```
+brew tap mongodb/brew
+brew install mongodb-community@4.0
+```
+
+#### Windows via [chocolatey](https://chocolatey.org/)
+```
+choco install mongodb
+```
+
 ### Get into mongo shell
 
 Once you run the above command you should be able to get into running docker container like this in a shell session:
