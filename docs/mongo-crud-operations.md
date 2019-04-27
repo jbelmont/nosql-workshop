@@ -682,10 +682,44 @@ mongo scripts/create-numbers-collection.js
 
 ###### Write a MongoDB query using the numbers collection to find numbers between 150 and 175 (151 till 174).
 
+*Hint checkout these [Operators in MongoDB Docs](https://docs.mongodb.com/manual/reference/operator/query-comparison/)*
+
 <details>
    <summary>Answer</summary>
    <pre>
-      db.numbers.find({ count: { $gt: 150, $lt: 175 } })
+   db.numbers.find({ count: { $gt: 150, $lt: 175 } })
+   </pre>
+</details>
+
+###### Write a MongoDB query using the numbers collection to update number 561 and add a field called word and set the value to "workshop"
+
+*Hint checkout these [Update Operators in MongoDB Docs](https://docs.mongodb.com/manual/reference/operator/update/)*
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.numbers.update(
+      { count: 561 },
+      { $set: { word: "workshop" } 
+   )
+   </pre>
+</details>
+
+###### Write a MongoDB query using the orders collection that finds a status of either "D" or "E"
+
+Run the following script in your terminal:
+
+```bash
+# At the base of the repository
+mongo scripts/create-orders-collection.js
+```
+
+*Hint checkout these [Query Operators in MongoDB Docs](https://docs.mongodb.com/manual/reference/operator/query-comparison/)*
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.orders.find({ status: { $in: ["D", "E" ] } })
    </pre>
 </details>
 
