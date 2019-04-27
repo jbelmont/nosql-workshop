@@ -1,6 +1,6 @@
 "use strict";
 
-let db = connect("localhost:27017");
+var db = connect("localhost:27017");
 
 // Load the words global array into memory
 // var words = [...];
@@ -34,7 +34,7 @@ class Large {
     generateDocuments() {
         this.dropCollection(this.collectionName);
         this.documents = [];
-		for (let i = 0; i < this.numberOfDocuments; i++) {
+		for (var i = 0; i < this.numberOfDocuments; i++) {
             this.documents.push({
                 _id: new ObjectId(),
                 number: i,

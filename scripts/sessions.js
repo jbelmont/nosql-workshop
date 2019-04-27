@@ -1,11 +1,11 @@
 "use strict";
 
-const proc = require('child_process').spawn('pbcopy');
-const faker = require("faker");
+var proc = require('child_process').spawn('pbcopy');
+var faker = require("faker");
 
-let sessions = [];
+var sessions = [];
 
-for (let i = 0; i < 50; i++) {
+for (var i = 0; i < 50; i++) {
     sessions.push({
         user_id: faker.random.uuid(),
         ts: faker.date.past(),

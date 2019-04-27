@@ -1,19 +1,19 @@
 "use strict";
 
-const proc = require('child_process').spawn('pbcopy');
+var proc = require('child_process').spawn('pbcopy');
 // Load Chance
-let Chance = require('chance');
+var Chance = require('chance');
 // Load faker
-const faker = require("faker");
+var faker = require("faker");
 
 // Instantiate Chance so it can be used
-let chance = new Chance();
+var chance = new Chance();
 
-let ordersv2 = [];
+var ordersv2 = [];
 
-const status = ["A", "B", "C", "D", "E", "G"];
+var status = ["A", "B", "C", "D", "E", "G"];
 
-let items = [
+var items = [
     { sku: "mmm", qty: 5, price: 2.5 },
     { sku: "nnn", qty: 5, price: 2.5 },
     { sku: 'ppp', qty: 7, price: 3.5 },
@@ -26,9 +26,9 @@ let items = [
     { sku: 'ccc', qty: 8.5, price: 9.25 }
 ];
 
-let cust_ids = [];
-let chance_id = chance.fbid();
-for (let i = 0; i < 100; i++) {
+var cust_ids = [];
+var chance_id = chance.fbid();
+for (var i = 0; i < 100; i++) {
     if (i % 5 === 0) {
         cust_ids.push(chance_id);
     } else {
@@ -36,10 +36,10 @@ for (let i = 0; i < 100; i++) {
     }
 }
 
-for (let i = 0; i < 100; i++) {
-    let orderDate = new Date(faker.date.past());
-    let month = (orderDate.getMonth() + 1).toString().length === 1 ? `0${orderDate.getMonth() + 1}` : (orderDate.getMonth() + 1);
-    let day = (orderDate.getDate() + 1).toString().length === 1 ? `0${orderDate.getDate()}` : (orderDate.getDate() + 1);
+for (var i = 0; i < 100; i++) {
+    var orderDate = new Date(faker.date.past());
+    var month = (orderDate.getMonth() + 1).toString().length === 1 ? `0${orderDate.getMonth() + 1}` : (orderDate.getMonth() + 1);
+    var day = (orderDate.getDate() + 1).toString().length === 1 ? `0${orderDate.getDate()}` : (orderDate.getDate() + 1);
     orderDate = `${orderDate.getFullYear()}-${(month)}-${day}`;
     ordersv2.push({
         cust_id: cust_ids[i],

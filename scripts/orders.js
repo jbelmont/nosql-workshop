@@ -1,19 +1,19 @@
 "use strict";
 
-const proc = require('child_process').spawn('pbcopy');
+var proc = require('child_process').spawn('pbcopy');
 // Load Chance
-let Chance = require('chance');
+var Chance = require('chance');
 // Load faker
-const faker = require("faker");
+var faker = require("faker");
 
 // Instantiate Chance so it can be used
-let chance = new Chance();
+var chance = new Chance();
 
-let orders = [];
+var orders = [];
 
-const status = ["A", "B", "C", "D", "E", "G"];
+var status = ["A", "B", "C", "D", "E", "G"];
 
-for (let i = 0; i < 50; i++) {
+for (var i = 0; i < 50; i++) {
     orders.push({
         cust_id: chance.fbid(),
         amount: faker.finance.amount(),

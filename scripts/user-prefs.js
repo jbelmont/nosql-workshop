@@ -1,13 +1,13 @@
 "use strict";
 
-const proc = require('child_process').spawn('pbcopy');
+var proc = require('child_process').spawn('pbcopy');
 
 // Load faker
-const faker = require("faker");
+var faker = require("faker");
 
-let userPrefs = [];
+var userPrefs = [];
 
-let hobbies = [
+var hobbies = [
     "hobby",
     "3D printing",
     "amateur radio",
@@ -178,10 +178,10 @@ let hobbies = [
     "Water sports"
 ];
 
-for (let i = 0; i < hobbies.length; i++) {
-    let userJoinDate = new Date(faker.date.past());
-    let month = (userJoinDate.getMonth() + 1).toString().length === 1 ? `0${userJoinDate.getMonth() + 1}` : (userJoinDate.getMonth() + 1);
-    let day = (userJoinDate.getDate() + 1).toString().length === 1 ? `0${userJoinDate.getDate()}` : (userJoinDate.getDate() + 1);
+for (var i = 0; i < hobbies.length; i++) {
+    var userJoinDate = new Date(faker.date.past());
+    var month = (userJoinDate.getMonth() + 1).toString().length === 1 ? `0${userJoinDate.getMonth() + 1}` : (userJoinDate.getMonth() + 1);
+    var day = (userJoinDate.getDate() + 1).toString().length === 1 ? `0${userJoinDate.getDate()}` : (userJoinDate.getDate() + 1);
     userJoinDate = `${userJoinDate.getFullYear()}-${(month)}-${day}`;
     userPrefs.push({
         firstName: faker.name.firstName(),

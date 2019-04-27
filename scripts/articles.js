@@ -1,11 +1,11 @@
 "use strict";
 
-const proc = require('child_process').spawn('pbcopy');
-const faker = require("faker");
+var proc = require('child_process').spawn('pbcopy');
+var faker = require("faker");
 
-let articles = [];
+var articles = [];
 
-for (let i = 0; i < 50; i++) {
+for (var i = 0; i < 50; i++) {
     articles.push({
         subject: faker.company.companyName(),
         title: faker.company.catchPhrase()

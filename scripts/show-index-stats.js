@@ -1,9 +1,9 @@
 "use strict";
 
-let db = connect("localhost:27017/nosql_workshop");
+var db = connect("localhost:27017/nosql_workshop");
 
 function indexStats() {
-    let adminDB = db.adminCommand({ listDatabases: 1 });
+    var adminDB = db.adminCommand({ listDatabases: 1 });
 
     if (!adminDB.databases) {
         print("There are no databases!");
@@ -20,16 +20,16 @@ function indexStats() {
 }
 
 function aggregateStatsInformation(db) {
-    let collectionNames = db.getCollectionNames();
+    var collectionNames = db.getCollectionNames();
 
     collectionNames.filter(collection => {
         return db.getCollection(collection).getIndexes().length > 0;
     }).forEach(collection => {
         print(`${collection} collection:`);
-        let cursor = db[collection].aggregate([{$indexStats:{}}]);
-        let indexSize = db[collection].stats().indexSizes._id_;
+        var cursor = db[collection].aggregate([{$indexStats:{}}]);
+        var indexSize = db[collection].stats().indexSizes._id_;
         while(cursor.hasNext()) {
-            let value = cursor.next();
+            var value = cursor.next();
             printIndexStats(value, indexSize);
         }
     });

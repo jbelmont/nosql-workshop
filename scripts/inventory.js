@@ -1,11 +1,11 @@
 "use strict";
 
-const proc = require('child_process').spawn('pbcopy');
-const faker = require("faker");
+var proc = require('child_process').spawn('pbcopy');
+var faker = require("faker");
 
-let inventory = [];
+var inventory = [];
 
-for (let i = 0; i < 50; i++) {
+for (var i = 0; i < 50; i++) {
     inventory.push({
         item: faker.commerce.productName(),
         type: faker.commerce.department(),

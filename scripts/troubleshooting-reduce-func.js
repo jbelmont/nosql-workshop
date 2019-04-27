@@ -1,17 +1,17 @@
 "use strict";
 
-let db = connect("localhost:27017/nosql_workshop");
+var db = connect("localhost:27017/nosql_workshop");
 
-let reduceFunction1 = function(keyCustId, valuesPrices) {
+var reduceFunction1 = function(keyCustId, valuesPrices) {
     return Array.sum(valuesPrices);
 };
 
-let myTestValues = [ 5, 5, 10 ];
+var myTestValues = [ 5, 5, 10 ];
 
 print(reduceFunction1('myKey', myTestValues));
 
-let reduceFunction2 = function(keySKU, valuesCountObjects) {
-    let reducedValue = { 
+var reduceFunction2 = function(keySKU, valuesCountObjects) {
+    var reducedValue = { 
         count: 0, 
         qty: 0 
     };
@@ -24,7 +24,7 @@ let reduceFunction2 = function(keySKU, valuesCountObjects) {
     return reducedValue;
 };
 
-let myTestObjects = [
+var myTestObjects = [
     { count: 1, qty: 5 },
     { count: 2, qty: 10 },
     { count: 3, qty: 15 }
@@ -32,13 +32,13 @@ let myTestObjects = [
 
 printjson(reduceFunction2('myKey', myTestObjects));
 
-let values1 = [
+var values1 = [
     { count: 1, qty: 5 },
     { count: 2, qty: 10 },
     { count: 3, qty: 15 }
 ];
 
-let values2 = [
+var values2 = [
     { count: 3, qty: 15 },
     { count: 1, qty: 5 },
     { count: 2, qty: 10 }

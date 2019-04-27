@@ -5,9 +5,9 @@
 db.adminCommand({ setFeatureCompatibilityVersion: "4.0" });
 
 // Start a session.
-const session = db.getMongo().startSession( { readPreference: { mode: "primary" } } );
+var session = db.getMongo().startSession( { readPreference: { mode: "primary" } } );
 
-const employeesCollection = session.getDatabase("hr").employees;
+var employeesCollection = session.getDatabase("hr").employees;
 
 // Start a transaction
 session.startTransaction({ 

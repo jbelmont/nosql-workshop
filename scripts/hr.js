@@ -1,13 +1,13 @@
 "use strict";
 
-const proc = require('child_process').spawn('pbcopy');
-const faker = require("faker");
+var proc = require('child_process').spawn('pbcopy');
+var faker = require("faker");
 
-let employees = [];
+var employees = [];
 
-let stat = ["Active", "InActive"];
+var stat = ["Active", "InActive"];
 
-for (let i = 0; i < 10; i++) {
+for (var i = 0; i < 10; i++) {
     employees.push({
         employee: i+1,
         status: stat[Math.floor(Math.random() * 2)],

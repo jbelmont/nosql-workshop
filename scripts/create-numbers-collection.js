@@ -1,6 +1,6 @@
 "use strict";
 
-let db = connect("localhost:27017/nosql_workshop");
+var db = connect("localhost:27017/nosql_workshop");
 
 load('./scripts/load-numbers.js')
 

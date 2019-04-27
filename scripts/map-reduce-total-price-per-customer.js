@@ -1,12 +1,12 @@
 "use strict";
 
-let db = connect("localhost:27017/nosql_workshop");
+var db = connect("localhost:27017/nosql_workshop");
 
-let mapFunc = function() {
+var mapFunc = function() {
     emit(this.cust_id, this.price);
 };
 
-let reduceFunc = function(keyCustId, valuesPrices) {
+var reduceFunc = function(keyCustId, valuesPrices) {
     return Array.sum(valuesPrices);
 };
 

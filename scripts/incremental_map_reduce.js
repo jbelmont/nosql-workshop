@@ -1,10 +1,10 @@
 "use strict";
 
-let db = connect("localhost:27017/nosql_workshop");
+var db = connect("localhost:27017/nosql_workshop");
 
-let mapFunc = function() {
-    let key = this.userid;
-    let value = {
+var mapFunc = function() {
+    var key = this.userid;
+    var value = {
         user_id: this.user_id,
         total_time: this.length,
         count: 1,
@@ -13,15 +13,15 @@ let mapFunc = function() {
     emit(key, value);
 };
 
-let reduceFunc = function(key, values) {
-    let reducedObject = {
+var reduceFunc = function(key, values) {
+    var reducedObject = {
         user_id: key,
         total_time: 0,
         count: 0,
         avg_time: 0
     };
 
-    for (let i = 0; i < values.length; i++) {
+    for (var i = 0; i < values.length; i++) {
         reducedObject.total_time += values[i].total_time;
         reducedObject.count += values[i].count;
     }
@@ -29,7 +29,7 @@ let reduceFunc = function(key, values) {
     return reducedObject;
 };
 
-let finalizeFunc = function(key, reducedVal) {
+var finalizeFunc = function(key, reducedVal) {
     if (reducedVal.count > 0) {
         reducedVal.avg_time = reducedVal.total_time / reducedVal.count;
     }
@@ -37,7 +37,7 @@ let finalizeFunc = function(key, reducedVal) {
     return reducedVal;
 }
 
-let query = {
+var query = {
     out: "session_stat",
     finalize: finalizeFunc
 };
