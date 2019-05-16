@@ -7,3 +7,5 @@ WORKDIR /usr/src/nosql_workshop
 COPY . ${WORKDIR}
 
 EXPOSE 27017
+
+CMD ["mongod", "--smallfiles"]
