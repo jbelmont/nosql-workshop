@@ -72,20 +72,26 @@ Please run the following command to pull the official mongo docker image:
 
 You can also pull my own docker image which has vim installed:
 
-`docker pull jbelmont/mongo-vim:4.0.5`
+`docker pull jbelmont/nosql-mongo-image-with-scripts:v1`
 
 
 ### Use the following shell script to get mongo running in your system:
 
 ```bash
-#! /bin/bash
+##! /bin/bash
 
-docker run --name mongo-image-4 \
+docker run --name mongo-image-4-with-scripts \
   --rm \
   -v ~/mongod_data.4.0.5:/data/db \
   -p 27017:27017 \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -d mongo:4.0.5
+  -d jbelmont/nosql-mongo-image-with-scripts:v1
+```
+
+Then you can run the script like this in a Unix Shell:
+
+```bash
+sh scripts/run-mongo-shell-with-script-files-image.sh
 ```
 
 ### Install the Mongo client
