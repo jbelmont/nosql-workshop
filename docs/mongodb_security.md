@@ -3,8 +3,8 @@ NoSQL Workshop - Mongo Security
 ## Sections:
 
 * [Security Checklist](#security-checklist)
+* [Enable Access Control](#enable-auth)
 * [Authentication](#authentication)
-* [Enable Auth](#enable-auth)
 * [Role-Based Access Control](#role-based-access-control)
 * [TLS/SSL (Transport Encryption)](#tls/ssl-(transport-encryption))
 * [Encryption at Rest](#encryption-at-rest)
@@ -16,53 +16,65 @@ NoSQL Workshop - Mongo Security
 * [Appendix](#appendix)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
-###### Security Checklist
+[Mongo Security](https://docs.mongodb.com/manual/security/)
 
-Content
+#### Security Checklist
 
-###### Authentication
+Please read the [MongoDB Security Checklist](https://docs.mongodb.com/manual/administration/security-checklist/)
 
-Content
+#### Enable Access Control
 
-###### Enable Auth
+Please read the section [Enable Access Control](https://docs.mongodb.com/manual/tutorial/enable-authentication/)
 
-Content
+#### Authentication
 
-###### Role-Based Access Control
+Please read the section [Authentication](https://docs.mongodb.com/manual/core/authentication/)
 
-Content
+#### Role-Based Access Control
 
-###### TLS/SSL (Transport Encryption)
+Please read the section [Role-Based Access Control (RBAC)](https://docs.mongodb.com/manual/core/authorization/)
 
-Content
+[RBAC Wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control)
 
-###### Encryption at Rest
+> In computer systems security, role-based access control (RBAC) or role-based security is an approach to restricting system access to unauthorized users. It is used by the majority of enterprises with more than 500 employees, and can implement mandatory access control (MAC) or discretionary access control (DAC).
 
-Content
+> Role-based access control (RBAC) is a policy-neutral access-control mechanism defined around roles and privileges. The components of RBAC such as role-permissions, user-role and role-role relationships make it simple to perform user assignments. A study by NIST has demonstrated that RBAC addresses many needs of commercial and government organizations[citation needed]. RBAC can be used to facilitate administration of security in large organizations with hundreds of users and thousands of permissions. Although RBAC is different from MAC and DAC access control frameworks, it can enforce these policies without any complication.
 
-###### Auditing
+#### TLS/SSL (Transport Encryption)
 
-Content
+Please read the section on [TLS/SSL](https://docs.mongodb.com/manual/core/security-transport-encryption/)
 
-###### Security Hardening
+Read the current [TLS RFC](https://tools.ietf.org/html/rfc8446)
 
-Content
+Read the current [SSL RFC](https://tools.ietf.org/html/rfc6101)
 
-###### Implement Field Level Redaction
+#### Encryption at Rest
 
-Content
+Please read the section [Encryption at Rest](https://docs.mongodb.com/manual/core/security-encryption-at-rest/)
 
-###### Security Reference
+#### Auditing
 
-Content
+Please read the section on [Auditing](https://docs.mongodb.com/manual/core/auditing/)
 
-###### Create a Vulnerability Report
+#### Security Hardening
 
-Content
+Please read the section on [Security Hardening](https://docs.mongodb.com/manual/core/security-hardening/)
 
-###### Appendix
+#### Implement Field Level Redaction
 
-Content
+Please read the section on [Field Level Redaction](https://docs.mongodb.com/manual/tutorial/implement-field-level-redaction/)
+
+#### Security Reference
+
+Please read the [Security Reference Section](https://docs.mongodb.com/manual/reference/security/)
+
+#### Create a Vulnerability Report
+
+Please read the [Vulnerability Report Section](https://docs.mongodb.com/manual/tutorial/create-a-vulnerability-report/)
+
+#### Appendix
+
+Please read the [Security Appendix Section](https://docs.mongodb.com/manual/appendix/security/)
 
 #### Bread Crumb Navigation
 _________________________
