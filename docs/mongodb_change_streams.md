@@ -25,7 +25,7 @@ NoSQL Workshop - Mongo Change Streams
 
 [MongoDB Change Events](https://docs.mongodb.com/manual/reference/change-events/)
 
-#### Creating 3 node replica set
+#### Creating 3 node replica set with docker run instructions
 
 Create a network first: 
 
@@ -68,6 +68,27 @@ config = {
 ```
 
 Then we can simply do: `rs.initiate(config)`
+
+#### Creating 3 node replica set with docker-compose yml script
+
+Run the following docker-compose command at the root:
+
+```bash
+docker-compose build
+docker-compose up
+```
+
+Next assuming that 3 docker containers are created you can get into the primary like this:
+
+```bash
+docker exec -it localmongo1 mongo
+```
+
+You can monitor the secondary replica set like this:
+
+```bash
+docker exec -it localmongo2 mongo
+```
 
 #### Bread Crumb Navigation
 _________________________
