@@ -32,5 +32,8 @@
     "gitbook-plugin-copy-code-button": "0.0.2",
     "gitbook-plugin-highlight": "^2.0.3",
     "gitbook-plugin-include-codeblock": "^3.2.2"
+  },
+  "dependencies": {
+    "mongodb": "^3.2.6"
   }
 }

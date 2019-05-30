@@ -90,6 +90,18 @@ You can monitor the secondary replica set like this:
 docker exec -it localmongo2 mongo
 ```
 
+#### Example using mongodb change stream blog post
+
+The mongodb blog has a good introductory blog post on using change streams that you can find at [An Introduction to Change Streams](https://www.mongodb.com/blog/post/an-introduction-to-change-streams)
+
+I also used and adapted the code in this github repository: [mongodb-node-changestreams-sample](https://github.com/rlondner/mongodb-node-changestreams-sample/tree/master/shell)
+
+Make sure that you have a 3 node replicaset and primary running and as a sanity check you should see something like this:
+
+![images/mongodb-replicaset-connect](../images/mongodb-replicaset-connect.png)
+
+You can 
+
 #### Bread Crumb Navigation
 _________________________
 
