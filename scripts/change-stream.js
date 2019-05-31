@@ -5,22 +5,12 @@
 // This example is based out of mongodb blog post:
 // https://www.mongodb.com/blog/post/an-introduction-to-change-streams
 
-var CONNECTION_STRING = "mongodb://localhost:30021,localhost:30022,localhost:30023/admin?replicaSet=rs0";
+var CONNECTION_STRING = "mongodb://localhost:27017/nosql_workshop?replicaSet=rs0";
 
-var conn = new Mongo(CONNECTION_STRING);
-db = conn.getDB("nosql_workshop");
-collection = db.stock;
+var db = connect(CONNECTION_STRING);
+var collection = db.stock;
 
-var updateOps = {
-  $match: {
-    $and: [
-      { "updateDescription.updatedFields.quantity": { $lte: 10 } },
-      { operationType: "update" }
-    ]
-  }
-};
-
-var changeStreamCursor = collection.watch([updateOps]);
+var changeStreamCursor = collection.watch();
 
 pollStream(changeStreamCursor);
 
@@ -28,7 +18,7 @@ pollStream(changeStreamCursor);
 function pollStream(cursor) {
   while (!cursor.isExhausted()) {
     if (cursor.hasNext()) {
-      change = cursor.next();
+      var change = cursor.next();
       print(JSON.stringify(change));
     }
   }

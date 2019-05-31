@@ -10,7 +10,7 @@ services:
     volumes: 
       - ./scripts:/usr/src/configs
     restart: always
-    command: mongod --replSet rs0 --port 27017 --oplogSize 16 --noprealloc --smallfiles
+    command: mongod --replSet rs0 --port 27017 --oplogSize 1024
     links:
       - mongo-rs0-2:mongo-rs0-2
       - mongo-rs0-3:mongo-rs0-3
@@ -22,7 +22,7 @@ services:
     ports:
       - "30022:27017"
     restart: always
-    command: mongod --replSet rs0 --port 27017 --oplogSize 16 --noprealloc --smallfiles
+    command: mongod --replSet rs0 --port 27017 --oplogSize 1024
 
   mongo-rs0-3:
     image: "mongo:4.0.5"
@@ -31,7 +31,7 @@ services:
     ports:
       - "30023:27017"
     restart: always
-    command: mongod --replSet rs0 --port 27017 --oplogSize 16 --noprealloc --smallfiles
+    command: mongod --replSet rs0 --port 27017 --oplogSize 1024
 
   mongo-rs2-setup:
     container_name: "mongo-replica-setup"
