@@ -43,3 +43,6 @@ common.env
 mongo-rs0-1/
 mongo-rs0-2/
 mongo-rs0-3/
+
+# Ignore dump directory
+dump/

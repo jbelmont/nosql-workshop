@@ -9,6 +9,7 @@ services:
       - "30021:27017"
     volumes: 
       - ./scripts:/usr/src/configs
+      - ./mongo-rs0-1:/conf
     restart: always
     command: mongod --replSet rs0 --port 27017 --oplogSize 1024
     links:
