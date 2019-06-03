@@ -65,7 +65,7 @@ The oplog (Operation Log) stores documents and is different than a normal collec
 
 Here is a screenshot of the primary replica set and the looking at the local database which stores the oplog collection:
 
-![.scripts/create-image-path.sh](../.scripts/create-image-path.sh)
+![scripts/mongodb-oplog-collection.png](../scripts/mongodb-oplog-collection.png)
 
 We can use tools such as mongodump with the oplog collection like this as well:
 
@@ -177,7 +177,186 @@ Please read more about [Replica Set Read and Write Semantics](https://docs.mongo
 
 #### Replica Set Deployment Tutorials
 
-Content
+###### Deploy a Replica Set
+
+[Deploy a Replica Set](https://docs.mongodb.com/manual/tutorial/deploy-replica-set/)
+
+Configure a three-member replica set for production systems.
+
+We already configured a 3 node replica set in the previous section in change stream.
+
+*We are using docker to orchestrate 3 separate containers and have already configured a primary and 2 secondaries*
+
+###### Deploy a Replica Set for Testing and Development
+
+[Deploy a Replica Set for Testing and Development](https://docs.mongodb.com/manual/tutorial/deploy-replica-set-for-testing/)
+
+Configure a three-member replica set for either development or testing systems.
+
+###### Deploy a Geographically Redundant Replica Set
+
+[Deploy a Geographically Redundant Replica Set](https://docs.mongodb.com/manual/tutorial/deploy-geographically-distributed-replica-set/)
+
+Create a geographically redundant replica set to protect against location-centered availability limitations (e.g. network and power interruptions).
+
+###### Add an Arbiter to Replica Set
+
+[Add an Arbiter to Replica Set](https://docs.mongodb.com/manual/tutorial/add-replica-set-arbiter/)
+
+Add an arbiter give a replica set an odd number of voting members to prevent election ties.
+
+Let us add another docker container with the following command in the terminal:
+
+```bash
+docker run --name localmongo4 --hostname mongoarbiter1 --net=nosql-workshop_default -p 30024:27017 --expose=27017 -d mongo:4.0.5 --replSet "rs0"
+```
+
+Now let us go into the primary and add the following arbiter:
+
+```bash
+mongo localhost:30024
+```
+
+Then we can add an arbiter like this:
+
+```bash
+rs0:PRIMARY> rs.addArb("localmongo4:27017")
+{
+	"ok" : 1,
+	"operationTime" : Timestamp(1559526689, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1559526689, 1),
+		"signature" : {
+			"hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+			"keyId" : NumberLong(0)
+		}
+	}
+}
+```
+
+We can validate that an arbiter was added with the status command:
+
+```bash
+rs.status().members.filter(function(node) { return node.stateStr === "ARBITER" })
+[
+	{
+		"_id" : 103,
+		"name" : "localmongo4:27017",
+		"health" : 1,
+		"state" : 7,
+		"stateStr" : "ARBITER",
+		"uptime" : 395,
+		"lastHeartbeat" : ISODate("2019-06-03T01:58:03.580Z"),
+		"lastHeartbeatRecv" : ISODate("2019-06-03T01:58:03.580Z"),
+		"pingMs" : NumberLong(0),
+		"lastHeartbeatMessage" : "",
+		"syncingTo" : "",
+		"syncSourceHost" : "",
+		"syncSourceId" : -1,
+		"infoMessage" : "",
+		"configVersion" : 80652
+	}
+]
+```
+
+###### Convert a Standalone to a Replica Set
+
+[Convert a Standalone to a Replica Set](https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/)
+
+Convert an existing standalone mongod instance into a three-member replica set.
+
+###### Add Members to a Replica Set
+
+[Add Members to a Replica Set](https://docs.mongodb.com/manual/tutorial/expand-replica-set/)
+
+Add a new member to an existing replica set.
+
+Let us add another member to the replica set with the following command:
+
+```bash
+docker run --name localmongo5 --hostname mongonode5 --net=nosql-workshop_default -p 30025:27017 -d mongo:4.0.5 --replSet rs0
+```
+
+We can now add a new member in the primary member of the replica set like this:
+
+```bash
+rs0:PRIMARY> rs.add("localmongo5:27017")
+{
+	"ok" : 1,
+	"operationTime" : Timestamp(1559527357, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1559527357, 1),
+		"signature" : {
+			"hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+			"keyId" : NumberLong(0)
+		}
+	}
+}
+```
+
+We can confirm that a new secondary was added to the replicaset with the following command:
+
+```bash
+rs0:PRIMARY> rs.status().members.filter(function(node) { return node.name === "localmongo5:27017" })
+[
+	{
+		"_id" : 104,
+		"name" : "localmongo5:27017",
+		"health" : 1,
+		"state" : 2,
+		"stateStr" : "SECONDARY",
+		"uptime" : 85,
+		"optime" : {
+			"ts" : Timestamp(1559527432, 1),
+			"t" : NumberLong(1)
+		},
+		"optimeDurable" : {
+			"ts" : Timestamp(1559527432, 1),
+			"t" : NumberLong(1)
+		},
+		"optimeDate" : ISODate("2019-06-03T02:03:52Z"),
+		"optimeDurableDate" : ISODate("2019-06-03T02:03:52Z"),
+		"lastHeartbeat" : ISODate("2019-06-03T02:04:01.626Z"),
+		"lastHeartbeatRecv" : ISODate("2019-06-03T02:04:02.853Z"),
+		"pingMs" : NumberLong(0),
+		"lastHeartbeatMessage" : "",
+		"syncingTo" : "172.24.0.4:27017",
+		"syncSourceHost" : "172.24.0.4:27017",
+		"syncSourceId" : 100,
+		"infoMessage" : "",
+		"configVersion" : 80653
+	}
+]
+```
+
+###### Remove Members from Replica Set
+
+[Remove Members from Replica Set](https://docs.mongodb.com/manual/tutorial/remove-replica-set-member/)
+
+Remove a member from a replica set.
+
+We can use the following command to remove our new secondary member like this:
+
+```bash
+rs0:PRIMARY> rs.remove("localmongo5:27017")
+{
+	"ok" : 1,
+	"operationTime" : Timestamp(1559527508, 1),
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1559527508, 1),
+		"signature" : {
+			"hash" : BinData(0,"AAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+			"keyId" : NumberLong(0)
+		}
+	}
+}
+```
+
+###### Replace a Replica Set Member
+
+[Replace a Replica Set Member](https://docs.mongodb.com/manual/tutorial/replace-replica-set-member/)
+
+Update the replica set configuration when the hostname of a member’s corresponding mongod instance has changed.
 
 #### Member Configuration Tutorials
 
