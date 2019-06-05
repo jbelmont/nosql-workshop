@@ -5,7 +5,8 @@ NoSQL Workshop - Mongo Aggregations
 * [Aggregation Pipeline](#aggregation-pipeline)
 * [Map-Reduce](#map-reduce)
 * [Aggregation Reference](#aggregation-reference)
-* [SQL to Aggregation Mapping Chart](#sql_to_aggregation_mapping_chart)
+* [SQL to Aggregation Mapping Chart](#sql-to-aggregation-mapping-chart)
+* [MongoDB Aggregation Practice Exercises](#mongodb-aggregation-practice-exercises)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 *All of this information is gathered from the official mongodb docs in https://docs.mongodb.com/manual/aggregation/*
@@ -1211,6 +1212,161 @@ FROM (SELECT cust_id,
 ```
 
 ![images/mongodb-aggregation-count-dist-exclude](../images/mongodb-aggregation-count-dist-exclude.png)
+
+## MongoDB Aggregation Practice Exercises
+
+#### Aggregation Exercise 1
+
+Please insert a new collection called employees in the mongo shell like this:
+
+```bash
+use nosql_workshop
+
+dept = ["IT", "Engineering", "QA", "Data", "Product"];
+
+for (i = 0; i < 100; i++) { 
+   db.employees.insert({ 
+      id: i, 
+      empId: 'empId_' + i, 
+      deptName: dept[Math.round(Math.random() * 4)], 
+      experience: Math.round(Math.random() * 30) 
+   }); 
+}
+```
+
+This insert 100 documents to the employees collection
+
+Please write a mongodb aggregation has the following fields:
+
+* DEPARTMENT
+* newExperience
+
+*Please make sure to make the field 'DEPARTMENT' is in all caps with mongodb.*
+
+*Also use the experience field and add one to it.*
+
+*Hint look at the following documentation: [Aggregation Pipeline Operators](https://docs.mongodb.com/manual/reference/operator/aggregation/)
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.employees.aggregate([ 
+      { 
+         $project: { 
+            _id: 0, 
+            Department: { $toUpper: '$deptName' }, 
+            newExperience: { $add: [ '$experience', 1 ] } 
+         } 
+      } 
+   ])
+   </pre>
+</details>
+
+#### Aggregation Exercise 2
+
+Please use the employees collection and now only get employees that are part of engineering using aggregations:
+
+*Hint: you will need to add another pipeline stage and find the match.*
+
+Please look at the [Aggregation Pipeline Stages Table](https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/#alphabetical-listing-of-stages)
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.employees.aggregate([ 
+      { 
+         $project: { 
+            _id: 0, 
+            Department: { $toUpper: '$deptName' }, 
+            newExperience: { $add: [ '$experience', 1 ] } 
+         } 
+      },
+      {
+         $match: {
+            'Department': 'ENGINEERING'
+         }
+      } 
+   ])
+   </pre>
+</details>
+
+#### Aggregation Exercise 3
+
+Please use the employees collection and group the number of employees by department and their respective years of experience.
+
+The fields returned should be:
+
+* _id 
+   * Should be a document with Department and yearsExperience 
+* numEmployees should count the number of employees
+
+Look at the following aggregate operators to count all the employees: [Aggregate Operators](https://docs.mongodb.com/manual/reference/operator/aggregation/)
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.employees.aggregate([ 
+      { 
+         $group:  { 
+            _id: { 'Department': '$deptName', 'yearsExperience': '$experience' }, 
+            numEmployees: { $sum: 1 } 
+         } 
+      } 
+   ])
+   </pre>
+</details>
+
+#### Aggregation Exercise 4
+
+Please reuse the aggregate query in exercise 3 but now sort using the Department field in the _id field:
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.employees.aggregate([ 
+    { 
+        $group:  { 
+            _id: { 'Department': '$deptName', 'yearsExperience': '$experience' }, 
+            numEmployees: { $sum: 1 } 
+        }
+    },
+    {
+        $sort: {
+            _id: 1
+        }
+    }
+   ])
+   </pre>
+</details>
+
+#### Aggregation Exercise 5
+
+Please reuse the aggregate query in exercise 4 but use the $skip and $limit aggregation pipeline stage to skip the first 5 and limit to 2 records
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.employees.aggregate([ 
+    { 
+        $group:  { 
+            _id: { 'Department': '$deptName', 'yearsExperience': '$experience' }, 
+            numEmployees: { $sum: 1 } 
+        }
+    },
+    {
+        $sort: {
+            _id: 1
+        }
+    },
+    {
+       $skip: 5
+    },
+    {
+       $limit: 2
+    }
+   ])
+   </pre>
+</details>
 
 ## Bread Crumb Navigation
 _________________________
