@@ -81,4 +81,4 @@ _________________________
 
 Previous | Next
 :------- | ---:
-← [MongoDB Indexes Part II](./mongodb_indexes_partII.md) | [MongoDB Change Streams](./mongodb_change_streams.md) →
+← [MongoDB Query Performance](./mongodb-query-performance.md) | [MongoDB Change Streams](./mongodb_change_streams.md) →

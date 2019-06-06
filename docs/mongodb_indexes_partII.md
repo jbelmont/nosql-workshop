@@ -4,6 +4,7 @@ NoSQL Workshop - Mongo Indexes Part II
 
 * [Load collection with large amount of data](#load-collection-with-large-amount-of-data)
 * [Reading Query Plan in Mongo Shell](#reading-query-plan-in-mongo-shell)
+* [MongoDB Indexes Exercises](#mongodb-indexes-exercises)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
 The information below comes from [MongoDB Reference on Indexes](https://docs.mongodb.com/manual/indexes/)
@@ -581,9 +582,86 @@ Also notice that the field "executionStats.executionTimeMillis" : 420
 
 Our query executed in 420 milliseconds which is a fast query indeed for a 1 million document collection!
 
+#### MongoDB Indexes Exercises
+
+###### Indexes Exercise 1
+
+Please create the following collection called indexes:
+
+```bash
+var department = ["QA", "Engineering", "Product", "DevOps"]
+
+for (i = 0; i < 100000; i++) {
+	db.indexes.insert({
+		_id: new ObjectId(),
+		empId: "empId" + i,
+		department: department[Math.round(Math.random() * 3)]
+	});
+}
+```
+
+This will insert 100K documents into the indexes collection.
+
+The exercises is to create an index for empId field and to make query for the employee with the employee id "empId1000" and make sure to make it a covered query.
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.indexes.createIndex({
+		empId: 1
+	}, {
+		name: "empId"
+	});
+   </pre>
+   <h5>A covered query is a query that can be satisfied entirely using an index and does not have to examine any documents. An index covers a query when both of the following apply. If you look at the executionStats you will notice that totalDocsExamined is 0, nReturned is 1 and totalKeysExamined is 1 so this is a covered query.</h5>
+   <pre>
+   db.indexes.find({ empId: "empId1000" }, { _id: 0, empId: 1 }).explain("executionStats")
+   </pre>
+</details>
+
+###### Indexes Exercise 2
+
+Please update the indexes collection with the following information:
+
+```bash
+db.indexes.find({}).toArray().forEach(function(doc) { 
+    db.indexes.update({ _id: doc._id }, {
+        $set: {
+            x: Math.floor(Math.random() * 1000),
+            y: Math.floor(Math.random() * 100),
+            z: Math.floor(Math.random() * 10)
+        }
+    });
+});
+```
+
+Now create a compound index for the fields x, y, and z.
+
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.indexes.createIndex({
+		x: 1,
+		y: 1,
+		z: 1
+	}, {
+		name: "x_y_z"
+	});
+   </pre>
+</details>
+
+Next make a query with the compound indexes. Remember that with compound indices that the leftmost rule applies else the query will resort to a full collection scan:
+
+<details>
+	<summary>Answer</summary>
+	<pre>
+	db.indexes.find({ x: { $gt: 0 }, z: 7 }, { z: 1, _id: 0 }).explain('executionStats')
+	</pre>
+</details>
+
 ## Bread Crumb Navigation
 _________________________
 
 Previous | Next
 :------- | ---:
-← [MongoDB Indexes Part I](./mongodb_indexes_partI.md) | [MongoDB Security](./mongodb_security.md) →
+← [MongoDB Indexes Part I](./mongodb_indexes_partI.md) |[MongoDB Query Performance](./mongodb-query-performance.md) →

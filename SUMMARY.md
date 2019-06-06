@@ -27,6 +27,7 @@
     * [MongoDB Transactions](docs/mongodb_transactions.md)
     * [MongoDB Indexes Part I](docs/mongodb_indexes_partI.md)
     * [MongoDB Indexes Part II](docs/mongodb_indexes_partII.md)
+    * [MongoDB Query Performance](docs/mongodb-query-performance.md)
     * [MongoDB Security](docs/mongodb_security.md)
     * [MongoDB Change Streams](docs/mongodb_change_streams.md)
     * [MongoDB Replication](docs/mongodb_replication.md)
