@@ -46,3 +46,6 @@ mongo-rs0-3/
 
 # Ignore dump directory
 dump/
+
+# Ignore data directory from shard and replica set
+data/

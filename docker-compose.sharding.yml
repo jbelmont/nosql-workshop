@@ -1,117 +1,30 @@
-version: "3"
+version: "2"
 
 services:
-
-  # Config server for metadata
-  mongo-cfg-server-01:
-    image: mongo
-    container_name: cfg-server-01
-    command: mongod --auth --port 27017 --configsvr --noprealloc --smallfiles --replSet mongo-cfg-server --dbpath /data/db --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-        - ./mongo-configserver.init.js:/mongo-configserver.init.js
   
-  mongo-cfg-server-02:
-    image: mongo
-    container_name: cfg-server-02
-    command: mongod --auth --port 27017 --configsvr --noprealloc --smallfiles --replSet mongo-cfg-server --dbpath /data/db --oplogSize 16 --keyFile /mongodb.key
+  nsqlmongocfg:
+    container_name: nsqlmongocfg
+    image: "mongo:4.0.5"
+    command: mongod --configsvr --replSet mongocfg --bind_ip_all --port 27019
+    ports:
+      - "27019:27019"
     volumes:
-        - ./mongodb.key:/mongodb.key
+      - ./data/mongocfg:/data/db
   
-  mongo-cfg-server-03:
-    image: mongo
-    container_name: cfg-server-03
-    command: mongod --auth --port 27017 --configsvr --noprealloc --smallfiles --replSet mongo-cfg-server --dbpath /data/db --oplogSize 16 --keyFile /mongodb.key
+  nosqlmongoshard:
+    container_name: nosqlmongoshard
+    image: "mongo:4.0.5"
+    command: mongod --shardsvr --replSet mongoshard --bind_ip_all --port 27018
     volumes:
-        - ./mongodb.key:/mongodb.key
-
-  # shard 1
-  mongo-shard-01a:
-    image: mongo
-    container_name: shard-01a
-    command: mongod --auth --port 27018 --noprealloc --smallfiles --replSet mongo-shard-01 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
+      - ./data/mongoshard:/data/db
+    ports:
+      - "27018:27018"
+  
+  mongoserver:
+    container_name: mongoserver
+    image: "mongo:4.0.5"
+    command: mongos --configdb mongocfg/nsqlmongocfg:27019 --bind_ip_all
     volumes:
-        - ./mongodb.key:/mongodb.key
-        - ./mongo-shard-01.init.js:/mongo-shard-01.init.js
-
-  mongo-shard-01b:
-    image: mongo
-    container_name: shard-01b
-    command: mongod --auth --port 27018 --noprealloc --smallfiles --replSet mongo-shard-01 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-
-  mongo-shard-01c:
-    image: mongo
-    container_name: shard-01c
-    command: mongod --auth --port 27018 --noprealloc --smallfiles --replSet mongo-shard-01 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-
-  # shard 2
-  mongo-shard-02a:
-    image: mongo
-    container_name: shard-02a
-    command: mongod --auth --port 27019 --noprealloc --smallfiles --replSet mongo-shard-02 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-        - ./mongo-shard-02.init.js:/mongo-shard-02.init.js
-
-  mongo-shard-02b:
-    image: mongo
-    container_name: shard-02b
-    command: mongod --auth --port 27019 --noprealloc --smallfiles --replSet mongo-shard-02 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-
-  mongo-shard-02c:
-    image: mongo
-    container_name: shard-02c
-    command: mongod --auth --port 27018 --noprealloc --smallfiles --replSet mongo-shard-02 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-
-  # shard 3
-  mongo-shard-03a:
-    image: mongo
-    container_name: shard-03a
-    command: mongod --auth --port 27020 --noprealloc --smallfiles --replSet mongo-shard-03 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-        - ./mongo-shard-03.init.js:/mongo-shard-03.init.js
-
-  mongo-shard-03b:
-    image: mongo
-    container_name: shard-03b
-    command: mongod --auth --port 27020 --noprealloc --smallfiles --replSet mongo-shard-03 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-
-  mongo-shard-03c:
-    image: mongo
-    container_name: shard-03c
-    command: mongod --auth --port 27020 --noprealloc --smallfiles --replSet mongo-shard-03 --dbpath /data/db --nojournal --oplogSize 16 --keyFile /mongodb.key
-    volumes:
-        - ./mongodb.key:/mongodb.key
-
-  # Mongo router
-  mongo-router:
-    image: mongo
-    command: mongos --port 27017 --configdb mongo-cfg-server/mongo-cfg-server-01:27017,mongo-cfg-server-02:27017,mongo-cfg-server-03:27017
-    volumes:
-        - ./mongodb.key:/mongodb.key
-        - ./mongo-sharding.init.js:/mongo-sharding.init.js
-        - ./mongo-auth.init.js:/mongo-auth.init.js
-    depends_on:
-      - mongo-cfg-server-01
-      - mongo-cfg-server-02
-      - mongo-cfg-server-03
-      - mongo-shard-01a
-      - mongo-shard-01b
-      - mongo-shard-01c
-      - mongo-shard-02a
-      - mongo-shard-02b
-      - mongo-shard-02c
-      - mongo-shard-03a
-      - mongo-shard-03b
-      - mongo-shard-03c
+      - ./data/mongos:/data/db
+    ports:
+      - "27017:27017"
