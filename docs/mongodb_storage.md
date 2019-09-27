@@ -5,24 +5,28 @@ NoSQL Workshop - Mongo Storage
 * [Storage Engines](#storage-engines)
 * [Journaling](#journaling)
 * [GridFS](#gridfs)
-* [FAQ: MongoDB Storage](#faq:-mongodb-storage)
+* [MongoDB Storage FA](#mongodb-storage-faq)
 * [Bread Crumb Navigation](#bread-crumb-navigation)
 
-###### Storage Engines
+#### Storage Engines
 
-Content
+Please read more about [Storage Engines in the official mongodb documentation](https://docs.mongodb.com/manual/core/storage-engines/)
 
-###### Journaling
+#### Journaling
 
-Content
+Please read more about [Journaling in the official mongodb documentation](https://docs.mongodb.com/manual/core/journaling/)
 
-###### GridFS
+#### GridFS
 
-Content
+Please read more about [GridFS in the official mongodb documentation](https://docs.mongodb.com/manual/core/gridfs/)
 
-###### FAQ: MongoDB Storage
+#### MongoDB Storage FA
 
-Content
+Please read more about [MongoDB Storage FAQ information in the official mongodb documentation](https://docs.mongodb.com/manual/faq/storage/)
+
+#### Personal Notes on Storage
+
+content
 
 #### Bread Crumb Navigation
 _________________________
