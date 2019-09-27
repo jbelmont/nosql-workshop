@@ -47,6 +47,8 @@ Please read the official [Monitoring for MongoDB document](https://docs.mongodb.
 
 ###### Personal Notes on MongoDB Administration
 
+###### Mongo Perf usage
+
 Let us create json file to get performance metrics in mongodb
 
 ```bash
@@ -191,308 +193,133 @@ loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0
 loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
 loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
 xvda              0.00     0.00 1160.00    0.50     9.06     0.01    16.01     3.99    3.42    3.43    0.00   0.86 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   32.66    0.13   67.09
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1319.00    0.00    10.30     0.00    16.00     3.99    3.04    3.04    0.00   0.76 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.13   56.93    0.13   42.57
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1525.50    0.00    11.92     0.00    16.00     4.71    3.11    3.11    0.00   0.66 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   91.66    0.13    8.09
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1686.00    0.00    13.17     0.00    16.00     7.98    4.72    4.72    0.00   0.59 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.00   77.88    0.13   21.74
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1821.00    0.00    14.23     0.00    16.00     7.98    4.34    4.34    0.00   0.55 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   84.28    0.00   15.59
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1653.00    0.50    12.91     0.01    16.00     7.99    4.86    4.86    4.00   0.60 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.00   92.78    0.25    6.71
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00    21.50 2036.00    2.00    15.91     0.09    16.08     8.70    4.27    4.27    1.00   0.49 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.38    0.00    0.00   96.08    0.25    3.29
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2012.00    0.00    15.72     0.00    16.00    11.98    5.91    5.91    0.00   0.50 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.00   99.24    0.00    0.51
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2104.00    0.00    16.44     0.00    16.00    11.99    5.71    5.71    0.00   0.48 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.13   96.84    0.25    2.65
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2032.00    0.00    15.88     0.00    16.00    11.98    5.95    5.95    0.00   0.49 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.00   97.59    0.00    2.15
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1827.00    0.50    14.27     0.01    16.00    11.98    6.50    6.50    4.00   0.55 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.51    0.00    0.00   93.79    0.25    5.45
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2322.00    0.00    18.14     0.00    16.00    11.97    5.19    5.19    0.00   0.43 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.00   99.37    0.25    0.13
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2011.50    0.00    15.71     0.00    16.00    11.98    5.96    5.96    0.00   0.50 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.13   99.49    0.13    0.13
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2180.50    0.00    17.04     0.00    16.00    11.98    5.51    5.51    0.00   0.46 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.38    0.00    0.00   99.49    0.13    0.00
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2563.00    0.50    20.02     0.00    16.00    11.98    4.63    4.63    4.00   0.39 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   99.62    0.25    0.00
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2147.00    0.50    16.77     0.01    16.00    11.97    5.59    5.59    4.00   0.47 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.13   99.49    0.13    0.00
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2254.00    0.00    17.61     0.00    16.00    11.98    5.34    5.34    0.00   0.44 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   90.71    0.13    9.03
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2414.00    0.50    18.86     0.00    16.00    11.96    4.95    4.95    4.00   0.41 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   98.86    0.25    0.76
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2262.00    0.00    17.67     0.00    16.00    11.97    5.28    5.28    0.00   0.44 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   87.09    0.13   12.66
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1633.00    0.00    12.76     0.00    16.00    11.97    7.30    7.30    0.00   0.61 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.38    0.00    0.13   98.74    0.13    0.63
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2183.50    0.50    17.06     0.01    16.00    11.97    5.52    5.52    4.00   0.46 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   98.60    0.13    1.15
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     7.50 2320.50    1.50    18.13     0.04    16.02    11.97    5.17    5.17    1.33   0.43 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.51    0.00    0.13   95.96    0.25    3.16
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     3.00 2259.50   20.50    17.65     0.09    15.94    12.04    5.27    5.28    3.80   0.44 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.13   92.02    0.13    7.60
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2107.50    0.00    16.46     0.00    16.00    12.00    5.64    5.64    0.00   0.48 100.20
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   92.40    0.25    7.22
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2092.50    0.00    16.35     0.00    16.00    11.98    5.74    5.74    0.00   0.48 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.13   96.96    0.00    2.78
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 1948.00    0.50    15.22     0.01    16.00    11.99    6.16    6.16    4.00   0.51 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.13   73.76    0.25   25.60
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2309.50    0.00    18.04     0.00    16.00    11.99    5.18    5.18    0.00   0.43 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.00   98.22    0.13    1.40
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2150.00    0.00    16.80     0.00    16.00    11.97    5.57    5.57    0.00   0.47 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.13    0.00    0.00   98.48    0.25    1.14
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2302.00    0.00    17.98     0.00    16.00    11.98    5.24    5.24    0.00   0.43 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.38   99.11    0.13    0.13
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2141.00    1.50    16.73     0.01    16.00    11.98    5.53    5.53    0.00   0.47 100.00
-
-avg-cpu:  %user   %nice %system %iowait  %steal   %idle
-           0.25    0.00    0.13   92.89    0.13    6.60
-
-Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
-loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
-xvda              0.00     0.00 2343.00    0.50    18.30     0.01    16.01    11.97    5.09    5.09    4.00   0.43 100.00
 .....................................................................................................................
 ```
+
+
+Notice that the xvda device in the %util column from the iostat command reached 100% utilization quickly from 13% ~ disk utilization.
+
+###### Mongo Monitoring with mongostat
+
+Let us create a 100k documents in the nosql_workshop database like this:
+
+```js
+rs0:PRIMARY> use nosql_workshop
+switched to db nosql_workshop
+rs0:PRIMARY> for (var x = 0; x < 100000; x++) {
+...     db.mongostat.insert({
+...         age:(Math.round(Math.random()*100)%20)
+...     });
+...     db.mongostat.findAndModify({
+...         query: { age: (Math.round(Math.random()*100)%20)},
+...         update:{ $inc: {age: 2}}
+...     });
+...     db.mongostat.remove({
+...         age:(Math.round(Math.random()*100)%20)
+...     });
+... }
+```
+
+Now let us monitor the secondary replica set member:
+
+![images/replset-info2](../images/replset-info2.png)
+
+*While this long running insert find/update, and remove operation is working we will jump into another terminal session.*
+
+Run the following command:
+
+```bash
+mongostat -o 'host,metrics.document.inserted.rate()=insert_rate,metrics.document.inserted=inserted_count'
+```
+
+Here is a screenshot of the output:
+
+![images/mongostat1](../images/mongostat1.png)
+
+###### Mongostat metric Table
+
+| Metric | Description |
+| --- | --- |
+| insert, query, update, and delete | The rate of the specific query type per second |
+| getmore | The rate of the cursor batch fetches per second |
+| command | The number of commands per second |
+| flushes | For WiredTiger Engine, it represents the rate of checkpoints per polling interval |
+| mapped | The size of total data mapped for the MMAPv1 storage engine |
+| vsize &#124; res | The virtual and resident memory size of the mongod/mongos process |
+| faults | MMAPv1 only, represents the number of page faults per second |
+| qr &#124; qw | The queue length of active clients waiting for reads and writes respectively |
+| ar &#124; aw | The current number of active clients performing read and write operations |
+
+###### Mongostat json output
+
+Pretty JSON output:
+
+![images/mongostat2](../images/mongostat2.png)
+
+*In this output we used jq utility to pretty print our output.*
+
+###### Monitoring the Replication lag of Replica Set nodes in a Replica Set
+
+*Make sure to stop this other container before running the next series of commands*
+
+`docker stop <container_id>`
+
+You can run a command like this if there is only one container:
+
+```bash
+docker ps | awk '{ if(NR>1) { print $1 } }'
+```
+
+Let us start up our 3 node replica set member using the docker-compose yml script like this:
+
+```bash
+docker-compose up
+```
+
+We should see 3 docker containers like this screenshot depicts:
+
+![images/replmonitor-docker-ps](../images/replmonitor-docker-ps.png)
+
+Now let us go into the primary replica set member 
+
+We could do the following type command:
+
+![images/replmonitor-primary](../images/replmonitor-primary.png)
+
+The key field to distinguish the primary replica set member is:
+
+* `"stateStr" : "PRIMARY"`
+
+In this case we don't get as helpful information but in our docker-compose.yml file we have mapped the following ports:
+
+* 30021
+* 30022
+* 30023
+
+We have also mapped the following container names:
+
+* localmongo1
+* localmongo2
+* localmongo3
+
+so you can easily connect in 2 ways:
+
+* `mongo localhost:30021` if you have mongo client tools installed
+* `docker exec -it localmongo1 mongo` using docker commands
+
+Now let us reuse the long running insert, find/update, and remove command that we previously used.
+
+Connect to the primary replica set member and run the following command and print replica set information:
+
+![images/replset-info](../images/replset-info.png)
+
+Now we will shutdown one of the secondary nodes like this:
+
+`docker stop localmongo2` and we should only have 2 containers now
+
+Now let us make a long running operation in the primary replica set like this:
+
+![replset-info2](../images/replset-info2.png)
 
 #### Bread Crumb Navigation
 _________________________
