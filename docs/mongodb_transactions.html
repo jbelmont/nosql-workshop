@@ -1,0 +1,744 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Transactions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_indexes_partI.html" />
+    
+    
+    <link rel="prev" href="mongodb_data_models_part_II.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Transactions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="nosql-workshop---mongo-transactions">NoSQL Workshop - Mongo Transactions</h1>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#production-considerations">Production Considerations</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h2 id="production-considerations">Production Considerations</h2>
+<p>Please read <a href="https://docs.mongodb.com/manual/core/transactions-production-consideration/" target="_blank">Production Considerations documenation in Official Documentation</a></p>
+<h4 id="transactions">Transactions</h4>
+<p>Please read the official documentation on <a href="https://docs.mongodb.com/manual/core/transactions/" target="_blank">MongoDB Transactions</a></p>
+<p>If you would like to try out a replicaset then run the following to stop the docker container:</p>
+<pre><code class="lang-bash">docker stop $(docker ps <span class="hljs-_">-a</span> | grep mongo | awk <span class="hljs-string">&apos;{print $1}&apos;</span>)
+</code></pre>
+<p>This will stop the running mongo container that has been running in the workshop.</p>
+<p>Now run the docker-compose yml script with the following command in the root of the repository:</p>
+<pre><code class="lang-bash">docker-compose up
+</code></pre>
+<p>This will build several images and get a replica set running which we can confirm like this:</p>
+<p><img src="../images/mongo-docker-compose-up.png" alt="images/mongo-docker-compose-up"></p>
+<p>Now you should have 3 running mongo replica sets like this:</p>
+<p><img src="../images/mongo-replicaset.png" alt="images/mongo-replicaset"></p>
+<p>Now here is the script that the mongodb docs partly use:</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-comment">// Enables or disables the features that persist data incompatible with earlier versions of MongoDB. </span>
+<span class="hljs-comment">// You can only issue the setFeatureCompatibilityVersion against the admin database.</span>
+db.adminCommand({ <span class="hljs-attr">setFeatureCompatibilityVersion</span>: <span class="hljs-string">&quot;4.0&quot;</span> });
+
+<span class="hljs-comment">// Start a session.</span>
+<span class="hljs-keyword">const</span> session = db.getMongo().startSession( { <span class="hljs-attr">readPreference</span>: { <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;primary&quot;</span> } } );
+
+<span class="hljs-keyword">const</span> employeesCollection = session.getDatabase(<span class="hljs-string">&quot;hr&quot;</span>).employees;
+
+<span class="hljs-comment">// Start a transaction</span>
+session.startTransaction({ 
+    <span class="hljs-attr">readConcern</span>: { <span class="hljs-attr">level</span>: <span class="hljs-string">&quot;snapshot&quot;</span> }, 
+    <span class="hljs-attr">writeConcern</span>: { <span class="hljs-attr">w</span>: <span class="hljs-string">&quot;majority&quot;</span> } 
+});
+
+<span class="hljs-comment">// Operations inside the transaction</span>
+<span class="hljs-keyword">try</span> {
+   employeesCollection.updateOne( { <span class="hljs-attr">employee</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">$set</span>: { <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;Inactive&quot;</span> } } );
+} <span class="hljs-keyword">catch</span> (error) {
+   <span class="hljs-comment">// Abort transaction on error</span>
+   session.abortTransaction();
+   <span class="hljs-keyword">throw</span> error;
+}
+
+<span class="hljs-comment">// Commit the transaction using write concern set at transaction start</span>
+session.commitTransaction();
+
+session.endSession();
+</code></pre>
+<p>Let us get into the first replica set like this:</p>
+<pre><code class="lang-bash">&gt; docker <span class="hljs-built_in">exec</span> -it $(docker ps <span class="hljs-_">-a</span> | grep <span class="hljs-string">&quot;nosql-workshop_mongo-rs0-1_1&quot;</span> | awk <span class="hljs-string">&apos;{print $1}&apos;</span>) /bin/bash
+
+&gt; mongo
+</code></pre>
+<p>Here is a screenshot of a possible shell session:</p>
+<p><img src="../images/mongodb-replicaset.png" alt="images/mongodb-replicaset"></p>
+<p>We can check on the replica set status with the following command:</p>
+<pre><code class="lang-js">rs.status()
+</code></pre>
+<p>Let us make another one of the replica sets secondary: </p>
+<p><img src="../images/mongodb-replicaset-secondary.png" alt="images/mongodb-replicaset-secondary"></p>
+<h2 id="transactions-and-operations">Transactions and Operations</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/transactions-operations/" target="_blank">MongoDB Transactions and Operations</a>.</p>
+<h2 id="bread-crumb-navigation">Bread Crumb Navigation</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb_data_models.md">MongoDB Data Models</a></td>
+<td style="text-align:right"><a href="mongodb_indexes_partI.html">MongoDB Indexes Part I</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_data_models_part_II.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Data Models Part II">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_indexes_partI.html" class="navigation navigation-next " aria-label="Next page: MongoDB Indexes Part I">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Transactions","level":"1.4.11","depth":2,"next":{"title":"MongoDB Indexes Part I","level":"1.4.12","depth":2,"path":"docs/mongodb_indexes_partI.md","ref":"docs/mongodb_indexes_partI.md","articles":[]},"previous":{"title":"MongoDB Data Models Part II","level":"1.4.10","depth":2,"path":"docs/mongodb_data_models_part_II.md","ref":"docs/mongodb_data_models_part_II.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_transactions.md","mtime":"2019-04-21T19:51:45.066Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

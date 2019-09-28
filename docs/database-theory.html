@@ -1,0 +1,793 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Database Theory · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="data-modeling.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Database Theory</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Database Theory</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#definition-of-a-database">Definition of a Database</a></li>
+<li><a href="#history-of-databases">History of Databases</a></li>
+<li><a href="#database-classification">Database Classification</a></li>
+<li><a href="#database-languages">Database Languages</a></li>
+<li><a href="#history-of-nosql-databases">History of NoSQL Databases</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h2 id="definition-of-a-database">Definition of a Database</h2>
+<p>We can describe a database to be much like an electronic filing cabinet while the information has been digitized. The information is kept in a persistent storage mechanism such as with magnetic disks. Database users can create/insert new data into the database, change, delete, or retrieve existing information in the database by issuing commands/requests to the database system. This system is commonly called the Database Management System (DBMS).</p>
+<h2 id="history-of-databases">History of Databases</h2>
+<p>Please check out this site for <a href="http://www.comphist.org/computing_history/new_page_9.htm" target="_blank">Learning Computing History on Databases</a></p>
+<h2 id="database-classification">Database Classification</h2>
+<p><a href="https://en.wikipedia.org/wiki/Database#Classification" target="_blank">Database Classification</a></p>
+<p><strong>All the information is from the wikipedia Page</strong></p>
+<p>Differenty Types of Databases:</p>
+<ul>
+<li><p>An in-memory database is a database that primarily resides in main memory, but is typically backed-up by non-volatile computer data storage. Main memory databases are faster than disk databases, and so are often used where response time is critical, such as in telecommunications network equipment.</p>
+</li>
+<li><p>An active database includes an event-driven architecture which can respond to conditions both inside and outside the database. Possible uses include security monitoring, alerting, statistics gathering and authorization. Many databases provide active database features in the form of database triggers.</p>
+</li>
+<li><p>A cloud database relies on cloud technology. Both the database and most of its DBMS reside remotely, &quot;in the cloud&quot;, while its applications are both developed by programmers and later maintained and used by end-users through a web browser and Open APIs.</p>
+</li>
+<li><p>Data warehouses archive data from operational databases and often from external sources such as market research firms. The warehouse becomes the central source of data for use by managers and other end-users who may not have access to operational data. For example, sales data might be aggregated to weekly totals and converted from internal product codes to use UPCs so that they can be compared with ACNielsen data. Some basic and essential components of data warehousing include extracting, analyzing, and mining data, transforming, loading, and managing data so as to make them available for further use.</p>
+</li>
+<li><p>A deductive database combines logic programming with a relational database.</p>
+</li>
+<li><p>A distributed database is one in which both the data and the DBMS span multiple computers.</p>
+</li>
+<li><p>A document-oriented database is designed for storing, retrieving, and managing document-oriented, or semi structured, information. Document-oriented databases are one of the main categories of NoSQL databases.</p>
+</li>
+<li><p>An embedded database system is a DBMS which is tightly integrated with an application software that requires access to stored data in such a way that the DBMS is hidden from the application&apos;s end-users and requires little or no ongoing maintenance.</p>
+</li>
+<li><p>End-user databases consist of data developed by individual end-users. Examples of these are collections of documents, spreadsheets, presentations, multimedia, and other files. Several products exist to support such databases. Some of them are much simpler than full-fledged DBMSs, with more elementary DBMS functionality.</p>
+</li>
+<li><p>A federated database system comprises several distinct databases, each with its own DBMS. It is handled as a single database by a federated database management system (FDBMS), which transparently integrates multiple autonomous DBMSs, possibly of different types (in which case it would also be a heterogeneous database system), and provides them with an integrated conceptual view.</p>
+</li>
+<li><p>Sometimes the term multi-database is used as a synonym to federated database, though it may refer to a less integrated (e.g., without an FDBMS and a managed integrated schema) group of databases that cooperate in a single application. In this case, typically middleware is used for distribution, which typically includes an atomic commit protocol (ACP), e.g., the two-phase commit protocol, to allow distributed (global) transactions across the participating databases.</p>
+</li>
+<li><p>A graph database is a kind of NoSQL database that uses graph structures with nodes, edges, and properties to represent and store information. General graph databases that can store any graph are distinct from specialized graph databases such as triplestores and network databases.</p>
+</li>
+<li><p>An array DBMS is a kind of NoSQL DBMS that allows modeling, storage, and retrieval of (usually large) multi-dimensional arrays such as satellite images and climate simulation output.</p>
+</li>
+<li><p>In a hypertext or hypermedia database, any word or a piece of text representing an object, e.g., another piece of text, an article, a picture, or a film, can be hyperlinked to that object. Hypertext databases are particularly useful for organizing large amounts of disparate information. For example, they are useful for organizing online encyclopedias, where users can conveniently jump around the text. The World Wide Web is thus a large distributed hypertext database.</p>
+</li>
+<li><p>A knowledge base (abbreviated KB, kb or &#x394;) is a special kind of database for knowledge management, providing the means for the computerized collection, organization, and retrieval of knowledge. Also a collection of data representing problems with their solutions and related experiences.</p>
+</li>
+<li><p>A mobile database can be carried on or synchronized from a mobile computing device.</p>
+</li>
+<li><p>Operational databases store detailed data about the operations of an organization. They typically process relatively high volumes of updates using transactions. Examples include customer databases that record contact, credit, and demographic information about a business&apos;s customers, personnel databases that hold information such as salary, benefits, skills data about employees, enterprise resource planning systems that record details about product components, parts inventory, and financial databases that keep track of the organization&apos;s money, accounting and financial dealings.</p>
+</li>
+<li><p>A parallel database seeks to improve performance through parallelization for tasks such as loading data, building indexes and evaluating queries.</p>
+</li>
+<li><p>The major parallel DBMS architectures which are induced by the underlying hardware architecture are:</p>
+</li>
+<li><p>Shared memory architecture, where multiple processors share the main memory space, as well as other data storage.</p>
+</li>
+<li><p>Shared disk architecture, where each processing unit (typically consisting of multiple processors) has its own main memory, but all units share the other storage.</p>
+</li>
+<li><p>Shared nothing architecture, where each processing unit has its own main memory and other storage.</p>
+</li>
+<li><p>Probabilistic databases employ fuzzy logic to draw inferences from imprecise data.</p>
+</li>
+<li><p>Real-time databases process transactions fast enough for the result to come back and be acted on right away.</p>
+</li>
+<li><p>A spatial database can store the data with multidimensional features. The queries on such data include location-based queries, like &quot;Where is the closest hotel in my area?&quot;.</p>
+</li>
+<li><p>A temporal database has built-in time aspects, for example a temporal data model and a temporal version of SQL. More specifically the temporal aspects usually include valid-time and transaction-time.</p>
+</li>
+<li><p>A terminology-oriented database builds upon an object-oriented database, often customized for a specific field.</p>
+</li>
+<li><p>An unstructured data database is intended to store in a manageable and protected way diverse objects that do not fit naturally and conveniently in common databases. It may include email messages, documents, journals, multimedia objects, etc. The name may be misleading since some objects can be highly structured. However, the entire possible object collection does not fit into a predefined structured framework. Most established DBMSs now support unstructured data in various ways, and new dedicated DBMSs are emerging.</p>
+</li>
+</ul>
+<h2 id="database-languages">Database Languages</h2>
+<p><strong>All the information is from the wikipedia Page</strong></p>
+<p><a href="https://en.wikipedia.org/wiki/Database#Database_languages" target="_blank">Database Languages</a></p>
+<blockquote>
+<p>Database languages are special-purpose languages, which allow one or more of the following tasks, sometimes distinguished as sublanguages:</p>
+</blockquote>
+<ul>
+<li><p>Data control language (DCL) &#x2013; controls access to data;</p>
+</li>
+<li><p>Data definition language (DDL) &#x2013; defines data types such as creating, altering, or dropping and the relationships among them;</p>
+</li>
+<li><p>Data manipulation language (DML) &#x2013; performs tasks such as inserting, updating, or deleting data occurrences;</p>
+</li>
+<li><p>Data query language (DQL) &#x2013; allows searching for information and computing derived information.
+Database languages are specific to a particular data model. Notable examples include:</p>
+</li>
+</ul>
+<blockquote>
+<p>SQL combines the roles of data definition, data manipulation, and query in a single language. It was one of the first commercial languages for the relational model, although it departs in some respects from the relational model as described by Codd (for example, the rows and columns of a table can be ordered). SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987. The standards have been regularly enhanced since and is supported (with varying degrees of conformance) by all mainstream commercial relational DBMSs.</p>
+<p>OQL is an object model language standard (from the Object Data Management Group). It has influenced the design of some of the newer query languages like JDOQL and EJB QL.
+XQuery is a standard XML query language implemented by XML database systems such as MarkLogic and eXist, by relational databases with XML capability such as Oracle and DB2, and also by in-memory XML processors such as Saxon.
+SQL/XML combines XQuery with SQL.</p>
+</blockquote>
+<p>A database language may also incorporate features like:</p>
+<ul>
+<li><p>DBMS-specific configuration and storage engine management</p>
+</li>
+<li><p>Computations to modify query results, like counting, summing, averaging, sorting, grouping, and cross-referencing</p>
+</li>
+<li><p>Constraint enforcement (e.g. in an automotive database, only allowing one engine type per car)</p>
+</li>
+<li><p>Application programming interface version of the query language, for programmer convenience</p>
+</li>
+</ul>
+<h2 id="history-of-nosql-databases">History of NoSQL Databases</h2>
+<p><a href="https://en.wikipedia.org/wiki/NoSQL#History" target="_blank">History of NoSQL Databases</a></p>
+<blockquote>
+<p>The term NoSQL was used by Carlo Strozzi in 1998 to name his lightweight Strozzi NoSQL open-source relational database that did not expose the standard Structured Query Language (SQL) interface, but was still relational. His NoSQL RDBMS is distinct from the circa-2009 general concept of NoSQL databases. Strozzi suggests that, because the current NoSQL movement &quot;departs from the relational model altogether, it should therefore have been called more appropriately &apos;NoREL&apos;, referring to &apos;No Relational&apos;.</p>
+<p>Johan Oskarsson, then a developer at Last.fm, reintroduced the term NoSQL in early 2009 when he organized an event to discuss &quot;open source distributed, non relational databases&quot;. The name attempted to label the emergence of an increasing number of non-relational, distributed data stores, including open source clones of Google&apos;s Bigtable/MapReduce and Amazon&apos;s DynamoDB.</p>
+</blockquote>
+<h2 id="bread-crumb-navigation">Bread Crumb Navigation</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="../">README</a></td>
+<td style="text-align:right"><a href="data-modeling.html">Data Modeling</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="data-modeling.html" class="navigation navigation-next " aria-label="Next page: Data Modeling">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Database Theory","level":"1.2","depth":1,"next":{"title":"Data Modeling","level":"1.2.1","depth":2,"path":"docs/data-modeling.md","ref":"docs/data-modeling.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/database-theory.md","mtime":"2019-04-14T23:16:04.736Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

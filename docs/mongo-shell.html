@@ -1,0 +1,1994 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mongo Shell · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongo-crud-operations.html" />
+    
+    
+    <link rel="prev" href="bson-data-types.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mongo Shell</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Shell</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#configure-the-mongo-shell">Configure the mongo Shell</a></li>
+<li><a href="access-the-mongo-shell-help">Access the mongo Shell Help</a></li>
+<li><a href="write-scripts-for-the-mongo-shell">Write Scripts for the mongo Shell</a></li>
+<li><a href="data-types-in-the-mongo-shell">Data Types in the mongo Shell</a></li>
+<li><a href="mongo-shell-quick-reference">mongo Shell Quick Reference</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p><strong>These information is all gleaned from the official <a href="https://docs.mongodb.com/manual/tutorial/access-mongo-shell-help/" target="_blank">mongodb docs</a></strong></p>
+<h4 id="configure-the-mongo-shell">Configure the mongo Shell</h4>
+<h6 id="customize-the-prompt">Customize the prompt</h6>
+<p>We can easily customize the mongo shell:</p>
+<p><img src="../images/mongo_prompt.png" alt="mongo prompt"></p>
+<p>We can also customize the mongo prompt to show more information with something like this:</p>
+<pre><code class="lang-js">host = db.serverStatus().host;
+
+prompt = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> db+<span class="hljs-string">&quot;@&quot;</span>+host+<span class="hljs-string">&quot;$ &quot;</span>;
+}
+</code></pre>
+<p><img src="../images/mongo_prompt2.png" alt="mongo prompt 2"></p>
+<p>Let us try another mongo prompt example:</p>
+<pre><code class="lang-js">prompt = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;DB Uptime:&quot;</span>+db.serverStatus().uptime+<span class="hljs-string">&quot; Documents:&quot;</span>+db.stats().objects+<span class="hljs-string">&quot; &gt; &quot;</span>;
+}
+</code></pre>
+<p><img src="../images/mongo_prompt3.png" alt="mongo prompt 3"></p>
+<h6 id="external-editor-in-mongo-shell">External Editor in Mongo shell</h6>
+<p><em>We can configure an external editor like vim to the mongo shell.</em></p>
+<p><img src="../images/external-editor.png" alt="external editor"></p>
+<p>Here is a vim session with the <em>andOne</em> function we just defined:</p>
+<p><img src="../images/vim-session.png" alt="vim session"></p>
+<p>We made some changes to the andOne function as you can tell when we print out the contents:</p>
+<p><img src="../images/changed-func.png" alt="changed function"></p>
+<h6 id="changing-the-mongo-shell-batch-size">Changing the mongo shell batch size</h6>
+<p>We can directly change the default batch size by doing the following in the mongo shell:</p>
+<pre><code class="lang-js">DBQuery.shellBatchSize = <span class="hljs-number">15</span>;
+</code></pre>
+<h4 id="access-the-mongo-shell-help">Access the mongo Shell Help</h4>
+<h6 id="command-line-help">Command Line Help</h6>
+<p>You can see the full list of options and help items by invoking this command in your shell:</p>
+<pre><code class="lang-bash">mongo --help
+MongoDB shell version v4.0.5
+usage: mongo [options] [db address] [file names (ending <span class="hljs-keyword">in</span> .js)]
+db address can be:
+  foo                   foo database on <span class="hljs-built_in">local</span> machine
+  192.168.0.5/foo       foo database on 192.168.0.5 machine
+  192.168.0.5:9999/foo  foo database on 192.168.0.5 machine on port 9999
+Options:
+  --shell                             run the shell after executing files
+  --nodb                              don<span class="hljs-string">&apos;t connect to mongod on startup - no
+                                      &apos;</span>db address<span class="hljs-string">&apos; arg expected
+  --norc                              will not run the &quot;.mongorc.js&quot; file on
+                                      start up
+  --quiet                             be less chatty
+  --port arg                          port to connect to
+  --host arg                          server to connect to
+  --eval arg                          evaluate javascript
+...................................................................
+</span></code></pre>
+<h6 id="shell-help">Shell Help</h6>
+<p>You can see all of the mongo shell <em>help</em> by typing <em>help</em> in mongo shell.</p>
+<p>You can get to mongo shell in a couple of ways:</p>
+<ol>
+<li>Run mongo daemon locally preferably with docker.</li>
+</ol>
+<p>I have a mongo image with vim installed in it:</p>
+<p>Pull my docker image with:</p>
+<p><code>docker pull jbelmont/mongo-vim:4.0.5</code></p>
+<p>Or you can pull the official mongo image in docker hub with:</p>
+<p><code>docker pull mongo:4.0.5</code></p>
+<p>Now you will need to run docker image once it is in your local machine.</p>
+<p>I would suggest to create the following directory:</p>
+<pre><code class="lang-bash">sudo mkdir -p /data/db
+
+sudo chown -R $(whoami):staff /data
+</code></pre>
+<p>The 2nd command uses your username and is for a Mac OS X specifically.</p>
+<p>The <em>/data/db</em> directory is for <a href="https://docs.mongodb.com/manual/core/wiredtiger/" target="_blank">WiredTiger Storage Engine</a> which is the default storage engine anyways.</p>
+<p>Here is a script that will run my personal image:</p>
+<pre><code class="lang-bash"><span class="hljs-meta">#! /bin/bash
+</span>
+docker run --name jbelmont-mongo-image-4 \
+  --rm \
+  -v ~/mongod_data.4.0.5:/data/db \
+  -p 27017:27017 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  <span class="hljs-_">-d</span> jbelmont/mongo-vim:4.0.5
+</code></pre>
+<p>Here is a command to run the official image:</p>
+<pre><code class="lang-bash">docker run --name mongo-4 \
+  --rm \
+  -v ~/mongod_data.4.0.5:/data/db \
+  -p 27017:27017 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  <span class="hljs-_">-d</span> jbelmont/mongo-vim:4.0.5
+</code></pre>
+<p>Now you can get an interactive mongo shell session a couple of ways:</p>
+<ol>
+<li><p>You can directly enter running docker container with <em>docker exec</em> command</p>
+<ol>
+<li>If you run my personal docker image using the script above you can run the following command:<ol>
+<li><code>docker exec -it $(docker ps -a | awk &apos;/mongo\-vim/ { print $1 }&apos;) /bin/bash</code></li>
+</ol>
+</li>
+<li>Else if you run the official docker image and execute the command I gave above<ol>
+<li><code>docker exec -it $(docker ps -a | awk &apos;/mongo/ { print $1 }&apos;) /bin/bash</code></li>
+</ol>
+</li>
+<li>Else none of these commands work and you might have multiple mongo sessions running or something else.<ol>
+<li><code>docker ps -a | grep mongo</code> so find the right docker container id and copy it to system clipboard and run the exec command</li>
+<li><code>docker exec -it SYSTEM-COPIED-process /bin/bash</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>You can also run mongo directly like this:</p>
+<ol>
+<li><code>mongo localhost:27017</code></li>
+<li>This will connect to localhost and to port 27017 which is the default port.</li>
+</ol>
+</li>
+</ol>
+<p><em>Once inside the mongo interactive shell run the following command:</em></p>
+<p><img src="../images/mongo-help-command.png" alt="mongo help"></p>
+<h6 id="database-help">Database Help</h6>
+<h6 id="to-see-the-list-of-database-on-the-mongodb-server-run-the-following-command">To see the list of database on the mongodb server run the following command:</h6>
+<pre><code class="lang-bash">&gt; show databases
+admin           0.000GB
+config          0.000GB
+<span class="hljs-built_in">local</span>           0.000GB
+nosql_workshop  0.000GB
+<span class="hljs-built_in">test</span>            0.000GB
+</code></pre>
+<p><em>Notice here that might have something different.</em></p>
+<p>You can run the alias form of:</p>
+<p><code>show dbs</code></p>
+<h6 id="to-see-the-list-of-help-for-methods-you-can-use-on-the-db-object-call-the-dbhelp-method">To see the list of help for methods you can use on the db object, call the db.help() method:</h6>
+<pre><code class="lang-bash">&gt; db.help()
+DB methods:
+    db.adminCommand(nameOrDocument) - switches to <span class="hljs-string">&apos;admin&apos;</span> db, and runs <span class="hljs-built_in">command</span> [just calls db.runCommand(...)]
+    db.aggregate([pipeline], {options}) - performs a collectionless aggregation on this database; returns a cursor
+    db.auth(username, password)
+    db.cloneDatabase(fromhost) - deprecated
+    db.commandHelp(name) returns the <span class="hljs-built_in">help</span> <span class="hljs-keyword">for</span> the <span class="hljs-built_in">command</span>
+    db.copyDatabase(fromdb, todb, fromhost) - deprecated
+    db.createCollection(name, {size: ..., capped: ..., max: ...})
+    db.createView(name, viewOn, [{<span class="hljs-variable">$operator</span>: {...}}, ...], {viewOptions})
+    db.createUser(userDocument)
+    db.currentOp() displays currently executing operations <span class="hljs-keyword">in</span> the db
+    db.dropDatabase()
+    db.eval() - deprecated
+    db.fsyncLock() flush data to disk and lock server <span class="hljs-keyword">for</span> backups
+    db.fsyncUnlock() unlocks server following a db.fsyncLock()
+    db.getCollection(cname) same as db[<span class="hljs-string">&apos;cname&apos;</span>] or db.cname
+    db.getCollectionInfos([filter]) - returns a list that contains the names and options of the db<span class="hljs-string">&apos;s collections
+    db.getCollectionNames()
+    db.getLastError() - just returns the err msg string
+    db.getLastErrorObj() - return full status object
+..........................................................................................
+</span></code></pre>
+<h6 id="to-see-the-implementation-of-a-method-in-the-shell-type-the-dbmethod-name-without-the-parenthesis-">To see the implementation of a method in the shell, type the <code>db.&lt;method name&gt;</code> without the parenthesis <code>()</code>:</h6>
+<p>The following example will return the implementation of the method <code>db.dropDatabase()</code>:</p>
+<pre><code class="lang-bash">&gt; db.dropDatabase
+<span class="hljs-function"><span class="hljs-title">function</span></span> () {
+    <span class="hljs-keyword">if</span> (arguments.length)
+        throw Error(<span class="hljs-string">&quot;dropDatabase doesn&apos;t take arguments&quot;</span>);
+    <span class="hljs-built_in">return</span> this._dbCommand({dropDatabase: 1});
+}
+</code></pre>
+<h6 id="collection-help">Collection Help</h6>
+<h6 id="to-see-the-list-of-collections-in-the-current-database-use-the-show-collections-command">To see the list of collections in the current database, use the show collections command:</h6>
+<pre><code class="lang-bash">&gt; use nosql_workshop
+switched to db nosql_workshop
+&gt;
+&gt; show collections
+inventory
+json
+numbers
+people
+</code></pre>
+<p>Here we switch to nosql_workshop database and then run <em>show collections</em> command.</p>
+<h6 id="to-see-the-help-for-methods-available-on-the-collection-objects-eg-db-use-the-dbhelp-method">To see the help for methods available on the collection objects (e.g. db.<collection>), use the db.<collection>.help() method:</collection></collection></h6>
+<pre><code class="lang-bash">&gt; db.numbers.help()
+DBCollection <span class="hljs-built_in">help</span>
+    db.numbers.find().help() - show DBCursor <span class="hljs-built_in">help</span>
+    db.numbers.bulkWrite( operations, &lt;optional params&gt; ) - bulk execute write operations, optional parameters are: w, wtimeout, j
+    db.numbers.count( query = {}, &lt;optional params&gt; ) - count the number of documents that matches the query, optional parameters are: <span class="hljs-built_in">limit</span>, skip, hint, maxTimeMS
+    db.numbers.countDocuments( query = {}, &lt;optional params&gt; ) - count the number of documents that matches the query, optional parameters are: <span class="hljs-built_in">limit</span>, skip, hint, maxTimeMS
+    db.numbers.estimatedDocumentCount( &lt;optional params&gt; ) - estimate the document count using collection metadata, optional parameters are: maxTimeMS
+    db.numbers.copyTo(newColl) - duplicates collection by copying all documents to newColl; no indexes are copied.
+    db.numbers.convertToCapped(maxBytes) - calls {convertToCapped:<span class="hljs-string">&apos;numbers&apos;</span>, size:maxBytes}} <span class="hljs-built_in">command</span>
+    db.numbers.createIndex(keypattern[,options])
+    db.numbers.createIndexes([keypatterns], &lt;options&gt;)
+    db.numbers.dataSize()
+    db.numbers.deleteOne( filter, &lt;optional params&gt; ) - delete first matching document, optional parameters are: w, wtimeout, j
+    db.numbers.deleteMany( filter, &lt;optional params&gt; ) - delete all matching documents, optional parameters are: w, wtimeout, j
+    db.numbers.distinct( key, query, &lt;optional params&gt; ) - e.g. db.numbers.distinct( <span class="hljs-string">&apos;x&apos;</span> ), optional parameters are: maxTimeMS
+    db.numbers.drop() drop the collection
+    db.numbers.dropIndex(index) - e.g. db.numbers.dropIndex( <span class="hljs-string">&quot;indexName&quot;</span> ) or db.numbers.dropIndex( { <span class="hljs-string">&quot;indexKey&quot;</span> : 1 } )
+    db.numbers.dropIndexes()
+    db.numbers.ensureIndex(keypattern[,options]) - DEPRECATED, use createIndex() instead
+    db.numbers.explain().help() - show explain <span class="hljs-built_in">help</span>
+    db.numbers.reIndex()
+    db.numbers.find([query],[fields]) - query is an optional query filter. fields is optional <span class="hljs-built_in">set</span> of fields to return.
+                                                  e.g. db.numbers.find( {x:77} , {name:1, x:1} )
+    db.numbers.find(...).count()
+    db.numbers.find(...).limit(n)
+...........................................................................................
+</code></pre>
+<blockquote>
+<p><code>&lt;collection&gt;</code> can be the name of a collection that exists, although you may specify a collection that doesn&#x2019;t exist.</p>
+<p>To see the collection method implementation, type the <code>db.&lt;collection&gt;.&lt;method&gt;</code> name without the parenthesis <code>()</code>, as in the following example which will return the implementation of the find() method:</p>
+</blockquote>
+<pre><code class="lang-bash">&gt; db.numbers.find
+<span class="hljs-keyword">function</span> (query, fields, <span class="hljs-built_in">limit</span>, skip, batchSize, options) {
+    var cursor = new DBQuery(this._mongo,
+                             this._db,
+                             this,
+                             this._fullName,
+                             this._massageObject(query),
+                             fields,
+                             <span class="hljs-built_in">limit</span>,
+                             skip,
+                             batchSize,
+                             options || this.getQueryOptions());
+
+    {
+        const session = this.getDB().getSession();
+
+        const <span class="hljs-built_in">read</span>Preference = session._serverSession.client.getReadPreference(session);
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">read</span>Preference !== null) {
+            cursor.readPref(<span class="hljs-built_in">read</span>Preference.mode, <span class="hljs-built_in">read</span>Preference.tags);
+        }
+
+        const <span class="hljs-built_in">read</span>Concern = session._serverSession.client.getReadConcern(session);
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">read</span>Concern !== null) {
+            cursor.readConcern(<span class="hljs-built_in">read</span>Concern.level);
+        }
+    }
+
+    <span class="hljs-built_in">return</span> cursor;
+}
+</code></pre>
+<h6 id="cursor-help">Cursor Help</h6>
+<blockquote>
+<p>When you perform read operations with the find() method in the mongo shell, you can use various cursor methods to modify the find() behavior and various JavaScript methods to handle the cursor returned from the find() method.</p>
+</blockquote>
+<h6 id="to-list-the-available-modifier-and-cursor-handling-methods-use-the-dbcollectionfindhelp-command">To list the available modifier and cursor handling methods, use the db.collection.find().help() command:</h6>
+<pre><code class="lang-bash">&gt; db.numbers.find().help()
+find(&lt;predicate&gt;, &lt;projection&gt;) modifiers
+    .sort({...})
+    .limit(&lt;n&gt;)
+    .skip(&lt;n&gt;)
+    .batchSize(&lt;n&gt;) - sets the number of docs to <span class="hljs-built_in">return</span> per getMore
+    .collation({...})
+    .hint({...})
+    .readConcern(&lt;level&gt;)
+    .readPref(&lt;mode&gt;, &lt;tagset&gt;)
+    .count(&lt;applySkipLimit&gt;) - total <span class="hljs-comment"># of objects matching query. by default ignores skip,limit</span>
+    .size() - total <span class="hljs-comment"># of objects cursor would return, honors skip,limit</span>
+    .explain(&lt;verbosity&gt;) - accepted verbosities are {<span class="hljs-string">&apos;queryPlanner&apos;</span>, <span class="hljs-string">&apos;executionStats&apos;</span>, <span class="hljs-string">&apos;allPlansExecution&apos;</span>}
+    .min({...})
+    .max({...})
+    .maxScan(&lt;n&gt;)
+    .maxTimeMS(&lt;n&gt;)
+    .comment(&lt;comment&gt;)
+    .tailable(&lt;isA<span class="hljs-built_in">wait</span>Data&gt;)
+    .noCursorTimeout()
+    .allowPartialResults()
+    .returnKey()
+    .showRecordId() - adds a <span class="hljs-variable">$recordId</span> field to each returned object
+
+Cursor methods
+    .toArray() - iterates through docs and returns an array of the results
+    .forEach(&lt;func&gt;)
+    .map(&lt;func&gt;)
+    .hasNext()
+    .next()
+    .close()
+    .objsLeftInBatch() - returns count of docs left <span class="hljs-keyword">in</span> current batch (when exhausted, a new getMore will be issued)
+    .itcount() - iterates through documents and counts them
+    .pretty() - pretty <span class="hljs-built_in">print</span> each document, possibly over multiple lines
+&gt;
+</code></pre>
+<blockquote>
+<p><code>&lt;collection&gt;</code> can be the name of a collection that exists, although you may specify a collection that doesn&#x2019;t exist.</p>
+</blockquote>
+<h6 id="to-see-the-implementation-of-the-cursor-method-type-the-dbfind-name-without-the-parenthesis--as-in-the-following-example-which-will-return-the-implementation-of-the-toarray-method">To see the implementation of the cursor method, type the db.<collection>.find().<method> name without the parenthesis (), as in the following example which will return the implementation of the toArray() method:</method></collection></h6>
+<pre><code class="lang-bash">&gt; db.collection.find().toArray
+<span class="hljs-function"><span class="hljs-title">function</span></span> () {
+    <span class="hljs-keyword">if</span> (this._arr)
+        <span class="hljs-built_in">return</span> this._arr;
+
+    var a = [];
+    <span class="hljs-keyword">while</span> (this.hasNext())
+        a.push(this.next());
+    this._arr = a;
+    <span class="hljs-built_in">return</span> a;
+}
+</code></pre>
+<p><em>Some useful methods for handling cursors are:</em></p>
+<ol>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/cursor.hasNext/#cursor.hasNext" target="_blank"><code>hasNext()</code></a>   </p>
+<ol>
+<li>hasNext checks whether the cursor has more documents to return.</li>
+</ol>
+</li>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/cursor.next/#cursor.next" target="_blank"><code>next()</code></a></p>
+<ol>
+<li>next returns the next document and advances the cursor position forward by one.</li>
+</ol>
+</li>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/cursor.forEach/#cursor.forEach" target="_blank"><code>forEach(&lt;function&gt;)</code></a> </p>
+<ol>
+<li>forEach iterates the whole cursor and applies the <code>&lt;function&gt;</code> to each document returned by the cursor. </li>
+<li>The <code>&lt;function&gt;</code> expects a single argument which corresponds to the document from each iteration.</li>
+</ol>
+</li>
+</ol>
+<h6 id="wrapper-object-help">Wrapper Object Help</h6>
+<h6 id="to-get-a-list-of-the-wrapper-classes-available-in-the-mongo-shell-such-as-objectid-type-help-misc-in-the-mongo-shell">To get a list of the wrapper classes available in the mongo shell, such as ObjectId(), type help misc in the mongo shell:</h6>
+<pre><code class="lang-bash">&gt; <span class="hljs-built_in">help</span> misc
+    b = new B<span class="hljs-keyword">in</span>Data(subtype,base64str)  create a BSON B<span class="hljs-keyword">in</span>Data value
+    b.subtype()                         the B<span class="hljs-keyword">in</span>Data subtype (0..255)
+    b.length()                          length of the B<span class="hljs-keyword">in</span>Data data <span class="hljs-keyword">in</span> bytes
+    b.hex()                             the data as a hex encoded string
+    b.base64()                          the data as a base 64 encoded string
+    b.toString()
+
+    b = HexData(subtype,hexstr)         create a BSON B<span class="hljs-keyword">in</span>Data value from a hex string
+    b = UUID(hexstr)                    create a BSON B<span class="hljs-keyword">in</span>Data value of UUID subtype
+    b = MD5(hexstr)                     create a BSON B<span class="hljs-keyword">in</span>Data value of MD5 subtype
+    <span class="hljs-string">&quot;hexstr&quot;</span>                            string, sequence of hex characters (no 0x prefix)
+
+    o = new ObjectId()                  create a new ObjectId
+    o.getTimestamp()                    <span class="hljs-built_in">return</span> timestamp derived from first 32 bits of the OID
+    o.isObjectId
+    o.toString()
+    o.equals(otherid)
+
+    d = ISODate()                       like Date() but behaves more intuitively when used
+    d = ISODate(<span class="hljs-string">&apos;YYYY-MM-DD hh:mm:ss&apos;</span>)    without an explicit <span class="hljs-string">&quot;new &quot;</span> prefix on construction
+&gt; objectId = new ObjectId()
+ObjectId(<span class="hljs-string">&quot;5c603570e97a475d5b92d7ac&quot;</span>)
+&gt;
+</code></pre>
+<h4 id="write-scripts-for-the-mongo-shell">Write Scripts for the mongo Shell</h4>
+<h4 id="opening-new-connections">Opening New Connections</h4>
+<p>From the mongo shell or from a JavaScript file, you can instantiate database connections using the <code>Mongo()</code> constructor:</p>
+<pre><code class="lang-bash">db = new Mongo(<span class="hljs-string">&quot;localhost:27017&quot;</span>).getDB(<span class="hljs-string">&quot;test&quot;</span>)
+<span class="hljs-built_in">test</span>
+</code></pre>
+<p>Here we create a new local database connection to the test database.</p>
+<blockquote>
+<p>If connecting to a MongoDB instance that enforces access control, you can use the db.auth() method to authenticate.</p>
+<p>Additionally, you can use the connect() method to connect to the MongoDB instance.</p>
+</blockquote>
+<pre><code class="lang-bash">db = connect(<span class="hljs-string">&quot;localhost:27017/test&quot;</span>)
+connecting to: mongodb://localhost:27017/<span class="hljs-built_in">test</span>
+Implicit session: session { <span class="hljs-string">&quot;id&quot;</span> : UUID(<span class="hljs-string">&quot;11921e8f-706d-4b7e-9f09-fd70578846e6&quot;</span>) }
+MongoDB server version: 4.0.5
+<span class="hljs-built_in">test</span>
+</code></pre>
+<p><em>The following example connects to the MongoDB instance to the test database that is running on localhost and sets the global db variable.</em></p>
+<h4 id="differences-between-interactive-and-scripted-mongo">Differences Between Interactive and Scripted mongo</h4>
+<p><a href="https://docs.mongodb.com/manual/tutorial/write-scripts-for-the-mongo-shell/#differences-between-interactive-and-scripted-mongo" target="_blank">Differences Between Interactive and Script Mongo</a></p>
+<blockquote>
+<p>When writing scripts for the mongo shell, consider the following:</p>
+<p>To set the db global variable, use the getDB() method or the connect() method. You can assign the database reference to a variable other than db.</p>
+<p>Write operations in the mongo shell use a write concern of { w: 1 } by default. If performing bulk operations, use the Bulk() methods. See Write Method Acknowledgements for more information.</p>
+<p>You cannot use any shell helper (e.g. use <code>&lt;dbname&gt;</code>, show dbs, etc.) inside the JavaScript file because they are not valid JavaScript.</p>
+</blockquote>
+<p>The following table maps the most common mongo shell helpers to their JavaScript equivalents.</p>
+<table>
+<thead>
+<tr>
+<th>Shell Helpers</th>
+<th>JavaScript Equivalents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>show dbs, show databases</td>
+<td>db.adminCommand(&apos;listDatabases&apos;)</td>
+</tr>
+<tr>
+<td>use &lt;db&gt;</td>
+<td>db = db.getSiblingDB(&apos;&lt;db&gt;&apos;)</td>
+</tr>
+<tr>
+<td>show collections</td>
+<td>db.getCollectionNames()</td>
+</tr>
+<tr>
+<td>show users</td>
+<td>db.getUsers()</td>
+</tr>
+<tr>
+<td>show roles</td>
+<td>db.getRoles({showBuiltinRoles: true})</td>
+</tr>
+<tr>
+<td>show log &lt;logname&gt;</td>
+<td>db.adminCommand({ &apos;getLog&apos; : &apos;&lt;logname&gt;&apos; })</td>
+</tr>
+<tr>
+<td>show logs</td>
+<td>db.adminCommand({ &apos;getLog&apos; : &apos;*&apos; })</td>
+</tr>
+<tr>
+<td>it</td>
+<td>cursor = db.collection.find() if ( cursor.hasNext() ){cursor.next(); }</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>In interactive mode, mongo prints the results of operations including the content of all cursors. In scripts, either use the JavaScript <code>print()</code> function or the mongo specific <code>printjson()</code> function which returns formatted JSON.</p>
+<p>To print all items in a result cursor in mongo shell scripts, use the following idiom:</p>
+</blockquote>
+<pre><code class="lang-js">cursor = db.numbers.find();
+<span class="hljs-keyword">while</span> ( cursor.hasNext() ) {
+   printjson( cursor.next() );
+}
+</code></pre>
+<h4 id="scripting">Scripting</h4>
+<p>From the system prompt, use mongo to evaluate JavaScript.</p>
+<p><img src="../images/mongo-eval-js.png" alt="mongo eval javascript"></p>
+<p>Notice that the screenshot show the collections that exist on the localhost/nosql_workshop connection on port 27017.</p>
+<h6 id="executing-a-javascript-file-on-the-mongo-shell">Executing a Javascript file on the mongo shell</h6>
+<p>You can specify a .js file to the mongo shell, and mongo will execute the JavaScript directly. Consider the following example:</p>
+<p><img src="../images/mongo-shell-js.png" alt="js file to execute"></p>
+<blockquote>
+<p>Alternately, you can specify the mongodb connection parameters inside of the javascript file using the <code>Mongo()</code> constructor.</p>
+</blockquote>
+<p><em>You can execute a .js file from within the mongo shell, using the load() function.</em></p>
+<pre><code class="lang-bash">load(<span class="hljs-string">&quot;scripts/show_collections.js&quot;</span>)
+
+show_collections script:
+
+inventory,json,numbers,people
+<span class="hljs-literal">true</span>
+</code></pre>
+<p>Here is the contents of the show_collections.js script:</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-comment">// equivalent for &quot;use &lt;db&gt;&quot; command in mongo shell</span>
+<span class="hljs-keyword">var</span> db = db.getSiblingDB(<span class="hljs-string">&apos;nosql_workshop&apos;</span>);
+
+<span class="hljs-comment">// print the collections present in nosql_workshop db</span>
+print(<span class="hljs-string">&quot;\nshow_collections script:\n&quot;</span>)
+print(db.getCollectionNames());
+</code></pre>
+<blockquote>
+<p>The <code>load()</code> method accepts relative and absolute paths.</p>
+<p>There is no search path for the load() function. If the desired script is not in the current working directory or the full specified path, mongo will not be able to access the file.</p>
+</blockquote>
+<h4 id="data-types-in-the-mongo-shell">Data Types in the mongo Shell</h4>
+<blockquote>
+<p>MongoDB BSON provides support for additional data types than JSON. Drivers provide native support for these data types in host languages and the mongo shell also provides several helper classes to support the use of these data types in the mongo JavaScript shell. </p>
+</blockquote>
+<p>The mongo shell provides various methods to return the date, either as a string or as a Date object:</p>
+<ul>
+<li><p><a href="">Date()</a></p>
+<ul>
+<li>method which returns the current date as a string.</li>
+<li>new Date() constructor which returns a Date object using the ISODate() wrapper.</li>
+</ul>
+</li>
+<li><p><a href="">ISODate()</a> </p>
+<ul>
+<li>constructor which returns a Date object using the ISODate() wrapper.</li>
+</ul>
+</li>
+</ul>
+<h6 id="types">Types</h6>
+<h6 id="dates">Dates</h6>
+<blockquote>
+<p>Internally, Date objects are stored as a signed 64-bit integer representing the number of milliseconds since the Unix epoch (Jan 1, 1970).</p>
+</blockquote>
+<p>Here is a shell session using Date and ISODate:</p>
+<p><img src="../images/date-shell.png" alt="date shell"></p>
+<h6 id="objectids">ObjectIds</h6>
+<p>The mongo shell provides the ObjectId() wrapper class around the ObjectId data type. To generate a new ObjectId, use the following operation in the mongo shell.</p>
+<p>Returns a new ObjectId value. The 12-byte ObjectId value consists of:</p>
+<p>a 4-byte value representing the seconds since the Unix epoch,
+a 5-byte random value, and
+a 3-byte counter, starting with a random value.</p>
+<pre><code class="lang-bash">&gt; new ObjectId()
+ObjectId(<span class="hljs-string">&quot;5c68614d90753389f07190a9&quot;</span>)
+</code></pre>
+<h6 id="numberlong">NumberLong</h6>
+<p>The mongo shell treats all numbers as floating-point values by default. The mongo shell provides the NumberLong() wrapper to handle 64-bit integers.</p>
+<p>The NumberLong() wrapper accepts the long as a string:</p>
+<pre><code class="lang-bash">&gt; NumberLong(<span class="hljs-string">&quot;2090845886855&quot;</span>)
+NumberLong(<span class="hljs-string">&quot;2090845886855&quot;</span>)
+</code></pre>
+<p>Here is an example session with NumberLong:</p>
+<pre><code class="lang-bash">&gt; db.numbers.insertOne( { _id: 6, calc: NumberLong(<span class="hljs-string">&quot;2090845886852&quot;</span>) } )
+{ <span class="hljs-string">&quot;acknowledged&quot;</span> : <span class="hljs-literal">true</span>, <span class="hljs-string">&quot;insertedId&quot;</span> : 6 }
+&gt; db.numbers.updateOne( { _id: 6 },
+...                       { <span class="hljs-variable">$set</span>:  { calc: NumberLong(<span class="hljs-string">&quot;2555555000000&quot;</span>) } } )
+{ <span class="hljs-string">&quot;acknowledged&quot;</span> : <span class="hljs-literal">true</span>, <span class="hljs-string">&quot;matchedCount&quot;</span> : 1, <span class="hljs-string">&quot;modifiedCount&quot;</span> : 1 }
+&gt; db.numbers.updateOne( { _id: 6 },
+...                       { <span class="hljs-variable">$inc</span>: { calc: NumberLong(5) } } )
+{ <span class="hljs-string">&quot;acknowledged&quot;</span> : <span class="hljs-literal">true</span>, <span class="hljs-string">&quot;matchedCount&quot;</span> : 1, <span class="hljs-string">&quot;modifiedCount&quot;</span> : 1 }
+&gt; db.numbers.find({
+... <span class="hljs-string">&quot;_id&quot;</span>: 6
+... }).<span class="hljs-function"><span class="hljs-title">pretty</span></span>()
+{ <span class="hljs-string">&quot;_id&quot;</span> : 6, <span class="hljs-string">&quot;calc&quot;</span> : NumberLong(<span class="hljs-string">&quot;2555555000005&quot;</span>) }
+</code></pre>
+<h6 id="numberint">NumberInt</h6>
+<p>The mongo shell treats all numbers as floating-point values by default. The mongo shell provides the NumberInt() constructor to explicitly specify 32-bit integers.</p>
+<p>Here is an example session:</p>
+<pre><code class="lang-bash">&gt; NumberInt(100)
+NumberInt(100)
+&gt; NumberInt(1.5)
+NumberInt(1)
+</code></pre>
+<p>Notice how <code>NumberInt(1.5)</code> got casted into 32-bit integer.</p>
+<h6 id="numberdecimal">NumberDecimal</h6>
+<p>New in version 3.4.</p>
+<p>The mongo shell treats all numbers as 64-bit floating-point double values by default. The mongo shell provides the NumberDecimal() constructor to explicitly specify 128-bit decimal-based floating-point values capable of emulating decimal rounding with exact precision. This functionality is intended for applications that handle monetary data, such as financial, tax, and scientific computations.</p>
+<p>The decimal BSON type uses the IEEE 754 decimal128 floating-point numbering format which supports 34 decimal digits (i.e. significant digits) and an exponent range of &#x2212;6143 to +6144.</p>
+<p>The NumberDecimal() constructor accepts the decimal value as a string:</p>
+<blockquote>
+<p>The NumberDecimal() constructor also accepts double values from the mongo shell (i.e. without quotes), although this is not recommended due to the risk of losing precision. The constructor creates a binary-based double precision representation of the decimal-based parameter (potentially losing precision), then converts that value to a decimal value with a precision of 15 digits. The following example passes the value implicitly as a double and shows how it is created with a precision of 15 digits:</p>
+</blockquote>
+<p>Here is an example session:</p>
+<pre><code class="lang-bash">&gt; NumberDecimal(1000.55)
+NumberDecimal(<span class="hljs-string">&quot;1000.55000000000&quot;</span>)
+</code></pre>
+<p>Notice the loss in precision here.</p>
+<h6 id="equality-and-sort-order">Equality and Sort Order</h6>
+<p>Here is an example session showing equality and sort order:</p>
+<pre><code class="lang-bash">&gt; db.numbers2.insertMany([
+... { <span class="hljs-string">&quot;_id&quot;</span> : 1, <span class="hljs-string">&quot;val&quot;</span> : NumberDecimal( <span class="hljs-string">&quot;9.99&quot;</span> ), <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Decimal&quot;</span> },
+... { <span class="hljs-string">&quot;_id&quot;</span> : 2, <span class="hljs-string">&quot;val&quot;</span> : 9.99, <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Double&quot;</span> },
+... { <span class="hljs-string">&quot;_id&quot;</span> : 3, <span class="hljs-string">&quot;val&quot;</span> : 10, <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Double&quot;</span> },
+... { <span class="hljs-string">&quot;_id&quot;</span> : 4, <span class="hljs-string">&quot;val&quot;</span> : NumberLong(10), <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Long&quot;</span> },
+... { <span class="hljs-string">&quot;_id&quot;</span> : 5, <span class="hljs-string">&quot;val&quot;</span> : NumberDecimal( <span class="hljs-string">&quot;10.0&quot;</span> ), <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Decimal&quot;</span> }
+... ])
+{ <span class="hljs-string">&quot;acknowledged&quot;</span> : <span class="hljs-literal">true</span>, <span class="hljs-string">&quot;insertedIds&quot;</span> : [ 1, 2, 3, 4, 5 ] }
+&gt; db.numbers2.find({})
+{ <span class="hljs-string">&quot;_id&quot;</span> : 1, <span class="hljs-string">&quot;val&quot;</span> : NumberDecimal(<span class="hljs-string">&quot;9.99&quot;</span>), <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Decimal&quot;</span> }
+{ <span class="hljs-string">&quot;_id&quot;</span> : 2, <span class="hljs-string">&quot;val&quot;</span> : 9.99, <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Double&quot;</span> }
+{ <span class="hljs-string">&quot;_id&quot;</span> : 3, <span class="hljs-string">&quot;val&quot;</span> : 10, <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Double&quot;</span> }
+{ <span class="hljs-string">&quot;_id&quot;</span> : 4, <span class="hljs-string">&quot;val&quot;</span> : NumberLong(10), <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Long&quot;</span> }
+{ <span class="hljs-string">&quot;_id&quot;</span> : 5, <span class="hljs-string">&quot;val&quot;</span> : NumberDecimal(<span class="hljs-string">&quot;10.0&quot;</span>), <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Decimal&quot;</span> }
+&gt; db.numbers2.find({
+... val: 9.99
+... })
+{ <span class="hljs-string">&quot;_id&quot;</span> : 2, <span class="hljs-string">&quot;val&quot;</span> : 9.99, <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;Double&quot;</span> }
+</code></pre>
+<blockquote>
+<p>The first query, { &quot;val&quot;: 9.99 }, implicitly searches for the double representation of 9.99 which is not equal to the decimal representation of the value.</p>
+</blockquote>
+<h6 id="checking-for-decimal-type">Checking for decimal type</h6>
+<p>To test for decimal type, use the $type operator with the string alias &quot;decimal&quot; or 19, the numeric code for the decimal type.</p>
+<pre><code class="lang-bash">&gt; db.inventory.insertOne({
+...     <span class="hljs-string">&quot;_id&quot;</span>: new ObjectId(),
+...     <span class="hljs-string">&quot;item&quot;</span> : <span class="hljs-string">&quot;postcard&quot;</span>,
+...     <span class="hljs-string">&quot;qty&quot;</span> : 60,
+...     <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>,
+...     <span class="hljs-string">&quot;size&quot;</span> : {
+...         <span class="hljs-string">&quot;h&quot;</span> : 10,
+...         <span class="hljs-string">&quot;w&quot;</span> : NumberDecimal(<span class="hljs-string">&quot;15.25&quot;</span>),
+...         <span class="hljs-string">&quot;uom&quot;</span> : <span class="hljs-string">&quot;cm&quot;</span> },
+...         <span class="hljs-string">&quot;tags&quot;</span> : [     <span class="hljs-string">&quot;blue&quot;</span> ]
+...     }
+... )
+{
+    <span class="hljs-string">&quot;acknowledged&quot;</span> : <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;insertedId&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c6865d8035949476a06ce05&quot;</span>)
+}
+&gt; db.inventory.find({
+... <span class="hljs-string">&quot;size.w&quot;</span>: {
+... <span class="hljs-string">&quot;<span class="hljs-variable">$type</span>&quot;</span>: <span class="hljs-string">&quot;decimal&quot;</span>
+... }})
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c68656090753389f07190aa&quot;</span>),
+    <span class="hljs-string">&quot;item&quot;</span> : <span class="hljs-string">&quot;postcard&quot;</span>,
+    <span class="hljs-string">&quot;qty&quot;</span> : 59,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>,
+    <span class="hljs-string">&quot;size&quot;</span> : {
+        <span class="hljs-string">&quot;h&quot;</span> : 10,
+        <span class="hljs-string">&quot;w&quot;</span> : NumberDecimal(<span class="hljs-string">&quot;15.25&quot;</span>),
+        <span class="hljs-string">&quot;uom&quot;</span> : <span class="hljs-string">&quot;cm&quot;</span>
+    },
+    <span class="hljs-string">&quot;tags&quot;</span> : [
+        <span class="hljs-string">&quot;blue&quot;</span>
+    ]
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c6865d8035949476a06ce05&quot;</span>),
+    <span class="hljs-string">&quot;item&quot;</span> : <span class="hljs-string">&quot;postcard&quot;</span>,
+    <span class="hljs-string">&quot;qty&quot;</span> : 60,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>,
+    <span class="hljs-string">&quot;size&quot;</span> : {
+        <span class="hljs-string">&quot;h&quot;</span> : 10,
+        <span class="hljs-string">&quot;w&quot;</span> : NumberDecimal(<span class="hljs-string">&quot;15.25&quot;</span>),
+        <span class="hljs-string">&quot;uom&quot;</span> : <span class="hljs-string">&quot;cm&quot;</span>
+    },
+    <span class="hljs-string">&quot;tags&quot;</span> : [
+        <span class="hljs-string">&quot;blue&quot;</span>
+    ]
+}
+</code></pre>
+<h6 id="check-types-in-the-mongo-shell">Check Types in the mongo Shell</h6>
+<p>To determine the type of fields, the mongo shell provides the instanceof and typeof operators.</p>
+<p><em>instanceof</em></p>
+<p>instanceof returns a boolean to test if a value is an instance of some type.</p>
+<p>Let us look at an example in the mongo shell:</p>
+<pre><code class="lang-bash">&gt; db.inventory.find({ <span class="hljs-string">&quot;size.w&quot;</span>: {  <span class="hljs-string">&quot;<span class="hljs-variable">$type</span>&quot;</span>: <span class="hljs-string">&quot;decimal&quot;</span> }})[0]._id instanceof ObjectId
+<span class="hljs-literal">true</span>
+</code></pre>
+<p><em>typeof</em></p>
+<p>typeof returns the type of a field.</p>
+<p>Let us look at the type of the _id field in the shell:</p>
+<pre><code class="lang-bash">&gt; typeof db.inventory.find({ <span class="hljs-string">&quot;size.w&quot;</span>: {  <span class="hljs-string">&quot;<span class="hljs-variable">$type</span>&quot;</span>: <span class="hljs-string">&quot;decimal&quot;</span> }})[0]._id
+object
+</code></pre>
+<p>In this case typeof will return the more generic object type rather than ObjectId type.</p>
+<h6 id="mongo-shell-quick-reference">Mongo Shell Quick Reference</h6>
+<h6 id="mongo-shell-command-history">mongo Shell Command History</h6>
+<blockquote>
+<p>You can retrieve previous commands issued in the mongo shell with the up and down arrow keys. Command history is stored in ~/.dbshell file.</p>
+</blockquote>
+<h6 id="command-line-options">Command Line Options</h6>
+<p>The mongo shell can be started with numerous options.</p>
+<p>The following table displays some common options for mongo:</p>
+<table>
+<thead>
+<tr>
+<th>Command Line Option</th>
+<th>Command Line Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--help</td>
+<td>Show command line options</td>
+</tr>
+<tr>
+<td>--nodb</td>
+<td>Start mongo shell without connecting to a database. To connect later, see Opening New Connections.</td>
+</tr>
+<tr>
+<td>--shell</td>
+<td>Used in conjunction with a JavaScript file (i.e. &lt;script.js&gt;) to continue in the mongo shell after running the JavaScript file.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic-commands">Basic Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connect to local host on default port 27017</td>
+<td>mongo</td>
+<td>mongo</td>
+</tr>
+<tr>
+<td>Connect to remote host on specified port</td>
+<td>mongo --host &lt;hostname or ip address&gt; --port &lt;port no&gt;</td>
+<td>mongo --host 192.168.65.23 --port 27020</td>
+</tr>
+<tr>
+<td>Connect to a database</td>
+<td>mongo &lt;host&gt;/&lt;database&gt;</td>
+<td>mongo 192.168.65.23/api</td>
+</tr>
+<tr>
+<td>Show current database</td>
+<td>db</td>
+<td>db</td>
+</tr>
+<tr>
+<td>Select or switch database</td>
+<td>use &lt;database name&gt;</td>
+<td>use api</td>
+</tr>
+<tr>
+<td>Execute a JavaScript file</td>
+<td>load(&lt;filename&gt;)</td>
+<td>load (program.js)</td>
+</tr>
+<tr>
+<td>Display help</td>
+<td>help</td>
+<td>help</td>
+</tr>
+<tr>
+<td>Display help on DB methods</td>
+<td>db.help()</td>
+<td>db.help()</td>
+</tr>
+<tr>
+<td>Display help on Collection</td>
+<td>db.mycol.help()</td>
+<td>db.mycol.help()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="show-commands">Show Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show all databases</td>
+<td>show dbs</td>
+<td>show dbs</td>
+</tr>
+<tr>
+<td>Show all collections in current database</td>
+<td>show collections</td>
+<td>show collections</td>
+</tr>
+<tr>
+<td>Show all users on current database</td>
+<td>show users</td>
+<td>show users</td>
+</tr>
+<tr>
+<td>Show all roles on current database</td>
+<td>show roles</td>
+<td>show roles</td>
+</tr>
+</tbody>
+</table>
+<h2 id="crud-operations">CRUD Operations</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>If running in secure mode, authenticate the user.</td>
+<td>db.auth()</td>
+<td>db.auth()</td>
+</tr>
+<tr>
+<td>Insert a new document in a collection</td>
+<td>db.collection.insert( &lt;document&gt; )</td>
+<td>db.heroes.insert({&quot;name&quot;: &quot;Batman&quot;, &quot;powers&quot;: [&quot;Super Rich&quot;,&quot;Tech Gadgets&quot;,&quot;Batmobile&quot;,&quot;Martial Artists&quot;,&quot;Super Style&quot;,&quot;Alfred&quot;], &quot;gender&quot;: &quot;male&quot; })</td>
+</tr>
+<tr>
+<td>Insert multiple documents into a collection</td>
+<td>db.collection.insertMany([ &lt;document1&gt;, &lt;document2&gt;, ... ]) or db.collection.insert([&lt;document1&gt;, &lt;document2&gt;, ... ])`</td>
+<td>db.heroes.insertMany( [{&quot;name&quot;: &quot;Batman&quot;, &quot;powers&quot;: [&quot;Super Rich&quot;,&quot;Tech Gadgets&quot;,&quot;Batmobile&quot;,&quot;Martial Artists&quot;,&quot;Super Style&quot;,&quot;Alfred&quot;], &quot;gender&quot;: &quot;male&quot; }, {&quot;name&quot;: &quot;Aquaman&quot;, &quot;powers&quot;, [&quot;Superhuman Strength&quot;, &quot;Telepathic Abilities&quot;], &quot;gender&quot;: &quot;male&quot;}])</td>
+</tr>
+<tr>
+<td>Show all documents in the collection</td>
+<td>db.collection.find()</td>
+<td>db.heroes.find()</td>
+</tr>
+<tr>
+<td>Filter documents by field value condition</td>
+<td>db.collection.find(&lt;query&gt;)</td>
+<td>db.heroes.find({&quot;_id&quot;: ObjectId(&quot;507f1f77bcf86cd799439011&quot;)})</td>
+</tr>
+<tr>
+<td>Show only some fields of matching documents</td>
+<td>db.collection.find(&lt;query&gt;, &lt;projection&gt;)</td>
+<td>db.heroes.find({&quot;_id&quot;: &quot;507f1f77bcf86cd799439011&quot;}, {name: true})</td>
+</tr>
+<tr>
+<td>Show the first document that matches the query condition</td>
+<td>db.collection.findOne(&lt;query&gt;, &lt;projection&gt;)</td>
+<td>db.heroes.findOne({}, {_id:false})</td>
+</tr>
+<tr>
+<td>Update specific fields of a single document that match the query condition</td>
+<td>db.collection.update(&lt;query&gt;, &lt;update&gt; )</td>
+<td>db.heores.update({name: &quot;Aquaman&quot;}, {$set : {name :&quot;Aquaman Crisis&quot;}})</td>
+</tr>
+<tr>
+<td>Remove certain fields of a single document the query condition</td>
+<td>db.collection.update(&lt;query&gt;, &lt;update&gt;)</td>
+<td>db.heroes.update({name: &quot;Aquaman&quot;}, {$unset : {gender:&quot;&quot;}})</td>
+</tr>
+<tr>
+<td>Remove certain fields of all documents that match the query condition</td>
+<td>db.collection.update(&lt;query&gt;, &lt;update&gt;, {multi:true} )</td>
+<td>db.heroes.update({gender : &quot;male&quot;}, {$unset : {name:&quot;&quot;}}, {multi:true})</td>
+</tr>
+<tr>
+<td>Delete a single document that match the query condition</td>
+<td>db.collection.remove(&lt;query&gt;, {justOne:true})</td>
+<td>db.heroes.remove({gender : &quot;male&quot;}, {justOne:true})</td>
+</tr>
+<tr>
+<td>Delete all documents matching a query condition</td>
+<td>db.collection.remove(&lt;query&gt;)</td>
+<td>db.heroes.remove({gender : &quot;male&quot;})</td>
+</tr>
+<tr>
+<td>Delete all documents in a collection</td>
+<td>db.collection.remove({})</td>
+<td>db.heroes.remove({})</td>
+</tr>
+</tbody>
+</table>
+<h2 id="index-methods">Index Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create an index</td>
+<td>db.collection.createIndex( {indexField:type} ) &quot;type&quot; can be 1 for ascending and -1 for descending</td>
+<td>db.heroes.createIndex({organization:1})</td>
+</tr>
+<tr>
+<td>Create a unique index</td>
+<td>db.collection.createIndex( {indexField:type}, {unique:true} )</td>
+<td>db.heroes.createIndex( {crisisMode:1},{unique:true} )</td>
+</tr>
+<tr>
+<td>Create a index on multiple fields (compound index)</td>
+<td>db.collection.createIndex({indexField1:type1, indexField2:type2, ...})</td>
+<td>db.heroes.createIndex({name:1, gender:-1})</td>
+</tr>
+<tr>
+<td>Show all indexes in a collection</td>
+<td>db.collection.getIndexes()</td>
+<td>db.heroes.getIndexes()</td>
+</tr>
+<tr>
+<td>Drop an index</td>
+<td>db.collection.dropIndex( {indexField:type} )</td>
+<td>db.heroes.dropIndex({author:-1})</td>
+</tr>
+<tr>
+<td>Show index statistics</td>
+<td>db.collection.stats()</td>
+<td>db.heroes.stats()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cursor-methods">Cursor Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show number of documents in the collection</td>
+<td>cursor.count()</td>
+<td>db.heroes.find().count()</td>
+</tr>
+<tr>
+<td>Limit the number of documents to return</td>
+<td>cursor.limit(&lt;n&gt;)</td>
+<td>db.heroes.find().limit(2)</td>
+</tr>
+<tr>
+<td>Return the result set after skipping the first n number of documents</td>
+<td>cursor.skip(&lt;n&gt;)</td>
+<td>db.heroes.find().skip(2)</td>
+</tr>
+<tr>
+<td>Sort the documents in a result set in ascending or descending order of field values</td>
+<td>cursor.sort( &lt;{field : value}&gt; ) where value = 1 for ascending and -1 for descending</td>
+<td>db.heroes.find().sort( {name : 1} )</td>
+</tr>
+<tr>
+<td>Display formatted (more readable) result</td>
+<td>cursor.pretty()</td>
+<td>db.heroes.find({}).pretty()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comparison-operators">Comparison Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>equals to</td>
+<td>{&lt;field&gt;: { $eq: &lt;value&gt; }}</td>
+<td>db.heroes.find({name: {$eq: &quot;Aquaman&quot;}})</td>
+</tr>
+<tr>
+<td>less than</td>
+<td>{&lt;field&gt;: { $lt: &lt;value&gt; }}</td>
+<td>db.heroes.find({year: {$lt: 1981}})</td>
+</tr>
+<tr>
+<td>less than or equal to</td>
+<td>{&lt;field&gt;: { $lte: &lt;value&gt; }}</td>
+<td>db.heroes.find({year: {$lte: 1985}})</td>
+</tr>
+<tr>
+<td>greater than</td>
+<td>{&lt;field&gt;: { $gt: &lt;value&gt; }}</td>
+<td>db.heroes.find({year: {$gt: 1985}})</td>
+</tr>
+<tr>
+<td>greater than or equal to</td>
+<td>{&lt;field&gt;: { $gte: &lt;value&gt; }}</td>
+<td>db.heroes.find({year: {$gte: 2008}})</td>
+</tr>
+<tr>
+<td>not equal to</td>
+<td>{&lt;field&gt;: { $ne: &lt;value&gt; }}</td>
+<td>db.heroes.find({year: {$ne: 2008}})</td>
+</tr>
+<tr>
+<td>value in</td>
+<td>{&lt;field&gt;: { $in: [ &lt;value1&gt;, &lt;value2&gt;, ... }}</td>
+<td>db.heroes.find({year: {$in: [1985, 1991]}})</td>
+</tr>
+<tr>
+<td>value not in</td>
+<td>{&lt;field&gt;: { $nin: [ &lt;value1&gt;, &lt;value2&gt;, ... }}</td>
+<td>db.heroes.find({year: {$nin: [1981, 1992]}})</td>
+</tr>
+</tbody>
+</table>
+<h2 id="logical-operators">Logical Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OR</td>
+<td>{ $or: [&lt;expression1&gt;, &lt;expression2&gt;,...]}</td>
+<td>db.heroes.find( { $or: [{year: {$lte: 1981}}, {year: {$eq: 1991}}]} )</td>
+</tr>
+<tr>
+<td>AND</td>
+<td>{ $and: [&lt;expression1&gt;, &lt;expression2&gt;,...]}</td>
+<td>db.heroes.find( { $and: [{year: {$eq: 1981}}, {gender: {$eq: &quot;male&quot;}}]} )</td>
+</tr>
+<tr>
+<td>NOT</td>
+<td>{ $not: {&lt;expression&gt;}}</td>
+<td>db.heroes.find( {$not: {year: {$eq: 1981} }})</td>
+</tr>
+<tr>
+<td>NOR</td>
+<td>{ $nor: [&lt;expression1&gt;, &lt;expression2&gt;,...]}</td>
+<td>db.heroes.find( { $nor: [{year: {$lte: 1981}}, {year: {$eq: 1993}}]} )</td>
+</tr>
+</tbody>
+</table>
+<h2 id="element-operators">Element Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Match documents that contains that specified field</td>
+<td>{&lt;field&gt;: {$exists:true}}</td>
+<td>db.heroes.find({ powers: {$exists: true }})</td>
+</tr>
+<tr>
+<td>Match documents whose field value is of the specified BSON data type</td>
+<td>{&lt;field&gt;: {$type:value}}</td>
+<td>db.heroes.find({name: {$type: 2 }})</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mongodb-server-status">MongoDB Server Status</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Run Command</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Returns the number of mongo connections</td>
+<td>db.serverStatus()</td>
+<td>db.serverStatus().connections</td>
+</tr>
+</tbody>
+</table>
+<h6 id="keyboard-shortcuts">Keyboard Shortcuts</h6>
+<table>
+<thead>
+<tr>
+<th>Keystroke</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up-arrow</td>
+<td>previous-history</td>
+</tr>
+<tr>
+<td>Down-arrow</td>
+<td>next-history</td>
+</tr>
+<tr>
+<td>Home</td>
+<td>beginning-of-line</td>
+</tr>
+<tr>
+<td>End</td>
+<td>end-of-line</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>autocomplete</td>
+</tr>
+<tr>
+<td>Left-arrow</td>
+<td>b</td>
+</tr>
+<tr>
+<td>Right-arrow</td>
+<td>forward-char</td>
+</tr>
+<tr>
+<td>Ctrl-left-arrow</td>
+<td>b</td>
+</tr>
+<tr>
+<td>Ctrl-right-arrow</td>
+<td>forward-word</td>
+</tr>
+<tr>
+<td>Meta-left-arrow</td>
+<td>b</td>
+</tr>
+<tr>
+<td>Meta-right-arrow</td>
+<td>forward-word</td>
+</tr>
+<tr>
+<td>Ctrl-A</td>
+<td>beginning-of-line</td>
+</tr>
+<tr>
+<td>Ctrl-B</td>
+<td>b</td>
+</tr>
+<tr>
+<td>Up-arrow</td>
+<td>previous-history</td>
+</tr>
+<tr>
+<td>Down-arrow</td>
+<td>next-history</td>
+</tr>
+<tr>
+<td>Home</td>
+<td>beginning-of-line</td>
+</tr>
+<tr>
+<td>End</td>
+<td>end-of-line</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>autocomplete</td>
+</tr>
+<tr>
+<td>Left-arrow</td>
+<td>backward-character</td>
+</tr>
+<tr>
+<td>Right-arrow</td>
+<td>forward-character</td>
+</tr>
+<tr>
+<td>Ctrl-left-arrow</td>
+<td>backward-word</td>
+</tr>
+<tr>
+<td>Ctrl-right-arrow</td>
+<td>forward-word</td>
+</tr>
+<tr>
+<td>Meta-left-arrow</td>
+<td>backward-word</td>
+</tr>
+<tr>
+<td>Meta-right-arrow</td>
+<td>forward-word</td>
+</tr>
+<tr>
+<td>Ctrl-A</td>
+<td>beginning-of-line</td>
+</tr>
+<tr>
+<td>Ctrl-B</td>
+<td>backward-char</td>
+</tr>
+<tr>
+<td>Ctrl-C</td>
+<td>exit-shell</td>
+</tr>
+<tr>
+<td>Ctrl-D</td>
+<td>delete-char (or exit shell)</td>
+</tr>
+<tr>
+<td>Ctrl-E</td>
+<td>end-of-line</td>
+</tr>
+<tr>
+<td>Ctrl-F</td>
+<td>forward-char</td>
+</tr>
+<tr>
+<td>Ctrl-G</td>
+<td>abort</td>
+</tr>
+<tr>
+<td>Ctrl-J</td>
+<td>accept-line</td>
+</tr>
+<tr>
+<td>Ctrl-K</td>
+<td>kill-line</td>
+</tr>
+<tr>
+<td>Ctrl-L</td>
+<td>clear-screen</td>
+</tr>
+<tr>
+<td>Ctrl-M</td>
+<td>accept-line</td>
+</tr>
+<tr>
+<td>Ctrl-N</td>
+<td>next-history</td>
+</tr>
+<tr>
+<td>Ctrl-P</td>
+<td>previous-history</td>
+</tr>
+<tr>
+<td>Ctrl-R</td>
+<td>reverse-search-history</td>
+</tr>
+<tr>
+<td>Ctrl-S</td>
+<td>forward-search-history</td>
+</tr>
+<tr>
+<td>Ctrl-T</td>
+<td>transpose-chars</td>
+</tr>
+<tr>
+<td>Ctrl-U</td>
+<td>unix-line-discard</td>
+</tr>
+<tr>
+<td>Ctrl-W</td>
+<td>unix-word-rubout</td>
+</tr>
+<tr>
+<td>Ctrl-Y</td>
+<td>yank</td>
+</tr>
+<tr>
+<td>Ctrl-Z</td>
+<td>Suspend (job control works in linux)</td>
+</tr>
+<tr>
+<td>Ctrl-H (i.e. Backspace)</td>
+<td>backward-delete-char</td>
+</tr>
+<tr>
+<td>Ctrl-I (i.e. Tab)</td>
+<td>complete</td>
+</tr>
+<tr>
+<td>Meta-B</td>
+<td>backward-word</td>
+</tr>
+<tr>
+<td>Meta-C</td>
+<td>capitalize-word</td>
+</tr>
+<tr>
+<td>Meta-D</td>
+<td>kill-word</td>
+</tr>
+<tr>
+<td>Meta-F</td>
+<td>forward-word</td>
+</tr>
+<tr>
+<td>Meta-L</td>
+<td>downcase-word</td>
+</tr>
+<tr>
+<td>Meta-U</td>
+<td>upcase-word</td>
+</tr>
+<tr>
+<td>Meta-Y</td>
+<td>yank-pop</td>
+</tr>
+<tr>
+<td>Meta-[Backspace]</td>
+<td>backward-kill-word</td>
+</tr>
+<tr>
+<td>Meta-&lt;</td>
+<td>beginning-of-history</td>
+</tr>
+<tr>
+<td>Meta-&gt;</td>
+<td>end-of-history</td>
+</tr>
+</tbody>
+</table>
+<h6 id="error-checking-methods">Error Checking Methods</h6>
+<blockquote>
+<p>The mongo shell write methods now integrates the Write Concern directly into the method execution rather than with a separate <code>db.getLastError()</code> method. As such, the write methods now return a WriteResult() object that contains the results of the operation, including any write errors and write concern errors.</p>
+</blockquote>
+<p>Previous versions used <code>db.getLastError()</code> and <code>db.getLastErrorObj()</code> methods to return error information.</p>
+<h6 id="administrative-command-helpers">Administrative Command Helpers</h6>
+<table>
+<thead>
+<tr>
+<th>JavaScript Database Administration Methods</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db.cloneDatabase(&lt;host&gt;)</td>
+<td>Clone the current database from the &lt;host&gt; specified. The &lt;host&gt; database instance must be in noauth mode.</td>
+</tr>
+<tr>
+<td>db.copyDatabase(&lt;from&gt;, &lt;to&gt;, &lt;host&gt;)</td>
+<td>Copy the &lt;from&gt; database from the &lt;host&gt; to the &lt;to&gt; database on the current server. The &lt;host&gt; database instance must be in noauth mode.</td>
+</tr>
+<tr>
+<td>db.fromColl.renameCollection(&lt;toColl&gt;)</td>
+<td>Rename collection from fromColl to &lt;toColl&gt;.</td>
+</tr>
+<tr>
+<td>db.getCollectionNames()</td>
+<td>Get the list of all collections in the current database.</td>
+</tr>
+<tr>
+<td>db.dropDatabase()</td>
+<td>Drops the current database.</td>
+</tr>
+</tbody>
+</table>
+<h6 id="opening-additional-connections">Opening Additional Connections</h6>
+<blockquote>
+<p>You can create new connections within the mongo shell.</p>
+</blockquote>
+<p>The following table displays the methods to create the connections:</p>
+<table>
+<thead>
+<tr>
+<th>JavaScript Connection Create Methods</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db = connect(&quot;&lt;host&gt;&lt;:port&gt;/&lt;dbname&gt;&quot;)</td>
+<td>Open a new database connection.</td>
+</tr>
+<tr>
+<td>conn = new Mongo() ; db = conn.getDB(&quot;dbname&quot;)</td>
+<td>Open a connection to a new server using new Mongo(). Use getDB() method of the connection to select a database.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="bson-data-types.html">BSON Data Types</a></td>
+<td style="text-align:right"><a href="mongo-crud-operations.html">Mongo CRUD Operations</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bson-data-types.html" class="navigation navigation-prev " aria-label="Previous page: BSON Data Types">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongo-crud-operations.html" class="navigation navigation-next " aria-label="Next page: Mongo CRUD Operations">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mongo Shell","level":"1.4.3","depth":2,"next":{"title":"Mongo CRUD Operations","level":"1.4.4","depth":2,"path":"docs/mongo-crud-operations.md","ref":"docs/mongo-crud-operations.md","articles":[]},"previous":{"title":"BSON Data Types","level":"1.4.2","depth":2,"path":"docs/bson-data-types.md","ref":"docs/bson-data-types.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongo-shell.md","mtime":"2019-04-27T11:27:49.662Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

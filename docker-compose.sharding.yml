@@ -1,0 +1,58 @@
+version: "2"
+
+services:
+  
+  nsqlmongocfg1:
+    container_name: nsqlmongocfg1
+    image: "mongo:4.0.5"
+    command: mongod --configsvr --replSet mongocfg --bind_ip_all --port 27019
+    ports:
+      - "27021:27019"
+    volumes:
+      - ./data/mongocfg:/data/db
+
+  nsqlmongocfg2:
+    container_name: nsqlmongocfg2
+    image: "mongo:4.0.5"
+    command: mongod --configsvr --replSet mongocfg --bind_ip_all --port 27019
+    ports:
+      - "27022:27019"
+    volumes:
+      - ./data/mongocfg:/data/db
+
+  nsqlmongocfg3:
+    container_name: nsqlmongocfg3
+    image: "mongo:4.0.5"
+    command: mongod --configsvr --replSet mongocfg --bind_ip_all --port 27019
+    ports:
+      - "27023:27019"
+    volumes:
+      - ./data/mongocfg:/data/db
+  
+  nosqlmongoshard1:
+    container_name: nosqlmongoshard1
+    image: "mongo:4.0.5"
+    command: mongod --shardsvr --replSet mongoshard --bind_ip_all --port 27018
+    ports:
+      - "27018:27018"
+
+  nosqlmongoshard2:
+    container_name: nosqlmongoshard2
+    image: "mongo:4.0.5"
+    command: mongod --shardsvr --replSet mongoshard --bind_ip_all --port 27018
+    ports:
+      - "27019:27018"
+
+  nosqlmongoshard3:
+    container_name: nosqlmongoshard3
+    image: "mongo:4.0.5"
+    command: mongod --shardsvr --replSet mongoshard --bind_ip_all --port 27018
+    ports:
+      - "27020:27018"
+  
+  mongoserver:
+    container_name: mongoserver
+    image: "mongo:4.0.5"
+    command: mongos --configdb mongocfg/nsqlmongocfg1:27019,nsqlmongocfg2:27019,nsqlmongocfg3:27019 --bind_ip_all
+    ports:
+      - "27017:27017"

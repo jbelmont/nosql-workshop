@@ -1,0 +1,1246 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mongo CRUD Operations Part II · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongo-crud-operations-part3.html" />
+    
+    
+    <link rel="prev" href="mongo-crud-operations.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mongo CRUD Operations Part II</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Crud Operations Part II</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#bulk-write-operations">Bulk Write Operations</a></li>
+<li><a href="#retryable-writes">Retryable Writes</a></li>
+<li><a href="#sql-to-mongodb-mapping-chart">SQL to MongoDB Mapping Chart</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p><em>All of this information is gathered from the official mongodb docs in <a href="https://docs.mongodb.com/manual/crud/" target="_blank">https://docs.mongodb.com/manual/crud/</a></em></p>
+<h2 id="bulk-write-operations">Bulk Write Operations</h2>
+<blockquote>
+<p>MongoDB provides clients the ability to perform write operations in bulk. Bulk write operations affect a single collection. MongoDB allows applications to determine the acceptable level of acknowledgement required for bulk write operations.</p>
+</blockquote>
+<h4 id="overview">Overview</h4>
+<blockquote>
+<p>The db.collection.bulkWrite() method provides the ability to perform bulk insert, update, and remove operations. MongoDB also supports bulk insert through the db.collection.insertMany().</p>
+</blockquote>
+<h4 id="ordered-vs-unordered-operations">Ordered vs Unordered Operations</h4>
+<blockquote>
+<p>Bulk write operations can be either ordered or unordered.</p>
+<p>With an ordered list of operations, MongoDB executes the operations serially. If an error occurs during the processing of one of the write operations, MongoDB will return without processing any remaining write operations in the list.</p>
+<p>With an unordered list of operations, MongoDB can execute the operations in parallel, but this behavior is not guaranteed. If an error occurs during the processing of one of the write operations, MongoDB will continue to process remaining write operations in the list.</p>
+<p>Executing an ordered list of operations on a sharded collection will generally be slower than executing an unordered list since with an ordered list, each operation must wait for the previous operation to finish.</p>
+</blockquote>
+<p><em>By default, bulkWrite() performs ordered operations. To specify unordered write operations, set ordered : false in the options document.</em></p>
+<h4 id="bulkwrite-methods">bulkWrite() Methods</h4>
+<p><a href="https://docs.mongodb.com/manual/core/bulk-write-operations/#bulkwrite-methods" target="_blank">bulkwrite methods</a></p>
+<p>bulkWrite() supports the following write operations:</p>
+<ul>
+<li>insertOne</li>
+<li>updateOne</li>
+<li>updateMany</li>
+<li>replaceOne</li>
+<li>deleteOne</li>
+<li>deleteMany</li>
+</ul>
+<p><em>Each write operation is passed to bulkWrite() as a document in an array.</em></p>
+<p>For example, the following performs multiple write operations:</p>
+<p>Let us run the following script in the mongo shell:</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+db = connect(<span class="hljs-string">&quot;localhost:27017/nosql_workshop&quot;</span>);
+
+<span class="hljs-keyword">try</span> {
+    db.characters.bulkWrite(
+       [
+          { <span class="hljs-attr">insertOne</span> :
+             {
+                <span class="hljs-string">&quot;document&quot;</span> :
+                {
+                   <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">4</span>, <span class="hljs-string">&quot;char&quot;</span> : <span class="hljs-string">&quot;Dithras&quot;</span>, <span class="hljs-string">&quot;class&quot;</span> : <span class="hljs-string">&quot;barbarian&quot;</span>, <span class="hljs-string">&quot;lvl&quot;</span> : <span class="hljs-number">4</span>
+                }
+             }
+          },
+          { <span class="hljs-attr">insertOne</span> :
+             {
+                <span class="hljs-string">&quot;document&quot;</span> :
+                {
+                   <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">5</span>, <span class="hljs-string">&quot;char&quot;</span> : <span class="hljs-string">&quot;Taeln&quot;</span>, <span class="hljs-string">&quot;class&quot;</span> : <span class="hljs-string">&quot;fighter&quot;</span>, <span class="hljs-string">&quot;lvl&quot;</span> : <span class="hljs-number">3</span>
+                }
+             }
+          },
+          { <span class="hljs-attr">updateOne</span> :
+             {
+                <span class="hljs-string">&quot;filter&quot;</span> : { <span class="hljs-string">&quot;char&quot;</span> : <span class="hljs-string">&quot;Eldon&quot;</span> },
+                <span class="hljs-string">&quot;update&quot;</span> : { <span class="hljs-attr">$set</span> : { <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;Critical Injury&quot;</span> } }
+             }
+          },
+          { <span class="hljs-attr">deleteOne</span> :
+             { <span class="hljs-string">&quot;filter&quot;</span> : { <span class="hljs-string">&quot;char&quot;</span> : <span class="hljs-string">&quot;Brisbane&quot;</span>} }
+          },
+          { <span class="hljs-attr">replaceOne</span> :
+             {
+                <span class="hljs-string">&quot;filter&quot;</span> : { <span class="hljs-string">&quot;char&quot;</span> : <span class="hljs-string">&quot;Meldane&quot;</span> },
+                <span class="hljs-string">&quot;replacement&quot;</span> : { <span class="hljs-string">&quot;char&quot;</span> : <span class="hljs-string">&quot;Tanys&quot;</span>, <span class="hljs-string">&quot;class&quot;</span> : <span class="hljs-string">&quot;oracle&quot;</span>, <span class="hljs-string">&quot;lvl&quot;</span> : <span class="hljs-number">4</span> }
+             }
+          }
+       ]
+    );
+ } <span class="hljs-keyword">catch</span> (e) {
+    print(e);
+ }
+</code></pre>
+<p>In a mongo shell session and assuming that you are in the nosql-workshop folder run the following command:</p>
+<p><img src="../images/load-bulk-write-script.png" alt="images/load-bulk-write-script"></p>
+<p>Since we ran this script in the mongo shell you won&apos;t see what happened but here is a summary:</p>
+<pre><code class="lang-json">{
+   <span class="hljs-string">&quot;acknowledged&quot;</span> : <span class="hljs-literal">true</span>,
+   <span class="hljs-string">&quot;deletedCount&quot;</span> : <span class="hljs-number">1</span>,
+   <span class="hljs-string">&quot;insertedCount&quot;</span> : <span class="hljs-number">2</span>,
+   <span class="hljs-string">&quot;matchedCount&quot;</span> : <span class="hljs-number">2</span>,
+   <span class="hljs-string">&quot;upsertedCount&quot;</span> : <span class="hljs-number">0</span>,
+   <span class="hljs-string">&quot;insertedIds&quot;</span> : {
+      <span class="hljs-string">&quot;0&quot;</span> : <span class="hljs-number">4</span>,
+      <span class="hljs-string">&quot;1&quot;</span> : <span class="hljs-number">5</span>
+   },
+   <span class="hljs-string">&quot;upsertedIds&quot;</span> : {
+
+   }
+}
+</code></pre>
+<h2 id="sql-to-mongodb-mapping-chart">SQL to MongoDB Mapping Chart</h2>
+<h4 id="terminology-and-concepts">Terminology and Concepts</h4>
+<p>The following table presents the various SQL terminology and concepts and the corresponding MongoDB terminology and concepts.</p>
+<table>
+<thead>
+<tr>
+<th>SQL</th>
+<th>Terms/Concepts    MongoDB Terms/Concepts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>database</td>
+<td><a href="https://docs.mongodb.com/manual/reference/glossary/#term-database" target="_blank">database</a></td>
+</tr>
+<tr>
+<td>table</td>
+<td><a href="https://docs.mongodb.com/manual/reference/glossary/#term-collection" target="_blank">collection</a></td>
+</tr>
+<tr>
+<td>row</td>
+<td><a href="https://docs.mongodb.com/manual/reference/glossary/#term-document" target="_blank">document</a> or <a href="https://docs.mongodb.com/manual/reference/glossary/#term-bson" target="_blank">BSON</a> document</td>
+</tr>
+<tr>
+<td>column</td>
+<td><a href="https://docs.mongodb.com/manual/reference/glossary/#term-field" target="_blank">field</a></td>
+</tr>
+<tr>
+<td>index</td>
+<td><a href="https://docs.mongodb.com/manual/reference/glossary/#term-index" target="_blank">index</a></td>
+</tr>
+<tr>
+<td>table joins</td>
+<td><a href="https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#pipe._S_lookup" target="_blank">$lookup</a>, embedded documents</td>
+</tr>
+<tr>
+<td>primary key =&gt; Specify any unique column or column combination as primary key.</td>
+<td><a href="https://docs.mongodb.com/manual/reference/glossary/#term-primary-key" target="_blank">primary key</a> =&gt; In MongoDB, the primary key is automatically set to the _id field.</td>
+</tr>
+<tr>
+<td>aggregation (e.g. group by)</td>
+<td>aggregation pipeline =&gt; <a href="https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/" target="_blank">See the SQL to Aggregation Mapping Chart</a></td>
+</tr>
+<tr>
+<td>transactions</td>
+<td><a href="https://docs.mongodb.com/manual/core/transactions/" target="_blank">transactions</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="executables">Executables</h4>
+<p><a href="https://docs.mongodb.com/manual/reference/sql-comparison/#executables" target="_blank">Executables</a></p>
+<blockquote>
+<p>The following table presents some database executables and the corresponding MongoDB executables. This table is not meant to be exhaustive.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>MongoDB</th>
+<th>MySQL</th>
+<th>Oracle</th>
+<th>Informix</th>
+<th>DB2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database Server</td>
+<td>mongod</td>
+<td>mysqld</td>
+<td>oracle</td>
+<td>IDS</td>
+<td>DB2 Server</td>
+</tr>
+<tr>
+<td>Database Client</td>
+<td>mongo</td>
+<td>mysql</td>
+<td>sqlplus</td>
+<td>DB-Access</td>
+<td>DB2 Client</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sql-to-mongo-shell-examples">SQL to Mongo Shell Examples</h2>
+<h4 id="create-and-alter">Create and Alter</h4>
+<h6 id="sql-schema-statements-vs-mongo-schema">SQL Schema Statements vs Mongo Schema</h6>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> people (
+    <span class="hljs-keyword">id</span> MEDIUMINT <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+    user_id <span class="hljs-built_in">Varchar</span>(<span class="hljs-number">30</span>),
+    age <span class="hljs-built_in">Number</span>,
+    <span class="hljs-keyword">status</span> <span class="hljs-built_in">char</span>(<span class="hljs-number">1</span>),
+    PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-keyword">id</span>)
+)
+</code></pre>
+<h6 id="mongodb-schema-statements">MongoDB Schema Statements</h6>
+<pre><code class="lang-js">db.people.insertOne({
+    <span class="hljs-attr">user_id</span>: <span class="hljs-string">&quot;abc123&quot;</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">55</span>,
+    <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span>
+})
+</code></pre>
+<p>Notice that in the screenshot below that mongodb implicitly created the _id field for us:</p>
+<p><img src="../images/mongo-insert-one-implicit.png" alt="images/mongo-insert-one-implicit"></p>
+<p>We can also directly create a new collection like this:</p>
+<pre><code class="lang-js">db.createCollection(<span class="hljs-string">&quot;people2&quot;</span>)
+{ <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span> }
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> people
+<span class="hljs-keyword">ADD</span> join_date DATETIME
+</code></pre>
+<blockquote>
+<p>Collections do not describe or enforce the structure of its documents; i.e. there is no structural alteration at the collection level.</p>
+<p>However, at the document level, updateMany() operations can add fields to existing documents using the $set operator.</p>
+</blockquote>
+<p>Notice that in the screenshot below we modified 51 documents and set a new field of join_date</p>
+<p><a href="../images/mongo-set.png">images/mongo-set</a></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> people
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> join_date
+</code></pre>
+<blockquote>
+<p>Collections do not describe or enforce the structure of its documents; i.e. there is no structural alteration at the collection level.</p>
+<p>However, at the document level, updateMany() operations can remove fields from documents using the $unset operator.</p>
+</blockquote>
+<p>Notice in the screenshot below that we removed the join_date field from multiple documents:</p>
+<p><img src="../images/mongo-unset.png" alt="images/mongo-unset"></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_user_id_asc
+<span class="hljs-keyword">ON</span> people(user_id)
+</code></pre>
+<p>We can create indexes in mongodb like this:</p>
+<p><code>db.people.createIndex( { user_id: 1 } )</code></p>
+<p>Here is the ack document response:</p>
+<p><img src="../images/mongo-create-index.png" alt="images/mongo-create-index"></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_user_id_asc_age_desc
+<span class="hljs-keyword">ON</span> people(user_id, age <span class="hljs-keyword">DESC</span>)
+</code></pre>
+<p>We can also create multiple indexes as well:</p>
+<p><code>db.people.createIndex( { user_id: 1, age: -1 } )</code></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> people
+</code></pre>
+<pre><code class="lang-js">db.people2.drop()
+<span class="hljs-literal">true</span>
+</code></pre>
+<h6 id="mongodb-insert-vs-sql-insert">MongoDB Insert vs SQL Insert</h6>
+<pre><code class="lang-sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> people(user_id, age, <span class="hljs-keyword">status</span>)
+<span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&quot;bcd001&quot;</span>, <span class="hljs-number">45</span>, <span class="hljs-string">&quot;A&quot;</span>)
+</code></pre>
+<p><img src="../images/mongo-create-document.png" alt="images/mongo-create-document"></p>
+<h6 id="sql-select-vs-mongodb-select-find">SQL SELECT vs MongoDB Select find</h6>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+</code></pre>
+<p><img src="../images/mongo-select.png" alt="images/mongo-select"></p>
+<p>Notice in the screenshot above that the query returns everything!</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">id</span>, user_id, <span class="hljs-keyword">status</span>
+<span class="hljs-keyword">FROM</span> people
+</code></pre>
+<p><img src="../images/mongo-projections.png" alt="images/mongo-projections"></p>
+<p>Notice that here we utilize mongo projections to get only certain fields!</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> user_id, <span class="hljs-keyword">status</span>
+<span class="hljs-keyword">FROM</span> people
+</code></pre>
+<p><img src="../images/mongo-projection-minus-id.png" alt="images/mongo-projection-minus-id"></p>
+<p>Notice that in the screenshot above that the default _id field was not returned!</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+</code></pre>
+<p>This sql example uses the where clause condition:</p>
+<p><img src="../images/mongo-where-clause.png" alt="images/mongo-where-clause"></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> user_id, <span class="hljs-keyword">status</span>
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+</code></pre>
+<p><img src="../images/mongo-where-project.png" alt="images/mongo-where-project"></p>
+<p>Notice that here we use a filter condition and projection.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> != <span class="hljs-string">&quot;A&quot;</span>
+</code></pre>
+<p>Here we use negation sql example</p>
+<p><img src="../images/mongo-where-with-negate.png" alt="images/mongo-where-with-negate"></p>
+<p>Notice that in this screenshot we create a new document with a status of &apos;B&apos; and then our query finds one result with the <code>$ne</code> operator.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+<span class="hljs-keyword">AND</span> age = <span class="hljs-number">50</span>
+</code></pre>
+<p><img src="../images/mongo-with-and-where-clause.png" alt="images/mongo-with-and-where-clause"></p>
+<p>Notice that in the screenshot above we just add another key/value pair for the and operation.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+<span class="hljs-keyword">OR</span> age = <span class="hljs-number">50</span>
+</code></pre>
+<p><img src="../images/mongo-or-clause.png" alt="images/mongo-or-clause"></p>
+<p>Notice that we specify the <code>$or</code> operator and our search will either return a status of &apos;A&apos; or age = 50</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> age &gt; <span class="hljs-number">25</span>
+</code></pre>
+<p>Here our sql query is for any person with age greater than 25</p>
+<pre><code class="lang-js">db.people.find(
+    { <span class="hljs-attr">age</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">25</span> } }
+)
+</code></pre>
+<p>Here we use the <code>$gt</code> operator to find any persons greater than 25 in our query document.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> age &lt; <span class="hljs-number">25</span>
+</code></pre>
+<p>Here our sql query looks for any person who is less than 25.</p>
+<pre><code class="lang-js">db.people.find(
+   { <span class="hljs-attr">age</span>: { <span class="hljs-attr">$lt</span>: <span class="hljs-number">25</span> } }
+)
+</code></pre>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> age &gt; <span class="hljs-number">25</span>
+<span class="hljs-keyword">AND</span>   age &lt;= <span class="hljs-number">50</span>
+</code></pre>
+<p>In this sql query we look for any person who is older than 25 but no older than 50 years old.</p>
+<pre><code class="lang-js">db.people.find(
+   { <span class="hljs-attr">age</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">25</span>, <span class="hljs-attr">$lte</span>: <span class="hljs-number">50</span> } }
+)
+</code></pre>
+<p>Notice here that we just add the <code>$gt</code> and <code>$lte</code> operators to do the same query in mongodb.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> user_id <span class="hljs-keyword">like</span> <span class="hljs-string">&quot;%bc%&quot;</span>
+</code></pre>
+<p>In this sql query we look for any user_id that has the letters bc in them such as <code>abc</code> <code>bc12</code> and so on.</p>
+<p><img src="../images/mongo-regex.png" alt="images/mongo-regex"></p>
+<p>Notice here that we use a regex pattern delineated by <code>//</code> in the screenshot above.</p>
+<p><img src="../images/mongo-regex2.png" alt="images/mongo-regex2"></p>
+<p>Notice that here we directly use the <code>$regex</code> operator.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> user_id <span class="hljs-keyword">like</span> <span class="hljs-string">&quot;bc%&quot;</span>
+</code></pre>
+<p>In this sql query we look for any user_id that begin with bc such as <code>bc123</code> and so on.</p>
+<p><img src="../images/mongo-regex3.png" alt="images/mongo-regex3"></p>
+<p>Notice in the screenshot above that we look only get one document back.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> user_id <span class="hljs-keyword">ASC</span>
+</code></pre>
+<p>In this sql query we look for people with a status of A and then sort the results back in ascending order by user_id.</p>
+<p><img src="../images/mongo-query-sort.png" alt="images/mongo-query-sort"></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> user_id <span class="hljs-keyword">DESC</span>
+</code></pre>
+<p><img src="../images/mongo-query-desc-sort.png" alt="images/mongo-query-desc-sort"></p>
+<p>Notice that in this screenshot we got 2 documents with user_id at the top ordered in descending order.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*)
+<span class="hljs-keyword">FROM</span> people
+</code></pre>
+<p>In this sql query we get the total count of people in the people table.</p>
+<p><img src="../images/mongo-count.png" alt="images/mongo-count"></p>
+<p>Notice that we can get the count by calling count directly on the people collection or by finding all the documents and then calling the count method in mongodb.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(user_id)
+<span class="hljs-keyword">FROM</span> people
+</code></pre>
+<p>In this sql query we get the total count of people with a user_id field.</p>
+<p><img src="../images/mongo-count2.png" alt="images/mongo-count2"></p>
+<p>Notice that we use a filter query document checking for the existence of the user_id field and pass that to the count method or we can pass this query filter document to the find method and then call count.</p>
+<p>This is because the method <code>db.collection.count</code>:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">query, options</span>) </span>{
+    query = <span class="hljs-keyword">this</span>.find(query);
+
+    <span class="hljs-comment">// Apply options and return the result of the find</span>
+    <span class="hljs-keyword">return</span> QueryHelpers._applyCountOptions(query, options).count(<span class="hljs-literal">true</span>);
+}
+</code></pre>
+<p><em>Notice that under the hood the count method calls the query method as well!</em></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(*)
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> age &gt; <span class="hljs-number">30</span>
+</code></pre>
+<p>In this sql query we get the count of all people who are over the age of 30.</p>
+<p><img src="../images/mongo-count3.png" alt="images/mongo-count3"></p>
+<p>Notice that in this screenshot we utilize the <code>$gt</code> operator in the find query document or in the count method.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span>(<span class="hljs-keyword">status</span>)
+<span class="hljs-keyword">FROM</span> people
+</code></pre>
+<p>In this sql query we get only retrieve distinct status values from the people table.</p>
+<p><img src="../images/mongo-distinct.png" alt="images/mongo-distinct"></p>
+<p>Here we call the aggregate method and either use the <code>$group</code> operator or we can call the <code>distinct</code> method.</p>
+<p><em>db.collection.aggregate:</em></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">pipeline, aggregateOptions</span>) </span>{
+    <span class="hljs-keyword">if</span> (!(pipeline <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>)) {
+        <span class="hljs-comment">// Support legacy varargs form. Also handles db.foo.aggregate().</span>
+        pipeline = <span class="hljs-built_in">Array</span>.from(<span class="hljs-built_in">arguments</span>);
+        aggregateOptions = {};
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (aggregateOptions === <span class="hljs-literal">undefined</span>) {
+        aggregateOptions = {};
+    }
+
+    <span class="hljs-keyword">const</span> cmdObj = <span class="hljs-keyword">this</span>._makeCommand(<span class="hljs-string">&quot;aggregate&quot;</span>, {<span class="hljs-attr">pipeline</span>: pipeline});
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._db._runAggregate(cmdObj, aggregateOptions);
+}
+</code></pre>
+<p>Notice that the aggregate method will turn the pipeline into an array.</p>
+<p><em>db.people.distinct:</em></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">keyString, query, options</span>) </span>{
+    <span class="hljs-keyword">var</span> opts = <span class="hljs-built_in">Object</span>.extend({}, options || {});
+    <span class="hljs-keyword">var</span> keyStringType = <span class="hljs-keyword">typeof</span> keyString;
+    <span class="hljs-keyword">var</span> queryType = <span class="hljs-keyword">typeof</span> query;
+
+    <span class="hljs-keyword">if</span> (keyStringType != <span class="hljs-string">&quot;string&quot;</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;The first argument to the distinct command must be a string but was a &quot;</span> +
+                        keyStringType);
+    }
+
+    <span class="hljs-keyword">if</span> (query != <span class="hljs-literal">null</span> &amp;&amp; queryType != <span class="hljs-string">&quot;object&quot;</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;The query argument to the distinct command must be a document but was a &quot;</span> +
+                        queryType);
+    }
+
+    <span class="hljs-comment">// Distinct command</span>
+    <span class="hljs-keyword">var</span> cmd = {<span class="hljs-attr">distinct</span>: <span class="hljs-keyword">this</span>.getName(), <span class="hljs-attr">key</span>: keyString, <span class="hljs-attr">query</span>: query || {}};
+
+    <span class="hljs-comment">// Set maxTimeMS if provided</span>
+    <span class="hljs-keyword">if</span> (opts.maxTimeMS) {
+        cmd.maxTimeMS = opts.maxTimeMS;
+    }
+
+    <span class="hljs-keyword">if</span> (opts.collation) {
+        cmd.collation = opts.collation;
+    }
+
+    <span class="hljs-comment">// Execute distinct command</span>
+    <span class="hljs-keyword">var</span> res = <span class="hljs-keyword">this</span>.runReadCommand(cmd);
+    <span class="hljs-keyword">if</span> (!res.ok) {
+        <span class="hljs-keyword">throw</span> _getErrorWithCode(res, <span class="hljs-string">&quot;distinct failed: &quot;</span> + tojson(res));
+    }
+
+    <span class="hljs-keyword">return</span> res.values;
+}
+</code></pre>
+<p>Notice that distinct is the key we pass into it.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">LIMIT</span> <span class="hljs-number">1</span>
+</code></pre>
+<p>In this sql query we select all fields from the people table and only return one result.</p>
+<p><img src="../images/mongo-limit.png" alt="images/mongo-limit"></p>
+<p>Here we have 2 ways to return one result, we can call <code>.findOne</code> or call the limit method and pass one.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">LIMIT</span> <span class="hljs-number">5</span>
+<span class="hljs-keyword">SKIP</span> <span class="hljs-number">10</span>
+</code></pre>
+<p>In this sql query we select all rows in the people table and return 5 results and skip the first 10.</p>
+<pre><code class="lang-js">&gt; db.people.find().limit(<span class="hljs-number">5</span>)
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabb6&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Erica Johnson&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">25</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabb7&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Delta Sauer&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">26</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabb8&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Donna Green&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">27</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabb9&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Aniya Hammes&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">28</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabba&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Jeanette Deckow&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">29</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+&gt; db.people.find().limit(<span class="hljs-number">5</span>).skip(<span class="hljs-number">10</span>)
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabc0&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Jordyn McClure&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">35</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabc1&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Gunner Huels&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">36</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabc2&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Lura Gaylord&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">37</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabc3&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Adolfo Donnelly&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">38</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c8451d7823b98ccd9efabc4&quot;</span>),
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Rico Abbott&quot;</span>,
+    <span class="hljs-string">&quot;age&quot;</span> : <span class="hljs-number">39</span>,
+    <span class="hljs-string">&quot;status&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>
+}
+</code></pre>
+<p>Notice here that we start at 35 when we pass in 10 to the skip method because it skips the first 10 documents in mongodb.</p>
+<p><em>db.collection.find().skip() definition:</em></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">skip</span>) </span>{
+    <span class="hljs-keyword">this</span>._checkModify();
+    <span class="hljs-keyword">this</span>._skip = skip;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+}
+</code></pre>
+<p>The method definition of the skip method.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">EXPLAIN</span> <span class="hljs-keyword">SELECT</span> *
+<span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+</code></pre>
+<p>The EXPLAIN keyword is used throughout various SQL databases and provides information about how your SQL database executes a query. </p>
+<p>In MySQL and in PostgresSQL:</p>
+<ul>
+<li>EXPLAIN can be used in front of a query beginning with SELECT, INSERT, DELETE, REPLACE, and UPDATE.</li>
+</ul>
+<p>So in the sql query above we are getting the query execution plan for the select query.</p>
+<p><img src="../images/mongo-explain-query.png" alt="images/mongo-explain-query"></p>
+<h6 id="sql-update-vs-mongo-update">SQL Update vs Mongo Update</h6>
+<pre><code class="lang-sql"><span class="hljs-keyword">UPDATE</span> people
+<span class="hljs-keyword">SET</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;C&quot;</span>
+<span class="hljs-keyword">WHERE</span> age &gt; <span class="hljs-number">25</span>
+</code></pre>
+<p>In this sql query we update all people that have status of &quot;C&quot; and whose age &gt; 25</p>
+<p><img src="../images/mongo-update-set.png" alt="images/mongo-update-set"></p>
+<p>Here we set all the mongoDB documents for all the people who are over the age of 25 and set the status to &quot;C&quot;.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">UPDATE</span> people
+<span class="hljs-keyword">SET</span> age = age + <span class="hljs-number">3</span>
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+</code></pre>
+<p>In this sql query we increment the age by 3 for people whose status is &quot;A&quot;</p>
+<p><img src="../images/mongo-update-with-increment.png" alt="images/mongo-update-with-increment"></p>
+<p>Here we increment only one person age by 3.</p>
+<h6 id="sql-delete-vs-mongo-delete">SQL Delete vs Mongo Delete</h6>
+<pre><code class="lang-sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> people
+<span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;D&quot;</span>
+</code></pre>
+<p>In this sql query we delete all people whose status is &quot;D&quot;</p>
+<p><img src="../images/mongo-deleteMany.png" alt="images/mongo-deleteMany"></p>
+<p>In the screenshot above we insert 2 new documents in the people collection and then remove the new documents by passing in a filter in the delete method.</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> people
+</code></pre>
+<p>In this sql query we delete all the people from the people table.</p>
+<p><img src="../images/mongo-deleteMany2.png" alt="images/mongo-deleteMany2"></p>
+<p>Notice in the screenshot that we deleted every document in the people collection so be careful using deleteMany and pass a filter query or if you know what you are doing then execute it.</p>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongo-crud-operations.html">Mongo CRUD Operations</a></td>
+<td style="text-align:right"><a href="mongo-crud-operations-part3.html">Mongo CRUD Operations Part III</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongo-crud-operations.html" class="navigation navigation-prev " aria-label="Previous page: Mongo CRUD Operations">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongo-crud-operations-part3.html" class="navigation navigation-next " aria-label="Next page: Mongo CRUD Operations Part III">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mongo CRUD Operations Part II","level":"1.4.5","depth":2,"next":{"title":"Mongo CRUD Operations Part III","level":"1.4.6","depth":2,"path":"docs/mongo-crud-operations-part3.md","ref":"docs/mongo-crud-operations-part3.md","articles":[]},"previous":{"title":"Mongo CRUD Operations","level":"1.4.4","depth":2,"path":"docs/mongo-crud-operations.md","ref":"docs/mongo-crud-operations.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongo-crud-operations-part2.md","mtime":"2019-03-15T14:58:32.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

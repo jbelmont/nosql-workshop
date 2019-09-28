@@ -1,0 +1,934 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Change Streams · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_replication.html" />
+    
+    
+    <link rel="prev" href="mongodb_security.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Change Streams</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Change Streams</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#definition-of-change-streams">Definition of Change Streams</a></li>
+<li><a href="#change-streams-production-recommendations">Change Streams Production Recommendations</a></li>
+<li><a href="#change-events">Change Events</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h2 id="definition-of-change-streams">Definition of Change Streams</h2>
+<p><a href="https://docs.mongodb.com/manual/changeStreams/" target="_blank">MongoDB Change Streams</a></p>
+<blockquote>
+<p>Change streams allow applications to access real-time data changes without the complexity and risk of tailing the oplog. Applications can use change streams to subscribe to all data changes on a single collection, a database, or an entire deployment, and immediately react to them. Because change streams use the aggregation framework, applications can also filter for specific changes or transform the notifications at will.</p>
+</blockquote>
+<h4 id="watch-collectiondatabasedeployment">Watch Collection/Database/Deployment</h4>
+<p><a href="https://docs.mongodb.com/manual/changeStreams/#watch-collection-database-deployment" target="_blank">Watch collections</a></p>
+<h4 id="change-streams-production-recommendations">Change Streams Production Recommendations</h4>
+<p><a href="https://docs.mongodb.com/manual/administration/change-streams-production-recommendations/" target="_blank">Change Streams Production Recommendations</a></p>
+<h6 id="change-events">Change Events</h6>
+<p><a href="https://docs.mongodb.com/manual/reference/change-events/" target="_blank">MongoDB Change Events</a></p>
+<h4 id="creating-3-node-replica-set-with-docker-run-instructions">Creating 3 node replica set with docker run instructions</h4>
+<p>Create a network first: </p>
+<p><code>docker network create my-mongo-cluster</code></p>
+<p>Now let us create 3 separate containers with the following commands:</p>
+<pre><code class="lang-bash">&gt; docker run --name mongo-node1 <span class="hljs-_">-d</span> --net my-mongo-cluster mongo:4.0.5 --replSet <span class="hljs-string">&quot;rs0&quot;</span>
+&gt; docker run --name mongo-node2 <span class="hljs-_">-d</span> --net my-mongo-cluster mongo:4.0.5 --replSet <span class="hljs-string">&quot;rs0&quot;</span>
+&gt; docker run --name mongo-node3 <span class="hljs-_">-d</span> --net my-mongo-cluster mongo:4.0.5 --replSet <span class="hljs-string">&quot;rs0&quot;</span>
+</code></pre>
+<p>Next let us get into the mongo-node1 container with the following command like this:</p>
+<pre><code class="lang-bash">docker <span class="hljs-built_in">exec</span> -it mongo-node1 mongo
+</code></pre>
+<p>Next let us initiate a replica set with the following configuration options:</p>
+<pre><code class="lang-js">config = {
+      <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-string">&quot;rs0&quot;</span>,
+      <span class="hljs-string">&quot;members&quot;</span> : [
+          {
+              <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">0</span>,
+              <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;mongo-node1:27017&quot;</span>
+          },
+          {
+              <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">1</span>,
+              <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;mongo-node2:27017&quot;</span>
+          },
+          {
+              <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">2</span>,
+              <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;mongo-node3:27017&quot;</span>
+          }
+      ]
+}
+</code></pre>
+<p>Then we can simply do: <code>rs.initiate(config)</code></p>
+<h4 id="creating-3-node-replica-set-with-docker-compose-yml-script">Creating 3 node replica set with docker-compose yml script</h4>
+<p>Run the following docker-compose command at the root:</p>
+<pre><code class="lang-bash">docker-compose build
+docker-compose up
+</code></pre>
+<p>Next assuming that 3 docker containers are created you can get into the primary like this:</p>
+<pre><code class="lang-bash">docker <span class="hljs-built_in">exec</span> -it localmongo1 mongo
+</code></pre>
+<p>You can monitor the secondary replica set like this:</p>
+<pre><code class="lang-bash">docker <span class="hljs-built_in">exec</span> -it localmongo2 mongo
+</code></pre>
+<h4 id="example-using-mongodb-change-stream-blog-post">Example using mongodb change stream blog post</h4>
+<p>The mongodb blog has a good introductory blog post on using change streams that you can find at <a href="https://www.mongodb.com/blog/post/an-introduction-to-change-streams" target="_blank">An Introduction to Change Streams</a></p>
+<p>I also used and adapted the code in this github repository: <a href="https://github.com/rlondner/mongodb-node-changestreams-sample/tree/master/shell" target="_blank">mongodb-node-changestreams-sample</a></p>
+<p>Make sure that you have a 3 node replicaset and primary running and as a sanity check you should see something like this:</p>
+<p><img src="../images/mongodb-replicaset-connect.png" alt="images/mongodb-replicaset-connect"></p>
+<p>You can check which node is the primary with this command:</p>
+<pre><code class="lang-bash">docker <span class="hljs-built_in">exec</span> localmongo1 bash -c <span class="hljs-string">&apos;mongo --eval &quot;rs.status()&quot;&apos;</span>
+</code></pre>
+<p><em>You will see a bson blob like this:</em></p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;set&quot;</span> : <span class="hljs-string">&quot;rs0&quot;</span>,
+    <span class="hljs-string">&quot;date&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:18:01.179Z&quot;</span>),
+    <span class="hljs-string">&quot;myState&quot;</span> : <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;term&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;syncingTo&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;syncSourceHost&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;syncSourceId&quot;</span> : <span class="hljs-number">-1</span>,
+    <span class="hljs-string">&quot;heartbeatIntervalMillis&quot;</span> : NumberLong(<span class="hljs-number">2000</span>),
+    <span class="hljs-string">&quot;optimes&quot;</span> : {
+        <span class="hljs-string">&quot;lastCommittedOpTime&quot;</span> : {
+            <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+            <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+        },
+        <span class="hljs-string">&quot;readConcernMajorityOpTime&quot;</span> : {
+            <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+            <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+        },
+        <span class="hljs-string">&quot;appliedOpTime&quot;</span> : {
+            <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+            <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+        },
+        <span class="hljs-string">&quot;durableOpTime&quot;</span> : {
+            <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+            <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+        }
+    },
+    <span class="hljs-string">&quot;lastStableCheckpointTimestamp&quot;</span> : Timestamp(<span class="hljs-number">1559258267</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;members&quot;</span> : [
+        {
+            <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">100</span>,
+            <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+            <span class="hljs-string">&quot;health&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;state&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;stateStr&quot;</span> : <span class="hljs-string">&quot;PRIMARY&quot;</span>,
+            <span class="hljs-string">&quot;uptime&quot;</span> : <span class="hljs-number">1467</span>,
+            <span class="hljs-string">&quot;optime&quot;</span> : {
+                <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;optimeDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:17:57Z&quot;</span>),
+            <span class="hljs-string">&quot;syncingTo&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;syncSourceHost&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;syncSourceId&quot;</span> : <span class="hljs-number">-1</span>,
+            <span class="hljs-string">&quot;infoMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;electionTime&quot;</span> : Timestamp(<span class="hljs-number">1559256825</span>, <span class="hljs-number">1</span>),
+            <span class="hljs-string">&quot;electionDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T22:53:45Z&quot;</span>),
+            <span class="hljs-string">&quot;configVersion&quot;</span> : <span class="hljs-number">13105</span>,
+            <span class="hljs-string">&quot;self&quot;</span> : <span class="hljs-literal">true</span>,
+            <span class="hljs-string">&quot;lastHeartbeatMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">101</span>,
+            <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;172.24.0.3:27017&quot;</span>,
+            <span class="hljs-string">&quot;health&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;state&quot;</span> : <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;stateStr&quot;</span> : <span class="hljs-string">&quot;SECONDARY&quot;</span>,
+            <span class="hljs-string">&quot;uptime&quot;</span> : <span class="hljs-number">1465</span>,
+            <span class="hljs-string">&quot;optime&quot;</span> : {
+                <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;optimeDurable&quot;</span> : {
+                <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;optimeDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:17:57Z&quot;</span>),
+            <span class="hljs-string">&quot;optimeDurableDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:17:57Z&quot;</span>),
+            <span class="hljs-string">&quot;lastHeartbeat&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:17:59.456Z&quot;</span>),
+            <span class="hljs-string">&quot;lastHeartbeatRecv&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:18:00.411Z&quot;</span>),
+            <span class="hljs-string">&quot;pingMs&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+            <span class="hljs-string">&quot;lastHeartbeatMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;syncingTo&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+            <span class="hljs-string">&quot;syncSourceHost&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+            <span class="hljs-string">&quot;syncSourceId&quot;</span> : <span class="hljs-number">100</span>,
+            <span class="hljs-string">&quot;infoMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;configVersion&quot;</span> : <span class="hljs-number">13105</span>
+        },
+        {
+            <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">102</span>,
+            <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;172.24.0.2:27017&quot;</span>,
+            <span class="hljs-string">&quot;health&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;state&quot;</span> : <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;stateStr&quot;</span> : <span class="hljs-string">&quot;SECONDARY&quot;</span>,
+            <span class="hljs-string">&quot;uptime&quot;</span> : <span class="hljs-number">1465</span>,
+            <span class="hljs-string">&quot;optime&quot;</span> : {
+                <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;optimeDurable&quot;</span> : {
+                <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;optimeDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:17:57Z&quot;</span>),
+            <span class="hljs-string">&quot;optimeDurableDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:17:57Z&quot;</span>),
+            <span class="hljs-string">&quot;lastHeartbeat&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:17:59.457Z&quot;</span>),
+            <span class="hljs-string">&quot;lastHeartbeatRecv&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-30T23:18:00.412Z&quot;</span>),
+            <span class="hljs-string">&quot;pingMs&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+            <span class="hljs-string">&quot;lastHeartbeatMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;syncingTo&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+            <span class="hljs-string">&quot;syncSourceHost&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+            <span class="hljs-string">&quot;syncSourceId&quot;</span> : <span class="hljs-number">100</span>,
+            <span class="hljs-string">&quot;infoMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;configVersion&quot;</span> : <span class="hljs-number">13105</span>
+        }
+    ],
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;operationTime&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;$clusterTime&quot;</span> : {
+        <span class="hljs-string">&quot;clusterTime&quot;</span> : Timestamp(<span class="hljs-number">1559258277</span>, <span class="hljs-number">1</span>),
+        <span class="hljs-string">&quot;signature&quot;</span> : {
+            <span class="hljs-string">&quot;hash&quot;</span> : BinData(<span class="hljs-number">0</span>,<span class="hljs-string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>),
+            <span class="hljs-string">&quot;keyId&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        }
+    }
+}
+</code></pre>
+<p>We can use the jq json parser to just get the list of members like this:</p>
+<p><code>docker exec localmongo1 bash -c &apos;mongo --quiet --eval &quot;JSON.stringify(rs.status())&quot;&apos; | jq &apos;.members&apos;</code></p>
+<p><img src="../images/mongodb-rs-status-jq-output.png" alt="images/mongodb-rs-status-jq-output"></p>
+<p>We can get change stream working in the shell by doing the following:</p>
+<p><code>docker exec -it localmongo1 mongo</code> this command will get you into the primary and load mongo shell.</p>
+<p>Next you need to switch to nosql_workshop in mongo shell:</p>
+<p><code>use nosql_workshop</code></p>
+<p>Then you need to load the following script:</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-comment">// Original Code for this is from:</span>
+<span class="hljs-comment">// https://github.com/rlondner/mongodb-node-changestreams-sample/tree/master/shell</span>
+<span class="hljs-comment">// This example is based out of mongodb blog post:</span>
+<span class="hljs-comment">// https://www.mongodb.com/blog/post/an-introduction-to-change-streams</span>
+
+<span class="hljs-keyword">var</span> CONNECTION_STRING = <span class="hljs-string">&quot;mongodb://localhost:27017/nosql_workshop?replicaSet=rs0&quot;</span>;
+
+<span class="hljs-keyword">var</span> db = connect(CONNECTION_STRING);
+<span class="hljs-keyword">var</span> collection = db.stock;
+
+<span class="hljs-keyword">var</span> changeStreamCursor = collection.watch();
+
+pollStream(changeStreamCursor);
+
+<span class="hljs-comment">//this function polls a change stream and prints out each change as it comes in</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pollStream</span>(<span class="hljs-params">cursor</span>) </span>{
+  <span class="hljs-keyword">while</span> (!cursor.isExhausted()) {
+    <span class="hljs-keyword">if</span> (cursor.hasNext()) {
+      <span class="hljs-keyword">var</span> change = cursor.next();
+      print(<span class="hljs-built_in">JSON</span>.stringify(change));
+    }
+  }
+  pollStream(cursor);
+}
+</code></pre>
+<p>You can load the change stream script in the primary replicaset node like this:</p>
+<p><code>load(&apos;/usr/src/configs/change-stream.js&apos;)</code></p>
+<p>Then inside another shell session get into the primary node like this again:</p>
+<pre><code class="lang-bash">docker <span class="hljs-built_in">exec</span> -it localmongo1 mongo
+</code></pre>
+<p><img src="../images/mongodb-rs0-insert.png" alt="node1 replicaset"></p>
+<p>You will then see a message like this in the primary replica set:</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;_id&quot;</span>: {
+    <span class="hljs-string">&quot;_data&quot;</span>: <span class="hljs-string">&quot;825CF094FB0000000229295A10047BD0B4FEAA254B5E9C3ED88E9A0477E046645F696400645CF094FB9A7A0E082A335F540004&quot;</span>
+  },
+  <span class="hljs-string">&quot;operationType&quot;</span>: <span class="hljs-string">&quot;insert&quot;</span>,
+  <span class="hljs-string">&quot;clusterTime&quot;</span>: {
+    <span class="hljs-string">&quot;$timestamp&quot;</span>: {
+      <span class="hljs-string">&quot;t&quot;</span>: <span class="hljs-number">1559270651</span>,
+      <span class="hljs-string">&quot;i&quot;</span>: <span class="hljs-number">2</span>
+    }
+  },
+  <span class="hljs-string">&quot;fullDocument&quot;</span>: {
+    <span class="hljs-string">&quot;_id&quot;</span>: {
+      <span class="hljs-string">&quot;$oid&quot;</span>: <span class="hljs-string">&quot;5cf094fb9a7a0e082a335f54&quot;</span>
+    },
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;What&quot;</span>
+  },
+  <span class="hljs-string">&quot;ns&quot;</span>: {
+    <span class="hljs-string">&quot;db&quot;</span>: <span class="hljs-string">&quot;nosql_workshop&quot;</span>,
+    <span class="hljs-string">&quot;coll&quot;</span>: <span class="hljs-string">&quot;stock&quot;</span>
+  },
+  <span class="hljs-string">&quot;documentKey&quot;</span>: {
+    <span class="hljs-string">&quot;_id&quot;</span>: {
+      <span class="hljs-string">&quot;$oid&quot;</span>: <span class="hljs-string">&quot;5cf094fb9a7a0e082a335f54&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb_security.html">MongoDB Security</a></td>
+<td style="text-align:right"><a href="mongodb_replication.html">MongoDB Replication</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_security.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Security">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_replication.html" class="navigation navigation-next " aria-label="Next page: MongoDB Replication">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Change Streams","level":"1.4.16","depth":2,"next":{"title":"MongoDB Replication","level":"1.4.17","depth":2,"path":"docs/mongodb_replication.md","ref":"docs/mongodb_replication.md","articles":[]},"previous":{"title":"MongoDB Security","level":"1.4.15","depth":2,"path":"docs/mongodb_security.md","ref":"docs/mongodb_security.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_change_streams.md","mtime":"2019-05-31T02:50:39.791Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

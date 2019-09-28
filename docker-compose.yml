@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  mongo-rs0-1:
+    image: "mongo:4.0.5"
+    container_name: localmongo1
+    hostname: mongo1
+    ports:
+      - "30021:27017"
+    volumes: 
+      - ./scripts:/usr/src/configs
+      - ./mongo-rs0-1:/conf
+    restart: always
+    command: mongod --replSet rs0 --port 27017 --oplogSize 1024
+    links:
+      - mongo-rs0-2:mongo-rs0-2
+      - mongo-rs0-3:mongo-rs0-3
+
+  mongo-rs0-2:
+    image: "mongo:4.0.5"
+    hostname: mongo2
+    container_name: localmongo2
+    ports:
+      - "30022:27017"
+    restart: always
+    command: mongod --replSet rs0 --port 27017 --oplogSize 1024
+
+  mongo-rs0-3:
+    image: "mongo:4.0.5"
+    hostname: mongo3
+    container_name: localmongo3
+    ports:
+      - "30023:27017"
+    restart: always
+    command: mongod --replSet rs0 --port 27017 --oplogSize 1024
+
+  mongo-rs2-setup:
+    container_name: "mongo-replica-setup"
+    build: 
+      context: ./
+      dockerfile: ./mongo-replica-setup/Dockerfile
+    depends_on:
+      - "mongo-rs0-1"
+      - "mongo-rs0-2"
+      - "mongo-rs0-3"
+    links:
+      - mongo-rs0-1:mongo-rs0-1
+      - mongo-rs0-2:mongo-rs0-2
+      - mongo-rs0-3:mongo-rs0-3
+    volumes:
+      - ./scripts:/scripts
+    environment: 
+      - MONGO1=mongo-rs0-1
+      - MONGO2=mongo-rs0-2
+      - MONGO3=mongo-rs0-3
+      - RS=rs0
+      - PORT=27017

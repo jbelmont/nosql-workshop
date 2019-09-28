@@ -1,0 +1,1049 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Indexes Part I · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_indexes_partII.html" />
+    
+    
+    <link rel="prev" href="mongodb_transactions.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Indexes Part I</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Indexes Part I</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#single-field-indexes">Single Field Indexes</a></li>
+<li><a href="#compound-indexes">Compound Indexes</a></li>
+<li><a href="#multikey-indexes">Multikey Indexes</a></li>
+<li><a href="#text-indexes">Text Indexes</a></li>
+<li><a href="#2dsphere-indexes">2dsphere Indexes</a></li>
+<li><a href="#2d-indexes">2d Indexes</a></li>
+<li><a href="#geohaystack-indexes">geoHaystack Indexes</a></li>
+<li><a href="#hashed-indexes">Hashed Indexes</a></li>
+<li><a href="#index-properties">Index Properties</a></li>
+<li><a href="#index-build-operations-on-a-populated-collection">Index Build Operations on a Populated Collection</a></li>
+<li><a href="#index-intersection">Index Intersection</a></li>
+<li><a href="#manage-indexes">Manage Indexes</a></li>
+<li><a href="#measure-index-use">Measure Index Use</a></li>
+<li><a href="#indexing-strategies">Indexing Strategies</a></li>
+<li><a href="#load-collection-with-large-amount-of-data">Load collection with large amount of data</a></li>
+<li><a href="#indexing-reference">Indexing Reference</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p>The information below comes from <a href="https://docs.mongodb.com/manual/indexes/" target="_blank">MongoDB Reference on Indexes</a></p>
+<h2 id="single-field-indexes">Single Field Indexes</h2>
+<p>Let us create the records collection with the following script:</p>
+<pre><code class="lang-bash">mongo scripts/create-records-collection.js
+</code></pre>
+<p>in order to test out the indexes section.</p>
+<p><a href="https://docs.mongodb.com/manual/core/index-single/" target="_blank">Single Field Indexes</a></p>
+<blockquote>
+<p>MongoDB provides complete support for indexes on any field in a collection of documents. By default, all collections have an index on the _id field, and applications and users may add additional indexes to support important queries and operations.</p>
+<p>The following operation creates an ascending index on the score field of the records collection:</p>
+</blockquote>
+<pre><code class="lang-js">db.records.createIndex( { <span class="hljs-attr">score</span>: <span class="hljs-number">1</span> } )
+</code></pre>
+<blockquote>
+<p>The value of the field in the index specification describes the kind of index for that field. For example, a value of 1 specifies an index that orders items in ascending order. A value of -1 specifies an index that orders items in descending order. For additional index types, see index types.</p>
+</blockquote>
+<h4 id="create-an-index-on-an-embedded-field">Create an Index on an Embedded Field</h4>
+<p><a href="https://docs.mongodb.com/manual/core/index-single/#create-an-index-on-an-embedded-field" target="_blank">Create an Index on an Embedded Field</a></p>
+<blockquote>
+<p>You can create indexes on fields within embedded documents, just as you can index top-level fields in documents. Indexes on embedded fields differ from indexes on embedded documents, which include the full content up to the maximum index size of the embedded document in the index. Instead, indexes on embedded fields allow you to use a &#x201C;dot notation,&#x201D; to introspect into embedded documents.</p>
+</blockquote>
+<pre><code class="lang-js">db.records.createIndex( { <span class="hljs-string">&quot;location.state&quot;</span>: <span class="hljs-number">1</span> } )
+</code></pre>
+<blockquote>
+<p>The created index will support queries that select on the field location.state, such as the following:</p>
+</blockquote>
+<p><img src="../images/mongodb-single-indexes.png" alt="images/mongodb-single-indexes"></p>
+<h4 id="create-an-index-on-embedded-document">Create an Index on Embedded Document</h4>
+<p><a href="https://docs.mongodb.com/manual/core/index-single/#create-an-index-on-embedded-document" target="_blank">Create an Index on Embedded Document</a></p>
+<blockquote>
+<p>You can also create indexes on embedded document as a whole.</p>
+<p>The location field is an embedded document, containing the embedded fields city and state. The following command creates an index on the location field as a whole:</p>
+</blockquote>
+<pre><code class="lang-js">db.records.createIndex( { <span class="hljs-attr">location</span>: <span class="hljs-number">1</span> } )
+</code></pre>
+<h2 id="compound-indexes">Compound Indexes</h2>
+<blockquote>
+<p>MongoDB supports compound indexes, where a single index structure holds references to multiple fields within a collection&#x2019;s documents. The following diagram illustrates an example of a compound index on two fields:</p>
+<p>Compound indexes can support queries that match on multiple fields.</p>
+</blockquote>
+<p><a href="https://docs.mongodb.com/manual/core/index-compound/#create-a-compound-index" target="_blank">Create a Compound Index</a></p>
+<pre><code class="lang-js">db.collection.createIndex( { &lt;field1&gt;: &lt;type&gt;, &lt;field2&gt;: &lt;type2&gt;, ... } )
+</code></pre>
+<blockquote>
+<p>The value of the field in the index specification describes the kind of index for that field. For example, a value of 1 specifies an index that orders items in ascending order. A value of -1 specifies an index that orders items in descending order. For additional index types, see index types.</p>
+</blockquote>
+<p>Let us insert many documents to the products collection:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> products = [
+  {<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Intelligent Granite Chair&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Shoes&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;8551 Darrion Plaza&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">57</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Car&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Rustic Steel Tuna&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Electronics&quot;</span>,<span class="hljs-string">&quot;Outdoors&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;01833 Sydney Lights&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">5</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Gloves&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Small Granite Chips&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Outdoors&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;2777 Esther Mountain&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">7</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Fish&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Generic Frozen Chicken&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Home&quot;</span>,<span class="hljs-string">&quot;Movies&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;2838 Rosella Parkway&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Pants&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Sleek Concrete Cheese&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Industrial&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Tools&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;80038 Lindsey Green&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">51</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Soap&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Awesome Wooden Bike&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Baby&quot;</span>,<span class="hljs-string">&quot;Home&quot;</span>,<span class="hljs-string">&quot;Clothing&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;671 Emard Camp&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">4</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Hat&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Sleek Metal Towels&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Industrial&quot;</span>,<span class="hljs-string">&quot;Sports&quot;</span>,<span class="hljs-string">&quot;Electronics&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;8685 Arnaldo Brook&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">21</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Bacon&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Intelligent Granite Keyboard&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Industrial&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Tools&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;3296 Friedrich Summit&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">13</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Hat&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Incredible Plastic Sausages&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Beauty&quot;</span>,<span class="hljs-string">&quot;Outdoors&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;276 Bergnaum Plaza&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">63</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Gloves&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Small Metal Chips&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Jewelery&quot;</span>,<span class="hljs-string">&quot;Clothing&quot;</span>,<span class="hljs-string">&quot;Industrial&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;5299 Roob Drive&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">23</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Tuna&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Handmade Granite Shoes&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Computers&quot;</span>,<span class="hljs-string">&quot;Industrial&quot;</span>,<span class="hljs-string">&quot;Home&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;53272 Homenick Row&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">38</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Salad&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Small Wooden Car&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Sports&quot;</span>,<span class="hljs-string">&quot;Home&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;28131 Gleichner Trace&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">43</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Sausages&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Gorgeous Wooden Pizza&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Toys&quot;</span>,<span class="hljs-string">&quot;Beauty&quot;</span>,<span class="hljs-string">&quot;Home&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;5073 Jarvis Dale&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">54</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Towels&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Handmade Soft Pizza&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Music&quot;</span>,<span class="hljs-string">&quot;Books&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;7509 Daniel Walks&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">96</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Shirt&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Ergonomic Concrete Chair&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Books&quot;</span>,<span class="hljs-string">&quot;Movies&quot;</span>,<span class="hljs-string">&quot;Home&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;54435 Yundt Roads&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">13</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Tuna&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Ergonomic Steel Shirt&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Clothing&quot;</span>,<span class="hljs-string">&quot;Automotive&quot;</span>,<span class="hljs-string">&quot;Kids&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;827 Mohr Parkways&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">68</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Bacon&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Licensed Granite Mouse&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Sports&quot;</span>,<span class="hljs-string">&quot;Games&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;1350 Champlin Ridges&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">98</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Shoes&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Generic Soft Ball&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Garden&quot;</span>,<span class="hljs-string">&quot;Music&quot;</span>,<span class="hljs-string">&quot;Garden&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;017 Jerald Manors&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">26</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Bacon&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Tasty Plastic Pizza&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Books&quot;</span>,<span class="hljs-string">&quot;Music&quot;</span>,<span class="hljs-string">&quot;Electronics&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;64802 Briana Valleys&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">81</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Computer&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Refined Concrete Bacon&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Music&quot;</span>,<span class="hljs-string">&quot;Electronics&quot;</span>,<span class="hljs-string">&quot;Sports&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;6687 Blick Route&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">10</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Shirt&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Incredible Cotton Tuna&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Electronics&quot;</span>,<span class="hljs-string">&quot;Industrial&quot;</span>,<span class="hljs-string">&quot;Games&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;614 Stephan Parkway&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">63</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Computer&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Intelligent Rubber Chair&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Toys&quot;</span>,<span class="hljs-string">&quot;Music&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;100 Ziemann Canyon&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">37</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Mouse&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Gorgeous Fresh Car&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Outdoors&quot;</span>,<span class="hljs-string">&quot;Outdoors&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;76946 Douglas Mount&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">93</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Generic Soft Keyboard&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Beauty&quot;</span>,<span class="hljs-string">&quot;Health&quot;</span>,<span class="hljs-string">&quot;Kids&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;9064 Fahey Spring&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">40</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Sausages&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Fantastic Wooden Ball&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Automotive&quot;</span>,<span class="hljs-string">&quot;Jewelery&quot;</span>,<span class="hljs-string">&quot;Home&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;52448 Retta Mount&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">91</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Gorgeous Fresh Mouse&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Electronics&quot;</span>,<span class="hljs-string">&quot;Garden&quot;</span>,<span class="hljs-string">&quot;Sports&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;09186 Crona Isle&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">30</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Bike&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Ergonomic Cotton Keyboard&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Movies&quot;</span>,<span class="hljs-string">&quot;Health&quot;</span>,<span class="hljs-string">&quot;Garden&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;551 Pacocha Grove&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">38</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Car&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Handmade Fresh Car&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Kids&quot;</span>,<span class="hljs-string">&quot;Books&quot;</span>,<span class="hljs-string">&quot;Health&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;8392 Davion Rue&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">20</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Small Steel Shoes&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Games&quot;</span>,<span class="hljs-string">&quot;Books&quot;</span>,<span class="hljs-string">&quot;Tools&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;770 Hilpert Corners&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">97</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Gloves&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Handmade Soft Shirt&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Health&quot;</span>,<span class="hljs-string">&quot;Clothing&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;24184 Predovic Locks&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">85</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Towels&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Licensed Plastic Cheese&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Home&quot;</span>,<span class="hljs-string">&quot;Sports&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;061 Hackett Hill&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">56</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Cheese&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Unbranded Wooden Cheese&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Toys&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>,<span class="hljs-string">&quot;Games&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;2274 Breitenberg Isle&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">80</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Bike&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Intelligent Fresh Tuna&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Baby&quot;</span>,<span class="hljs-string">&quot;Garden&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;628 Mitchell Forges&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">67</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Gorgeous Cotton Car&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Jewelery&quot;</span>,<span class="hljs-string">&quot;Automotive&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;5363 Narciso Mall&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">3</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Sausages&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Handcrafted Steel Shoes&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Jewelery&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>,<span class="hljs-string">&quot;Tools&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;80987 Schoen Ridges&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">65</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Towels&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Ergonomic Steel Soap&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Shoes&quot;</span>,<span class="hljs-string">&quot;Jewelery&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;29058 Fahey Flats&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">99</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Computer&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Small Cotton Pants&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Garden&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>,<span class="hljs-string">&quot;Beauty&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;98194 Abbie Station&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">19</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Intelligent Cotton Pants&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Health&quot;</span>,<span class="hljs-string">&quot;Electronics&quot;</span>,<span class="hljs-string">&quot;Beauty&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;120 Hills Plaza&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">55</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Tuna&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Ergonomic Rubber Bike&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Music&quot;</span>,<span class="hljs-string">&quot;Movies&quot;</span>,<span class="hljs-string">&quot;Garden&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;9058 Christiansen Points&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">61</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Salad&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Unbranded Steel Fish&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Computers&quot;</span>,<span class="hljs-string">&quot;Beauty&quot;</span>,<span class="hljs-string">&quot;Outdoors&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;05465 Elissa Manors&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">21</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Refined Granite Chips&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Sports&quot;</span>,<span class="hljs-string">&quot;Games&quot;</span>,<span class="hljs-string">&quot;Garden&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;494 Hirthe Ports&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">81</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Shirt&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Gorgeous Steel Computer&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Books&quot;</span>,<span class="hljs-string">&quot;Industrial&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;00908 Ahmed Unions&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">11</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Pants&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Unbranded Concrete Car&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Baby&quot;</span>,<span class="hljs-string">&quot;Computers&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;802 Farrell Inlet&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">59</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Refined Wooden Pizza&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Clothing&quot;</span>,<span class="hljs-string">&quot;Games&quot;</span>,<span class="hljs-string">&quot;Computers&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;15858 Predovic Ferry&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">34</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Keyboard&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Licensed Concrete Computer&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Computers&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>,<span class="hljs-string">&quot;Health&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;439 Stamm Extensions&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">49</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Computer&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Generic Frozen Ball&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Tools&quot;</span>,<span class="hljs-string">&quot;Beauty&quot;</span>,<span class="hljs-string">&quot;Sports&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;21821 Jermaine Brooks&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">75</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Bacon&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Licensed Frozen Towels&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Games&quot;</span>,<span class="hljs-string">&quot;Toys&quot;</span>,<span class="hljs-string">&quot;Movies&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;39745 Kuvalis Ridges&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">20</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chair&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Gorgeous Cotton Shirt&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Baby&quot;</span>,<span class="hljs-string">&quot;Electronics&quot;</span>,<span class="hljs-string">&quot;Grocery&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;780 Ernser Lodge&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">69</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Bike&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Tasty Cotton Table&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Industrial&quot;</span>,<span class="hljs-string">&quot;Games&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;486 Ondricka Dam&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">97</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Chicken&quot;</span>},{<span class="hljs-string">&quot;item&quot;</span>:<span class="hljs-string">&quot;Ergonomic Soft Towels&quot;</span>,<span class="hljs-string">&quot;category&quot;</span>:[<span class="hljs-string">&quot;Shoes&quot;</span>,<span class="hljs-string">&quot;Kids&quot;</span>,<span class="hljs-string">&quot;Baby&quot;</span>],<span class="hljs-string">&quot;location&quot;</span>:<span class="hljs-string">&quot;251 Anya Hill&quot;</span>,<span class="hljs-string">&quot;stock&quot;</span>:<span class="hljs-number">93</span>,<span class="hljs-string">&quot;type&quot;</span>:<span class="hljs-string">&quot;Shoes&quot;</span>}
+];
+
+db.products.insertMany(products);
+
+db.products.createIndex({ <span class="hljs-string">&quot;item&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;stock&quot;</span>: <span class="hljs-number">1</span> })
+</code></pre>
+<p>Here we create a compound index on item and stock</p>
+<p><code>db.events.find().sort( { username: 1, date: -1 } )</code></p>
+<blockquote>
+<p>For a compound index, MongoDB can use the index to support queries on the index prefixes. As such, MongoDB can use the index for queries on the following fields:</p>
+</blockquote>
+<ul>
+<li>the item field,</li>
+<li>the item field and the location field,</li>
+<li>the item field and the location field and the stock field.</li>
+</ul>
+<h2 id="multikey-indexes">Multikey Indexes</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/index-multikey/" target="_blank">Multikey Indexes</a></p>
+<h2 id="text-indexes">Text Indexes</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/index-multikey/" target="_blank">Multikey Indexes</a></p>
+<h2 id="2dsphere-indexes">2dsphere Indexes</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/2dsphere/" target="_blank">2dsphere Indexes</a></p>
+<h2 id="2d-indexes">2d Indexes</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/2d/" target="_blank">2d Indexes</a></p>
+<h2 id="geohaystack-indexes">geoHaystack Indexes</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/geohaystack/" target="_blank">GeoHaystack Indexes</a></p>
+<h2 id="hashed-indexes">Hashed Indexes</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/index-hashed/" target="_blank">Hashed</a></p>
+<h2 id="index-properties">Index Properties</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/index-properties/" target="_blank">Index Properties</a></p>
+<h2 id="index-build-operations-on-a-populated-collection">Index Build Operations on a Populated Collection</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/index-creation/" target="_blank">Index Build Operations on a Populated Collection</a></p>
+<h2 id="index-intersection">Index Intersection</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/core/index-intersection/" target="_blank">Index Intersection</a></p>
+<h2 id="manage-indexes">Manage Indexes</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/tutorial/manage-indexes/" target="_blank">Manage Indexes</a></p>
+<h4 id="view-existing-indexes">View Existing Indexes</h4>
+<h6 id="list-all-indexes-on-a-collection">List all Indexes on a Collection</h6>
+<blockquote>
+<p>To return a list of all indexes on a collection, use the db.collection.getIndexes() method or a similar method for your driver.</p>
+</blockquote>
+<p><img src="../images/mongodb-getIndexes.png" alt="images/mongodb-getIndexes"></p>
+<blockquote>
+<p>To list all indexes on all collections in a database, you can use the following operation in the mongo shell:</p>
+</blockquote>
+<pre><code class="lang-js">db.getCollectionNames().forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">collection</span>) </span>{
+   indexes = db[collection].getIndexes();
+   print(<span class="hljs-string">&quot;Indexes for &quot;</span> + collection + <span class="hljs-string">&quot;:&quot;</span>);
+   printjson(indexes);
+});
+</code></pre>
+<p>You can execute this with the mongo binary executable with the following script:</p>
+<pre><code class="lang-bash">mongo scripts/show-all-indexes-for-db.js
+</code></pre>
+<p><img src="../images/mongodb-show-all-indexes.png" alt="images/mongodb-show-all-indexes"></p>
+<h4 id="remove-indexes">Remove Indexes</h4>
+<p>MongoDB provides two methods for removing indexes from a collection:</p>
+<ul>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.dropIndex/#db.collection.dropIndex" target="_blank">db.collection.dropIndex()</a></p>
+</li>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.dropIndexes/" target="_blank">db.collection.dropIndexes()</a></p>
+</li>
+</ul>
+<h6 id="removing-the-index-with-index-name">Removing the index with index name</h6>
+<p>To remove an index, you can use the db.collection.dropIndex() method and provide the name.</p>
+<p>Here is a sample session removing an index by name:</p>
+<p><img src="../images/mongodb-drop-index.png" alt="images/mongodb-drop-index"></p>
+<h6 id="remove-all-indexes">Remove All Indexes</h6>
+<blockquote>
+<p>You can also use the db.collection.dropIndexes() to remove all indexes except for the _id index from a collection.</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.dropIndexes()
+</code></pre>
+<h2 id="measure-index-use">Measure Index Use</h2>
+<p><a href="https://docs.mongodb.com/manual/tutorial/measure-index-use/" target="_blank">Measure Index Use</a></p>
+<blockquote>
+<p>Use the $indexStats aggregation stage to get statistics regarding the use of each index for a collection. For example, the following aggregation operation returns statistics on the index use on the orders collection:</p>
+</blockquote>
+<pre><code class="lang-js">db.orders.aggregate( [ { <span class="hljs-attr">$indexStats</span>: { } } ] )
+</code></pre>
+<p>I wrote a script that gets index information for all the collections in a database:</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-keyword">let</span> db = connect(<span class="hljs-string">&quot;localhost:27017/nosql_workshop&quot;</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">indexStats</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> adminDB = db.adminCommand({ <span class="hljs-attr">listDatabases</span>: <span class="hljs-number">1</span> });
+
+    <span class="hljs-keyword">if</span> (!adminDB.databases) {
+        print(<span class="hljs-string">&quot;There are no databases!&quot;</span>);
+    }
+
+    adminDB.databases.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">database</span>) </span>{
+        <span class="hljs-keyword">return</span> database.name !== <span class="hljs-string">&quot;admin&quot;</span> &amp;&amp; 
+            database.name !== <span class="hljs-string">&quot;local&quot;</span> &amp;&amp; 
+            database.name !== <span class="hljs-string">&quot;config&quot;</span> &amp;&amp;
+            database.name !== <span class="hljs-string">&quot;test&quot;</span>;
+    }).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">database</span>) </span>{
+        aggregateStatsInformation(db.getSiblingDB(database.name));
+    });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">aggregateStatsInformation</span>(<span class="hljs-params">db</span>) </span>{
+    <span class="hljs-keyword">let</span> collectionNames = db.getCollectionNames();
+
+    collectionNames.filter(<span class="hljs-function"><span class="hljs-params">collection</span> =&gt;</span> {
+        <span class="hljs-keyword">return</span> db.getCollection(collection).getIndexes().length &gt; <span class="hljs-number">0</span>;
+    }).forEach(<span class="hljs-function"><span class="hljs-params">collection</span> =&gt;</span> {
+        print(<span class="hljs-string">`<span class="hljs-subst">${collection}</span> collection:`</span>);
+        <span class="hljs-keyword">let</span> cursor = db[collection].aggregate([{<span class="hljs-attr">$indexStats</span>:{}}]);
+        <span class="hljs-keyword">let</span> indexSize = db[collection].stats().indexSizes._id_;
+        <span class="hljs-keyword">while</span>(cursor.hasNext()) {
+            <span class="hljs-keyword">let</span> value = cursor.next();
+            printIndexStats(value, indexSize);
+        }
+    });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printIndexStats</span>(<span class="hljs-params">stats, indexSize</span>) </span>{
+    print(<span class="hljs-string">&quot;\nns\tsize\tops\tsince&quot;</span>);
+    print(
+        <span class="hljs-string">`<span class="hljs-subst">${stats.name}</span>\t<span class="hljs-subst">${indexSize}</span>\t<span class="hljs-subst">${stats.accesses.ops}</span>\t<span class="hljs-subst">${stats.accesses.since}</span>`</span>  
+    );
+}
+
+indexStats();
+</code></pre>
+<p>You can run this script by executing: <code>mongo scripts/show-index-stats.js</code></p>
+<h4 id="return-query-plan-with-explain">Return Query Plan with explain()</h4>
+<p><a href="https://docs.mongodb.com/manual/tutorial/measure-index-use/#return-query-plan-with-explain" target="_blank">Return Query Plan with explain()</a></p>
+<blockquote>
+<p>Use the db.collection.explain() or the cursor.explain() method in executionStats mode to return statistics about the query process, including the index used, the number of documents scanned, and the time the query takes to process in milliseconds.</p>
+<p>Run db.collection.explain() or the cursor.explain() method in allPlansExecution mode to view partial execution statistics collected during plan selection.</p>
+<p>db.collection.explain() provides information on the execution of other operations, such as db.collection.update(). See db.collection.explain() for details.</p>
+</blockquote>
+<h4 id="control-index-use-with-hint">Control Index Use with hint()</h4>
+<p><a href="https://docs.mongodb.com/manual/tutorial/measure-index-use/#control-index-use-with-hint" target="_blank">Control Index Use with hint()</a></p>
+<blockquote>
+<p>To force MongoDB to use a particular index for a db.collection.find() operation, specify the index with the hint() method. Append the hint() method to the find() method. Consider the following example:</p>
+</blockquote>
+<p>Here is a sample run session using hint and explain in a query:</p>
+<p><img src="../images/mongodb-index-hint-and-explain.png" alt="images/mongodb-index-hint-and-explain"></p>
+<h2 id="indexing-strategies">Indexing Strategies</h2>
+<p>Please read the official docs on <a href="https://docs.mongodb.com/manual/applications/indexes/" target="_blank">Indexing Strategies</a></p>
+<h2 id="indexing-reference">Indexing Reference</h2>
+<p><a href="https://docs.mongodb.com/manual/reference/indexes/" target="_blank">Indexing Reference</a></p>
+<table>
+<thead>
+<tr>
+<th>Indexing</th>
+<th>Methods in the mongo Shell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>db.collection.createIndex()</td>
+<td>Builds an index on a collection.</td>
+</tr>
+<tr>
+<td>db.collection.dropIndex()</td>
+<td>Removes a specified index on a collection.</td>
+</tr>
+<tr>
+<td>db.collection.dropIndexes()</td>
+<td>Removes all indexes on a collection.</td>
+</tr>
+<tr>
+<td>db.collection.getIndexes()</td>
+<td>Returns an array of documents that describe the existing indexes on a collection.</td>
+</tr>
+<tr>
+<td>db.collection.reIndex()</td>
+<td>Rebuilds all existing indexes on a collection.</td>
+</tr>
+<tr>
+<td>db.collection.totalIndexSize()</td>
+<td>Reports the total size used by the indexes on a collection. Provides a wrapper around the totalIndexSize field of the collStats output.</td>
+</tr>
+<tr>
+<td>cursor.explain()</td>
+<td>Reports on the query execution plan for a cursor.</td>
+</tr>
+<tr>
+<td>cursor.hint()</td>
+<td>Forces MongoDB to use a specific index for a query.</td>
+</tr>
+<tr>
+<td>cursor.max()</td>
+<td>Specifies an exclusive upper index bound for a cursor. For use with cursor.hint()</td>
+</tr>
+<tr>
+<td>cursor.min()</td>
+<td>Specifies an inclusive lower index bound for a cursor. For use with cursor.hint()</td>
+</tr>
+<tr>
+<td>Indexing</td>
+<td>Database Commands</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>createIndexes</td>
+<td>Builds one or more indexes for a collection.</td>
+</tr>
+<tr>
+<td>dropIndexes</td>
+<td>Removes indexes from a collection.</td>
+</tr>
+<tr>
+<td>compact</td>
+<td>Defragments a collection and rebuilds the indexes.</td>
+</tr>
+<tr>
+<td>reIndex</td>
+<td>Rebuilds all indexes on a collection.</td>
+</tr>
+<tr>
+<td>validate</td>
+<td>Internal command that scans for a collection&#x2019;s data and indexes for correctness.</td>
+</tr>
+<tr>
+<td>geoNear</td>
+<td>Deprecated in MongoDB 4.0. Performs a geospatial query that returns the documents closest to a given point.</td>
+</tr>
+<tr>
+<td>geoSearch</td>
+<td>Performs a geospatial query that uses MongoDB&#x2019;s haystack index functionality.</td>
+</tr>
+<tr>
+<td>checkShardingIndex</td>
+<td>Internal command that validates index on shard key.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Geospatial</th>
+<th>Query Selectors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>$geoWithin</td>
+<td>Selects geometries within a bounding GeoJSON geometry. The 2dsphere and 2d indexes support $geoWithin.</td>
+</tr>
+<tr>
+<td>$geoIntersects</td>
+<td>Selects geometries that intersect with a GeoJSON geometry. The 2dsphere index supports $geoIntersects.</td>
+</tr>
+<tr>
+<td>$near</td>
+<td>Returns geospatial objects in proximity to a point. Requires a geospatial index. The 2dsphere and 2d indexes support $near.</td>
+</tr>
+<tr>
+<td>$nearSphere</td>
+<td>Returns geospatial objects in proximity to a point on a sphere. Requires a geospatial index. The 2dsphere and 2d indexes support $nearSphere.</td>
+</tr>
+<tr>
+<td>Indexing</td>
+<td>Query Modifiers</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>$explain</td>
+<td>Forces MongoDB to report on query execution plans. See explain().</td>
+</tr>
+<tr>
+<td>$hint</td>
+<td>Forces MongoDB to use a specific index. See hint()</td>
+</tr>
+<tr>
+<td>$max</td>
+<td>Specifies an exclusive upper limit for the index to use in a query. See max().</td>
+</tr>
+<tr>
+<td>$min</td>
+<td>Specifies an inclusive lower limit for the index to use in a query. See min().</td>
+</tr>
+<tr>
+<td>$returnKey</td>
+<td>Forces the cursor to only return fields included in the index.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bread-crumb-navigation">Bread Crumb Navigation</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb_transactions.html">MongoDB Transactions</a></td>
+<td style="text-align:right"><a href="mongodb_indexes_partII.html">MongoDB Indexes Part II</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_transactions.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Transactions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_indexes_partII.html" class="navigation navigation-next " aria-label="Next page: MongoDB Indexes Part II">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Indexes Part I","level":"1.4.12","depth":2,"next":{"title":"MongoDB Indexes Part II","level":"1.4.13","depth":2,"path":"docs/mongodb_indexes_partII.md","ref":"docs/mongodb_indexes_partII.md","articles":[]},"previous":{"title":"MongoDB Transactions","level":"1.4.11","depth":2,"path":"docs/mongodb_transactions.md","ref":"docs/mongodb_transactions.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_indexes_partI.md","mtime":"2019-04-21T19:51:45.075Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

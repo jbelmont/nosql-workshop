@@ -1,0 +1,1182 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Replication · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_sharding.html" />
+    
+    
+    <link rel="prev" href="mongodb_change_streams.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Replication</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Replication</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#replica-set-members">Replica Set Members</a></li>
+<li><a href="#replica-set-oplog">Replica Set Oplog</a></li>
+<li><a href="#replica-set-data-synchronization">Replica Set Data Synchronization</a></li>
+<li><a href="#replica-set-deployment-architectures">Replica Set Deployment Architectures</a></li>
+<li><a href="#replica-set-high-availability">Replica Set High Availability</a></li>
+<li><a href="#replica-set-read-and-write-semantics">Replica Set Read and Write Semantics</a></li>
+<li><a href="#replica-set-deployment-tutorials">Replica Set Deployment Tutorials</a></li>
+<li><a href="#member-configuration-tutorials">Member Configuration Tutorials</a></li>
+<li><a href="#replica-set-maintenance-tutorials">Replica Set Maintenance Tutorials</a></li>
+<li><a href="#replication-reference">Replication Reference</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h4 id="replica-set-members">Replica Set Members</h4>
+<p><a href="https://docs.mongodb.com/manual/core/replica-set-members/" target="_blank">Replica Set Members</a></p>
+<blockquote>
+<p>A replica set in MongoDB is a group of mongod processes that provide redundancy and high availability. The members of a replica set are:</p>
+</blockquote>
+<h6 id="primary">Primary.</h6>
+<p>The primary receives all write operations.</p>
+<p><a href="https://docs.mongodb.com/manual/core/replica-set-members/#primary" target="_blank">Primary</a></p>
+<blockquote>
+<p>The primary is the only member in the replica set that receives write operations. MongoDB applies write operations on the primary and then records the operations on the primary&#x2019;s oplog. Secondary members replicate this log and apply the operations to their data sets.</p>
+</blockquote>
+<h6 id="secondaries">Secondaries</h6>
+<blockquote>
+<p>Secondaries replicate operations from the primary to maintain an identical data set. Secondaries may have additional configurations for special usage profiles. For example, secondaries may be non-voting or priority 0.</p>
+</blockquote>
+<p><a href="https://docs.mongodb.com/manual/core/replica-set-members/#secondaries" target="_blank">Secondaries</a></p>
+<blockquote>
+<p>A secondary maintains a copy of the primary&#x2019;s data set. To replicate data, a secondary applies operations from the primary&#x2019;s oplog to its own data set in an asynchronous process. [1] A replica set can have one or more secondaries.</p>
+<p>The following three-member replica set has two secondary members. The secondaries replicate the primary&#x2019;s oplog and apply the operations to their data sets.</p>
+</blockquote>
+<h6 id="arbiter">Arbiter</h6>
+<p><a href="https://docs.mongodb.com/manual/core/replica-set-members/#arbiter" target="_blank">Arbiter</a></p>
+<blockquote>
+<p>An arbiter does not have a copy of data set and cannot become a primary. Replica sets may have arbiters to add a vote in elections for primary. Arbiters always have exactly 1 election vote, and thus allow replica sets to have an uneven number of voting members without the overhead of an additional member that replicates data.</p>
+</blockquote>
+<h4 id="replica-set-oplog">Replica Set Oplog</h4>
+<p><a href="https://docs.mongodb.com/manual/core/replica-set-oplog/#replica-set-oplog" target="_blank">Replica Set Oplog</a></p>
+<blockquote>
+<p>The oplog (operations log) is a special capped collection that keeps a rolling record of all operations that modify the data stored in your databases.</p>
+<p>MongoDB applies database operations on the primary and then records the operations on the primary&#x2019;s oplog. The secondary members then copy and apply these operations in an asynchronous process. All replica set members contain a copy of the oplog, in the local.oplog.rs collection, which allows them to maintain the current state of the database.</p>
+</blockquote>
+<h6 id="oplog-size">Oplog Size</h6>
+<blockquote>
+<p>When you start a replica set member for the first time, MongoDB creates an oplog of a default size if you do not specify the oplog size.</p>
+</blockquote>
+<p>The oplog is used in:</p>
+<ul>
+<li>Replication</li>
+<li>Capped Collections</li>
+</ul>
+<p>The oplog (Operation Log) stores documents and is different than a normal collection.</p>
+<p>Here is a screenshot of the primary replica set and the looking at the local database which stores the oplog collection:</p>
+<p><img src="../scripts/mongodb-oplog-collection.png" alt="scripts/mongodb-oplog-collection.png"></p>
+<p>We can use tools such as mongodump with the oplog collection like this as well:</p>
+<pre><code class="lang-bash">mongodump --host localhost:30021 <span class="hljs-_">-d</span> <span class="hljs-built_in">local</span> -c oplog.rs
+</code></pre>
+<p>Now since we created a dump of our collection and we can then use the bsondump command to get a dump of the contents of the collection like this:</p>
+<p><code>bsondump dump/local/oplog.rs.bson</code></p>
+<h6 id="tailing-oplog-in-mongo-shell">Tailing oplog in mongo shell</h6>
+<p>First let us make sure that we have a 3 node replica set running with:</p>
+<p><code>docker-compose up</code></p>
+<p>Then we can get into the 3 node replica set with the following commands:</p>
+<pre><code class="lang-bash">mongo localhost:30021
+</code></pre>
+<p>Next we can tail the current oplog with this script that I wrote:</p>
+<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> CONNECTION_STRING = <span class="hljs-string">&quot;localhost:30021&quot;</span>;
+    <span class="hljs-keyword">var</span> mongoConnections = {
+        <span class="hljs-attr">CONNECTION_STRING</span>: CONNECTION_STRING,
+        <span class="hljs-attr">DATABASE</span>: <span class="hljs-string">&quot;local&quot;</span>
+    };
+    <span class="hljs-keyword">var</span> conn = <span class="hljs-keyword">new</span> Mongo(mongoConnections.CONNECTION_STRING);
+    <span class="hljs-keyword">var</span> db = conn.getDB(mongoConnections.DATABASE);
+    <span class="hljs-keyword">var</span> collection = db.oplog.rs;
+
+    <span class="hljs-keyword">var</span> cursor = collection.find()
+        .addOption(DBQuery.Option.tailable)
+        .addOption(DBQuery.Option.awaitData);
+
+    <span class="hljs-comment">// Loop through each entry in the cursor and print contents</span>
+    <span class="hljs-keyword">while</span>(cursor.hasNext()) {
+        printjson(cursor.next());
+    }
+}());
+</code></pre>
+<p>This will print out a bson dump like this:</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559486835</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;h&quot;</span> : NumberLong(<span class="hljs-string">&quot;454046473856700557&quot;</span>),
+    <span class="hljs-string">&quot;v&quot;</span> : <span class="hljs-number">2</span>,
+    <span class="hljs-string">&quot;op&quot;</span> : <span class="hljs-string">&quot;n&quot;</span>,
+    <span class="hljs-string">&quot;ns&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;wall&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-02T14:47:15.554Z&quot;</span>),
+    <span class="hljs-string">&quot;o&quot;</span> : {
+        <span class="hljs-string">&quot;msg&quot;</span> : <span class="hljs-string">&quot;initiating set&quot;</span>
+    }
+}
+{
+    <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559486847</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;h&quot;</span> : NumberLong(<span class="hljs-string">&quot;5764067233368327899&quot;</span>),
+    <span class="hljs-string">&quot;v&quot;</span> : <span class="hljs-number">2</span>,
+    <span class="hljs-string">&quot;op&quot;</span> : <span class="hljs-string">&quot;n&quot;</span>,
+    <span class="hljs-string">&quot;ns&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;wall&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-02T14:47:27.586Z&quot;</span>),
+    <span class="hljs-string">&quot;o&quot;</span> : {
+        <span class="hljs-string">&quot;msg&quot;</span> : <span class="hljs-string">&quot;new primary&quot;</span>
+    }
+}
+..............
+{
+    <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1559487024</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;h&quot;</span> : NumberLong(<span class="hljs-string">&quot;-7434890826388536737&quot;</span>),
+    <span class="hljs-string">&quot;v&quot;</span> : <span class="hljs-number">2</span>,
+    <span class="hljs-string">&quot;op&quot;</span> : <span class="hljs-string">&quot;i&quot;</span>,
+    <span class="hljs-string">&quot;ns&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.contacts&quot;</span>,
+    <span class="hljs-string">&quot;ui&quot;</span> : UUID(<span class="hljs-string">&quot;86341e4e-ee04-4f33-84b2-0661430eca74&quot;</span>),
+    <span class="hljs-string">&quot;wall&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-02T14:50:24.617Z&quot;</span>),
+    <span class="hljs-string">&quot;o&quot;</span> : {
+        <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5cf3e230d62c53ce2bf684e3&quot;</span>),
+        <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;heroes&quot;</span>
+    }
+}
+<span class="hljs-literal">true</span>
+</code></pre>
+<p>We can continually run the script: <code>load(&quot;scripts/tail-oplog.js&quot;)</code> </p>
+<h4 id="replica-set-data-synchronization">Replica Set Data Synchronization</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/replica-set-sync/" target="_blank">Replica Set Data Synchronization on mongodb docs</a></p>
+<h4 id="replica-set-deployment-architectures">Replica Set Deployment Architectures</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/replica-set-architectures/" target="_blank">Replica Set Deployment Architectures</a></p>
+<h4 id="replica-set-high-availability">Replica Set High Availability</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/replica-set-high-availability/" target="_blank">Replica Set High Availability</a></p>
+<h4 id="replica-set-read-and-write-semantics">Replica Set Read and Write Semantics</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/replica-set-high-availability/" target="_blank">Replica Set Read and Write Semantics</a></p>
+<h4 id="replica-set-deployment-tutorials">Replica Set Deployment Tutorials</h4>
+<h6 id="deploy-a-replica-set">Deploy a Replica Set</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/deploy-replica-set/" target="_blank">Deploy a Replica Set</a></p>
+<p>Configure a three-member replica set for production systems.</p>
+<p>We already configured a 3 node replica set in the previous section in change stream.</p>
+<p><em>We are using docker to orchestrate 3 separate containers and have already configured a primary and 2 secondaries</em></p>
+<h6 id="deploy-a-replica-set-for-testing-and-development">Deploy a Replica Set for Testing and Development</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/deploy-replica-set-for-testing/" target="_blank">Deploy a Replica Set for Testing and Development</a></p>
+<p>Configure a three-member replica set for either development or testing systems.</p>
+<h6 id="deploy-a-geographically-redundant-replica-set">Deploy a Geographically Redundant Replica Set</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/deploy-geographically-distributed-replica-set/" target="_blank">Deploy a Geographically Redundant Replica Set</a></p>
+<p>Create a geographically redundant replica set to protect against location-centered availability limitations (e.g. network and power interruptions).</p>
+<h6 id="add-an-arbiter-to-replica-set">Add an Arbiter to Replica Set</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/add-replica-set-arbiter/" target="_blank">Add an Arbiter to Replica Set</a></p>
+<p>Add an arbiter give a replica set an odd number of voting members to prevent election ties.</p>
+<p>Let us add another docker container with the following command in the terminal:</p>
+<pre><code class="lang-bash">docker run --name localmongo4 --hostname mongoarbiter1 --net=nosql-workshop_default -p 30024:27017 --expose=27017 <span class="hljs-_">-d</span> mongo:4.0.5 --replSet <span class="hljs-string">&quot;rs0&quot;</span>
+</code></pre>
+<p>Now let us go into the primary and add the following arbiter:</p>
+<pre><code class="lang-bash">mongo localhost:30024
+</code></pre>
+<p>Then we can add an arbiter like this:</p>
+<pre><code class="lang-bash">rs0:PRIMARY&gt; rs.addArb(<span class="hljs-string">&quot;localmongo4:27017&quot;</span>)
+{
+    <span class="hljs-string">&quot;ok&quot;</span> : 1,
+    <span class="hljs-string">&quot;operationTime&quot;</span> : Timestamp(1559526689, 1),
+    <span class="hljs-string">&quot;<span class="hljs-variable">$clusterTime</span>&quot;</span> : {
+        <span class="hljs-string">&quot;clusterTime&quot;</span> : Timestamp(1559526689, 1),
+        <span class="hljs-string">&quot;signature&quot;</span> : {
+            <span class="hljs-string">&quot;hash&quot;</span> : B<span class="hljs-keyword">in</span>Data(0,<span class="hljs-string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>),
+            <span class="hljs-string">&quot;keyId&quot;</span> : NumberLong(0)
+        }
+    }
+}
+</code></pre>
+<p>We can validate that an arbiter was added with the status command:</p>
+<pre><code class="lang-bash">rs.status().members.filter(<span class="hljs-keyword">function</span>(node) { <span class="hljs-built_in">return</span> node.stateStr === <span class="hljs-string">&quot;ARBITER&quot;</span> })
+[
+    {
+        <span class="hljs-string">&quot;_id&quot;</span> : 103,
+        <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;localmongo4:27017&quot;</span>,
+        <span class="hljs-string">&quot;health&quot;</span> : 1,
+        <span class="hljs-string">&quot;state&quot;</span> : 7,
+        <span class="hljs-string">&quot;stateStr&quot;</span> : <span class="hljs-string">&quot;ARBITER&quot;</span>,
+        <span class="hljs-string">&quot;uptime&quot;</span> : 395,
+        <span class="hljs-string">&quot;lastHeartbeat&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-03T01:58:03.580Z&quot;</span>),
+        <span class="hljs-string">&quot;lastHeartbeatRecv&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-03T01:58:03.580Z&quot;</span>),
+        <span class="hljs-string">&quot;pingMs&quot;</span> : NumberLong(0),
+        <span class="hljs-string">&quot;lastHeartbeatMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;syncingTo&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;syncSourceHost&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;syncSourceId&quot;</span> : -1,
+        <span class="hljs-string">&quot;infoMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;configVersion&quot;</span> : 80652
+    }
+]
+</code></pre>
+<h6 id="convert-a-standalone-to-a-replica-set">Convert a Standalone to a Replica Set</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/" target="_blank">Convert a Standalone to a Replica Set</a></p>
+<p>Convert an existing standalone mongod instance into a three-member replica set.</p>
+<h6 id="add-members-to-a-replica-set">Add Members to a Replica Set</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/expand-replica-set/" target="_blank">Add Members to a Replica Set</a></p>
+<p>Add a new member to an existing replica set.</p>
+<p>Let us add another member to the replica set with the following command:</p>
+<pre><code class="lang-bash">docker run --name localmongo5 --hostname mongonode5 --net=nosql-workshop_default -p 30025:27017 <span class="hljs-_">-d</span> mongo:4.0.5 --replSet rs0
+</code></pre>
+<p>We can now add a new member in the primary member of the replica set like this:</p>
+<pre><code class="lang-bash">rs0:PRIMARY&gt; rs.add(<span class="hljs-string">&quot;localmongo5:27017&quot;</span>)
+{
+    <span class="hljs-string">&quot;ok&quot;</span> : 1,
+    <span class="hljs-string">&quot;operationTime&quot;</span> : Timestamp(1559527357, 1),
+    <span class="hljs-string">&quot;<span class="hljs-variable">$clusterTime</span>&quot;</span> : {
+        <span class="hljs-string">&quot;clusterTime&quot;</span> : Timestamp(1559527357, 1),
+        <span class="hljs-string">&quot;signature&quot;</span> : {
+            <span class="hljs-string">&quot;hash&quot;</span> : B<span class="hljs-keyword">in</span>Data(0,<span class="hljs-string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>),
+            <span class="hljs-string">&quot;keyId&quot;</span> : NumberLong(0)
+        }
+    }
+}
+</code></pre>
+<p>We can confirm that a new secondary was added to the replicaset with the following command:</p>
+<pre><code class="lang-bash">rs0:PRIMARY&gt; rs.status().members.filter(<span class="hljs-keyword">function</span>(node) { <span class="hljs-built_in">return</span> node.name === <span class="hljs-string">&quot;localmongo5:27017&quot;</span> })
+[
+    {
+        <span class="hljs-string">&quot;_id&quot;</span> : 104,
+        <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;localmongo5:27017&quot;</span>,
+        <span class="hljs-string">&quot;health&quot;</span> : 1,
+        <span class="hljs-string">&quot;state&quot;</span> : 2,
+        <span class="hljs-string">&quot;stateStr&quot;</span> : <span class="hljs-string">&quot;SECONDARY&quot;</span>,
+        <span class="hljs-string">&quot;uptime&quot;</span> : 85,
+        <span class="hljs-string">&quot;optime&quot;</span> : {
+            <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(1559527432, 1),
+            <span class="hljs-string">&quot;t&quot;</span> : NumberLong(1)
+        },
+        <span class="hljs-string">&quot;optimeDurable&quot;</span> : {
+            <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(1559527432, 1),
+            <span class="hljs-string">&quot;t&quot;</span> : NumberLong(1)
+        },
+        <span class="hljs-string">&quot;optimeDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-03T02:03:52Z&quot;</span>),
+        <span class="hljs-string">&quot;optimeDurableDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-03T02:03:52Z&quot;</span>),
+        <span class="hljs-string">&quot;lastHeartbeat&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-03T02:04:01.626Z&quot;</span>),
+        <span class="hljs-string">&quot;lastHeartbeatRecv&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-06-03T02:04:02.853Z&quot;</span>),
+        <span class="hljs-string">&quot;pingMs&quot;</span> : NumberLong(0),
+        <span class="hljs-string">&quot;lastHeartbeatMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;syncingTo&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+        <span class="hljs-string">&quot;syncSourceHost&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+        <span class="hljs-string">&quot;syncSourceId&quot;</span> : 100,
+        <span class="hljs-string">&quot;infoMessage&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;configVersion&quot;</span> : 80653
+    }
+]
+</code></pre>
+<h6 id="remove-members-from-replica-set">Remove Members from Replica Set</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/remove-replica-set-member/" target="_blank">Remove Members from Replica Set</a></p>
+<p>Remove a member from a replica set.</p>
+<p>We can use the following command to remove our new secondary member like this:</p>
+<pre><code class="lang-bash">rs0:PRIMARY&gt; rs.remove(<span class="hljs-string">&quot;localmongo5:27017&quot;</span>)
+{
+    <span class="hljs-string">&quot;ok&quot;</span> : 1,
+    <span class="hljs-string">&quot;operationTime&quot;</span> : Timestamp(1559527508, 1),
+    <span class="hljs-string">&quot;<span class="hljs-variable">$clusterTime</span>&quot;</span> : {
+        <span class="hljs-string">&quot;clusterTime&quot;</span> : Timestamp(1559527508, 1),
+        <span class="hljs-string">&quot;signature&quot;</span> : {
+            <span class="hljs-string">&quot;hash&quot;</span> : B<span class="hljs-keyword">in</span>Data(0,<span class="hljs-string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>),
+            <span class="hljs-string">&quot;keyId&quot;</span> : NumberLong(0)
+        }
+    }
+}
+</code></pre>
+<h6 id="replace-a-replica-set-member">Replace a Replica Set Member</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/replace-replica-set-member/" target="_blank">Replace a Replica Set Member</a></p>
+<p>Update the replica set configuration when the hostname of a member&#x2019;s corresponding mongod instance has changed.</p>
+<h4 id="member-configuration-tutorials">Member Configuration Tutorials</h4>
+<h6 id="adjust-priority-for-replica-set-member">Adjust Priority for Replica Set Member</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/adjust-replica-set-member-priority/" target="_blank">Adjust Priority for Replica Set Member</a></p>
+<p>Let use change the priority in the replica set:</p>
+<p>First get into the replica set like this:</p>
+<pre><code class="lang-bash">docker <span class="hljs-built_in">exec</span> -it localmongo1 mongo
+</code></pre>
+<p>Next we need to get the configuration of the replica set and adjust priorities:</p>
+<pre><code class="lang-bash">cfg = rs.conf()
+
+cfg.members[0].priority = 0.5
+cfg.members[1].priority = 2
+cfg.members[2].priority = 2
+
+rs.reconfig(cfg)
+</code></pre>
+<p>Notice that we issue a reconfig for the replica sets with our updated priorities.</p>
+<p>This will initiate an election and either member 1 or 2 will be elected as the new primary.</p>
+<p>We can find out by issuing the <code>rs.status()</code> command and in our case member 2 was elected the new primary.</p>
+<h6 id="prevent-secondary-from-becoming-primary">Prevent Secondary from Becoming Primary</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/configure-secondary-only-replica-set-member/" target="_blank">Prevent Secondary from Becoming Primary</a></p>
+<blockquote>
+<p>In a replica set, by default all secondary members are eligible to become primary through the election process. You can use the priority to affect the outcome of these elections by making some members more likely to become primary and other members less likely or unable to become primary.</p>
+<p>Secondaries that cannot become primary are also unable to trigger elections. In all other respects these secondaries are identical to other secondaries.</p>
+<p>To prevent a secondary member from ever becoming a primary in a failover, assign the secondary a priority of 0, as described here. For a detailed description of secondary-only members and their purposes, see Priority 0 Replica Set Members.</p>
+</blockquote>
+<p>Let us get the configuration file for the replica set and then make one secondary inelible for primary:</p>
+<pre><code class="lang-bash">cfg = rs.conf()
+cfg.members[1].priority = 0
+rs.reconfig(cfg)
+</code></pre>
+<h6 id="configure-a-hidden-replica-set-member">Configure a Hidden Replica Set Member</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/configure-a-hidden-replica-set-member/#configure-a-hidden-replica-set-member" target="_blank">Configure a Hidden Replica Set Member</a></p>
+<blockquote>
+<p>Hidden members are part of a replica set but cannot become primary and are invisible to client applications. Hidden members may vote in elections. For more information on hidden members and their uses, see Hidden Replica Set Members.</p>
+</blockquote>
+<pre><code class="lang-bash">cfg = rs.conf()
+cfg.members[0].priority = 0
+cfg.members[0].hidden = <span class="hljs-literal">true</span>
+rs.reconfig(cfg)
+</code></pre>
+<p><em>Notice that here we set a field property of hidden to true.</em></p>
+<h6 id="configure-a-delayed-replica-set-member">Configure a Delayed Replica Set Member</h6>
+<p>Please read the following document in mongodb: <a href="https://docs.mongodb.com/manual/tutorial/configure-a-delayed-replica-set-member" target="_blank">configure a delayed replica set member</a></p>
+<blockquote>
+<p>To configure a delayed secondary member, set its members[n].priority value to 0, its members[n].hidden value to true, and its members[n].slaveDelay value to the number of seconds to delay.</p>
+</blockquote>
+<pre><code class="lang-bash">cfg = rs.conf()
+cfg.members[0].priority = 0
+cfg.members[0].hidden = <span class="hljs-literal">true</span>
+cfg.members[0].slaveDelay = 3600
+rs.reconfig(cfg)
+</code></pre>
+<h6 id="configure-non-voting-replica-set-member">Configure Non-Voting Replica Set Member</h6>
+<p>Please read the following document in mongodb: <a href="https://docs.mongodb.com/manual/tutorial/configure-a-non-voting-replica-set-member/" target="_blank">Configure a non voting replica set member</a></p>
+<blockquote>
+<p>Non-voting members allow you to add additional members for read distribution beyond the maximum seven voting members.</p>
+<p>To configure a member as non-voting, set both its votes and priority values to 0.</p>
+</blockquote>
+<pre><code class="lang-bash">cfg = rs.conf();
+cfg.members[2].votes = 0;
+cfg.members[2].priority = 0;
+</code></pre>
+<p>Here we configure the 3rd member of the replica set to be a non-voting replica set member</p>
+<h6 id="convert-a-secondary-to-an-arbiter">Convert a Secondary to an Arbiter</h6>
+<p>Please read the following document in mongodb: <a href="https://docs.mongodb.com/manual/tutorial/convert-secondary-into-arbiter/" target="_blank">Convert secondary into arbiter</a></p>
+<blockquote>
+<p>If you have a secondary in a replica set that no longer needs to hold data but that needs to remain in the set to ensure that the set can elect a primary, you may convert the secondary to an arbiter using either procedure in this tutorial. Both procedures are operationally equivalent:</p>
+<p>You may operate the arbiter on the same port as the former secondary. In this procedure, you must shut down the secondary and remove its data before restarting and reconfiguring it as an arbiter.</p>
+<p>For this procedure, see Convert Secondary to Arbiter and Reuse the Port Number.</p>
+<p>Run the arbiter on a new port. In this procedure, you can reconfigure the server as an arbiter before shutting down the instance running as a secondary.</p>
+<p>For this procedure, see Convert Secondary to Arbiter Running on a New Port Number.</p>
+</blockquote>
+<h4 id="replica-set-maintenance-tutorials">Replica Set Maintenance Tutorials</h4>
+<h6 id="change-the-size-of-the-oplog">Change the Size of the Oplog</h6>
+<p>Increase the size of the oplog which logs operations. In most cases, the default oplog size is sufficient.</p>
+<blockquote>
+<p>This procedure changes the size of the oplog on each member of a replica set using the replSetResizeOplog command, starting with the secondary members before proceeding to the primary. The replSetResizeOplog command only supports the WiredTiger Storage Engine storage engine.</p>
+<p>Perform these steps on each secondary replica set member first. Once you have changed the oplog size for all secondary members, perform these steps on the primary.</p>
+</blockquote>
+<p><a href="../images/mongodb-change-size-of-oplog.png">images/mongodb-change-size-of-oplog.png</a></p>
+<h6 id="perform-maintenance-on-replica-set-members">Perform Maintenance on Replica Set Members</h6>
+<p>Perform maintenance on a member of a replica set while minimizing downtime.</p>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/perform-maintence-on-replica-set-members/" target="_blank">Perform maintence on replica set members</a></p>
+<h6 id="force-a-member-to-become-primary">Force a Member to Become Primary</h6>
+<p>Force a replica set member to become primary.</p>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/force-member-to-be-primary/" target="_blank">Force member to be primary</a></p>
+<h6 id="resync-a-member-of-a-replica-set">Resync a Member of a Replica Set</h6>
+<p>Sync the data on a member. Either perform initial sync on a new member or resync the data on an existing member that has fallen too far behind to catch up by way of normal replication.</p>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/resync-replica-set-member/" target="_blank">Resync replica set member</a></p>
+<h6 id="configure-replica-set-tag-sets">Configure Replica Set Tag Sets</h6>
+<p>Assign tags to replica set members for use in targeting read and write operations to specific members.</p>
+<p>Please read the follwing mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/configure-replica-set-tag-sets/" target="_blank">Configure replica set tag sets</a></p>
+<h6 id="reconfigure-a-replica-set-with-unavailable-members">Reconfigure a Replica Set with Unavailable Members</h6>
+<p>Reconfigure a replica set when a majority of replica set members are down or unreachable.</p>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/reconfigure-replica-set-with-unavailable-members/" target="_blank">Reconfigure replica set with unavailable members</a></p>
+<h6 id="manage-chained-replication">Manage Chained Replication</h6>
+<p>Disable or enable chained replication. Chained replication occurs when a secondary replicates from another secondary instead of the primary.</p>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/manage-chained-replication/" target="_blank">Manage chained replication</a></p>
+<h6 id="change-hostnames-in-a-replica-set">Change Hostnames in a Replica Set</h6>
+<p>Update the replica set configuration to reflect changes in members&#x2019; hostnames.</p>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/change-hostnames-in-a-replica-set/" target="_blank">Change hostnames in a replica set</a></p>
+<h6 id="configure-a-secondarys-sync-target">Configure a Secondary&#x2019;s Sync Target</h6>
+<p>Specify the member that a secondary member synchronizes from.</p>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/tutorial/configure-replica-set-secondary-sync-target/" target="_blank">Configure replica set secondary sync target</a></p>
+<h4 id="replication-reference">Replication Reference</h4>
+<p>Please read the following mongodb document: <a href="https://docs.mongodb.com/manual/reference/replication/" target="_blank">Replication</a></p>
+<p><em>Replication Methods in the mongo Shell</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rs.add()</td>
+<td>Adds a member to a replica set.</td>
+</tr>
+<tr>
+<td>rs.addArb()</td>
+<td>Adds an arbiter to a replica set.</td>
+</tr>
+<tr>
+<td>rs.conf()</td>
+<td>Returns the replica set configuration document.</td>
+</tr>
+<tr>
+<td>rs.freeze()</td>
+<td>Prevents the current member from seeking election as primary for a period of time.</td>
+</tr>
+<tr>
+<td>rs.help()</td>
+<td>Returns basic help text for replica set functions.</td>
+</tr>
+<tr>
+<td>rs.initiate()</td>
+<td>Initializes a new replica set.</td>
+</tr>
+<tr>
+<td>rs.printReplicationInfo()</td>
+<td>Prints a report of the status of the replica set from the perspective of the primary.</td>
+</tr>
+<tr>
+<td>rs.printSlaveReplicationInfo()</td>
+<td>Prints a report of the status of the replica set from the perspective of the secondaries.</td>
+</tr>
+<tr>
+<td>rs.reconfig()</td>
+<td>Re-configures a replica set by applying a new replica set configuration object.</td>
+</tr>
+<tr>
+<td>rs.remove()</td>
+<td>Remove a member from a replica set.</td>
+</tr>
+<tr>
+<td>rs.slaveOk()</td>
+<td>Sets the slaveOk property for the current connection. Deprecated. Use readPref() and Mongo.setReadPref() to set read preference.</td>
+</tr>
+<tr>
+<td>rs.status()</td>
+<td>Returns a document with information about the state of the replica set.</td>
+</tr>
+<tr>
+<td>rs.stepDown()</td>
+<td>Causes the current primary to become a secondary which forces an election.</td>
+</tr>
+<tr>
+<td>rs.syncFrom()</td>
+<td>Sets the member that this replica set member will sync from, overriding the default sync target selection logic.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Replication Database Commands</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>applyOps</td>
+<td>Internal command that applies oplog entries to the current data set.</td>
+</tr>
+<tr>
+<td>isMaster</td>
+<td>Displays information about this member&#x2019;s role in the replica set, including whether it is the master.</td>
+</tr>
+<tr>
+<td>replSetAbortPrimaryCatchUp</td>
+<td>Forces the elected primary to abort sync (catch up) then complete the transition to primary.</td>
+</tr>
+<tr>
+<td>replSetFreeze</td>
+<td>Prevents the current member from seeking election as primary for a period of time.</td>
+</tr>
+<tr>
+<td>replSetGetConfig</td>
+<td>Returns the replica set&#x2019;s configuration object.</td>
+</tr>
+<tr>
+<td>replSetGetStatus</td>
+<td>Returns a document that reports on the status of the replica set.</td>
+</tr>
+<tr>
+<td>replSetInitiate</td>
+<td>Initializes a new replica set.</td>
+</tr>
+<tr>
+<td>replSetMaintenance</td>
+<td>Enables or disables a maintenance mode, which puts a secondary node in a RECOVERING state.</td>
+</tr>
+<tr>
+<td>replSetReconfig</td>
+<td>Applies a new configuration to an existing replica set.</td>
+</tr>
+<tr>
+<td>replSetResizeOplog</td>
+<td>Dynamically resizes the oplog for a replica set member. Available for WiredTiger storage engine only.</td>
+</tr>
+<tr>
+<td>replSetStepDown</td>
+<td>Forces the current primary to step down and become a secondary, forcing an election.</td>
+</tr>
+<tr>
+<td>replSetSyncFrom</td>
+<td>Explicitly override the default logic for selecting a member to replicate from.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb_change_streams.html">MongoDB Change Streams</a></td>
+<td style="text-align:right"><a href="mongodb_sharding.html">MongoDB Sharding</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_change_streams.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Change Streams">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_sharding.html" class="navigation navigation-next " aria-label="Next page: MongoDB Sharding">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Replication","level":"1.4.17","depth":2,"next":{"title":"MongoDB Sharding","level":"1.4.18","depth":2,"path":"docs/mongodb_sharding.md","ref":"docs/mongodb_sharding.md","articles":[]},"previous":{"title":"MongoDB Change Streams","level":"1.4.16","depth":2,"path":"docs/mongodb_change_streams.md","ref":"docs/mongodb_change_streams.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_replication.md","mtime":"2019-06-05T21:47:34.701Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,844 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>BSON Specification · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bson-data-types.html" />
+    
+    
+    <link rel="prev" href="mongodb.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >BSON Specification</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - BSON Specification</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#general-description">General Description</a></li>
+<li><a href="#basic-types">Basic Types</a></li>
+<li><a href="#non%5C-terminals">Non-terminals</a></li>
+<li><a href="#notes-section">Notes Section</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p>All Information gleaned from official <a href="http://bsonspec.org/spec.html" target="_blank">bson specification</a></p>
+<h2 id="general-description">General Description</h2>
+<blockquote>
+<p>BSON is a binary format in which zero or more ordered key/value pairs are stored as a single entity. We call this entity a document.</p>
+<p>The following grammar specifies version 1.1 of the BSON standard. We&apos;ve written the grammar using a pseudo-BNF syntax. Valid BSON data is represented by the document non-terminal.</p>
+</blockquote>
+<h4 id="basic-types">Basic Types</h4>
+<blockquote>
+<p>The following basic types are used as terminals in the rest of the grammar.</p>
+<p>Each type must be serialized in little-endian format.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>1 byte (8-bits)</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>4 bytes (32-bit signed integer, two&apos;s complement)</td>
+</tr>
+<tr>
+<td>int64</td>
+<td>8 bytes (64-bit signed integer, two&apos;s complement)</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td>8 bytes (64-bit unsigned integer)</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 bytes (64-bit IEEE 754-2008 binary floating point)</td>
+</tr>
+<tr>
+<td>decimal128</td>
+<td>16 bytes (128-bit IEEE 754-2008 decimal floating point)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="non-terminals">Non-terminals</h4>
+<blockquote>
+<p>The following specifies the rest of the BSON grammar. Note that quoted strings represent terminals, and should be interpreted with C semantics (e.g. &quot;\x01&quot; represents the byte 0000 0001). Also note that we use the <em> operator as shorthand for repetition (e.g. (&quot;\x01&quot;</em>2) is &quot;\x01\x01&quot;). When used as a unary operator, * means that the repetition can occur 0 or more times.</p>
+</blockquote>
+<p><code>&lt;expr&gt; ::= &lt;term&gt;|&lt;expr&gt;&lt;addop&gt;&lt;term&gt;</code></p>
+<h6 id="backus-naur-form-bnf">Backus-Naur Form (BNF)</h6>
+<p><code>&lt;symbol&gt; ::= __expression__</code></p>
+<p>Remember that in BNF Form the pipe (|) stands for an or operation.</p>
+<p>document    ::=    int32 e_list &quot;\x00&quot;    BSON Document. int32 is the total number of bytes comprising the document.</p>
+<p>e_list    ::=    element e_list</p>
+<pre><code>    |    &quot;&quot;
+</code></pre><p>element    ::=    &quot;\x01&quot; e_name   double            64-bit binary floating point</p>
+<pre><code>    |    &quot;\x02&quot; e_name   string            UTF-8 string
+
+    |    &quot;\x03&quot; e_name   document        Embedded document
+
+    |    &quot;\x04&quot; e_name   document        Array
+
+    |    &quot;\x05&quot; e_name   binary            Binary data
+
+    |    &quot;\x06&quot; e_name   Undefined (value) &#x2014; Deprecated
+
+    |    &quot;\x07&quot; e_name   (byte*12)        ObjectId
+
+    |    &quot;\x08&quot; e_name   &quot;\x00&quot;            Boolean &quot;false&quot;
+
+    |    &quot;\x08&quot; e_name   &quot;\x01&quot;            Boolean &quot;true&quot;
+
+    |    &quot;\x09&quot; e_name   int64    UTC     datetime
+
+    |    &quot;\x0A&quot; e_name   Null            value
+
+    |    &quot;\x0B&quot; e_name   cstring         cstring        Regular expression - The first 
+    cstring is the regex pattern, the second is the regex options string. Options are identified by characters, which must be stored in alphabetical order. Valid options are &apos;i&apos; for case insensitive matching, &apos;m&apos; for multiline matching, &apos;x&apos; for verbose mode, &apos;l&apos; to make \w, \W, etc. locale dependent, &apos;s&apos; for dotall mode (&apos;.&apos; matches everything), and &apos;u&apos; to make \w, \W, etc. match unicode.
+
+    |    &quot;\x0C&quot; e_name string (byte*12)    DBPointer &#x2014; Deprecated
+
+    |    &quot;\x0D&quot; e_name string            JavaScript code
+
+    |    &quot;\x0E&quot; e_name string            Symbol. Deprecated
+
+    |    &quot;\x0F&quot; e_name code_w_s            JavaScript code w/ scope
+
+    |    &quot;\x10&quot; e_name int32                32-bit integer
+
+    |    &quot;\x11&quot; e_name uint64            Timestamp
+
+    |    &quot;\x12&quot; e_name int64                64-bit integer
+
+    |    &quot;\x13&quot; e_name decimal128        128-bit decimal floating point
+
+    |    &quot;\xFF&quot; e_name Min key
+
+    |    &quot;\x7F&quot; e_name Max key
+</code></pre><p><em>Here an element is defined as double or a string, or a document, etc</em></p>
+<p>e_name    ::=    cstring    Key name</p>
+<p>string    ::=    int32 (byte<em>) &quot;\x00&quot;    String - The int32 is the number bytes in the (byte</em>) + 1 (for the trailing &apos;\x00&apos;). The (byte*) is zero or more UTF-8 encoded characters.</p>
+<p>cstring    ::=    (byte<em>) &quot;\x00&quot;    Zero or more modified UTF-8 encoded characters followed by &apos;\x00&apos;. The (byte</em>) MUST NOT contain &apos;\x00&apos;, hence it is not full UTF-8.</p>
+<p>binary    ::=    int32 subtype (byte<em>)    Binary - The int32 is the number of bytes in the (byte</em>).</p>
+<p>subtype    ::=    &quot;\x00&quot;    Generic binary subtype</p>
+<pre><code>|    &quot;\x01&quot;    Function
+
+|    &quot;\x02&quot;    Binary (Old)
+
+|    &quot;\x03&quot;    UUID (Old)
+
+|    &quot;\x04&quot;    UUID
+
+|    &quot;\x05&quot;    MD5
+
+|    &quot;\x80&quot;    User defined
+</code></pre><p>code_w_s    ::=    int32 string document    Code w/ scope</p>
+<h4 id="notes-section">Notes Section</h4>
+<ul>
+<li><p>Array - The document for an array is a normal BSON document with integer values for the keys, starting with 0 and continuing sequentially. </p>
+<ul>
+<li>For example, the array [&apos;red&apos;, &apos;blue&apos;] would be encoded as the document {&apos;0&apos;: &apos;red&apos;, &apos;1&apos;: &apos;blue&apos;}. The keys must be in ascending numerical order.</li>
+</ul>
+</li>
+<li><p>UTC datetime - The int64 is UTC milliseconds since the Unix epoch.</p>
+</li>
+<li><p>Timestamp - Special internal type used by MongoDB replication and sharding. </p>
+<ul>
+<li>First 4 bytes are an increment, second 4 are a timestamp.</li>
+</ul>
+</li>
+<li><p>Min key - Special type which compares lower than all other possible BSON element values.</p>
+</li>
+<li><p>Max key - Special type which compares higher than all other possible BSON element values.</p>
+</li>
+<li><p>Generic binary subtype - This is the most commonly used binary subtype and should be the &apos;default&apos; for drivers and tools.</p>
+</li>
+<li><p>The BSON &quot;binary&quot; or &quot;BinData&quot; datatype is used to represent arrays of bytes. It is somewhat analogous to the Java notion of a ByteArray. </p>
+<ul>
+<li><p>BSON binary values have a subtype. This is used to indicate what kind of data is in the byte array. Subtypes from zero to 127 are predefined or reserved. Subtypes from 128-255 are user-defined.</p>
+</li>
+<li><p>\x02 Binary (Old) - This used to be the default subtype, but was deprecated in favor of </p>
+</li>
+<li><p>\x00. Drivers and tools should be sure to handle \x02 appropriately. The structure of the binary data (the byte<em> array in the binary non-terminal) must be an int32 followed by a (byte</em>). The int32 is the number of bytes in the repetition.</p>
+</li>
+<li><p>\x03 UUID (Old) - This used to be the UUID subtype, but was deprecated in favor of \x04. Drivers and tools for languages with a native UUID type should handle \x03 appropriately.</p>
+</li>
+<li><p>\x80-\xFF &quot;User defined&quot; subtypes. The binary data can be anything.</p>
+</li>
+</ul>
+</li>
+<li><p>Code w/ scope - The int32 is the length in bytes of the entire code_w_s value. </p>
+<ul>
+<li>The string is JavaScript code. </li>
+<li>The document is a mapping from identifiers to values, representing the scope in which the string should be evaluated.</li>
+</ul>
+</li>
+</ul>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb.html">MongoDB</a></td>
+<td style="text-align:right"><a href="bson-data-types.html">BSON Data Types</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bson-data-types.html" class="navigation navigation-next " aria-label="Next page: BSON Data Types">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"BSON Specification","level":"1.4.1","depth":2,"next":{"title":"BSON Data Types","level":"1.4.2","depth":2,"path":"docs/bson-data-types.md","ref":"docs/bson-data-types.md","articles":[]},"previous":{"title":"MongoDB","level":"1.4","depth":1,"path":"docs/mongodb.md","ref":"docs/mongodb.md","articles":[{"title":"BSON Specification","level":"1.4.1","depth":2,"path":"docs/bson-specification.md","ref":"docs/bson-specification.md","articles":[]},{"title":"BSON Data Types","level":"1.4.2","depth":2,"path":"docs/bson-data-types.md","ref":"docs/bson-data-types.md","articles":[]},{"title":"Mongo Shell","level":"1.4.3","depth":2,"path":"docs/mongo-shell.md","ref":"docs/mongo-shell.md","articles":[]},{"title":"Mongo CRUD Operations","level":"1.4.4","depth":2,"path":"docs/mongo-crud-operations.md","ref":"docs/mongo-crud-operations.md","articles":[]},{"title":"Mongo CRUD Operations Part II","level":"1.4.5","depth":2,"path":"docs/mongo-crud-operations-part2.md","ref":"docs/mongo-crud-operations-part2.md","articles":[]},{"title":"Mongo CRUD Operations Part III","level":"1.4.6","depth":2,"path":"docs/mongo-crud-operations-part3.md","ref":"docs/mongo-crud-operations-part3.md","articles":[]},{"title":"Mongo CRUD Concepts","level":"1.4.7","depth":2,"path":"docs/mongo-crud-concepts.md","ref":"docs/mongo-crud-concepts.md","articles":[]},{"title":"MongoDB Aggregation","level":"1.4.8","depth":2,"path":"docs/mongodb-aggregation.md","ref":"docs/mongodb-aggregation.md","articles":[]},{"title":"MongoDB Data Models Part I","level":"1.4.9","depth":2,"path":"docs/mongodb_data_models_part_I.md","ref":"docs/mongodb_data_models_part_I.md","articles":[]},{"title":"MongoDB Data Models Part II","level":"1.4.10","depth":2,"path":"docs/mongodb_data_models_part_II.md","ref":"docs/mongodb_data_models_part_II.md","articles":[]},{"title":"MongoDB Transactions","level":"1.4.11","depth":2,"path":"docs/mongodb_transactions.md","ref":"docs/mongodb_transactions.md","articles":[]},{"title":"MongoDB Indexes Part I","level":"1.4.12","depth":2,"path":"docs/mongodb_indexes_partI.md","ref":"docs/mongodb_indexes_partI.md","articles":[]},{"title":"MongoDB Indexes Part II","level":"1.4.13","depth":2,"path":"docs/mongodb_indexes_partII.md","ref":"docs/mongodb_indexes_partII.md","articles":[]},{"title":"MongoDB Query Performance","level":"1.4.14","depth":2,"path":"docs/mongodb-query-performance.md","ref":"docs/mongodb-query-performance.md","articles":[]},{"title":"MongoDB Security","level":"1.4.15","depth":2,"path":"docs/mongodb_security.md","ref":"docs/mongodb_security.md","articles":[]},{"title":"MongoDB Change Streams","level":"1.4.16","depth":2,"path":"docs/mongodb_change_streams.md","ref":"docs/mongodb_change_streams.md","articles":[]},{"title":"MongoDB Replication","level":"1.4.17","depth":2,"path":"docs/mongodb_replication.md","ref":"docs/mongodb_replication.md","articles":[]},{"title":"MongoDB Sharding","level":"1.4.18","depth":2,"path":"docs/mongodb_sharding.md","ref":"docs/mongodb_sharding.md","articles":[]},{"title":"MongoDB Administration","level":"1.4.19","depth":2,"path":"docs/mongodb_administration.md","ref":"docs/mongodb_administration.md","articles":[]},{"title":"MongoDB Storage","level":"1.4.20","depth":2,"path":"docs/mongodb_storage.md","ref":"docs/mongodb_storage.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/bson-specification.md","mtime":"2019-02-25T03:03:18.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

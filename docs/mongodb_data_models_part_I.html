@@ -1,0 +1,893 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Data Models Part I · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_data_models_part_II.html" />
+    
+    
+    <link rel="prev" href="mongodb-aggregation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Data Models Part I</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Data Models Part I</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#data-modeling-introduction">Data Modeling Introduction</a></li>
+<li><a href="#schema-validation">Schema Validation</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h2 id="data-modeling-introduction">Data Modeling Introduction</h2>
+<p>*All of this information is from <a href="https://docs.mongodb.com/manual/core/data-modeling-introduction/" target="_blank">Data Modeling Introduction MongoDB Docs</a></p>
+<blockquote>
+<p>The key challenge in data modeling is balancing the needs of the application, the performance characteristics of the database engine, and the data retrieval patterns. When designing data models, always consider the application usage of the data (i.e. queries, updates, and processing of the data) as well as the inherent structure of the data itself.</p>
+</blockquote>
+<h4 id="flexible-schema">Flexible Schema</h4>
+<blockquote>
+<p>Unlike SQL databases, where you must determine and declare a table&#x2019;s schema before inserting data, MongoDB&#x2019;s collections, by default, does not require its documents to have the same schema. That is:</p>
+<p>The documents in a single collection do not need to have the same set of fields and the data type for a field can differ across documents within a collection.
+To change the structure of the documents in a collection, such as add new fields, remove existing fields, or change the field values to a new type, update the documents to the new structure.</p>
+<p>This flexibility facilitates the mapping of documents to an entity or an object. Each document can match the data fields of the represented entity, even if the document has substantial variation from other documents in the collection.</p>
+<p>In practice, however, the documents in a collection share a similar structure, and you can enforce document validation rules for a collection during update and insert operations. See Schema Validation for details.</p>
+</blockquote>
+<h4 id="document-structure">Document Structure</h4>
+<blockquote>
+<p>The key decision in designing data models for MongoDB applications revolves around the structure of documents and how the application represents relationships between data. MongoDB allows related data to be embedded within a single document.</p>
+</blockquote>
+<h6 id="embedded-data">Embedded Data</h6>
+<blockquote>
+<p>Embedded documents capture relationships between data by storing related data in a single document structure. MongoDB documents make it possible to embed document structures in a field or array within a document. These denormalized data models allow applications to retrieve and manipulate related data in a single database operation.</p>
+</blockquote>
+<h6 id="references">References</h6>
+<p>References store the relationships between data by including links or references from one document to another. Applications can resolve these references to access the related data. Broadly, these are normalized data models.</p>
+<p><em>user document:</em></p>
+<pre><code class="lang-js">{
+    <span class="hljs-attr">_id</span>: ObjectId(<span class="hljs-string">&quot;12345&quot;</span>),
+    <span class="hljs-attr">username</span>: <span class="hljs-string">&quot;jbelmont&quot;</span>
+}
+</code></pre>
+<p><em>contact document:</em></p>
+<pre><code class="lang-js">{
+    <span class="hljs-attr">id</span>: ObjectId(<span class="hljs-string">&quot;some1345&quot;</span>),
+    <span class="hljs-attr">user_id</span>: ObjectId(<span class="hljs-string">&quot;12345&quot;</span>),
+    <span class="hljs-attr">phone</span>: <span class="hljs-string">&quot;910-923-4556&quot;</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;somebody@hey.com&quot;</span>
+}
+</code></pre>
+<p><em>Notice here that user_id is a reference to the _id field in the user document.</em></p>
+<h2 id="schema-validation">Schema Validation</h2>
+<p><a href="https://docs.mongodb.com/manual/core/schema-validation/" target="_blank">Schema Validation</a></p>
+<blockquote>
+<p>MongoDB provides the capability to perform schema validation during updates and insertions in version 3.2</p>
+</blockquote>
+<h4 id="specify-validation-rules">Specify Validation Rules</h4>
+<p>Validation rules are on a per-collection basis.</p>
+<p>To specify validation rules when creating a new collection, use db.createCollection() with the validator option.</p>
+<p>To add document validation to an existing collection, use collMod command with the validator option.</p>
+<p>MongoDB also provides the following related options:</p>
+<ul>
+<li><p>validationLevel option, which determines how strictly MongoDB applies validation rules to existing documents during an update, and</p>
+</li>
+<li><p>validationAction option, which determines whether MongoDB should error and reject documents that violate the validation rules or warn about the violations in the log but allow invalid documents.</p>
+</li>
+</ul>
+<h4 id="json-schema">JSON Schema</h4>
+<blockquote>
+<p>Starting in version 3.6, MongoDB supports JSON Schema validation. To specify JSON Schema validation, use the $jsonSchema operator in your validator expression.</p>
+</blockquote>
+<p><strong>JSON Schema is the recommended means of performing schema validation.</strong></p>
+<p><em>Schema validation with json schema:</em></p>
+<pre><code class="lang-js">db.createCollection(<span class="hljs-string">&quot;students&quot;</span>, {
+   <span class="hljs-attr">validator</span>: {
+      <span class="hljs-attr">$jsonSchema</span>: {
+         <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;object&quot;</span>,
+         <span class="hljs-attr">required</span>: [ <span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;year&quot;</span>, <span class="hljs-string">&quot;major&quot;</span>, <span class="hljs-string">&quot;gpa&quot;</span>, <span class="hljs-string">&quot;address.city&quot;</span>, <span class="hljs-string">&quot;address.street&quot;</span> ],
+         <span class="hljs-attr">properties</span>: {
+            <span class="hljs-attr">name</span>: {
+               <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;string&quot;</span>,
+               <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and is required&quot;</span>
+            },
+            <span class="hljs-attr">gender</span>: {
+               <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;string&quot;</span>,
+               <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and is not required&quot;</span>
+            },
+            <span class="hljs-attr">year</span>: {
+               <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;int&quot;</span>,
+               <span class="hljs-attr">minimum</span>: <span class="hljs-number">2017</span>,
+               <span class="hljs-attr">maximum</span>: <span class="hljs-number">3017</span>,
+               <span class="hljs-attr">exclusiveMaximum</span>: <span class="hljs-literal">false</span>,
+               <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be an integer in [ 2017, 3017 ] and is required&quot;</span>
+            },
+            <span class="hljs-attr">major</span>: {
+               <span class="hljs-attr">enum</span>: [ <span class="hljs-string">&quot;Math&quot;</span>, <span class="hljs-string">&quot;English&quot;</span>, <span class="hljs-string">&quot;Computer Science&quot;</span>, <span class="hljs-string">&quot;History&quot;</span>, <span class="hljs-literal">null</span> ],
+               <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;can only be one of the enum values and is required&quot;</span>
+            },
+            <span class="hljs-attr">gpa</span>: {
+               <span class="hljs-attr">bsonType</span>: [ <span class="hljs-string">&quot;double&quot;</span> ],
+               <span class="hljs-attr">minimum</span>: <span class="hljs-number">0</span>,
+               <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a double and is required&quot;</span>
+            },
+            <span class="hljs-string">&quot;address.city&quot;</span> : {
+               <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;string&quot;</span>,
+               <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and is required&quot;</span>
+            },
+            <span class="hljs-string">&quot;address.street&quot;</span> : {
+               <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;string&quot;</span>,
+               <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and is required&quot;</span>
+            }
+         }
+      }
+   }
+})
+</code></pre>
+<p><em>Notice here that we specify the bson type for each property and can specify required fields.</em></p>
+<h4 id="query-expressions">Query Expressions</h4>
+<blockquote>
+<p>In addition to JSON Schema validation, MongoDB supports validation with query filter expressions using the query operators, with the exception of $near, $nearSphere, $text, and $where.</p>
+</blockquote>
+<pre><code class="lang-js">db.createCollection( <span class="hljs-string">&quot;contacts&quot;</span>, { 
+    <span class="hljs-attr">validator</span>: { 
+        <span class="hljs-attr">$or</span>: [
+            { <span class="hljs-attr">phone</span>: { <span class="hljs-attr">$type</span>: <span class="hljs-string">&quot;string&quot;</span> } },
+            { <span class="hljs-attr">email</span>: { <span class="hljs-attr">$regex</span>: <span class="hljs-regexp">/@mongodb\.com$/</span> } },
+            { <span class="hljs-attr">status</span>: { <span class="hljs-attr">$in</span>: [ <span class="hljs-string">&quot;Unknown&quot;</span>, <span class="hljs-string">&quot;Incomplete&quot;</span> ] } }
+        ]
+    }
+})
+</code></pre>
+<p>Let us try to add a new set of contacts with the validation rules that fail in the following example:</p>
+<pre><code class="lang-js">db.contacts.insert([
+   { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Anne&quot;</span>, <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;+1 555 123 456&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;London&quot;</span>, <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;Complete&quot;</span> },
+   { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Ivan&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;Vancouver&quot;</span> }
+])
+</code></pre>
+<p><img src="../images/mongodb-validation-fail.png" alt="images/mongodb-validation-fail"></p>
+<p>Let us fix the validation failures in the example:</p>
+<pre><code class="lang-js">db.contacts.insert([
+   { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Anne&quot;</span>, <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;+1 555 123 456&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;London&quot;</span>, <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;Incomplete&quot;</span> },
+   { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Ivan&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;Vancouver&quot;</span>, <span class="hljs-string">&quot;email&quot;</span>: <span class="hljs-string">&quot;somebody@mongodb.com&quot;</span> }
+])
+</code></pre>
+<p><img src="../images/mongodb-validation-pass.png" alt="images/mongodb-validation-pass"></p>
+<p><em>Notice that it passed now because the $or validation passed for the status which is Incomplete in _id 1 and we passed a valid email to the _id of 2.</em></p>
+<h4 id="existing-documents">Existing Documents</h4>
+<p><a href="https://docs.mongodb.com/manual/core/schema-validation/#existing-documents" target="_blank">Existing Documents</a></p>
+<p>The validationLevel option determines which operations MongoDB applies the validation rules:</p>
+<ul>
+<li><p>If the validationLevel is strict (the default), MongoDB applies validation rules to all inserts and updates.</p>
+</li>
+<li><p>If the validationLevel is moderate, MongoDB applies validation rules to inserts and to updates to existing documents that already fulfill the validation criteria. With the moderate level, updates to existing documents that do not fulfill the validation criteria are not checked for validity.</p>
+</li>
+</ul>
+<p>Let us create a new collection called &quot;contacts2&quot; to test the existing documents validation.</p>
+<pre><code class="lang-js">db.createCollection(<span class="hljs-string">&quot;contacts2&quot;</span>)
+
+db.contacts2.insert([
+   { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Anne&quot;</span>, <span class="hljs-string">&quot;phone&quot;</span>: <span class="hljs-string">&quot;+1 555 123 456&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;London&quot;</span>, <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;Complete&quot;</span> },
+   { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Ivan&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;Vancouver&quot;</span> }
+])
+</code></pre>
+<p>Let us now add a validator to the contacts2 collection like this:</p>
+<pre><code class="lang-js">db.runCommand( {
+   <span class="hljs-attr">collMod</span>: <span class="hljs-string">&quot;contacts2&quot;</span>,
+   <span class="hljs-attr">validator</span>: { 
+       <span class="hljs-attr">$jsonSchema</span>: {
+            <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;object&quot;</span>,
+            <span class="hljs-attr">required</span>: [ <span class="hljs-string">&quot;phone&quot;</span>, <span class="hljs-string">&quot;name&quot;</span> ],
+            <span class="hljs-attr">properties</span>: {
+                <span class="hljs-attr">phone</span>: {
+                    <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                    <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and is required&quot;</span>
+                },
+                <span class="hljs-attr">name</span>: {
+                    <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                    <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and is required&quot;</span>
+                }
+            }
+        } 
+   },
+   <span class="hljs-attr">validationLevel</span>: <span class="hljs-string">&quot;error&quot;</span>
+})
+</code></pre>
+<p>Now when we try to update the existing contact2 collection we should get a validation failure with an insert like this:</p>
+<p><img src="../images/mongodb-validation-validator.png" alt="images/mongodb-validation-validator"></p>
+<h6 id="accept-or-reject-invalid-documents">Accept or Reject Invalid Documents</h6>
+<p><a href="https://docs.mongodb.com/manual/core/schema-validation/#accept-or-reject-invalid-documents" target="_blank">Accept or Reject Invalid Documents</a></p>
+<p>The validationAction option determines how MongoDB handles documents that violate the validation rules:</p>
+<ul>
+<li><p>If the validationAction is error (the default), MongoDB rejects any insert or update that violates the validation criteria.</p>
+</li>
+<li><p>If the validationAction is warn, MongoDB logs any violations but allows the insertion or update to proceed.</p>
+</li>
+</ul>
+<pre><code class="lang-js">db.createCollection( <span class="hljs-string">&quot;contacts2&quot;</span>, {
+   <span class="hljs-attr">validator</span>: { <span class="hljs-attr">$jsonSchema</span>: {
+      <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">required</span>: [ <span class="hljs-string">&quot;phone&quot;</span> ],
+      <span class="hljs-attr">properties</span>: {
+         <span class="hljs-attr">phone</span>: {
+            <span class="hljs-attr">bsonType</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and is required&quot;</span>
+         },
+         <span class="hljs-attr">email</span>: {
+            <span class="hljs-attr">bsonType</span> : <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">pattern</span> : <span class="hljs-string">&quot;@mongodb\.com$&quot;</span>,
+            <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;must be a string and match the regular expression pattern&quot;</span>
+         },
+         <span class="hljs-attr">status</span>: {
+            <span class="hljs-attr">enum</span>: [ <span class="hljs-string">&quot;Unknown&quot;</span>, <span class="hljs-string">&quot;Incomplete&quot;</span> ],
+            <span class="hljs-attr">description</span>: <span class="hljs-string">&quot;can only be one of the enum values&quot;</span>
+         }
+      }
+   } },
+   <span class="hljs-attr">validationAction</span>: <span class="hljs-string">&quot;warn&quot;</span>
+} )
+</code></pre>
+<p><img src="../images/mongodb-validation-insert.png" alt="images/mongodb-validation-insert"></p>
+<p><img src="../images/mongodb-validation-log.png" alt="images/mongodb-validation-log"></p>
+<p>Notice that the log showed the warning but the insert still occurred.</p>
+<h2 id="bread-crumb-navigation">Bread Crumb Navigation</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb-aggregation.html">MongoDB Aggregation</a></td>
+<td style="text-align:right"><a href="mongodb_data_models_part_II.html">MongoDB Data Models Part I</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb-aggregation.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Aggregation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_data_models_part_II.html" class="navigation navigation-next " aria-label="Next page: MongoDB Data Models Part II">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Data Models Part I","level":"1.4.9","depth":2,"next":{"title":"MongoDB Data Models Part II","level":"1.4.10","depth":2,"path":"docs/mongodb_data_models_part_II.md","ref":"docs/mongodb_data_models_part_II.md","articles":[]},"previous":{"title":"MongoDB Aggregation","level":"1.4.8","depth":2,"path":"docs/mongodb-aggregation.md","ref":"docs/mongodb-aggregation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_data_models_part_I.md","mtime":"2019-04-03T21:56:47.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

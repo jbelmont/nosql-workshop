@@ -1,0 +1,902 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Sharding · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_administration.html" />
+    
+    
+    <link rel="prev" href="mongodb_replication.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Sharding</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Sharding</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#sharding-overview">Sharding Overview</a></li>
+<li><a href="#sharded-cluster-components">Sharded Cluster Components</a></li>
+<li><a href="#shard-keys">Shard Keys</a></li>
+<li><a href="#hashed-sharding">Hashed Sharding</a></li>
+<li><a href="#ranged-sharding">Ranged Sharding</a></li>
+<li><a href="#zones">Zones</a></li>
+<li><a href="#data-partitioning-with-chunks">Data Partitioning with Chunks</a></li>
+<li><a href="#balancer">Balancer</a></li>
+<li><a href="#administration">Administration</a></li>
+<li><a href="#sharding-reference">Sharding Reference</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h2 id="sharding-overview">Sharding Overview</h2>
+<blockquote>
+<p>Sharding is a method for distributing data across multiple machines. MongoDB uses sharding to support deployments with very large data sets and high throughput operations.</p>
+<p>Database systems with large data sets or high throughput applications can challenge the capacity of a single server. For example, high query rates can exhaust the CPU capacity of the server. Working set sizes larger than the system&#x2019;s RAM stress the I/O capacity of disk drives.</p>
+</blockquote>
+<h4 id="sharded-cluster-components">Sharded Cluster Components</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/sharded-cluster-components/" target="_blank">Sharded Cluster Components</a></p>
+<h4 id="shard-keys">Shard Keys</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/sharding-shard-key/" target="_blank">Shard Keys</a></p>
+<h4 id="hashed-sharding">Hashed Sharding</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/hashed-sharding/" target="_blank">Hashed Sharding</a></p>
+<h4 id="ranged-sharding">Ranged Sharding</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/tutorial/deploy-sharded-cluster-ranged-sharding/" target="_blank">Ranged Sharding</a></p>
+<h4 id="zones">Zones</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/zone-sharding/" target="_blank">Zones</a></p>
+<h4 id="data-partitioning-with-chunks">Data Partitioning with Chunks</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/tutorial/modify-chunk-size-in-sharded-cluster/" target="_blank">Data Partitioning with Chunks</a></p>
+<h4 id="balancer">Balancer</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/core/sharding-balancer-administration/" target="_blank">Balancer</a></p>
+<h4 id="administration">Administration</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/administration/sharded-cluster-administration/" target="_blank">Administration</a></p>
+<h4 id="sharding-reference">Sharding Reference</h4>
+<p>Please read more about <a href="https://docs.mongodb.com/manual/reference/sharding/" target="_blank">Sharding Reference</a></p>
+<h4 id="setup-3-node-replica-set-and-3-shards-with-docker-compose">Setup 3 Node Replica set and 3 Shards with docker-compose</h4>
+<p>Here is the <code>docker-compose.sharding.yml</code> file that we will use:</p>
+<pre><code class="lang-yml"><span class="hljs-attr">version:</span> <span class="hljs-string">&quot;2&quot;</span>
+
+<span class="hljs-attr">services:</span>
+
+<span class="hljs-attr">  nsqlmongocfg1:</span>
+<span class="hljs-attr">    container_name:</span> nsqlmongocfg1
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;mongo:4.0.5&quot;</span>
+<span class="hljs-attr">    command:</span> mongod --configsvr --replSet mongocfg --bind_ip_all --port <span class="hljs-number">27019</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;27021:27019&quot;</span>
+<span class="hljs-attr">    volumes:</span>
+<span class="hljs-bullet">      -</span> ./data/mongocfg:/data/db
+
+<span class="hljs-attr">  nsqlmongocfg2:</span>
+<span class="hljs-attr">    container_name:</span> nsqlmongocfg2
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;mongo:4.0.5&quot;</span>
+<span class="hljs-attr">    command:</span> mongod --configsvr --replSet mongocfg --bind_ip_all --port <span class="hljs-number">27019</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;27022:27019&quot;</span>
+<span class="hljs-attr">    volumes:</span>
+<span class="hljs-bullet">      -</span> ./data/mongocfg:/data/db
+
+<span class="hljs-attr">  nsqlmongocfg3:</span>
+<span class="hljs-attr">    container_name:</span> nsqlmongocfg3
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;mongo:4.0.5&quot;</span>
+<span class="hljs-attr">    command:</span> mongod --configsvr --replSet mongocfg --bind_ip_all --port <span class="hljs-number">27019</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;27023:27019&quot;</span>
+<span class="hljs-attr">    volumes:</span>
+<span class="hljs-bullet">      -</span> ./data/mongocfg:/data/db
+
+<span class="hljs-attr">  nosqlmongoshard1:</span>
+<span class="hljs-attr">    container_name:</span> nosqlmongoshard1
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;mongo:4.0.5&quot;</span>
+<span class="hljs-attr">    command:</span> mongod --shardsvr --replSet mongoshard --bind_ip_all --port <span class="hljs-number">27018</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;27018:27018&quot;</span>
+
+<span class="hljs-attr">  nosqlmongoshard2:</span>
+<span class="hljs-attr">    container_name:</span> nosqlmongoshard2
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;mongo:4.0.5&quot;</span>
+<span class="hljs-attr">    command:</span> mongod --shardsvr --replSet mongoshard --bind_ip_all --port <span class="hljs-number">27018</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;27019:27018&quot;</span>
+
+<span class="hljs-attr">  nosqlmongoshard3:</span>
+<span class="hljs-attr">    container_name:</span> nosqlmongoshard3
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;mongo:4.0.5&quot;</span>
+<span class="hljs-attr">    command:</span> mongod --shardsvr --replSet mongoshard --bind_ip_all --port <span class="hljs-number">27018</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;27020:27018&quot;</span>
+
+<span class="hljs-attr">  mongoserver:</span>
+<span class="hljs-attr">    container_name:</span> mongoserver
+<span class="hljs-attr">    image:</span> <span class="hljs-string">&quot;mongo:4.0.5&quot;</span>
+<span class="hljs-attr">    command:</span> mongos --configdb mongocfg/nsqlmongocfg1:<span class="hljs-number">27019</span>,nsqlmongocfg2:<span class="hljs-number">27019</span>,nsqlmongocfg3:<span class="hljs-number">27019</span> --bind_ip_all
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;27017:27017&quot;</span>
+</code></pre>
+<p>You can run it like this in your shell:</p>
+<pre><code class="lang-bash">docker-compose <span class="hljs-_">-f</span> docker-compose.sharding.yml up
+</code></pre>
+<p>This will spin up the following containers:</p>
+<pre><code class="lang-bash">&gt; docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                 NAMES
+bf605977aed0        mongo:4.0.5         <span class="hljs-string">&quot;docker-entrypoint.s&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        0.0.0.0:27017-&gt;27017/tcp              mongoserver
+ddf3030a060b        mongo:4.0.5         <span class="hljs-string">&quot;docker-entrypoint.s&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        27017/tcp, 0.0.0.0:27018-&gt;27018/tcp   nosqlmongoshard1
+b03397e2d6ce        mongo:4.0.5         <span class="hljs-string">&quot;docker-entrypoint.s&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        27017/tcp, 0.0.0.0:27023-&gt;27019/tcp   nsqlmongocfg3
+dc5f3d3e4be8        mongo:4.0.5         <span class="hljs-string">&quot;docker-entrypoint.s&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        27017/tcp, 0.0.0.0:27020-&gt;27018/tcp   nosqlmongoshard3
+<span class="hljs-built_in">fc</span>686ddc59a9        mongo:4.0.5         <span class="hljs-string">&quot;docker-entrypoint.s&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        27017/tcp, 0.0.0.0:27022-&gt;27019/tcp   nsqlmongocfg2
+e3bc74065947        mongo:4.0.5         <span class="hljs-string">&quot;docker-entrypoint.s&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        27017/tcp, 0.0.0.0:27019-&gt;27018/tcp   nosqlmongoshard2
+c8b0a91c0e3e        mongo:4.0.5         <span class="hljs-string">&quot;docker-entrypoint.s&#x2026;&quot;</span>   3 minutes ago       Up 3 minutes        27017/tcp, 0.0.0.0:27021-&gt;27019/tcp   nsqlmongocfg1
+</code></pre>
+<p>Now run the following <code>init-sharding.sh</code> shell script that looks like this:</p>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash
+</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Initializing mongo configuration&quot;</span>
+CFG_SCRIPT=<span class="hljs-string">&quot;rs.initiate({_id: \&quot;mongocfg\&quot;,configsvr: true, members: [{ _id : 0, host : \&quot;nsqlmongocfg1:27019\&quot; },{ _id : 1, host : \&quot;nsqlmongocfg2:27019\&quot; },{ _id : 2, host : \&quot;nsqlmongocfg3:27019\&quot; }]}); rs.status();&quot;</span>
+docker <span class="hljs-built_in">exec</span> -it nsqlmongocfg1 sh -c <span class="hljs-string">&quot;echo &apos;<span class="hljs-variable">${CFG_SCRIPT}</span>&apos; | mongo --port 27019&quot;</span>
+
+sleep 2
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Initializing mongo shard&quot;</span>
+SHARD_SCRIPT=<span class="hljs-string">&quot;rs.initiate({_id : \&quot;mongoshard\&quot;,members: [{ _id : 0, host : \&quot;nosqlmongoshard1:27018\&quot; },{ _id : 1, host : \&quot;nosqlmongoshard2:27018\&quot; },{ _id : 2, host : \&quot;nosqlmongoshard3:27018\&quot; }]}); rs.status();&quot;</span>
+docker <span class="hljs-built_in">exec</span> -it nosqlmongoshard1 sh -c <span class="hljs-string">&quot;echo &apos;<span class="hljs-variable">${SHARD_SCRIPT}</span>&apos; | mongo --port 27018&quot;</span>
+
+sleep 2
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Intializing mongos (mongo server)&quot;</span>
+docker <span class="hljs-built_in">exec</span> -it mongoserver sh -c <span class="hljs-string">&quot;echo \&quot;sh.addShard(&apos;mongoshard/nosqlmongoshard1:27018&apos;);sh.addShard(&apos;mongoshard/nosqlmongoshard2:27018&apos;);sh.addShard(&apos;mongoshard/nosqlmongoshard3:27018&apos;)\&quot; | mongo &quot;</span>
+</code></pre>
+<p>You run the shell script like this in the root of the repository:</p>
+<p><code>sh ./init-sharding.sh</code></p>
+<p>You may have to execute the shell script multiple times or you may need to do this in your shell:</p>
+<pre><code class="lang-bash">docker <span class="hljs-built_in">exec</span> -it mongoserver sh -c <span class="hljs-string">&quot;echo \&quot;sh.addShard(&apos;mongoshard/nosqlmongoshard1:27018&apos;);sh.addShard(&apos;mongoshard/nosqlmongoshard2:27018&apos;);sh.addShard(&apos;mongoshard/nosqlmongoshard3:27018&apos;)\&quot; | mongo &quot;</span>
+</code></pre>
+<p><em>It takes a bit of time to get all of the containers running and synchronized with each other</em></p>
+<h6 id="list-shards-from-the-running-mongo-server">List shards from the running mongo server</h6>
+<pre><code class="lang-js">&gt; mongo localhost:<span class="hljs-number">27017</span>
+MongoDB shell version v4<span class="hljs-number">.0</span><span class="hljs-number">.5</span>
+connecting to: mongodb:<span class="hljs-comment">//localhost:27017/test?gssapiServiceName=mongodb</span>
+Implicit session: session { <span class="hljs-string">&quot;id&quot;</span> : UUID(<span class="hljs-string">&quot;6789263a-bf28-4ebb-82d9-f48896fc6cb8&quot;</span>) }
+MongoDB server version: <span class="hljs-number">4.0</span><span class="hljs-number">.5</span>
+Server has startup warnings:
+<span class="hljs-number">2019</span><span class="hljs-number">-09</span><span class="hljs-number">-14</span>T16:<span class="hljs-number">23</span>:<span class="hljs-number">25.348</span>+<span class="hljs-number">0000</span> I CONTROL  [main]
+<span class="hljs-number">2019</span><span class="hljs-number">-09</span><span class="hljs-number">-14</span>T16:<span class="hljs-number">23</span>:<span class="hljs-number">25.348</span>+<span class="hljs-number">0000</span> I CONTROL  [main] ** WARNING: Access control is not enabled <span class="hljs-keyword">for</span> the database.
+<span class="hljs-number">2019</span><span class="hljs-number">-09</span><span class="hljs-number">-14</span>T16:<span class="hljs-number">23</span>:<span class="hljs-number">25.348</span>+<span class="hljs-number">0000</span> I CONTROL  [main] **          Read and write access to data and configuration is unrestricted.
+<span class="hljs-number">2019</span><span class="hljs-number">-09</span><span class="hljs-number">-14</span>T16:<span class="hljs-number">23</span>:<span class="hljs-number">25.348</span>+<span class="hljs-number">0000</span> I CONTROL  [main]
+mongos&gt; db.adminCommand( { <span class="hljs-attr">listShards</span> : <span class="hljs-number">1</span> } )
+{
+    <span class="hljs-string">&quot;shards&quot;</span> : [
+        {
+            <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-string">&quot;mongoshard&quot;</span>,
+            <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;mongoshard/nosqlmongoshard1:27018,nosqlmongoshard2:27018,nosqlmongoshard3:27018&quot;</span>,
+            <span class="hljs-string">&quot;state&quot;</span> : <span class="hljs-number">1</span>
+        }
+    ],
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;operationTime&quot;</span> : Timestamp(<span class="hljs-number">1568478915</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;$clusterTime&quot;</span> : {
+        <span class="hljs-string">&quot;clusterTime&quot;</span> : Timestamp(<span class="hljs-number">1568478915</span>, <span class="hljs-number">1</span>),
+        <span class="hljs-string">&quot;signature&quot;</span> : {
+            <span class="hljs-string">&quot;hash&quot;</span> : BinData(<span class="hljs-number">0</span>,<span class="hljs-string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>),
+            <span class="hljs-string">&quot;keyId&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        }
+    }
+}
+mongos&gt;
+</code></pre>
+<h6 id="shard-status-command">Shard status command</h6>
+<pre><code class="lang-js">sh.status()
+--- Sharding Status ---
+  sharding version: {
+      <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">1</span>,
+      <span class="hljs-string">&quot;minCompatibleVersion&quot;</span> : <span class="hljs-number">5</span>,
+      <span class="hljs-string">&quot;currentVersion&quot;</span> : <span class="hljs-number">6</span>,
+      <span class="hljs-string">&quot;clusterId&quot;</span> : ObjectId(<span class="hljs-string">&quot;5d7d1417f6ca77712e3e2e62&quot;</span>)
+  }
+  shards:
+        {  <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-string">&quot;mongoshard&quot;</span>,  <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;mongoshard/nosqlmongoshard1:27018,nosqlmongoshard2:27018,nosqlmongoshard3:27018&quot;</span>,  <span class="hljs-string">&quot;state&quot;</span> : <span class="hljs-number">1</span> }
+  active mongoses:
+        <span class="hljs-string">&quot;4.0.5&quot;</span> : <span class="hljs-number">1</span>
+  autosplit:
+        Currently enabled: yes
+  balancer:
+        Currently enabled:  yes
+        Currently running:  no
+        Failed balancer rounds <span class="hljs-keyword">in</span> last <span class="hljs-number">5</span> attempts:  <span class="hljs-number">0</span>
+        Migration Results <span class="hljs-keyword">for</span> the last <span class="hljs-number">24</span> hours:
+                No recent migrations
+  databases:
+        {  <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-string">&quot;config&quot;</span>,  <span class="hljs-string">&quot;primary&quot;</span> : <span class="hljs-string">&quot;config&quot;</span>,  <span class="hljs-string">&quot;partitioned&quot;</span> : <span class="hljs-literal">true</span> }
+                config.system.sessions
+                        shard key: { <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">1</span> }
+                        unique: <span class="hljs-literal">false</span>
+                        balancing: <span class="hljs-literal">true</span>
+                        chunks:
+                                mongoshard    <span class="hljs-number">1</span>
+                        { <span class="hljs-string">&quot;_id&quot;</span> : { <span class="hljs-string">&quot;$minKey&quot;</span> : <span class="hljs-number">1</span> } } --&gt;&gt; { <span class="hljs-string">&quot;_id&quot;</span> : { <span class="hljs-string">&quot;$maxKey&quot;</span> : <span class="hljs-number">1</span> } } on : mongoshard Timestamp(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
+
+mongos&gt;
+</code></pre>
+<h6 id="please-look-at-the-rest-of-the-running-containers-with-docker-ps-command">Please look at the rest of the running containers with <code>docker ps</code> command</h6>
+<p><em>Port 27017 ==&gt; Mongo Server</em></p>
+<p><em>Ports: 27018,27019,27020 ==&gt; Mongo Shards (Primary, Secondary, Secondary)</em></p>
+<p><em>Ports: 27021,27022,27023 ==&gt; Mongo Config Servers (Primary, Secondary, Secondary)</em></p>
+<h6 id="connecting-to-each-mongo-instance">Connecting to each mongo instance</h6>
+<p>To connect to the mongo server do the following:</p>
+<pre><code class="lang-bash">mongo localhost:27017
+</code></pre>
+<p>To connect to a mongo shard do the following:</p>
+<pre><code class="lang-bash">mongo localhost:27018
+<span class="hljs-comment"># or </span>
+mongo localhost:27019
+<span class="hljs-comment"># or</span>
+mongo localhost:27020
+</code></pre>
+<p>To connect to a mongo config server do the following:</p>
+<pre><code class="lang-bash">mongo localhost:27021
+<span class="hljs-comment"># or </span>
+mongo localhost:27022
+<span class="hljs-comment"># or</span>
+mongo localhost:27023
+</code></pre>
+<p>Please check out the official <a href="https://docs.mongodb.com/manual/administration/sharded-cluster-administration/" target="_blank">mongodb sharding administration guide for more info</a></p>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb_replication.html">MongoDB Replication</a></td>
+<td style="text-align:right"><a href="mongodb_administration.html">MongoDB Administration</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_replication.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Replication">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_administration.html" class="navigation navigation-next " aria-label="Next page: MongoDB Administration">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Sharding","level":"1.4.18","depth":2,"next":{"title":"MongoDB Administration","level":"1.4.19","depth":2,"path":"docs/mongodb_administration.md","ref":"docs/mongodb_administration.md","articles":[]},"previous":{"title":"MongoDB Replication","level":"1.4.17","depth":2,"path":"docs/mongodb_replication.md","ref":"docs/mongodb_replication.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_sharding.md","mtime":"2019-09-14T16:44:29.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

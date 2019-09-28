@@ -1,0 +1,957 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mongo CRUD Concepts · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb-aggregation.html" />
+    
+    
+    <link rel="prev" href="mongo-crud-operations-part3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mongo CRUD Concepts</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Crud Concepts</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#atomicity-and-transactions">Atomicity and Transactions</a></li>
+<li><a href="#read-isolation%5C,-consistency,-and-recency">Read Isolation, Consistency, and Recency</a></li>
+<li><a href="#distributed-queries">Distributed Queries</a></li>
+<li><a href="#linearizable-reads-via-findandmodify">Linearizable Reads via findAndModify</a></li>
+<li><a href="#query-plans">Query Plans</a></li>
+<li><a href="#query-optimization">Query Optimization</a></li>
+<li><a href="#analyze-query-performance">Analyze Query Performance</a></li>
+<li><a href="#write-operation-performance">Write Operation Performance</a></li>
+<li><a href="#tailable">Tailable Cursors</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h2 id="atomicity-and-transactions">Atomicity and Transactions</h2>
+<blockquote>
+<p>In MongoDB, a write operation is atomic on the level of a single document, even if the operation modifies multiple embedded documents within a single document.</p>
+</blockquote>
+<h4 id="multi-document-transactions">Multi-Document Transactions</h4>
+<blockquote>
+<p>When a single write operation (e.g. db.collection.updateMany()) modifies multiple documents, the modification of each document is atomic, but the operation as a whole is not atomic.</p>
+<p>When performing multi-document write operations, whether through a single write operation or multiple write operations, other operations may interleave.</p>
+<p>Starting in version 4.0, for situations that require atomicity for updates to multiple documents or consistency between reads to multiple documents, MongoDB provides multi-document transactions for replica sets.</p>
+</blockquote>
+<h4 id="concurrency-control">Concurrency Control</h4>
+<blockquote>
+<p>Concurrency control allows multiple applications to run concurrently without causing data inconsistency or conflicts.</p>
+<p>One approach is to create a unique index on a field that can only have unique values. This prevents insertions or updates from creating duplicate data. Create a unique index on multiple fields to force uniqueness on that combination of field values. For examples of use cases, see update() and Unique Index and findAndModify() and Unique Index.</p>
+</blockquote>
+<h4 id="read-isolation-consistency-and-recency">Read Isolation, Consistency, and Recency</h4>
+<p>Please read the offical docs at <a href="https://docs.mongodb.com/manual/core/read-isolation-consistency-recency/" target="_blank">Read Isolation Consistency Recency</a></p>
+<h6 id="distributed-queries">Distributed Queries</h6>
+<p>Please read the official docs at <a href="https://docs.mongodb.com/manual/core/distributed-queries/" target="_blank">Distributed Queries</a></p>
+<h6 id="linearizable-reads-via-findandmodify">Linearizable Reads via findAndModify</h6>
+<p>Please run the following script to populate products collection:</p>
+<pre><code class="lang-bash">mongo scripts/create-products-collection.js
+</code></pre>
+<p><a href="https://docs.mongodb.com/manual/tutorial/perform-findAndModify-linearizable-reads/#use-findandmodify-to-read-committed-data" target="_blank">Perform Findandmodify Linearizable Reads</a></p>
+<blockquote>
+<p>Use the db.collection.findAndModify() method to make a trivial update to the document you want to read and return the modified document. A write concern of { w: &quot;majority&quot; } is required. To specify the document to read, you must use an exact match query that is supported by a unique index.</p>
+</blockquote>
+<p><img src="../images/mongo-find-and-modify.png" alt="images/mongo-find-and-modify"></p>
+<blockquote>
+<p>The following findAndModify() operation specifies an exact match on the uniquely indexed field sku and increments the field named _dummy_field in the matching document. While not necessary, the write concern for this command also includes a wtimeout value of 5000 milliseconds to prevent the operation from blocking forever if the write cannot propagate to a majority of voting members.</p>
+<p>Even in situations where two nodes in the replica set believe that they are the primary, only one will be able to complete the write with w: &quot;majority&quot;. As such, the findAndModify() method with &quot;majority&quot; write concern will be successful only when the client has connected to the true primary to perform the operation.</p>
+</blockquote>
+<h6 id="query-plans">Query Plans</h6>
+<p>Please read the official docs at <a href="https://docs.mongodb.com/manual/core/query-plans/" target="_blank">Query Plans</a></p>
+<h6 id="query-optimization">Query Optimization</h6>
+<p>Please read the official docs at <a href="https://docs.mongodb.com/manual/core/query-optimization/" target="_blank">Query Optimization</a></p>
+<h6 id="analyze-query-performance">Analyze Query Performance</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/analyze-query-plan/#evaluate-the-performance-of-a-query" target="_blank">Evaluate The Performance Of A Query</a></p>
+<p><em>Consider a collection inventory with the following documents:</em></p>
+<p><img src="../images/mongo-inventory-collection.png" alt="images/mongo-inventory-collection"></p>
+<p>We can view the execution plan with no index by using the <code>.explain()</code> method:</p>
+<pre><code class="lang-js">db.inventory.find({ 
+    <span class="hljs-attr">quantity</span>: { 
+        <span class="hljs-attr">$gte</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">$lte</span>: <span class="hljs-number">100</span> 
+    } 
+}).explain(<span class="hljs-string">&quot;executionStats&quot;</span>)
+{
+    <span class="hljs-string">&quot;queryPlanner&quot;</span> : {
+        <span class="hljs-string">&quot;plannerVersion&quot;</span> : <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.inventory&quot;</span>,
+        <span class="hljs-string">&quot;indexFilterSet&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;parsedQuery&quot;</span> : {
+            <span class="hljs-string">&quot;$and&quot;</span> : [
+                {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : {
+                        <span class="hljs-string">&quot;$lte&quot;</span> : <span class="hljs-number">100</span>
+                    }
+                },
+                {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : {
+                        <span class="hljs-string">&quot;$gte&quot;</span> : <span class="hljs-number">50</span>
+                    }
+                }
+            ]
+        },
+        <span class="hljs-string">&quot;winningPlan&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;COLLSCAN&quot;</span>,
+            <span class="hljs-string">&quot;filter&quot;</span> : {
+                <span class="hljs-string">&quot;$and&quot;</span> : [
+                    {
+                        <span class="hljs-string">&quot;quantity&quot;</span> : {
+                            <span class="hljs-string">&quot;$lte&quot;</span> : <span class="hljs-number">100</span>
+                        }
+                    },
+                    {
+                        <span class="hljs-string">&quot;quantity&quot;</span> : {
+                            <span class="hljs-string">&quot;$gte&quot;</span> : <span class="hljs-number">50</span>
+                        }
+                    }
+                ]
+            },
+            <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>
+        },
+        <span class="hljs-string">&quot;rejectedPlans&quot;</span> : [ ]
+    },
+    <span class="hljs-string">&quot;executionStats&quot;</span> : {
+        <span class="hljs-string">&quot;executionSuccess&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">23</span>,
+        <span class="hljs-string">&quot;executionTimeMillis&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;totalKeysExamined&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;totalDocsExamined&quot;</span> : <span class="hljs-number">52</span>,
+        <span class="hljs-string">&quot;executionStages&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;COLLSCAN&quot;</span>,
+            <span class="hljs-string">&quot;filter&quot;</span> : {
+                <span class="hljs-string">&quot;$and&quot;</span> : [
+                    {
+                        <span class="hljs-string">&quot;quantity&quot;</span> : {
+                            <span class="hljs-string">&quot;$lte&quot;</span> : <span class="hljs-number">100</span>
+                        }
+                    },
+                    {
+                        <span class="hljs-string">&quot;quantity&quot;</span> : {
+                            <span class="hljs-string">&quot;$gte&quot;</span> : <span class="hljs-number">50</span>
+                        }
+                    }
+                ]
+            },
+            <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">23</span>,
+            <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">54</span>,
+            <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">23</span>,
+            <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">30</span>,
+            <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+            <span class="hljs-string">&quot;docsExamined&quot;</span> : <span class="hljs-number">52</span>
+        }
+    },
+    <span class="hljs-string">&quot;serverInfo&quot;</span> : {
+        <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;dd931d64603e&quot;</span>,
+        <span class="hljs-string">&quot;port&quot;</span> : <span class="hljs-number">27017</span>,
+        <span class="hljs-string">&quot;version&quot;</span> : <span class="hljs-string">&quot;4.0.5&quot;</span>,
+        <span class="hljs-string">&quot;gitVersion&quot;</span> : <span class="hljs-string">&quot;3739429dd92b92d1b0ab120911a23d50bf03c412&quot;</span>
+    },
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>
+}
+</code></pre>
+<p><a href="https://docs.mongodb.com/manual/tutorial/analyze-query-plan/#query-with-index" target="_blank">Query With Index</a></p>
+<blockquote>
+<p>To support the query on the quantity field, add an index on the quantity field:</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.createIndex({ <span class="hljs-attr">quantity</span>: <span class="hljs-number">1</span> })
+</code></pre>
+<p>Let us look at the execution plan for a query with an index now:</p>
+<pre><code class="lang-js">db.inventory.find(
+...    { <span class="hljs-attr">quantity</span>: { <span class="hljs-attr">$gte</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">$lte</span>: <span class="hljs-number">100</span> } }
+... ).explain(<span class="hljs-string">&quot;executionStats&quot;</span>)
+{
+    <span class="hljs-string">&quot;queryPlanner&quot;</span> : {
+        <span class="hljs-string">&quot;plannerVersion&quot;</span> : <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.inventory&quot;</span>,
+        <span class="hljs-string">&quot;indexFilterSet&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;parsedQuery&quot;</span> : {
+            <span class="hljs-string">&quot;$and&quot;</span> : [
+                {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : {
+                        <span class="hljs-string">&quot;$lte&quot;</span> : <span class="hljs-number">100</span>
+                    }
+                },
+                {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : {
+                        <span class="hljs-string">&quot;$gte&quot;</span> : <span class="hljs-number">50</span>
+                    }
+                }
+            ]
+        },
+        <span class="hljs-string">&quot;winningPlan&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;FETCH&quot;</span>,
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;quantity_1&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : [
+                        <span class="hljs-string">&quot;[50.0, 100.0]&quot;</span>
+                    ]
+                }
+            }
+        },
+        <span class="hljs-string">&quot;rejectedPlans&quot;</span> : [ ]
+    },
+    <span class="hljs-string">&quot;executionStats&quot;</span> : {
+        <span class="hljs-string">&quot;executionSuccess&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">23</span>,
+        <span class="hljs-string">&quot;executionTimeMillis&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;totalKeysExamined&quot;</span> : <span class="hljs-number">23</span>,
+        <span class="hljs-string">&quot;totalDocsExamined&quot;</span> : <span class="hljs-number">23</span>,
+        <span class="hljs-string">&quot;executionStages&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;FETCH&quot;</span>,
+            <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">23</span>,
+            <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">24</span>,
+            <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">23</span>,
+            <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;docsExamined&quot;</span> : <span class="hljs-number">23</span>,
+            <span class="hljs-string">&quot;alreadyHasObj&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">23</span>,
+                <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">24</span>,
+                <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">23</span>,
+                <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;quantity_1&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;quantity&quot;</span> : [
+                        <span class="hljs-string">&quot;[50.0, 100.0]&quot;</span>
+                    ]
+                },
+                <span class="hljs-string">&quot;keysExamined&quot;</span> : <span class="hljs-number">23</span>,
+                <span class="hljs-string">&quot;seeks&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;dupsTested&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;dupsDropped&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;seenInvalidated&quot;</span> : <span class="hljs-number">0</span>
+            }
+        }
+    },
+    <span class="hljs-string">&quot;serverInfo&quot;</span> : {
+        <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;dd931d64603e&quot;</span>,
+        <span class="hljs-string">&quot;port&quot;</span> : <span class="hljs-number">27017</span>,
+        <span class="hljs-string">&quot;version&quot;</span> : <span class="hljs-string">&quot;4.0.5&quot;</span>,
+        <span class="hljs-string">&quot;gitVersion&quot;</span> : <span class="hljs-string">&quot;3739429dd92b92d1b0ab120911a23d50bf03c412&quot;</span>
+    },
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>Now let us look at query with compound indexes of:</p>
+<pre><code class="lang-js">db.inventory.createIndex({ <span class="hljs-attr">quantity</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">type</span>: <span class="hljs-number">1</span> });
+db.inventory.createIndex({ <span class="hljs-attr">type</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">quantity</span>: <span class="hljs-number">1</span> });
+</code></pre>
+<p>Here is an explain query with a hint </p>
+<pre><code class="lang-js">db.inventory.find({ 
+    <span class="hljs-attr">quantity</span>: { 
+        <span class="hljs-attr">$gte</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">$lte</span>: <span class="hljs-number">300</span> 
+    }, 
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;food&quot;</span> 
+}).hint({ <span class="hljs-attr">quantity</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">type</span>: <span class="hljs-number">1</span> }).explain(<span class="hljs-string">&quot;executionStats&quot;</span>)
+</code></pre>
+<h4 id="tailable-cursors">Tailable Cursors</h4>
+<p>Please read the official docs at <a href="https://docs.mongodb.com/manual/core/tailable-cursors/" target="_blank">Tailable Cursors</a></p>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongo-crud-operations-part3.html">Mongo CRUD Operations Part III</a></td>
+<td style="text-align:right"><a href="mongodb-aggregation.html">MongoDB Aggregation</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongo-crud-operations-part3.html" class="navigation navigation-prev " aria-label="Previous page: Mongo CRUD Operations Part III">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb-aggregation.html" class="navigation navigation-next " aria-label="Next page: MongoDB Aggregation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mongo CRUD Concepts","level":"1.4.7","depth":2,"next":{"title":"MongoDB Aggregation","level":"1.4.8","depth":2,"path":"docs/mongodb-aggregation.md","ref":"docs/mongodb-aggregation.md","articles":[]},"previous":{"title":"Mongo CRUD Operations Part III","level":"1.4.6","depth":2,"path":"docs/mongo-crud-operations-part3.md","ref":"docs/mongo-crud-operations-part3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongo-crud-concepts.md","mtime":"2019-04-06T19:48:34.015Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

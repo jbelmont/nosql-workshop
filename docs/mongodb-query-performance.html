@@ -1,0 +1,840 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Query Performance · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_security.html" />
+    
+    
+    <link rel="prev" href="mongodb_indexes_partII.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Query Performance</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Query Performance</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#mongodb-profiler">MongoDB Profiler</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p>The information below comes from <a href="https://docs.mongodb.com/manual/administration/analyzing-mongodb-performance/" target="_blank">Analyzing MongoDB Performance</a></p>
+<h2 id="mongodb-profiler">MongoDB Profiler</h2>
+<p>Just remember that the database system will decides how to do the operation and what physical operations to need to be performed.</p>
+<p>MongoDB comes with a built-in profiler that gives query-level insight as to why the database chose these operations.</p>
+<p>The MongoDB profiler lets you see what queries are being run</p>
+<p>Either by collecting all of the queries or by sampling time-slices of the queries.</p>
+<p>Normally you will leave the profiler off unless you need to monitor usage of a database and need to collect information.</p>
+<p>When MongoDB collects queries, it use the entire database instance, which means all your databases and connections on that instance will collect data. </p>
+<p>Profiling can be turned on or off from applications or from the mongo shell.</p>
+<h4 id="configuring-the-mongodb-profiler">Configuring the MongoDB Profiler</h4>
+<p>The MongoDB profiler stores queries in the following database and colection: &quot;db.system.profile&quot;. </p>
+<p>This system database can be queried just like any other database and you can find a lot of information quickly from this database</p>
+<p>The following information will be stored in the profile collection:</p>
+<ul>
+<li>The query and/or command</li>
+<li>when the query was run</li>
+<li>how fast the query ran</li>
+<li>The number of documents that were examined</li>
+<li>The type of plan that was used</li>
+<li>Whether an index was able to be used</li>
+<li>The type of locking that occurred</li>
+</ul>
+<p>The current profiling status can be found with:</p>
+<pre><code class="lang-bash">db.<span class="hljs-function"><span class="hljs-title">getProfilingStatus</span></span>()
+{ <span class="hljs-string">&quot;was&quot;</span> : 0, <span class="hljs-string">&quot;slowms&quot;</span> : 100, <span class="hljs-string">&quot;sampleRate&quot;</span> : 1 }
+</code></pre>
+<ul>
+<li>The <code>was</code> field reports what the verbosity level is set to.</li>
+<li>The <code>slowms</code> field reports the queries that are stored based on the time it takes for the query to complete which in this case is longer than 100ms</li>
+<li>The <code>sample</code> field is the fraction of slow operations that should be profiled or logged.  <ul>
+<li>sampleRate accepts values between 0 and 1, inclusive.</li>
+</ul>
+</li>
+</ul>
+<h6 id="setting-the-mongodb-profiler">Setting the MongoDB Profiler</h6>
+<p>The following numeric values can be set for the profiler:</p>
+<ul>
+<li><p>Level 0 </p>
+<ul>
+<li>The profiler is off and does not collect any data. This is the default profiler level.</li>
+</ul>
+</li>
+<li><p>Level 1</p>
+<ul>
+<li>The profiler collects data for operations that take longer than the value of slowms, which you can set.</li>
+</ul>
+</li>
+<li><p>Level 2 </p>
+<ul>
+<li>The profiler collects data for all operations regardless of the <code>slowms</code> field value set.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-bash">db.setProfilingLevel(2)
+{ <span class="hljs-string">&quot;was&quot;</span> : 0, <span class="hljs-string">&quot;slowms&quot;</span> : 100, <span class="hljs-string">&quot;sampleRate&quot;</span> : 1, <span class="hljs-string">&quot;ok&quot;</span> : 1 }
+&gt; db.setProfilingLevel(0)
+{ <span class="hljs-string">&quot;was&quot;</span> : 2, <span class="hljs-string">&quot;slowms&quot;</span> : 100, <span class="hljs-string">&quot;sampleRate&quot;</span> : 1, <span class="hljs-string">&quot;ok&quot;</span> : 1 }
+</code></pre>
+<p>Notice we set the profiling state back to the default profiler level of 0.</p>
+<p>We can also view the new profiling level with:</p>
+<pre><code class="lang-bash">&gt; db.<span class="hljs-function"><span class="hljs-title">getProfilingStatus</span></span>()
+{ <span class="hljs-string">&quot;was&quot;</span> : 0, <span class="hljs-string">&quot;slowms&quot;</span> : 100, <span class="hljs-string">&quot;sampleRate&quot;</span> : 1 }
+</code></pre>
+<h2 id="useful-queriesscripts-for-performance-tuning">Useful Queries/Scripts for Performance Tuning</h2>
+<h4 id="sort-queries-by-when-queries-are-recorded-and-show-just-commandsaggregations-etc">Sort queries by when queries are recorded and show just commands/aggregations etc</h4>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-keyword">var</span> db = connect(<span class="hljs-string">&quot;localhost:27017/nosql_workshop&quot;</span>);
+
+<span class="hljs-comment">// This is good for aggregate queries</span>
+db.system.profile.find({
+    <span class="hljs-string">&quot;command.pipeline&quot;</span>: { <span class="hljs-attr">$exists</span>: <span class="hljs-literal">true</span> }
+},{
+    <span class="hljs-string">&quot;command.pipeline&quot;</span>:<span class="hljs-number">1</span>
+}).sort({
+    <span class="hljs-attr">$natural</span>:<span class="hljs-number">-1</span>
+}).pretty();
+</code></pre>
+<h4 id="find-all-queries-that-execute-a-collscan-collection-scan-because-there-is-no-suitable-index-used">Find all queries that execute a COLLSCAN (Collection Scan) because there is no suitable index used</h4>
+<p>Please perform the following query in the largev2 collection:</p>
+<pre><code class="lang-bash">db.largev2.find( { word: { <span class="hljs-variable">$regex</span>: /^ab.*/, <span class="hljs-variable">$options</span>: <span class="hljs-string">&quot;si&quot;</span> } } )
+</code></pre>
+<p>This will look for all documents that have the word field that have characters starting with &quot;ab&quot;</p>
+<p>Next do the following query in the system database and profile collection:</p>
+<pre><code class="lang-bash">db.system.profile.find({<span class="hljs-string">&quot;planSummary&quot;</span>:{<span class="hljs-variable">$eq</span>:<span class="hljs-string">&quot;COLLSCAN&quot;</span>}, <span class="hljs-string">&quot;op&quot;</span> : {<span class="hljs-variable">$eq</span>:<span class="hljs-string">&quot;query&quot;</span>}}).sort({millis:-1})
+{
+    <span class="hljs-string">&quot;op&quot;</span> : <span class="hljs-string">&quot;query&quot;</span>,
+    <span class="hljs-string">&quot;ns&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.largev2&quot;</span>,
+    <span class="hljs-string">&quot;command&quot;</span> : {
+        <span class="hljs-string">&quot;find&quot;</span> : <span class="hljs-string">&quot;largev2&quot;</span>,
+        <span class="hljs-string">&quot;filter&quot;</span> : {
+            <span class="hljs-string">&quot;word&quot;</span> : {
+                <span class="hljs-string">&quot;<span class="hljs-variable">$regex</span>&quot;</span> : /^ab.*/,
+                <span class="hljs-string">&quot;<span class="hljs-variable">$options</span>&quot;</span> : <span class="hljs-string">&quot;si&quot;</span>
+            }
+        },
+        <span class="hljs-string">&quot;lsid&quot;</span> : {
+            <span class="hljs-string">&quot;id&quot;</span> : UUID(<span class="hljs-string">&quot;9351612c-8d7e-446b-a92d-e31817068d25&quot;</span>)
+        },
+        <span class="hljs-string">&quot;<span class="hljs-variable">$db</span>&quot;</span> : <span class="hljs-string">&quot;nosql_workshop&quot;</span>
+    },
+    <span class="hljs-string">&quot;cursorid&quot;</span> : 60943904003,
+    <span class="hljs-string">&quot;keysExamined&quot;</span> : 0,
+    <span class="hljs-string">&quot;docsExamined&quot;</span> : 26909,
+    <span class="hljs-string">&quot;numYield&quot;</span> : 210,
+    <span class="hljs-string">&quot;nreturned&quot;</span> : 101,
+    <span class="hljs-string">&quot;locks&quot;</span> : {
+        <span class="hljs-string">&quot;Global&quot;</span> : {
+            <span class="hljs-string">&quot;acquireCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(211)
+            }
+        },
+        <span class="hljs-string">&quot;Database&quot;</span> : {
+            <span class="hljs-string">&quot;acquireCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(211)
+            }
+        },
+        <span class="hljs-string">&quot;Collection&quot;</span> : {
+            <span class="hljs-string">&quot;acquireCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(211)
+            }
+        }
+    },
+    <span class="hljs-string">&quot;responseLength&quot;</span> : 6970,
+    <span class="hljs-string">&quot;protocol&quot;</span> : <span class="hljs-string">&quot;op_msg&quot;</span>,
+    <span class="hljs-string">&quot;millis&quot;</span> : 20,
+    <span class="hljs-string">&quot;planSummary&quot;</span> : <span class="hljs-string">&quot;COLLSCAN&quot;</span>,
+    <span class="hljs-string">&quot;execStats&quot;</span> : {
+        <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;COLLSCAN&quot;</span>,
+        <span class="hljs-string">&quot;filter&quot;</span> : {
+            <span class="hljs-string">&quot;word&quot;</span> : {
+                <span class="hljs-string">&quot;<span class="hljs-variable">$regex</span>&quot;</span> : <span class="hljs-string">&quot;^ab.*&quot;</span>,
+                <span class="hljs-string">&quot;<span class="hljs-variable">$options</span>&quot;</span> : <span class="hljs-string">&quot;si&quot;</span>
+            }
+        },
+        <span class="hljs-string">&quot;nReturned&quot;</span> : 101,
+        <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : 10,
+        <span class="hljs-string">&quot;works&quot;</span> : 26910,
+        <span class="hljs-string">&quot;advanced&quot;</span> : 101,
+        <span class="hljs-string">&quot;needTime&quot;</span> : 26809,
+        <span class="hljs-string">&quot;needYield&quot;</span> : 0,
+        <span class="hljs-string">&quot;saveState&quot;</span> : 211,
+        <span class="hljs-string">&quot;restoreState&quot;</span> : 210,
+        <span class="hljs-string">&quot;isEOF&quot;</span> : 0,
+        <span class="hljs-string">&quot;invalidates&quot;</span> : 0,
+        <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+        <span class="hljs-string">&quot;docsExamined&quot;</span> : 26909
+    },
+    <span class="hljs-string">&quot;ts&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-05-18T17:57:54.389Z&quot;</span>),
+    <span class="hljs-string">&quot;client&quot;</span> : <span class="hljs-string">&quot;172.17.0.1&quot;</span>,
+    <span class="hljs-string">&quot;appName&quot;</span> : <span class="hljs-string">&quot;MongoDB Shell&quot;</span>,
+    <span class="hljs-string">&quot;allUsers&quot;</span> : [ ],
+    <span class="hljs-string">&quot;user&quot;</span> : <span class="hljs-string">&quot;&quot;</span>
+}
+......................................................................
+</code></pre>
+<p><em>We will get profile data such as the output shown above!</em></p>
+<h2 id="bread-crumb-navigation">Bread Crumb Navigation</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>&#x2190; <a href="mongodb_indexes_partII.html">MongoDB Indexes Part II</a> | <a href="mongodb_security.html">MongoDB Security</a> &#x2192;</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_indexes_partII.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Indexes Part II">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_security.html" class="navigation navigation-next " aria-label="Next page: MongoDB Security">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Query Performance","level":"1.4.14","depth":2,"next":{"title":"MongoDB Security","level":"1.4.15","depth":2,"path":"docs/mongodb_security.md","ref":"docs/mongodb_security.md","articles":[]},"previous":{"title":"MongoDB Indexes Part II","level":"1.4.13","depth":2,"path":"docs/mongodb_indexes_partII.md","ref":"docs/mongodb_indexes_partII.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb-query-performance.md","mtime":"2019-06-06T21:33:11.122Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1277 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Indexes Part II · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb-query-performance.html" />
+    
+    
+    <link rel="prev" href="mongodb_indexes_partI.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Indexes Part II</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Indexes Part II</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#load-collection-with-large-amount-of-data">Load collection with large amount of data</a></li>
+<li><a href="#reading-query-plan-in-mongo-shell">Reading Query Plan in Mongo Shell</a></li>
+<li><a href="#mongodb-indexes-exercises">MongoDB Indexes Exercises</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p>The information below comes from <a href="https://docs.mongodb.com/manual/indexes/" target="_blank">MongoDB Reference on Indexes</a></p>
+<h2 id="load-collection-with-large-amount-of-data">Load collection with large amount of data</h2>
+<p>We will load a collection named &apos;large&apos; with large amount of data into the nosql_workshop database.</p>
+<p>The following script will load however many documents into a collection that you prescribe into the nosql_workshop database.</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-keyword">var</span> db = connect(<span class="hljs-string">&quot;localhost:27017&quot;</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Large</span> </span>{
+    <span class="hljs-keyword">constructor</span>(numberOfDocuments, targetDB, collectionName) {
+        <span class="hljs-keyword">this</span>.numberOfDocuments = numberOfDocuments;
+        <span class="hljs-keyword">this</span>.targetDB = targetDB;
+        <span class="hljs-keyword">this</span>.collectionName = collectionName;
+        db = <span class="hljs-keyword">this</span>.setDB(<span class="hljs-keyword">this</span>.targetDB);
+        <span class="hljs-keyword">this</span>.words = [
+            <span class="hljs-comment">// Hidden for brevity!!</span>
+            ....
+        ];
+    }
+    help() {
+        print(<span class="hljs-string">&apos;------------------------------------------------------------------------------------------------&apos;</span>);
+        print(<span class="hljs-string">&apos;&apos;</span>);
+        print(<span class="hljs-string">&apos;Usage:&apos;</span>);
+        print(<span class="hljs-string">&quot;Pass in 3 arguments into Large Class:\n\tnumberOfDocuments should be an integer.\n\ttargetDB is the database name.\n\tcollectionName is the name of the collection to insert documents to.&quot;</span>)
+        print(<span class="hljs-string">&quot;\tvar collection = new Large(1000000, \&quot;dbName\&quot;, \&quot;collName\&quot;&quot;</span>);
+        print(<span class="hljs-string">&quot;\tcollection.generateDocuments()&quot;</span>)
+        print(<span class="hljs-string">&apos;------------------------------------------------------------------------------------------------&apos;</span>);
+
+    }
+    setDB(targetDB) {
+        <span class="hljs-keyword">return</span> db.getSiblingDB(targetDB);
+    }
+    dropCollection(collectionName) {
+        db.getCollection(collectionName).drop();
+    }
+    generateDocuments() {
+        <span class="hljs-keyword">this</span>.dropCollection(<span class="hljs-keyword">this</span>.collectionName);
+        <span class="hljs-keyword">this</span>.documents = [];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.numberOfDocuments; i++) {
+            <span class="hljs-keyword">this</span>.documents.push({
+                <span class="hljs-attr">_id</span>: <span class="hljs-keyword">new</span> ObjectId(),
+                <span class="hljs-attr">number</span>: i,
+                <span class="hljs-attr">word</span>: <span class="hljs-keyword">this</span>.words[i]
+            });
+        }
+        db.getCollection(<span class="hljs-keyword">this</span>.collectionName).insertMany(<span class="hljs-keyword">this</span>.documents);
+    }
+}
+</code></pre>
+<h2 id="reading-query-plan-in-mongo-shell-with-large-collection">Reading Query Plan in Mongo Shell with Large Collection</h2>
+<p>Now let use look at the following query for the new largev2 document that we created with the following command:</p>
+<pre><code class="lang-bash">collection = new Large(1000000, <span class="hljs-string">&quot;nosql_workshop&quot;</span>, <span class="hljs-string">&quot;largev2&quot;</span>);
+collection.generateDocuments();
+db.largev2.updateMany({}, { 
+    <span class="hljs-variable">$set</span>: { num: Math.floor(Math.random() * 100) } 
+});
+</code></pre>
+<p>We will query for one document in the following query and use the <em>explain()</em> command with no argument:</p>
+<p><img src="../images/mongodb-explain-no-arg.png" alt="images/mongodb-explain-no-arg"></p>
+<h4 id="understanding-the-query-plan-information-relationship-with-indexes">Understanding the Query Plan Information relationship with indexes</h4>
+<p>In the previous image we did not give any argument to the <code>.explain()</code> command and so by default the <em>queryPlanner</em></p>
+<p>There are 3 verbosity levels for the explain command:</p>
+<p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.explain/index.html#verbosity-modes" target="_blank">Verbosity Modes</a></p>
+<ol>
+<li><code>db.collection.explain()</code><ol>
+<li>If you don&apos;t provide any argument in the <em>.explain()</em> method, then it uses the &quot;queryPlanner&quot; verbosity by default.</li>
+<li>It returns the queryPlanner information for the evaluated method.</li>
+<li>You could also just do <code>db.collection.explain(&quot;queryPlanner&quot;)</code> but it is on by default so just omit an argument.</li>
+</ol>
+</li>
+</ol>
+<p>Here is a sample run for the queryPlanner method:</p>
+<p><img src="../images/mongodb-queryPlanner.png" alt="images/mongodb-queryPlanner"></p>
+<ol>
+<li><code>db.collection.explain(&quot;executionStats&quot;)</code><ol>
+<li>If you specify &quot;executionStats&quot;, you will get the queryPlanner and the executionStats information for the evaluated method.</li>
+<li>You will not get the query execution information for the rejected plans however. </li>
+</ol>
+</li>
+</ol>
+<p>Here is a sample run for the execution stats:</p>
+<pre><code class="lang-js">db.largev2.find({ <span class="hljs-attr">number</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">400000</span> } }).explain(<span class="hljs-string">&apos;executionStats&apos;</span>)
+{
+    <span class="hljs-string">&quot;queryPlanner&quot;</span> : {
+        <span class="hljs-string">&quot;plannerVersion&quot;</span> : <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.largev2&quot;</span>,
+        <span class="hljs-string">&quot;indexFilterSet&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;parsedQuery&quot;</span> : {
+            <span class="hljs-string">&quot;number&quot;</span> : {
+                <span class="hljs-string">&quot;$gt&quot;</span> : <span class="hljs-number">400000</span>
+            }
+        },
+        <span class="hljs-string">&quot;winningPlan&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;COLLSCAN&quot;</span>,
+            <span class="hljs-string">&quot;filter&quot;</span> : {
+                <span class="hljs-string">&quot;number&quot;</span> : {
+                    <span class="hljs-string">&quot;$gt&quot;</span> : <span class="hljs-number">400000</span>
+                }
+            },
+            <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>
+        },
+        <span class="hljs-string">&quot;rejectedPlans&quot;</span> : [ ]
+    },
+    <span class="hljs-string">&quot;executionStats&quot;</span> : {
+        <span class="hljs-string">&quot;executionSuccess&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;executionTimeMillis&quot;</span> : <span class="hljs-number">584</span>,
+        <span class="hljs-string">&quot;totalKeysExamined&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;totalDocsExamined&quot;</span> : <span class="hljs-number">1000000</span>,
+        <span class="hljs-string">&quot;executionStages&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;COLLSCAN&quot;</span>,
+            <span class="hljs-string">&quot;filter&quot;</span> : {
+                <span class="hljs-string">&quot;number&quot;</span> : {
+                    <span class="hljs-string">&quot;$gt&quot;</span> : <span class="hljs-number">400000</span>
+                }
+            },
+            <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">392</span>,
+            <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">1000002</span>,
+            <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">400002</span>,
+            <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">7813</span>,
+            <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">7813</span>,
+            <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+            <span class="hljs-string">&quot;docsExamined&quot;</span> : <span class="hljs-number">1000000</span>
+        }
+    },
+    <span class="hljs-string">&quot;serverInfo&quot;</span> : {
+        <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;2d7dd8d69672&quot;</span>,
+        <span class="hljs-string">&quot;port&quot;</span> : <span class="hljs-number">27017</span>,
+        <span class="hljs-string">&quot;version&quot;</span> : <span class="hljs-string">&quot;4.0.5&quot;</span>,
+        <span class="hljs-string">&quot;gitVersion&quot;</span> : <span class="hljs-string">&quot;3739429dd92b92d1b0ab120911a23d50bf03c412&quot;</span>
+    },
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>Notice here that this query did a collection scan!</p>
+<p>Also notice the ratio for:
+    &quot;executionStats.totalDocsExamined&quot; / &quot;executionStats.nReturned&quot; ==&gt;
+    1000000 / 599999 = 1.6</p>
+<p>In general what you want to see is a ratio of 1 to 1 for the number of total documents examined to number returned. </p>
+<p>This is where an index would be useful so that you get much better query performance.</p>
+<blockquote>
+<p>In general, if keysExamined is much higher than nreturned, the database is scanning many index keys to find the result documents. Consider creating or adjusting indexes to improve query performance.</p>
+</blockquote>
+<h6 id="adding-index-for-the-number-field-to-improve-query-performance">Adding index for the number field to improve query performance</h6>
+<p>Let us add an index to the number field and we can see indexes available in a collection using the <code>db.collection.getIndexes()</code> method:</p>
+<pre><code class="lang-js">db.largev2.getIndexes()
+[
+    {
+        <span class="hljs-string">&quot;v&quot;</span> : <span class="hljs-number">2</span>,
+        <span class="hljs-string">&quot;key&quot;</span> : {
+            <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">1</span>
+        },
+        <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;_id_&quot;</span>,
+        <span class="hljs-string">&quot;ns&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.largev2&quot;</span>
+    }
+]
+</code></pre>
+<p>Notice here that we only have the default index for the <code>_id</code> field.</p>
+<p>We can add an index using the <a href="https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/index.html#definition" target="_blank">db.collection.createIndex(...) method</a></p>
+<p><img src="../images/mongodb-create-index-with-name.png" alt="images/mongodb-create-index-with-name"></p>
+<p><em>Notice that in the screenshot we created a new index for the number field and used the options document to give our index a name but mongodb will create a name for your index by default!</em></p>
+<p>Now let us rerun the explain query to see if our query performed better:</p>
+<pre><code class="lang-js">db.largev2.find({ <span class="hljs-attr">number</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">400000</span> } }).explain(<span class="hljs-string">&apos;executionStats&apos;</span>)
+{
+    <span class="hljs-string">&quot;queryPlanner&quot;</span> : {
+        <span class="hljs-string">&quot;plannerVersion&quot;</span> : <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.largev2&quot;</span>,
+        <span class="hljs-string">&quot;indexFilterSet&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;parsedQuery&quot;</span> : {
+            <span class="hljs-string">&quot;number&quot;</span> : {
+                <span class="hljs-string">&quot;$gt&quot;</span> : <span class="hljs-number">400000</span>
+            }
+        },
+        <span class="hljs-string">&quot;winningPlan&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;FETCH&quot;</span>,
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;number&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [
+                        <span class="hljs-string">&quot;(400000.0, inf.0]&quot;</span>
+                    ]
+                }
+            }
+        },
+        <span class="hljs-string">&quot;rejectedPlans&quot;</span> : [ ]
+    },
+    <span class="hljs-string">&quot;executionStats&quot;</span> : {
+        <span class="hljs-string">&quot;executionSuccess&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;executionTimeMillis&quot;</span> : <span class="hljs-number">703</span>,
+        <span class="hljs-string">&quot;totalKeysExamined&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;totalDocsExamined&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;executionStages&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;FETCH&quot;</span>,
+            <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">604</span>,
+            <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">600000</span>,
+            <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">4688</span>,
+            <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">4688</span>,
+            <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;docsExamined&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;alreadyHasObj&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">192</span>,
+                <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">600000</span>,
+                <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">4688</span>,
+                <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">4688</span>,
+                <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;number&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [
+                        <span class="hljs-string">&quot;(400000.0, inf.0]&quot;</span>
+                    ]
+                },
+                <span class="hljs-string">&quot;keysExamined&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;seeks&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;dupsTested&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;dupsDropped&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;seenInvalidated&quot;</span> : <span class="hljs-number">0</span>
+            }
+        }
+    },
+    <span class="hljs-string">&quot;serverInfo&quot;</span> : {
+        <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;2d7dd8d69672&quot;</span>,
+        <span class="hljs-string">&quot;port&quot;</span> : <span class="hljs-number">27017</span>,
+        <span class="hljs-string">&quot;version&quot;</span> : <span class="hljs-string">&quot;4.0.5&quot;</span>,
+        <span class="hljs-string">&quot;gitVersion&quot;</span> : <span class="hljs-string">&quot;3739429dd92b92d1b0ab120911a23d50bf03c412&quot;</span>
+    },
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>Notice that the field &quot;winningPlan.inputStage.stage&quot; : &quot;IXSCAN&quot;</p>
+<p>This indicates that an index was used which is what we want!</p>
+<p>Also notice that our ratio for:</p>
+<p>&quot;executionStats.totalDocsExamined&quot; / &quot;executionStats.nReturned&quot; ==&gt;
+599999 / 599999 = 1</p>
+<p>Now we have a 1 to 1 ratio for our query which means we have a much more performant query!</p>
+<ol>
+<li><code>db.collection.explain(&quot;allPlansExecution&quot;)</code><ol>
+<li>If you specify the &quot;allPlansExecution&quot; mode, then you will get the statistics for the other candidate plans that the query optimizer selected or that it rejected.</li>
+<li>This is the most verbose setting in the <code>.explain()</code> command.</li>
+</ol>
+</li>
+</ol>
+<p>Here is a sample run for the &quot;allPlansExecution&quot; query plan which shows the rejected plans:</p>
+<pre><code class="lang-js">db.largev2.find({ <span class="hljs-attr">number</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">400000</span> } }).explain(<span class="hljs-string">&apos;allPlansExecution&apos;</span>)
+{
+    <span class="hljs-string">&quot;queryPlanner&quot;</span> : {
+        <span class="hljs-string">&quot;plannerVersion&quot;</span> : <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.largev2&quot;</span>,
+        <span class="hljs-string">&quot;indexFilterSet&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;parsedQuery&quot;</span> : {
+            <span class="hljs-string">&quot;number&quot;</span> : {
+                <span class="hljs-string">&quot;$gt&quot;</span> : <span class="hljs-number">400000</span>
+            }
+        },
+        <span class="hljs-string">&quot;winningPlan&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;FETCH&quot;</span>,
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;number&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [
+                        <span class="hljs-string">&quot;(400000.0, inf.0]&quot;</span>
+                    ]
+                }
+            }
+        },
+        <span class="hljs-string">&quot;rejectedPlans&quot;</span> : [ ]
+    },
+    <span class="hljs-string">&quot;executionStats&quot;</span> : {
+        <span class="hljs-string">&quot;executionSuccess&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;executionTimeMillis&quot;</span> : <span class="hljs-number">662</span>,
+        <span class="hljs-string">&quot;totalKeysExamined&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;totalDocsExamined&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;executionStages&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;FETCH&quot;</span>,
+            <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">608</span>,
+            <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">600000</span>,
+            <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">4690</span>,
+            <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">4690</span>,
+            <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;docsExamined&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;alreadyHasObj&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">243</span>,
+                <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">600000</span>,
+                <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">4690</span>,
+                <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">4690</span>,
+                <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;number&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [
+                        <span class="hljs-string">&quot;(400000.0, inf.0]&quot;</span>
+                    ]
+                },
+                <span class="hljs-string">&quot;keysExamined&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;seeks&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;dupsTested&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;dupsDropped&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;seenInvalidated&quot;</span> : <span class="hljs-number">0</span>
+            }
+        },
+        <span class="hljs-string">&quot;allPlansExecution&quot;</span> : [ ]
+    },
+    <span class="hljs-string">&quot;serverInfo&quot;</span> : {
+        <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;2d7dd8d69672&quot;</span>,
+        <span class="hljs-string">&quot;port&quot;</span> : <span class="hljs-number">27017</span>,
+        <span class="hljs-string">&quot;version&quot;</span> : <span class="hljs-string">&quot;4.0.5&quot;</span>,
+        <span class="hljs-string">&quot;gitVersion&quot;</span> : <span class="hljs-string">&quot;3739429dd92b92d1b0ab120911a23d50bf03c412&quot;</span>
+    },
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>Notice here that &quot;queryPlanner.rejectedPlans&quot; which is the rejected plans is an empty array.</p>
+<p>If the query execution planner had more plans we would have seen some rejected plans, but alas we did not.</p>
+<h4 id="query-planner-stage-names">Query Planner Stage Names</h4>
+<p>Each stage has a name and the name describes the operation. </p>
+<p>The most important names are:</p>
+<ul>
+<li>COLLSCAN &#x2013; Collection scan</li>
+<li>IXSCAN &#x2013; Scan of data in index keys</li>
+<li>FETCH &#x2013; Retrieving documents</li>
+<li>SHARD_MERGE &#x2013; Merging results from shards</li>
+<li>SORT &#x2013; Explicit sort rather than using index order</li>
+</ul>
+<p>We have already seen COLLSCAN (Collection Scans) and IXSCAN (Index scan) we will look at more queries that use the other stages later on the workshop.</p>
+<h4 id="covered-queries">Covered Queries</h4>
+<p><a href="https://docs.mongodb.com/manual/core/query-optimization/#covered-query" target="_blank">Covered Queries</a></p>
+<blockquote>
+<p>A covered query is a query that can be satisfied entirely using an index and does not have to examine any documents. An index covers a query when both of the following apply:</p>
+</blockquote>
+<ul>
+<li>all the fields in the query are part of an index, and</li>
+<li>all the fields returned in the results are in the same index.</li>
+</ul>
+<p>Here is a sample run that uses a covered query:</p>
+<pre><code class="lang-js">db.largev2.find({ <span class="hljs-attr">number</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">400000</span> } }, { <span class="hljs-attr">_id</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">number</span>: <span class="hljs-number">1</span> }).explain(<span class="hljs-string">&apos;executionStats&apos;</span>)
+{
+    <span class="hljs-string">&quot;queryPlanner&quot;</span> : {
+        <span class="hljs-string">&quot;plannerVersion&quot;</span> : <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span> : <span class="hljs-string">&quot;nosql_workshop.largev2&quot;</span>,
+        <span class="hljs-string">&quot;indexFilterSet&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;parsedQuery&quot;</span> : {
+            <span class="hljs-string">&quot;number&quot;</span> : {
+                <span class="hljs-string">&quot;$gt&quot;</span> : <span class="hljs-number">400000</span>
+            }
+        },
+        <span class="hljs-string">&quot;winningPlan&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;PROJECTION&quot;</span>,
+            <span class="hljs-string">&quot;transformBy&quot;</span> : {
+                <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+            },
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;number&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [
+                        <span class="hljs-string">&quot;(400000.0, inf.0]&quot;</span>
+                    ]
+                }
+            }
+        },
+        <span class="hljs-string">&quot;rejectedPlans&quot;</span> : [ ]
+    },
+    <span class="hljs-string">&quot;executionStats&quot;</span> : {
+        <span class="hljs-string">&quot;executionSuccess&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;executionTimeMillis&quot;</span> : <span class="hljs-number">420</span>,
+        <span class="hljs-string">&quot;totalKeysExamined&quot;</span> : <span class="hljs-number">599999</span>,
+        <span class="hljs-string">&quot;totalDocsExamined&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;executionStages&quot;</span> : {
+            <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;PROJECTION&quot;</span>,
+            <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">302</span>,
+            <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">600000</span>,
+            <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">599999</span>,
+            <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">4688</span>,
+            <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">4688</span>,
+            <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transformBy&quot;</span> : {
+                <span class="hljs-string">&quot;_id&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+            },
+            <span class="hljs-string">&quot;inputStage&quot;</span> : {
+                <span class="hljs-string">&quot;stage&quot;</span> : <span class="hljs-string">&quot;IXSCAN&quot;</span>,
+                <span class="hljs-string">&quot;nReturned&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;executionTimeMillisEstimate&quot;</span> : <span class="hljs-number">192</span>,
+                <span class="hljs-string">&quot;works&quot;</span> : <span class="hljs-number">600000</span>,
+                <span class="hljs-string">&quot;advanced&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;needTime&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;needYield&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;saveState&quot;</span> : <span class="hljs-number">4688</span>,
+                <span class="hljs-string">&quot;restoreState&quot;</span> : <span class="hljs-number">4688</span>,
+                <span class="hljs-string">&quot;isEOF&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;invalidates&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;keyPattern&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : <span class="hljs-number">1</span>
+                },
+                <span class="hljs-string">&quot;indexName&quot;</span> : <span class="hljs-string">&quot;number&quot;</span>,
+                <span class="hljs-string">&quot;isMultiKey&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;multiKeyPaths&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [ ]
+                },
+                <span class="hljs-string">&quot;isUnique&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isSparse&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;isPartial&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;indexVersion&quot;</span> : <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;direction&quot;</span> : <span class="hljs-string">&quot;forward&quot;</span>,
+                <span class="hljs-string">&quot;indexBounds&quot;</span> : {
+                    <span class="hljs-string">&quot;number&quot;</span> : [
+                        <span class="hljs-string">&quot;(400000.0, inf.0]&quot;</span>
+                    ]
+                },
+                <span class="hljs-string">&quot;keysExamined&quot;</span> : <span class="hljs-number">599999</span>,
+                <span class="hljs-string">&quot;seeks&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;dupsTested&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;dupsDropped&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;seenInvalidated&quot;</span> : <span class="hljs-number">0</span>
+            }
+        }
+    },
+    <span class="hljs-string">&quot;serverInfo&quot;</span> : {
+        <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;2d7dd8d69672&quot;</span>,
+        <span class="hljs-string">&quot;port&quot;</span> : <span class="hljs-number">27017</span>,
+        <span class="hljs-string">&quot;version&quot;</span> : <span class="hljs-string">&quot;4.0.5&quot;</span>,
+        <span class="hljs-string">&quot;gitVersion&quot;</span> : <span class="hljs-string">&quot;3739429dd92b92d1b0ab120911a23d50bf03c412&quot;</span>
+    },
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>
+}
+</code></pre>
+<p>Notice that we had an additional stage of &quot;PROJECTION&quot; since we did provide an additional document for projection with <code>{ _id: 0, number : 1}</code> in our query.</p>
+<p>We can confirm that no documents were examined with the key:</p>
+<p>&quot;executionStats.totalDocsExamined&quot;: 0 =&gt; no documents examined so this is a covered query.</p>
+<p>Also notice that the field &quot;executionStats.executionTimeMillis&quot; : 420 </p>
+<p>Our query executed in 420 milliseconds which is a fast query indeed for a 1 million document collection!</p>
+<h4 id="mongodb-indexes-exercises">MongoDB Indexes Exercises</h4>
+<h6 id="indexes-exercise-1">Indexes Exercise 1</h6>
+<p>Please create the following collection called indexes:</p>
+<pre><code class="lang-bash">var department = [<span class="hljs-string">&quot;QA&quot;</span>, <span class="hljs-string">&quot;Engineering&quot;</span>, <span class="hljs-string">&quot;Product&quot;</span>, <span class="hljs-string">&quot;DevOps&quot;</span>]
+
+<span class="hljs-keyword">for</span> (i = 0; i &lt; 100000; i++) {
+    db.indexes.insert({
+        _id: new ObjectId(),
+        empId: <span class="hljs-string">&quot;empId&quot;</span> + i,
+        department: department[Math.round(Math.random() * 3)]
+    });
+}
+</code></pre>
+<p>This will insert 100K documents into the indexes collection.</p>
+<p>The exercises is to create an index for empId field and to make query for the employee with the employee id &quot;empId1000&quot; and make sure to make it a covered query.</p>
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.indexes.createIndex({
+        empId: 1
+    }, {
+        name: &quot;empId&quot;
+    });
+   </pre>
+   <h5 id="a-covered-query-is-a-query-that-can-be-satisfied-entirely-using-an-index-and-does-not-have-to-examine-any-documents-an-index-covers-a-query-when-both-of-the-following-apply-if-you-look-at-the-executionstats-you-will-notice-that-totaldocsexamined-is-0-nreturned-is-1-and-totalkeysexamined-is-1-so-this-is-a-covered-query">A covered query is a query that can be satisfied entirely using an index and does not have to examine any documents. An index covers a query when both of the following apply. If you look at the executionStats you will notice that totalDocsExamined is 0, nReturned is 1 and totalKeysExamined is 1 so this is a covered query.</h5>
+   <pre>
+   db.indexes.find({ empId: &quot;empId1000&quot; }, { _id: 0, empId: 1 }).explain(&quot;executionStats&quot;)
+   </pre>
+</details>
+
+<h6 id="indexes-exercise-2">Indexes Exercise 2</h6>
+<p>Please update the indexes collection with the following information:</p>
+<pre><code class="lang-bash">db.indexes.find({}).toArray().forEach(<span class="hljs-keyword">function</span>(doc) { 
+    db.indexes.update({ _id: doc._id }, {
+        <span class="hljs-variable">$set</span>: {
+            x: Math.floor(Math.random() * 1000),
+            y: Math.floor(Math.random() * 100),
+            z: Math.floor(Math.random() * 10)
+        }
+    });
+});
+</code></pre>
+<p>Now create a compound index for the fields x, y, and z.</p>
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.indexes.createIndex({
+        x: 1,
+        y: 1,
+        z: 1
+    }, {
+        name: &quot;x_y_z&quot;
+    });
+   </pre>
+</details>
+
+<p>Next make a query with the compound indexes. Remember that with compound indices that the leftmost rule applies else the query will resort to a full collection scan:</p>
+<details>
+    <summary>Answer</summary>
+    <pre>
+    db.indexes.find({ x: { $gt: 0 }, z: 7 }, { z: 1, _id: 0 }).explain(&apos;executionStats&apos;)
+    </pre>
+</details>
+
+<h2 id="bread-crumb-navigation">Bread Crumb Navigation</h2>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb_indexes_partI.html">MongoDB Indexes Part I</a></td>
+<td style="text-align:right"><a href="mongodb-query-performance.html">MongoDB Query Performance</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_indexes_partI.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Indexes Part I">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb-query-performance.html" class="navigation navigation-next " aria-label="Next page: MongoDB Query Performance">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Indexes Part II","level":"1.4.13","depth":2,"next":{"title":"MongoDB Query Performance","level":"1.4.14","depth":2,"path":"docs/mongodb-query-performance.md","ref":"docs/mongodb-query-performance.md","articles":[]},"previous":{"title":"MongoDB Indexes Part I","level":"1.4.12","depth":2,"path":"docs/mongodb_indexes_partI.md","ref":"docs/mongodb_indexes_partI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_indexes_partII.md","mtime":"2019-06-06T22:35:43.063Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

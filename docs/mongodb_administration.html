@@ -1,0 +1,1920 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MongoDB Administration · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongodb_storage.html" />
+    
+    
+    <link rel="prev" href="mongodb_sharding.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MongoDB Administration</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Administration</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#production-notes">Production Notes</a></li>
+<li><a href="#operations-checklist">Operations Checklist</a></li>
+<li><a href="#development-checklist">Development Checklist</a></li>
+<li><a href="#performance">Performance</a></li>
+<li><a href="#configuration-and-maintenance">Configuration and Maintenance</a></li>
+<li><a href="#data-center-awareness">Data Center Awareness</a></li>
+<li><a href="#mongodb-backup-methods">MongoDB Backup Methods</a></li>
+<li><a href="#monitoring-for-mongodb">Monitoring for MongoDB</a></li>
+<li><a href="#personal-notes-on-mongodb-administration">Personal Notes on MongoDB Administration</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<h6 id="production-notes">Production Notes</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/administration/production-notes/" target="_blank">Production Notes document</a></p>
+<h6 id="operations-checklist">Operations Checklist</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/administration/production-checklist-operations/" target="_blank">Operations Checklist document</a></p>
+<h6 id="development-checklist">Development Checklist</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/administration/production-checklist-development/" target="_blank">Development Checklist document</a></p>
+<h6 id="performance">Performance</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/administration/analyzing-mongodb-performance/" target="_blank">Performance document</a></p>
+<h6 id="configuration-and-maintenance">Configuration and Maintenance</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/administration/configuration-and-maintenance/" target="_blank">Configuration and Maintenance document</a></p>
+<h6 id="data-center-awareness">Data Center Awareness</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/data-center-awareness/" target="_blank">Data Center Awareness document</a></p>
+<h6 id="mongodb-backup-methods">MongoDB Backup Methods</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/core/backups/" target="_blank">MongoDB Backup Methods document</a></p>
+<h6 id="monitoring-for-mongodb">Monitoring for MongoDB</h6>
+<p>Please read the official <a href="https://docs.mongodb.com/manual/administration/monitoring/" target="_blank">Monitoring for MongoDB document</a></p>
+<h6 id="personal-notes-on-mongodb-administration">Personal Notes on MongoDB Administration</h6>
+<h6 id="mongo-perf-usage">Mongo Perf usage</h6>
+<p>Let us create json file to get performance metrics in mongodb</p>
+<pre><code class="lang-bash">mongoperf --help
+mongoperf
+
+usage:
+
+  mongoperf &lt; myjsonconfigfile
+
+  {
+    nThreads:&lt;n&gt;,     // number of threads (default 1)
+    fileSizeMB:&lt;n&gt;,   // <span class="hljs-built_in">test</span> file size (default 1MB)
+    sleepMicros:&lt;n&gt;,  // pause <span class="hljs-keyword">for</span> sleepMicros/nThreads between each operation (default 0)
+    mmf:&lt;bool&gt;,       // <span class="hljs-keyword">if</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">do</span> i/o\<span class="hljs-string">&apos;s via memory mapped files (default false)
+    r:&lt;bool&gt;,         // do reads (default false)
+    w:&lt;bool&gt;,         // do writes (default false)
+    recSizeKB:&lt;n&gt;,    // size of each write (default 4KB)
+    syncDelay:&lt;n&gt;     // secs between fsyncs, like --syncdelay in mongod. (default 0/never)
+  }
+
+mongoperf is a performance testing tool. the initial tests are of disk subsystem performance;
+  tests of mongos and mongod will be added later.
+most fields are optional.
+non-mmf io is direct io (no caching). use a large file size to test making the heads
+  move significantly and to avoid i/o coalescing
+mmf io uses caching (the file system cache).
+</span></code></pre>
+<p>We are going to add the following json config file:</p>
+<pre><code class="lang-json">{ <span class="hljs-attr">recSizeKB</span>: <span class="hljs-number">8</span>, <span class="hljs-attr">nThreads</span>: <span class="hljs-number">12</span>, <span class="hljs-attr">fileSizeMB</span>: <span class="hljs-number">10000</span>, <span class="hljs-attr">r</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">mmf</span>: <span class="hljs-literal">false</span> }
+</code></pre>
+<p>Let us run a mongo perf test:</p>
+<pre><code class="lang-bash">mongoperf &lt; perf.json
+mongoperf
+use -h <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span>
+parsed options:
+{ recSizeKB: 8, nThreads: 12, fileSizeMB: 10000, r: <span class="hljs-literal">true</span>, mmf: <span class="hljs-literal">false</span> }
+creating <span class="hljs-built_in">test</span> file size:10000MB ...
+1GB...
+2GB...
+3GB...
+4GB...
+5GB...
+6GB...
+7GB...
+8GB...
+9GB...
+testing...
+optoins:{ recSizeKB: 8, nThreads: 12, fileSizeMB: 10000, r: <span class="hljs-literal">true</span>, mmf: <span class="hljs-literal">false</span> }
+wthr 12
+new thread, total running : 1
+<span class="hljs-built_in">read</span>:1 write:0
+201 ops/sec 0 MB/sec
+346 ops/sec 1 MB/sec
+308 ops/sec 1 MB/sec
+314 ops/sec 1 MB/sec
+335 ops/sec 1 MB/sec
+195 ops/sec 0 MB/sec
+320 ops/sec 1 MB/sec
+320 ops/sec 1 MB/sec
+new thread, total running : 2
+<span class="hljs-built_in">read</span>:1 write:0
+677 ops/sec 2 MB/sec
+738 ops/sec 2 MB/sec
+692 ops/sec 2 MB/sec
+562 ops/sec 2 MB/sec
+526 ops/sec 2 MB/sec
+598 ops/sec 2 MB/sec
+736 ops/sec 2 MB/sec
+586 ops/sec 2 MB/sec
+new thread, total running : 4
+<span class="hljs-built_in">read</span>:1 write:0
+<span class="hljs-built_in">read</span>:1 write:0
+1252 ops/sec 4 MB/sec
+1140 ops/sec 4 MB/sec
+1151 ops/sec 4 MB/sec
+1212 ops/sec 4 MB/sec
+1051 ops/sec 4 MB/sec
+1372 ops/sec 5 MB/sec
+1382 ops/sec 5 MB/sec
+1406 ops/sec 5 MB/sec
+<span class="hljs-built_in">read</span>:1 write:0
+<span class="hljs-built_in">read</span>:1 write:0
+new thread, total running : 8
+<span class="hljs-built_in">read</span>:1 write:0
+<span class="hljs-built_in">read</span>:1 write:0
+1777 ops/sec 6 MB/sec
+1805 ops/sec 7 MB/sec
+1859 ops/sec 7 MB/sec
+1736 ops/sec 6 MB/sec
+1782 ops/sec 6 MB/sec
+1616 ops/sec 6 MB/sec
+1658 ops/sec 6 MB/sec
+2108 ops/sec 8 MB/sec
+<span class="hljs-built_in">read</span>:1 write:0
+<span class="hljs-built_in">read</span>:1 write:0
+new thread, total running : 12
+<span class="hljs-built_in">read</span>:1 write:0
+<span class="hljs-built_in">read</span>:1 write:0
+2181 ops/sec 8 MB/sec
+2069 ops/sec 8 MB/sec
+</code></pre>
+<p>Now let us check the disk utilization using the <code>iostat</code> command:</p>
+<pre><code class="lang-bash">iostat -mx 2
+Linux 4.4.0-1088-aws (&lt;environment&gt;)     09/25/2019     _x86_64_    (4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           3.64    0.24    0.97    4.10    0.55   90.50
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+loop0             0.00     0.00    1.68    0.00     0.00     0.00     2.18     0.00    2.11    2.11    0.00   0.17   0.03
+loop1             0.00     0.00    5.18    0.00     0.01     0.00     2.20     0.01    2.27    2.27    0.00   0.13   0.07
+loop2             0.00     0.00    5.77    0.00     0.01     0.00     2.17     0.00    0.04    0.04    0.00   0.00   0.00
+loop3             0.00     0.00    1.69    0.00     0.00     0.00     2.18     0.00    0.11    0.11    0.00   0.01   0.00
+xvda              0.05   104.02   11.32   84.92     0.28     7.90   174.03    10.34  107.45    7.86  120.73   1.44  13.83
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.25    0.00    0.00   27.02    0.00   72.73
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+xvda              0.00     2.00 1154.00  146.00     9.02    15.77    39.05     8.12    6.20    3.40   28.32   0.77 100.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.25    0.00    0.00   36.28    0.00   63.46
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+loop0             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+loop1             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+loop2             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+loop3             0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+xvda              0.00     0.00 1160.00    0.50     9.06     0.01    16.01     3.99    3.42    3.43    0.00   0.86 100.00
+.....................................................................................................................
+</code></pre>
+<p>Notice that the xvda device in the %util column from the iostat command reached 100% utilization quickly from 13% ~ disk utilization.</p>
+<h6 id="mongo-monitoring-with-mongostat">Mongo Monitoring with mongostat</h6>
+<p>Let us create a 100k documents in the nosql_workshop database like this:</p>
+<pre><code class="lang-js">rs0:PRIMARY&gt; use nosql_workshop
+switched to db nosql_workshop
+rs0:PRIMARY&gt; <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x = <span class="hljs-number">0</span>; x &lt; <span class="hljs-number">100000</span>; x++) {
+...     db.mongostat.insert({
+...         age:(<span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">100</span>)%<span class="hljs-number">20</span>)
+...     });
+...     db.mongostat.findAndModify({
+...         query: { <span class="hljs-attr">age</span>: (<span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">100</span>)%<span class="hljs-number">20</span>)},
+...         update:{ <span class="hljs-attr">$inc</span>: {<span class="hljs-attr">age</span>: <span class="hljs-number">2</span>}}
+...     });
+...     db.mongostat.remove({
+...         age:(<span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">100</span>)%<span class="hljs-number">20</span>)
+...     });
+... }
+</code></pre>
+<p>Now let us monitor the secondary replica set member:</p>
+<p><img src="../images/replset-info2.png" alt="images/replset-info2"></p>
+<p><em>While this long running insert find/update, and remove operation is working we will jump into another terminal session.</em></p>
+<p>Run the following command:</p>
+<pre><code class="lang-bash">mongostat -o <span class="hljs-string">&apos;host,metrics.document.inserted.rate()=insert_rate,metrics.document.inserted=inserted_count&apos;</span>
+</code></pre>
+<p>Here is a screenshot of the output:</p>
+<p><img src="../images/mongostat1.png" alt="images/mongostat1"></p>
+<h6 id="mongostat-metric-table">Mongostat metric Table</h6>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>insert, query, update, and delete</td>
+<td>The rate of the specific query type per second</td>
+</tr>
+<tr>
+<td>getmore</td>
+<td>The rate of the cursor batch fetches per second</td>
+</tr>
+<tr>
+<td>command</td>
+<td>The number of commands per second</td>
+</tr>
+<tr>
+<td>flushes</td>
+<td>For WiredTiger Engine, it represents the rate of checkpoints per polling interval</td>
+</tr>
+<tr>
+<td>mapped</td>
+<td>The size of total data mapped for the MMAPv1 storage engine</td>
+</tr>
+<tr>
+<td>vsize | res</td>
+<td>The virtual and resident memory size of the mongod/mongos process</td>
+</tr>
+<tr>
+<td>faults</td>
+<td>MMAPv1 only, represents the number of page faults per second</td>
+</tr>
+<tr>
+<td>qr | qw</td>
+<td>The queue length of active clients waiting for reads and writes respectively</td>
+</tr>
+<tr>
+<td>ar | aw</td>
+<td>The current number of active clients performing read and write operations</td>
+</tr>
+</tbody>
+</table>
+<h6 id="mongostat-json-output">Mongostat json output</h6>
+<p>Pretty JSON output:</p>
+<p><img src="../images/mongostat2.png" alt="images/mongostat2"></p>
+<p><em>In this output we used jq utility to pretty print our output.</em></p>
+<h6 id="monitoring-the-replication-lag-of-replica-set-nodes-in-a-replica-set">Monitoring the Replication lag of Replica Set nodes in a Replica Set</h6>
+<p><em>Make sure to stop this other container before running the next series of commands</em></p>
+<p><code>docker stop &lt;container_id&gt;</code></p>
+<p>You can run a command like this if there is only one container:</p>
+<pre><code class="lang-bash">docker ps | awk <span class="hljs-string">&apos;{ if(NR&gt;1) { print $1 } }&apos;</span>
+</code></pre>
+<p>Let us start up our 3 node replica set member using the docker-compose yml script like this:</p>
+<pre><code class="lang-bash">docker-compose up
+</code></pre>
+<p>We should see 3 docker containers like this screenshot depicts:</p>
+<p><img src="../images/replmonitor-docker-ps.png" alt="images/replmonitor-docker-ps"></p>
+<p>Now let us go into the primary replica set member </p>
+<p>We could do the following type command:</p>
+<p><img src="../images/replmonitor-primary.png" alt="images/replmonitor-primary"></p>
+<p>The key field to distinguish the primary replica set member is:</p>
+<ul>
+<li><code>&quot;stateStr&quot; : &quot;PRIMARY&quot;</code></li>
+</ul>
+<p>In this case we don&apos;t get as helpful information but in our docker-compose.yml file we have mapped the following ports:</p>
+<ul>
+<li>30021</li>
+<li>30022</li>
+<li>30023</li>
+</ul>
+<p>We have also mapped the following container names:</p>
+<ul>
+<li>localmongo1</li>
+<li>localmongo2</li>
+<li>localmongo3</li>
+</ul>
+<p>so you can easily connect in 2 ways:</p>
+<ul>
+<li><code>mongo localhost:30021</code> if you have mongo client tools installed</li>
+<li><code>docker exec -it localmongo1 mongo</code> using docker commands</li>
+</ul>
+<p>Now let us reuse the long running insert, find/update, and remove command that we previously used.</p>
+<p>Connect to the primary replica set member and run the following command and print replica set information:</p>
+<p><img src="../images/replset-info.png" alt="images/replset-info"></p>
+<p>Now we will shutdown one of the secondary nodes like this:</p>
+<p><code>docker stop localmongo2</code> and we should only have 2 containers now</p>
+<p>Now let us make a long running operation in the primary replica set like this:</p>
+<p><img src="../images/replset-info2.png" alt="replset-info2"></p>
+<h6 id="monitoring-long-running-processes-and-killing-them">Monitoring long running processes and killing them</h6>
+<p>You can use the <a href="https://docs.mongodb.com/manual/reference/method/db.currentOp/" target="_blank">db.currentOp()</a> to both monitor and kill db processes in mongodb.</p>
+<p>Let us start up our 3 node replica set member again using <code>docker-compose up</code> in the root of the repository.</p>
+<p>Next let up insert a million documents into the primary replicaset member.</p>
+<p>We will first do an insert operation into a collection called mongostat like this:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x = <span class="hljs-number">0</span>; x &lt; <span class="hljs-number">1000000</span>; x++) {
+    db.mongostat.insert({
+        <span class="hljs-attr">age</span>:(<span class="hljs-built_in">Math</span>.round(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">100</span>)%<span class="hljs-number">20</span>)
+    });
+}
+</code></pre>
+<p>Next let us do an update operation like this:</p>
+<pre><code class="lang-js">db.mongostat.update({ }, { <span class="hljs-attr">$set</span>: { <span class="hljs-attr">other</span>: <span class="hljs-built_in">Math</span>.round() } }, { <span class="hljs-attr">multi</span>: <span class="hljs-literal">true</span> })
+</code></pre>
+<p>In another terminal session go into the primary replica set member like this:</p>
+<p><code>docker exec -it localmongo1 mongo</code></p>
+<p>Using the <code>db.currentOp</code> method we can pass a query document like this to find our long running db process:</p>
+<pre><code class="lang-js">db.currentOp({
+    <span class="hljs-string">&quot;active&quot;</span> : <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;op&quot;</span>: <span class="hljs-string">&quot;update&quot;</span>,
+    <span class="hljs-string">&quot;secs_running&quot;</span> : { <span class="hljs-string">&quot;$gt&quot;</span> : <span class="hljs-number">1</span> },
+    <span class="hljs-string">&quot;ns&quot;</span>: <span class="hljs-string">&quot;nosql_workshop.mongostat&quot;</span>
+})
+</code></pre>
+<p><img src="../images/dbcurrentOp.png" alt="images/dbcurrentOp"></p>
+<p>We can use a method like <a href="https://docs.mongodb.com/manual/reference/method/db.killOp/index.html" target="_blank">db.killOp()</a> to kill a db process cleanly if we wish to:</p>
+<pre><code class="lang-js">rs0:PRIMARY&gt; db.killOp(<span class="hljs-number">1937245</span>)
+{
+    <span class="hljs-string">&quot;info&quot;</span> : <span class="hljs-string">&quot;attempting to kill op&quot;</span>,
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;operationTime&quot;</span> : Timestamp(<span class="hljs-number">1569587524</span>, <span class="hljs-number">124</span>),
+    <span class="hljs-string">&quot;$clusterTime&quot;</span> : {
+        <span class="hljs-string">&quot;clusterTime&quot;</span> : Timestamp(<span class="hljs-number">1569587524</span>, <span class="hljs-number">125</span>),
+        <span class="hljs-string">&quot;signature&quot;</span> : {
+            <span class="hljs-string">&quot;hash&quot;</span> : BinData(<span class="hljs-number">0</span>,<span class="hljs-string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>),
+            <span class="hljs-string">&quot;keyId&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        }
+    }
+}
+</code></pre>
+<p><em>Notice that in the <code>db.killOp</code> we passed in an integer this corresponds to the <code>opid</code> field that is in the document returned from <code>db.currentOp</code> method.</em></p>
+<h6 id="checking-the-disk-io-utilization">Checking the disk i/o utilization</h6>
+<p><code>db.serverStatus()</code> Returns a document that provides an overview of the database process&#x2019;s state.</p>
+<p>We will run this command in our primary replica set member:</p>
+<pre><code class="lang-js">rs0:PRIMARY&gt; db.serverStatus()
+{
+    <span class="hljs-string">&quot;host&quot;</span> : <span class="hljs-string">&quot;mongo1&quot;</span>,
+    <span class="hljs-string">&quot;version&quot;</span> : <span class="hljs-string">&quot;4.0.5&quot;</span>,
+    <span class="hljs-string">&quot;process&quot;</span> : <span class="hljs-string">&quot;mongod&quot;</span>,
+    <span class="hljs-string">&quot;pid&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;uptime&quot;</span> : <span class="hljs-number">3379</span>,
+    <span class="hljs-string">&quot;uptimeMillis&quot;</span> : NumberLong(<span class="hljs-number">3378647</span>),
+    <span class="hljs-string">&quot;uptimeEstimate&quot;</span> : NumberLong(<span class="hljs-number">3378</span>),
+    <span class="hljs-string">&quot;localTime&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-09-27T12:49:15.603Z&quot;</span>),
+    <span class="hljs-string">&quot;asserts&quot;</span> : {
+        <span class="hljs-string">&quot;regular&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;warning&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;msg&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;user&quot;</span> : <span class="hljs-number">9</span>,
+        <span class="hljs-string">&quot;rollovers&quot;</span> : <span class="hljs-number">0</span>
+    },
+    <span class="hljs-string">&quot;connections&quot;</span> : {
+        <span class="hljs-string">&quot;current&quot;</span> : <span class="hljs-number">12</span>,
+        <span class="hljs-string">&quot;available&quot;</span> : <span class="hljs-number">838848</span>,
+        <span class="hljs-string">&quot;totalCreated&quot;</span> : <span class="hljs-number">33</span>
+    },
+    <span class="hljs-string">&quot;extra_info&quot;</span> : {
+        <span class="hljs-string">&quot;note&quot;</span> : <span class="hljs-string">&quot;fields vary by platform&quot;</span>,
+        <span class="hljs-string">&quot;page_faults&quot;</span> : <span class="hljs-number">2</span>
+    },
+    <span class="hljs-string">&quot;freeMonitoring&quot;</span> : {
+        <span class="hljs-string">&quot;state&quot;</span> : <span class="hljs-string">&quot;undecided&quot;</span>
+    },
+    <span class="hljs-string">&quot;globalLock&quot;</span> : {
+        <span class="hljs-string">&quot;totalTime&quot;</span> : NumberLong(<span class="hljs-string">&quot;3378645000&quot;</span>),
+        <span class="hljs-string">&quot;currentQueue&quot;</span> : {
+            <span class="hljs-string">&quot;total&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;readers&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;writers&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;activeClients&quot;</span> : {
+            <span class="hljs-string">&quot;total&quot;</span> : <span class="hljs-number">52</span>,
+            <span class="hljs-string">&quot;readers&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;writers&quot;</span> : <span class="hljs-number">0</span>
+        }
+    },
+    <span class="hljs-string">&quot;locks&quot;</span> : {
+        <span class="hljs-string">&quot;Global&quot;</span> : {
+            <span class="hljs-string">&quot;acquireCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">3082658</span>),
+                <span class="hljs-string">&quot;w&quot;</span> : NumberLong(<span class="hljs-number">1368133</span>),
+                <span class="hljs-string">&quot;W&quot;</span> : NumberLong(<span class="hljs-number">11</span>)
+            },
+            <span class="hljs-string">&quot;acquireWaitCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">2</span>),
+                <span class="hljs-string">&quot;w&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;W&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;timeAcquiringMicros&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">20493</span>),
+                <span class="hljs-string">&quot;w&quot;</span> : NumberLong(<span class="hljs-number">31622</span>),
+                <span class="hljs-string">&quot;W&quot;</span> : NumberLong(<span class="hljs-number">130</span>)
+            }
+        },
+        <span class="hljs-string">&quot;Database&quot;</span> : {
+            <span class="hljs-string">&quot;acquireCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">1698450</span>),
+                <span class="hljs-string">&quot;w&quot;</span> : NumberLong(<span class="hljs-number">1367797</span>),
+                <span class="hljs-string">&quot;R&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;W&quot;</span> : NumberLong(<span class="hljs-number">24</span>)
+            },
+            <span class="hljs-string">&quot;acquireWaitCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">2</span>),
+                <span class="hljs-string">&quot;W&quot;</span> : NumberLong(<span class="hljs-number">2</span>)
+            },
+            <span class="hljs-string">&quot;timeAcquiringMicros&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">28245</span>),
+                <span class="hljs-string">&quot;W&quot;</span> : NumberLong(<span class="hljs-number">250</span>)
+            }
+        },
+        <span class="hljs-string">&quot;Collection&quot;</span> : {
+            <span class="hljs-string">&quot;acquireCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">12158</span>),
+                <span class="hljs-string">&quot;w&quot;</span> : NumberLong(<span class="hljs-number">1367797</span>)
+            }
+        },
+        <span class="hljs-string">&quot;oplog&quot;</span> : {
+            <span class="hljs-string">&quot;acquireCount&quot;</span> : {
+                <span class="hljs-string">&quot;r&quot;</span> : NumberLong(<span class="hljs-number">1686253</span>),
+                <span class="hljs-string">&quot;w&quot;</span> : NumberLong(<span class="hljs-number">2</span>)
+            }
+        }
+    },
+    <span class="hljs-string">&quot;logicalSessionRecordCache&quot;</span> : {
+        <span class="hljs-string">&quot;activeSessionsCount&quot;</span> : <span class="hljs-number">1</span>,
+        <span class="hljs-string">&quot;sessionsCollectionJobCount&quot;</span> : <span class="hljs-number">12</span>,
+        <span class="hljs-string">&quot;lastSessionsCollectionJobDurationMillis&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;lastSessionsCollectionJobTimestamp&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-09-27T12:48:10.003Z&quot;</span>),
+        <span class="hljs-string">&quot;lastSessionsCollectionJobEntriesRefreshed&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;lastSessionsCollectionJobEntriesEnded&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;lastSessionsCollectionJobCursorsClosed&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;transactionReaperJobCount&quot;</span> : <span class="hljs-number">12</span>,
+        <span class="hljs-string">&quot;lastTransactionReaperJobDurationMillis&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;lastTransactionReaperJobTimestamp&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-09-27T12:48:10.003Z&quot;</span>),
+        <span class="hljs-string">&quot;lastTransactionReaperJobEntriesCleanedUp&quot;</span> : <span class="hljs-number">0</span>
+    },
+    <span class="hljs-string">&quot;network&quot;</span> : {
+        <span class="hljs-string">&quot;bytesIn&quot;</span> : NumberLong(<span class="hljs-number">967880210</span>),
+        <span class="hljs-string">&quot;bytesOut&quot;</span> : NumberLong(<span class="hljs-number">1235002457</span>),
+        <span class="hljs-string">&quot;physicalBytesIn&quot;</span> : NumberLong(<span class="hljs-number">709265205</span>),
+        <span class="hljs-string">&quot;physicalBytesOut&quot;</span> : NumberLong(<span class="hljs-number">734927806</span>),
+        <span class="hljs-string">&quot;numRequests&quot;</span> : NumberLong(<span class="hljs-number">1940266</span>),
+        <span class="hljs-string">&quot;compression&quot;</span> : {
+            <span class="hljs-string">&quot;snappy&quot;</span> : {
+                <span class="hljs-string">&quot;compressor&quot;</span> : {
+                    <span class="hljs-string">&quot;bytesIn&quot;</span> : NumberLong(<span class="hljs-number">1097412512</span>),
+                    <span class="hljs-string">&quot;bytesOut&quot;</span> : NumberLong(<span class="hljs-number">584330140</span>)
+                },
+                <span class="hljs-string">&quot;decompressor&quot;</span> : {
+                    <span class="hljs-string">&quot;bytesIn&quot;</span> : NumberLong(<span class="hljs-number">537460371</span>),
+                    <span class="hljs-string">&quot;bytesOut&quot;</span> : NumberLong(<span class="hljs-number">809564867</span>)
+                }
+            }
+        },
+        <span class="hljs-string">&quot;serviceExecutorTaskStats&quot;</span> : {
+            <span class="hljs-string">&quot;executor&quot;</span> : <span class="hljs-string">&quot;passthrough&quot;</span>,
+            <span class="hljs-string">&quot;threadsRunning&quot;</span> : <span class="hljs-number">12</span>
+        }
+    },
+    <span class="hljs-string">&quot;opLatencies&quot;</span> : {
+        <span class="hljs-string">&quot;reads&quot;</span> : {
+            <span class="hljs-string">&quot;latency&quot;</span> : NumberLong(<span class="hljs-number">292772677</span>),
+            <span class="hljs-string">&quot;ops&quot;</span> : NumberLong(<span class="hljs-number">683576</span>)
+        },
+        <span class="hljs-string">&quot;writes&quot;</span> : {
+            <span class="hljs-string">&quot;latency&quot;</span> : NumberLong(<span class="hljs-number">428259242</span>),
+            <span class="hljs-string">&quot;ops&quot;</span> : NumberLong(<span class="hljs-number">499392</span>)
+        },
+        <span class="hljs-string">&quot;commands&quot;</span> : {
+            <span class="hljs-string">&quot;latency&quot;</span> : NumberLong(<span class="hljs-number">277730680</span>),
+            <span class="hljs-string">&quot;ops&quot;</span> : NumberLong(<span class="hljs-number">757295</span>)
+        },
+        <span class="hljs-string">&quot;transactions&quot;</span> : {
+            <span class="hljs-string">&quot;latency&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+            <span class="hljs-string">&quot;ops&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        }
+    },
+    <span class="hljs-string">&quot;opcounters&quot;</span> : {
+        <span class="hljs-string">&quot;insert&quot;</span> : <span class="hljs-number">405822</span>,
+        <span class="hljs-string">&quot;query&quot;</span> : <span class="hljs-number">94</span>,
+        <span class="hljs-string">&quot;update&quot;</span> : <span class="hljs-number">21</span>,
+        <span class="hljs-string">&quot;delete&quot;</span> : <span class="hljs-number">46793</span>,
+        <span class="hljs-string">&quot;getmore&quot;</span> : <span class="hljs-number">683559</span>,
+        <span class="hljs-string">&quot;command&quot;</span> : <span class="hljs-number">804106</span>
+    },
+    <span class="hljs-string">&quot;opcountersRepl&quot;</span> : {
+        <span class="hljs-string">&quot;insert&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;query&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;update&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;delete&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;getmore&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;command&quot;</span> : <span class="hljs-number">0</span>
+    },
+    <span class="hljs-string">&quot;repl&quot;</span> : {
+        <span class="hljs-string">&quot;hosts&quot;</span> : [
+            <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+            <span class="hljs-string">&quot;172.24.0.2:27017&quot;</span>,
+            <span class="hljs-string">&quot;172.24.0.3:27017&quot;</span>
+        ],
+        <span class="hljs-string">&quot;setName&quot;</span> : <span class="hljs-string">&quot;rs0&quot;</span>,
+        <span class="hljs-string">&quot;setVersion&quot;</span> : <span class="hljs-number">103927</span>,
+        <span class="hljs-string">&quot;ismaster&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;secondary&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;primary&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+        <span class="hljs-string">&quot;me&quot;</span> : <span class="hljs-string">&quot;172.24.0.4:27017&quot;</span>,
+        <span class="hljs-string">&quot;electionId&quot;</span> : ObjectId(<span class="hljs-string">&quot;7fffffff0000000000000001&quot;</span>),
+        <span class="hljs-string">&quot;lastWrite&quot;</span> : {
+            <span class="hljs-string">&quot;opTime&quot;</span> : {
+                <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1569588550</span>, <span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;lastWriteDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-09-27T12:49:10Z&quot;</span>),
+            <span class="hljs-string">&quot;majorityOpTime&quot;</span> : {
+                <span class="hljs-string">&quot;ts&quot;</span> : Timestamp(<span class="hljs-number">1569588550</span>, <span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;t&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;majorityWriteDate&quot;</span> : ISODate(<span class="hljs-string">&quot;2019-09-27T12:49:10Z&quot;</span>)
+        },
+        <span class="hljs-string">&quot;rbid&quot;</span> : <span class="hljs-number">1</span>
+    },
+    <span class="hljs-string">&quot;storageEngine&quot;</span> : {
+        <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;wiredTiger&quot;</span>,
+        <span class="hljs-string">&quot;supportsCommittedReads&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;supportsSnapshotReadConcern&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;readOnly&quot;</span> : <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;persistent&quot;</span> : <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-string">&quot;tcmalloc&quot;</span> : {
+        <span class="hljs-string">&quot;generic&quot;</span> : {
+            <span class="hljs-string">&quot;current_allocated_bytes&quot;</span> : <span class="hljs-number">546511472</span>,
+            <span class="hljs-string">&quot;heap_size&quot;</span> : <span class="hljs-number">657690624</span>
+        },
+        <span class="hljs-string">&quot;tcmalloc&quot;</span> : {
+            <span class="hljs-string">&quot;pageheap_free_bytes&quot;</span> : <span class="hljs-number">9723904</span>,
+            <span class="hljs-string">&quot;pageheap_unmapped_bytes&quot;</span> : <span class="hljs-number">33001472</span>,
+            <span class="hljs-string">&quot;max_total_thread_cache_bytes&quot;</span> : <span class="hljs-number">516947968</span>,
+            <span class="hljs-string">&quot;current_total_thread_cache_bytes&quot;</span> : <span class="hljs-number">6918704</span>,
+            <span class="hljs-string">&quot;total_free_bytes&quot;</span> : <span class="hljs-number">68453776</span>,
+            <span class="hljs-string">&quot;central_cache_free_bytes&quot;</span> : <span class="hljs-number">56566464</span>,
+            <span class="hljs-string">&quot;transfer_cache_free_bytes&quot;</span> : <span class="hljs-number">4968608</span>,
+            <span class="hljs-string">&quot;thread_cache_free_bytes&quot;</span> : <span class="hljs-number">6918704</span>,
+            <span class="hljs-string">&quot;aggressive_memory_decommit&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pageheap_committed_bytes&quot;</span> : <span class="hljs-number">624689152</span>,
+            <span class="hljs-string">&quot;pageheap_scavenge_count&quot;</span> : <span class="hljs-number">9746</span>,
+            <span class="hljs-string">&quot;pageheap_commit_count&quot;</span> : <span class="hljs-number">45408</span>,
+            <span class="hljs-string">&quot;pageheap_total_commit_bytes&quot;</span> : NumberLong(<span class="hljs-string">&quot;216577695744&quot;</span>),
+            <span class="hljs-string">&quot;pageheap_decommit_count&quot;</span> : <span class="hljs-number">9746</span>,
+            <span class="hljs-string">&quot;pageheap_total_decommit_bytes&quot;</span> : NumberLong(<span class="hljs-string">&quot;215953006592&quot;</span>),
+            <span class="hljs-string">&quot;pageheap_reserve_count&quot;</span> : <span class="hljs-number">72</span>,
+            <span class="hljs-string">&quot;pageheap_total_reserve_bytes&quot;</span> : <span class="hljs-number">657690624</span>,
+            <span class="hljs-string">&quot;spinlock_total_delay_ns&quot;</span> : NumberLong(<span class="hljs-number">2001478800</span>),
+            <span class="hljs-string">&quot;formattedString&quot;</span> : <span class="hljs-string">&quot;------------------------------------------------\nMALLOC:      546512048 (  521.2 MiB) Bytes in use by application\nMALLOC: +      9723904 (    9.3 MiB) Bytes in page heap freelist\nMALLOC: +     56566464 (   53.9 MiB) Bytes in central cache freelist\nMALLOC: +      4968608 (    4.7 MiB) Bytes in transfer cache freelist\nMALLOC: +      6918128 (    6.6 MiB) Bytes in thread cache freelists\nMALLOC: +      4808960 (    4.6 MiB) Bytes in malloc metadata\nMALLOC:   ------------\nMALLOC: =    629498112 (  600.3 MiB) Actual memory used (physical + swap)\nMALLOC: +     33001472 (   31.5 MiB) Bytes released to OS (aka unmapped)\nMALLOC:   ------------\nMALLOC: =    662499584 (  631.8 MiB) Virtual address space used\nMALLOC:\nMALLOC:          51287              Spans in use\nMALLOC:             68              Thread heaps in use\nMALLOC:           4096              Tcmalloc page size\n------------------------------------------------\nCall ReleaseFreeMemory() to release freelist memory to the OS (via madvise()).\nBytes released to the OS take up virtual address space but no physical memory.\n&quot;</span>
+        }
+    },
+    <span class="hljs-string">&quot;transactions&quot;</span> : {
+        <span class="hljs-string">&quot;retriedCommandsCount&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;retriedStatementsCount&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;transactionsCollectionWriteCount&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;currentActive&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;currentInactive&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;currentOpen&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;totalAborted&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;totalCommitted&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;totalStarted&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+    },
+    <span class="hljs-string">&quot;transportSecurity&quot;</span> : {
+        <span class="hljs-string">&quot;1.0&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;1.1&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;1.2&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;1.3&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+        <span class="hljs-string">&quot;unknown&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+    },
+    <span class="hljs-string">&quot;wiredTiger&quot;</span> : {
+        <span class="hljs-string">&quot;uri&quot;</span> : <span class="hljs-string">&quot;statistics:&quot;</span>,
+        <span class="hljs-string">&quot;LSM&quot;</span> : {
+            <span class="hljs-string">&quot;application work units currently queued&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;merge work units currently queued&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;rows merged in an LSM tree&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;sleep for LSM checkpoint throttle&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;sleep for LSM merge throttle&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;switch work units currently queued&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;tree maintenance operations discarded&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;tree maintenance operations executed&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;tree maintenance operations scheduled&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;tree queue hit maximum&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;async&quot;</span> : {
+            <span class="hljs-string">&quot;current work queue length&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;maximum work queue length&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;number of allocation state races&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;number of flush calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;number of operation slots viewed for allocation&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;number of times operation allocation failed&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;number of times worker found no work&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;total allocations&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;total compact calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;total insert calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;total remove calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;total search calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;total update calls&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;block-manager&quot;</span> : {
+            <span class="hljs-string">&quot;blocks pre-loaded&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;blocks read&quot;</span> : <span class="hljs-number">251</span>,
+            <span class="hljs-string">&quot;blocks written&quot;</span> : <span class="hljs-number">24541</span>,
+            <span class="hljs-string">&quot;bytes read&quot;</span> : <span class="hljs-number">1028096</span>,
+            <span class="hljs-string">&quot;bytes written&quot;</span> : <span class="hljs-number">141242368</span>,
+            <span class="hljs-string">&quot;bytes written for checkpoint&quot;</span> : <span class="hljs-number">84852736</span>,
+            <span class="hljs-string">&quot;mapped blocks read&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;mapped bytes read&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;cache&quot;</span> : {
+            <span class="hljs-string">&quot;application threads page read from disk to cache count&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;application threads page read from disk to cache time (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;application threads page write from cache to disk count&quot;</span> : <span class="hljs-number">13606</span>,
+            <span class="hljs-string">&quot;application threads page write from cache to disk time (usecs)&quot;</span> : <span class="hljs-number">429777</span>,
+            <span class="hljs-string">&quot;bytes belonging to page images in the cache&quot;</span> : <span class="hljs-number">118577254</span>,
+            <span class="hljs-string">&quot;bytes belonging to the cache overflow table in the cache&quot;</span> : <span class="hljs-number">182</span>,
+            <span class="hljs-string">&quot;bytes currently in the cache&quot;</span> : <span class="hljs-number">419731816</span>,
+            <span class="hljs-string">&quot;bytes dirty in the cache cumulative&quot;</span> : <span class="hljs-number">4315228544</span>,
+            <span class="hljs-string">&quot;bytes not belonging to page images in the cache&quot;</span> : <span class="hljs-number">301154562</span>,
+            <span class="hljs-string">&quot;bytes read into cache&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;bytes written from cache&quot;</span> : <span class="hljs-number">323506998</span>,
+            <span class="hljs-string">&quot;cache overflow cursor application thread wait time (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cache overflow cursor internal thread wait time (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cache overflow score&quot;</span> : <span class="hljs-number">20</span>,
+            <span class="hljs-string">&quot;cache overflow table entries&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cache overflow table insert calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cache overflow table remove calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;checkpoint blocked page eviction&quot;</span> : <span class="hljs-number">872</span>,
+            <span class="hljs-string">&quot;eviction calls to get a page&quot;</span> : <span class="hljs-number">1417059</span>,
+            <span class="hljs-string">&quot;eviction calls to get a page found queue empty&quot;</span> : <span class="hljs-number">4892</span>,
+            <span class="hljs-string">&quot;eviction calls to get a page found queue empty after locking&quot;</span> : <span class="hljs-number">14396</span>,
+            <span class="hljs-string">&quot;eviction currently operating in aggressive mode&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;eviction empty score&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;eviction passes of a file&quot;</span> : <span class="hljs-number">23006</span>,
+            <span class="hljs-string">&quot;eviction server candidate queue empty when topping up&quot;</span> : <span class="hljs-number">8443</span>,
+            <span class="hljs-string">&quot;eviction server candidate queue not empty when topping up&quot;</span> : <span class="hljs-number">11195</span>,
+            <span class="hljs-string">&quot;eviction server evicting pages&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;eviction server slept, because we did not make progress with eviction&quot;</span> : <span class="hljs-number">23377</span>,
+            <span class="hljs-string">&quot;eviction server unable to reach eviction goal&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;eviction state&quot;</span> : <span class="hljs-number">32</span>,
+            <span class="hljs-string">&quot;eviction walk target pages histogram - 0-9&quot;</span> : <span class="hljs-number">2208</span>,
+            <span class="hljs-string">&quot;eviction walk target pages histogram - 10-31&quot;</span> : <span class="hljs-number">857</span>,
+            <span class="hljs-string">&quot;eviction walk target pages histogram - 128 and higher&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;eviction walk target pages histogram - 32-63&quot;</span> : <span class="hljs-number">1477</span>,
+            <span class="hljs-string">&quot;eviction walk target pages histogram - 64-128&quot;</span> : <span class="hljs-number">18464</span>,
+            <span class="hljs-string">&quot;eviction walks abandoned&quot;</span> : <span class="hljs-number">40</span>,
+            <span class="hljs-string">&quot;eviction walks gave up because they restarted their walk twice&quot;</span> : <span class="hljs-number">1110</span>,
+            <span class="hljs-string">&quot;eviction walks gave up because they saw too many pages and found no candidates&quot;</span> : <span class="hljs-number">45</span>,
+            <span class="hljs-string">&quot;eviction walks gave up because they saw too many pages and found too few candidates&quot;</span> : <span class="hljs-number">19</span>,
+            <span class="hljs-string">&quot;eviction walks reached end of tree&quot;</span> : <span class="hljs-number">5254</span>,
+            <span class="hljs-string">&quot;eviction walks started from root of tree&quot;</span> : <span class="hljs-number">1721</span>,
+            <span class="hljs-string">&quot;eviction walks started from saved location in tree&quot;</span> : <span class="hljs-number">21285</span>,
+            <span class="hljs-string">&quot;eviction worker thread active&quot;</span> : <span class="hljs-number">4</span>,
+            <span class="hljs-string">&quot;eviction worker thread created&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;eviction worker thread evicting pages&quot;</span> : <span class="hljs-number">1397768</span>,
+            <span class="hljs-string">&quot;eviction worker thread removed&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;eviction worker thread stable number&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;failed eviction of pages that exceeded the in-memory maximum count&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;failed eviction of pages that exceeded the in-memory maximum time (usecs)&quot;</span> : <span class="hljs-number">3</span>,
+            <span class="hljs-string">&quot;files with active eviction walks&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;files with new eviction walks started&quot;</span> : <span class="hljs-number">4144</span>,
+            <span class="hljs-string">&quot;force re-tuning of eviction workers once in a while&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;hazard pointer blocked page eviction&quot;</span> : <span class="hljs-number">48</span>,
+            <span class="hljs-string">&quot;hazard pointer check calls&quot;</span> : <span class="hljs-number">1397882</span>,
+            <span class="hljs-string">&quot;hazard pointer check entries walked&quot;</span> : <span class="hljs-number">3965320</span>,
+            <span class="hljs-string">&quot;hazard pointer maximum array length&quot;</span> : <span class="hljs-number">4</span>,
+            <span class="hljs-string">&quot;in-memory page passed criteria to be split&quot;</span> : <span class="hljs-number">109</span>,
+            <span class="hljs-string">&quot;in-memory page splits&quot;</span> : <span class="hljs-number">54</span>,
+            <span class="hljs-string">&quot;internal pages evicted&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;internal pages split during eviction&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;leaf pages split during eviction&quot;</span> : <span class="hljs-number">754</span>,
+            <span class="hljs-string">&quot;maximum bytes configured&quot;</span> : <span class="hljs-number">1531969536</span>,
+            <span class="hljs-string">&quot;maximum page size at eviction&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;modified pages evicted&quot;</span> : <span class="hljs-number">1395999</span>,
+            <span class="hljs-string">&quot;modified pages evicted by application threads&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;operations timed out waiting for space in cache&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;overflow pages read into cache&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;page split during eviction deepened the tree&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;page written requiring cache overflow records&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages currently held in the cache&quot;</span> : <span class="hljs-number">14177</span>,
+            <span class="hljs-string">&quot;pages evicted because they exceeded the in-memory maximum count&quot;</span> : <span class="hljs-number">61</span>,
+            <span class="hljs-string">&quot;pages evicted because they exceeded the in-memory maximum time (usecs)&quot;</span> : <span class="hljs-number">346025</span>,
+            <span class="hljs-string">&quot;pages evicted because they had chains of deleted items count&quot;</span> : <span class="hljs-number">40</span>,
+            <span class="hljs-string">&quot;pages evicted because they had chains of deleted items time (usecs)&quot;</span> : <span class="hljs-number">57674</span>,
+            <span class="hljs-string">&quot;pages evicted by application threads&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages queued for eviction&quot;</span> : <span class="hljs-number">1905224</span>,
+            <span class="hljs-string">&quot;pages queued for urgent eviction&quot;</span> : <span class="hljs-number">18</span>,
+            <span class="hljs-string">&quot;pages queued for urgent eviction during walk&quot;</span> : <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;pages read into cache&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages read into cache after truncate&quot;</span> : <span class="hljs-number">26</span>,
+            <span class="hljs-string">&quot;pages read into cache after truncate in prepare state&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages read into cache requiring cache overflow entries&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages read into cache requiring cache overflow for checkpoint&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages read into cache skipping older cache overflow entries&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages read into cache with skipped cache overflow entries needed later&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages read into cache with skipped cache overflow entries needed later by checkpoint&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;pages requested from the cache&quot;</span> : <span class="hljs-number">6742922</span>,
+            <span class="hljs-string">&quot;pages seen by eviction walk&quot;</span> : <span class="hljs-number">7743019</span>,
+            <span class="hljs-string">&quot;pages selected for eviction unable to be evicted&quot;</span> : <span class="hljs-number">921</span>,
+            <span class="hljs-string">&quot;pages walked for eviction&quot;</span> : <span class="hljs-number">7729147</span>,
+            <span class="hljs-string">&quot;pages written from cache&quot;</span> : <span class="hljs-number">24015</span>,
+            <span class="hljs-string">&quot;pages written requiring in-memory restoration&quot;</span> : <span class="hljs-number">1388680</span>,
+            <span class="hljs-string">&quot;percentage overhead&quot;</span> : <span class="hljs-number">8</span>,
+            <span class="hljs-string">&quot;tracked bytes belonging to internal pages in the cache&quot;</span> : <span class="hljs-number">1171517</span>,
+            <span class="hljs-string">&quot;tracked bytes belonging to leaf pages in the cache&quot;</span> : <span class="hljs-number">418560299</span>,
+            <span class="hljs-string">&quot;tracked dirty bytes in the cache&quot;</span> : <span class="hljs-number">725</span>,
+            <span class="hljs-string">&quot;tracked dirty pages in the cache&quot;</span> : <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;unmodified pages evicted&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;connection&quot;</span> : {
+            <span class="hljs-string">&quot;auto adjusting condition resets&quot;</span> : <span class="hljs-number">9740</span>,
+            <span class="hljs-string">&quot;auto adjusting condition wait calls&quot;</span> : <span class="hljs-number">31057</span>,
+            <span class="hljs-string">&quot;detected system time went backwards&quot;</span> : <span class="hljs-number">1314</span>,
+            <span class="hljs-string">&quot;files currently open&quot;</span> : <span class="hljs-number">32</span>,
+            <span class="hljs-string">&quot;memory allocations&quot;</span> : <span class="hljs-number">46495740</span>,
+            <span class="hljs-string">&quot;memory frees&quot;</span> : <span class="hljs-number">44142412</span>,
+            <span class="hljs-string">&quot;memory re-allocations&quot;</span> : <span class="hljs-number">3453836</span>,
+            <span class="hljs-string">&quot;pthread mutex condition wait calls&quot;</span> : <span class="hljs-number">102568</span>,
+            <span class="hljs-string">&quot;pthread mutex shared lock read-lock calls&quot;</span> : <span class="hljs-number">11016244</span>,
+            <span class="hljs-string">&quot;pthread mutex shared lock write-lock calls&quot;</span> : <span class="hljs-number">3555757</span>,
+            <span class="hljs-string">&quot;total fsync I/Os&quot;</span> : <span class="hljs-number">211382</span>,
+            <span class="hljs-string">&quot;total read I/Os&quot;</span> : <span class="hljs-number">422</span>,
+            <span class="hljs-string">&quot;total write I/Os&quot;</span> : <span class="hljs-number">241612</span>
+        },
+        <span class="hljs-string">&quot;cursor&quot;</span> : {
+            <span class="hljs-string">&quot;cursor close calls that result in cache&quot;</span> : <span class="hljs-number">2472933</span>,
+            <span class="hljs-string">&quot;cursor create calls&quot;</span> : <span class="hljs-number">6503</span>,
+            <span class="hljs-string">&quot;cursor insert calls&quot;</span> : <span class="hljs-number">3008897</span>,
+            <span class="hljs-string">&quot;cursor modify calls&quot;</span> : <span class="hljs-number">23295</span>,
+            <span class="hljs-string">&quot;cursor next calls&quot;</span> : <span class="hljs-number">120794374</span>,
+            <span class="hljs-string">&quot;cursor operation restarted&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cursor prev calls&quot;</span> : <span class="hljs-number">2337</span>,
+            <span class="hljs-string">&quot;cursor remove calls&quot;</span> : <span class="hljs-number">88771</span>,
+            <span class="hljs-string">&quot;cursor reserve calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cursor reset calls&quot;</span> : <span class="hljs-number">9054581</span>,
+            <span class="hljs-string">&quot;cursor search calls&quot;</span> : <span class="hljs-number">2491066</span>,
+            <span class="hljs-string">&quot;cursor search near calls&quot;</span> : <span class="hljs-number">1624154</span>,
+            <span class="hljs-string">&quot;cursor sweep buckets&quot;</span> : <span class="hljs-number">57078</span>,
+            <span class="hljs-string">&quot;cursor sweep cursors closed&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cursor sweep cursors examined&quot;</span> : <span class="hljs-number">1794</span>,
+            <span class="hljs-string">&quot;cursor sweeps&quot;</span> : <span class="hljs-number">9513</span>,
+            <span class="hljs-string">&quot;cursor update calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;cursors currently cached&quot;</span> : <span class="hljs-number">68</span>,
+            <span class="hljs-string">&quot;cursors reused from cache&quot;</span> : <span class="hljs-number">2472858</span>,
+            <span class="hljs-string">&quot;truncate calls&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;data-handle&quot;</span> : {
+            <span class="hljs-string">&quot;connection data handles currently active&quot;</span> : <span class="hljs-number">56</span>,
+            <span class="hljs-string">&quot;connection sweep candidate became referenced&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;connection sweep dhandles closed&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;connection sweep dhandles removed from hash list&quot;</span> : <span class="hljs-number">299</span>,
+            <span class="hljs-string">&quot;connection sweep time-of-death sets&quot;</span> : <span class="hljs-number">1915</span>,
+            <span class="hljs-string">&quot;connection sweeps&quot;</span> : <span class="hljs-number">1573</span>,
+            <span class="hljs-string">&quot;session dhandles swept&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;session sweep attempts&quot;</span> : <span class="hljs-number">148</span>
+        },
+        <span class="hljs-string">&quot;lock&quot;</span> : {
+            <span class="hljs-string">&quot;checkpoint lock acquisitions&quot;</span> : <span class="hljs-number">81</span>,
+            <span class="hljs-string">&quot;checkpoint lock application thread wait time (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;checkpoint lock internal thread wait time (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;commit timestamp queue lock application thread time waiting (usecs)&quot;</span> : <span class="hljs-number">16687</span>,
+            <span class="hljs-string">&quot;commit timestamp queue lock internal thread time waiting (usecs)&quot;</span> : <span class="hljs-number">21981</span>,
+            <span class="hljs-string">&quot;commit timestamp queue read lock acquisitions&quot;</span> : <span class="hljs-number">72</span>,
+            <span class="hljs-string">&quot;commit timestamp queue write lock acquisitions&quot;</span> : <span class="hljs-number">1154424</span>,
+            <span class="hljs-string">&quot;dhandle lock application thread time waiting (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;dhandle lock internal thread time waiting (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;dhandle read lock acquisitions&quot;</span> : <span class="hljs-number">83505</span>,
+            <span class="hljs-string">&quot;dhandle write lock acquisitions&quot;</span> : <span class="hljs-number">680</span>,
+            <span class="hljs-string">&quot;metadata lock acquisitions&quot;</span> : <span class="hljs-number">55</span>,
+            <span class="hljs-string">&quot;metadata lock application thread wait time (usecs)&quot;</span> : <span class="hljs-number">3</span>,
+            <span class="hljs-string">&quot;metadata lock internal thread wait time (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;read timestamp queue lock application thread time waiting (usecs)&quot;</span> : <span class="hljs-number">55224</span>,
+            <span class="hljs-string">&quot;read timestamp queue lock internal thread time waiting (usecs)&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;read timestamp queue read lock acquisitions&quot;</span> : <span class="hljs-number">39</span>,
+            <span class="hljs-string">&quot;read timestamp queue write lock acquisitions&quot;</span> : <span class="hljs-number">1682123</span>,
+            <span class="hljs-string">&quot;schema lock acquisitions&quot;</span> : <span class="hljs-number">139</span>,
+            <span class="hljs-string">&quot;schema lock application thread wait time (usecs)&quot;</span> : <span class="hljs-number">7</span>,
+            <span class="hljs-string">&quot;schema lock internal thread wait time (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table lock application thread time waiting for the table lock (usecs)&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;table lock internal thread time waiting for the table lock (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table read lock acquisitions&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table write lock acquisitions&quot;</span> : <span class="hljs-number">3210</span>,
+            <span class="hljs-string">&quot;txn global lock application thread time waiting (usecs)&quot;</span> : <span class="hljs-number">147042</span>,
+            <span class="hljs-string">&quot;txn global lock internal thread time waiting (usecs)&quot;</span> : <span class="hljs-number">41911</span>,
+            <span class="hljs-string">&quot;txn global read lock acquisitions&quot;</span> : <span class="hljs-number">386673</span>,
+            <span class="hljs-string">&quot;txn global write lock acquisitions&quot;</span> : <span class="hljs-number">711829</span>
+        },
+        <span class="hljs-string">&quot;log&quot;</span> : {
+            <span class="hljs-string">&quot;busy returns attempting to switch slots&quot;</span> : <span class="hljs-number">97448</span>,
+            <span class="hljs-string">&quot;force archive time sleeping (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;log bytes of payload data&quot;</span> : <span class="hljs-number">253714541</span>,
+            <span class="hljs-string">&quot;log bytes written&quot;</span> : <span class="hljs-number">295699200</span>,
+            <span class="hljs-string">&quot;log files manually zero-filled&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;log flush operations&quot;</span> : <span class="hljs-number">237206</span>,
+            <span class="hljs-string">&quot;log force write operations&quot;</span> : <span class="hljs-number">251198</span>,
+            <span class="hljs-string">&quot;log force write operations skipped&quot;</span> : <span class="hljs-number">34332</span>,
+            <span class="hljs-string">&quot;log records compressed&quot;</span> : <span class="hljs-number">107</span>,
+            <span class="hljs-string">&quot;log records not compressed&quot;</span> : <span class="hljs-number">1154488</span>,
+            <span class="hljs-string">&quot;log records too small to compress&quot;</span> : <span class="hljs-number">191</span>,
+            <span class="hljs-string">&quot;log release advances write LSN&quot;</span> : <span class="hljs-number">110</span>,
+            <span class="hljs-string">&quot;log scan operations&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;log scan records requiring two reads&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;log server thread advances write LSN&quot;</span> : <span class="hljs-number">216869</span>,
+            <span class="hljs-string">&quot;log server thread write LSN walk skipped&quot;</span> : <span class="hljs-number">39365</span>,
+            <span class="hljs-string">&quot;log sync operations&quot;</span> : <span class="hljs-number">210847</span>,
+            <span class="hljs-string">&quot;log sync time duration (usecs)&quot;</span> : <span class="hljs-number">237961807</span>,
+            <span class="hljs-string">&quot;log sync_dir operations&quot;</span> : <span class="hljs-number">3</span>,
+            <span class="hljs-string">&quot;log sync_dir time duration (usecs)&quot;</span> : <span class="hljs-number">8925</span>,
+            <span class="hljs-string">&quot;log write operations&quot;</span> : <span class="hljs-number">1154786</span>,
+            <span class="hljs-string">&quot;logging bytes consolidated&quot;</span> : <span class="hljs-number">295698176</span>,
+            <span class="hljs-string">&quot;maximum log file size&quot;</span> : <span class="hljs-number">104857600</span>,
+            <span class="hljs-string">&quot;number of pre-allocated log files to create&quot;</span> : <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;pre-allocated log files not ready and missed&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;pre-allocated log files prepared&quot;</span> : <span class="hljs-number">4</span>,
+            <span class="hljs-string">&quot;pre-allocated log files used&quot;</span> : <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;records processed by log scan&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;slot close lost race&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;slot close unbuffered waits&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;slot closures&quot;</span> : <span class="hljs-number">216979</span>,
+            <span class="hljs-string">&quot;slot join atomic update races&quot;</span> : <span class="hljs-number">12</span>,
+            <span class="hljs-string">&quot;slot join calls atomic updates raced&quot;</span> : <span class="hljs-number">12</span>,
+            <span class="hljs-string">&quot;slot join calls did not yield&quot;</span> : <span class="hljs-number">1154688</span>,
+            <span class="hljs-string">&quot;slot join calls found active slot closed&quot;</span> : <span class="hljs-number">86</span>,
+            <span class="hljs-string">&quot;slot join calls slept&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;slot join calls yielded&quot;</span> : <span class="hljs-number">98</span>,
+            <span class="hljs-string">&quot;slot join found active slot closed&quot;</span> : <span class="hljs-number">662</span>,
+            <span class="hljs-string">&quot;slot joins yield time (usecs)&quot;</span> : <span class="hljs-number">19212</span>,
+            <span class="hljs-string">&quot;slot transitions unable to find free slot&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;slot unbuffered writes&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;total in-memory size of compressed records&quot;</span> : <span class="hljs-number">374054</span>,
+            <span class="hljs-string">&quot;total log buffer size&quot;</span> : <span class="hljs-number">33554432</span>,
+            <span class="hljs-string">&quot;total size of compressed records&quot;</span> : <span class="hljs-number">115090</span>,
+            <span class="hljs-string">&quot;written slots coalesced&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;yields waiting for previous log file close&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;perf&quot;</span> : {
+            <span class="hljs-string">&quot;file system read latency histogram (bucket 1) - 10-49ms&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;file system read latency histogram (bucket 2) - 50-99ms&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system read latency histogram (bucket 3) - 100-249ms&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system read latency histogram (bucket 4) - 250-499ms&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system read latency histogram (bucket 5) - 500-999ms&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system read latency histogram (bucket 6) - 1000ms+&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system write latency histogram (bucket 1) - 10-49ms&quot;</span> : <span class="hljs-number">26</span>,
+            <span class="hljs-string">&quot;file system write latency histogram (bucket 2) - 50-99ms&quot;</span> : <span class="hljs-number">3</span>,
+            <span class="hljs-string">&quot;file system write latency histogram (bucket 3) - 100-249ms&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system write latency histogram (bucket 4) - 250-499ms&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system write latency histogram (bucket 5) - 500-999ms&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;file system write latency histogram (bucket 6) - 1000ms+&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;operation read latency histogram (bucket 1) - 100-249us&quot;</span> : <span class="hljs-number">9540</span>,
+            <span class="hljs-string">&quot;operation read latency histogram (bucket 2) - 250-499us&quot;</span> : <span class="hljs-number">3505</span>,
+            <span class="hljs-string">&quot;operation read latency histogram (bucket 3) - 500-999us&quot;</span> : <span class="hljs-number">1186</span>,
+            <span class="hljs-string">&quot;operation read latency histogram (bucket 4) - 1000-9999us&quot;</span> : <span class="hljs-number">513</span>,
+            <span class="hljs-string">&quot;operation read latency histogram (bucket 5) - 10000us+&quot;</span> : <span class="hljs-number">17</span>,
+            <span class="hljs-string">&quot;operation write latency histogram (bucket 1) - 100-249us&quot;</span> : <span class="hljs-number">11343</span>,
+            <span class="hljs-string">&quot;operation write latency histogram (bucket 2) - 250-499us&quot;</span> : <span class="hljs-number">5852</span>,
+            <span class="hljs-string">&quot;operation write latency histogram (bucket 3) - 500-999us&quot;</span> : <span class="hljs-number">2864</span>,
+            <span class="hljs-string">&quot;operation write latency histogram (bucket 4) - 1000-9999us&quot;</span> : <span class="hljs-number">1224</span>,
+            <span class="hljs-string">&quot;operation write latency histogram (bucket 5) - 10000us+&quot;</span> : <span class="hljs-number">45</span>
+        },
+        <span class="hljs-string">&quot;reconciliation&quot;</span> : {
+            <span class="hljs-string">&quot;fast-path pages deleted&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;page reconciliation calls&quot;</span> : <span class="hljs-number">1404461</span>,
+            <span class="hljs-string">&quot;page reconciliation calls for eviction&quot;</span> : <span class="hljs-number">1396390</span>,
+            <span class="hljs-string">&quot;pages deleted&quot;</span> : <span class="hljs-number">6</span>,
+            <span class="hljs-string">&quot;split bytes currently awaiting free&quot;</span> : <span class="hljs-number">167813</span>,
+            <span class="hljs-string">&quot;split objects currently awaiting free&quot;</span> : <span class="hljs-number">18</span>
+        },
+        <span class="hljs-string">&quot;session&quot;</span> : {
+            <span class="hljs-string">&quot;open cursor count&quot;</span> : <span class="hljs-number">29</span>,
+            <span class="hljs-string">&quot;open session count&quot;</span> : <span class="hljs-number">23</span>,
+            <span class="hljs-string">&quot;session query timestamp calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table alter failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table alter successful calls&quot;</span> : <span class="hljs-number">26</span>,
+            <span class="hljs-string">&quot;table alter unchanged and skipped&quot;</span> : <span class="hljs-number">78</span>,
+            <span class="hljs-string">&quot;table compact failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table compact successful calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table create failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table create successful calls&quot;</span> : <span class="hljs-number">27</span>,
+            <span class="hljs-string">&quot;table drop failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table drop successful calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table rebalance failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table rebalance successful calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table rename failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table rename successful calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table salvage failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table salvage successful calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table truncate failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table truncate successful calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table verify failed calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;table verify successful calls&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;thread-state&quot;</span> : {
+            <span class="hljs-string">&quot;active filesystem fsync calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;active filesystem read calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;active filesystem write calls&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;thread-yield&quot;</span> : {
+            <span class="hljs-string">&quot;application thread time evicting (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;application thread time waiting for cache (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;connection close blocked waiting for transaction state stabilization&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;connection close yielded for lsm manager shutdown&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;data handle lock yielded&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;get reference for page index and slot time sleeping (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;log server sync yielded for log write&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;page access yielded due to prepare state change&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;page acquire busy blocked&quot;</span> : <span class="hljs-number">2</span>,
+            <span class="hljs-string">&quot;page acquire eviction blocked&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;page acquire locked blocked&quot;</span> : <span class="hljs-number">109</span>,
+            <span class="hljs-string">&quot;page acquire read blocked&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;page acquire time sleeping (usecs)&quot;</span> : <span class="hljs-number">94800</span>,
+            <span class="hljs-string">&quot;page delete rollback time sleeping for state change (usecs)&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;page reconciliation yielded due to child modification&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;transaction&quot;</span> : {
+            <span class="hljs-string">&quot;Number of prepared updates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;Number of prepared updates added to cache overflow&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;Number of prepared updates resolved&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;commit timestamp queue entries walked&quot;</span> : <span class="hljs-number">198171</span>,
+            <span class="hljs-string">&quot;commit timestamp queue insert to empty&quot;</span> : <span class="hljs-number">956256</span>,
+            <span class="hljs-string">&quot;commit timestamp queue inserts to head&quot;</span> : <span class="hljs-number">198163</span>,
+            <span class="hljs-string">&quot;commit timestamp queue inserts total&quot;</span> : <span class="hljs-number">1154424</span>,
+            <span class="hljs-string">&quot;commit timestamp queue length&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;number of named snapshots created&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;number of named snapshots dropped&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;prepared transactions&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;prepared transactions committed&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;prepared transactions currently active&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;prepared transactions rolled back&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;query timestamp calls&quot;</span> : <span class="hljs-number">405170</span>,
+            <span class="hljs-string">&quot;read timestamp queue entries walked&quot;</span> : <span class="hljs-number">944466</span>,
+            <span class="hljs-string">&quot;read timestamp queue insert to empty&quot;</span> : <span class="hljs-number">750459</span>,
+            <span class="hljs-string">&quot;read timestamp queue inserts to head&quot;</span> : <span class="hljs-number">711115</span>,
+            <span class="hljs-string">&quot;read timestamp queue inserts total&quot;</span> : <span class="hljs-number">1682176</span>,
+            <span class="hljs-string">&quot;read timestamp queue length&quot;</span> : <span class="hljs-number">1</span>,
+            <span class="hljs-string">&quot;rollback to stable calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;rollback to stable updates aborted&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;rollback to stable updates removed from cache overflow&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;set timestamp calls&quot;</span> : <span class="hljs-number">395720</span>,
+            <span class="hljs-string">&quot;set timestamp commit calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;set timestamp commit updates&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;set timestamp oldest calls&quot;</span> : <span class="hljs-number">197860</span>,
+            <span class="hljs-string">&quot;set timestamp oldest updates&quot;</span> : <span class="hljs-number">197859</span>,
+            <span class="hljs-string">&quot;set timestamp stable calls&quot;</span> : <span class="hljs-number">197860</span>,
+            <span class="hljs-string">&quot;set timestamp stable updates&quot;</span> : <span class="hljs-number">197859</span>,
+            <span class="hljs-string">&quot;transaction begins&quot;</span> : <span class="hljs-number">3803884</span>,
+            <span class="hljs-string">&quot;transaction checkpoint currently running&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction checkpoint generation&quot;</span> : <span class="hljs-number">56</span>,
+            <span class="hljs-string">&quot;transaction checkpoint max time (msecs)&quot;</span> : <span class="hljs-number">1472</span>,
+            <span class="hljs-string">&quot;transaction checkpoint min time (msecs)&quot;</span> : <span class="hljs-number">13</span>,
+            <span class="hljs-string">&quot;transaction checkpoint most recent time (msecs)&quot;</span> : <span class="hljs-number">26</span>,
+            <span class="hljs-string">&quot;transaction checkpoint scrub dirty target&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction checkpoint scrub time (msecs)&quot;</span> : <span class="hljs-number">100</span>,
+            <span class="hljs-string">&quot;transaction checkpoint total time (msecs)&quot;</span> : <span class="hljs-number">5717</span>,
+            <span class="hljs-string">&quot;transaction checkpoints&quot;</span> : <span class="hljs-number">55</span>,
+            <span class="hljs-string">&quot;transaction checkpoints skipped because database was clean&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction failures due to cache overflow&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction fsync calls for checkpoint after allocating the transaction ID&quot;</span> : <span class="hljs-number">55</span>,
+            <span class="hljs-string">&quot;transaction fsync duration for checkpoint after allocating the transaction ID (usecs)&quot;</span> : <span class="hljs-number">7849</span>,
+            <span class="hljs-string">&quot;transaction range of IDs currently pinned&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction range of IDs currently pinned by a checkpoint&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction range of IDs currently pinned by named snapshots&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction range of timestamps currently pinned&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction range of timestamps pinned by a checkpoint&quot;</span> : NumberLong(<span class="hljs-string">&quot;6741331490426060801&quot;</span>),
+            <span class="hljs-string">&quot;transaction range of timestamps pinned by the oldest timestamp&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transaction sync calls&quot;</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;transactions committed&quot;</span> : <span class="hljs-number">1156905</span>,
+            <span class="hljs-string">&quot;transactions rolled back&quot;</span> : <span class="hljs-number">2646891</span>,
+            <span class="hljs-string">&quot;update conflicts&quot;</span> : <span class="hljs-number">0</span>
+        },
+        <span class="hljs-string">&quot;concurrentTransactions&quot;</span> : {
+            <span class="hljs-string">&quot;write&quot;</span> : {
+                <span class="hljs-string">&quot;out&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;available&quot;</span> : <span class="hljs-number">128</span>,
+                <span class="hljs-string">&quot;totalTickets&quot;</span> : <span class="hljs-number">128</span>
+            },
+            <span class="hljs-string">&quot;read&quot;</span> : {
+                <span class="hljs-string">&quot;out&quot;</span> : <span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;available&quot;</span> : <span class="hljs-number">127</span>,
+                <span class="hljs-string">&quot;totalTickets&quot;</span> : <span class="hljs-number">128</span>
+            }
+        }
+    },
+    <span class="hljs-string">&quot;mem&quot;</span> : {
+        <span class="hljs-string">&quot;bits&quot;</span> : <span class="hljs-number">64</span>,
+        <span class="hljs-string">&quot;resident&quot;</span> : <span class="hljs-number">545</span>,
+        <span class="hljs-string">&quot;virtual&quot;</span> : <span class="hljs-number">1930</span>,
+        <span class="hljs-string">&quot;supported&quot;</span> : <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;mapped&quot;</span> : <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;mappedWithJournal&quot;</span> : <span class="hljs-number">0</span>
+    },
+    <span class="hljs-string">&quot;metrics&quot;</span> : {
+        <span class="hljs-string">&quot;commands&quot;</span> : {
+            <span class="hljs-string">&quot;_isSelf&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">2</span>)
+            },
+            <span class="hljs-string">&quot;buildInfo&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">25</span>)
+            },
+            <span class="hljs-string">&quot;count&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">3</span>)
+            },
+            <span class="hljs-string">&quot;create&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;createIndexes&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">2</span>)
+            },
+            <span class="hljs-string">&quot;currentOp&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">19</span>)
+            },
+            <span class="hljs-string">&quot;delete&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">46790</span>)
+            },
+            <span class="hljs-string">&quot;endSessions&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">6</span>)
+            },
+            <span class="hljs-string">&quot;find&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">94</span>)
+            },
+            <span class="hljs-string">&quot;findAndModify&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">46782</span>)
+            },
+            <span class="hljs-string">&quot;getFreeMonitoringStatus&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">11</span>)
+            },
+            <span class="hljs-string">&quot;getLog&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">11</span>)
+            },
+            <span class="hljs-string">&quot;getMore&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">683559</span>)
+            },
+            <span class="hljs-string">&quot;insert&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">405822</span>)
+            },
+            <span class="hljs-string">&quot;isMaster&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">116</span>)
+            },
+            <span class="hljs-string">&quot;killOp&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">2</span>)
+            },
+            <span class="hljs-string">&quot;listCollections&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">33</span>)
+            },
+            <span class="hljs-string">&quot;listDatabases&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">2</span>)
+            },
+            <span class="hljs-string">&quot;listIndexes&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">3</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">25</span>)
+            },
+            <span class="hljs-string">&quot;ping&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;replSetGetConfig&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;replSetGetRBID&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">6</span>)
+            },
+            <span class="hljs-string">&quot;replSetGetStatus&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">53</span>)
+            },
+            <span class="hljs-string">&quot;replSetHeartbeat&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">3190</span>)
+            },
+            <span class="hljs-string">&quot;replSetInitiate&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;replSetReconfig&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;replSetUpdatePosition&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">753799</span>)
+            },
+            <span class="hljs-string">&quot;serverStatus&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">1</span>)
+            },
+            <span class="hljs-string">&quot;update&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">13</span>)
+            },
+            <span class="hljs-string">&quot;whatsmyuri&quot;</span> : {
+                <span class="hljs-string">&quot;failed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">13</span>)
+            }
+        },
+        <span class="hljs-string">&quot;cursor&quot;</span> : {
+            <span class="hljs-string">&quot;timedOut&quot;</span> : NumberLong(<span class="hljs-number">2</span>),
+            <span class="hljs-string">&quot;open&quot;</span> : {
+                <span class="hljs-string">&quot;noTimeout&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;pinned&quot;</span> : NumberLong(<span class="hljs-number">2</span>),
+                <span class="hljs-string">&quot;total&quot;</span> : NumberLong(<span class="hljs-number">2</span>)
+            }
+        },
+        <span class="hljs-string">&quot;document&quot;</span> : {
+            <span class="hljs-string">&quot;deleted&quot;</span> : NumberLong(<span class="hljs-number">44374</span>),
+            <span class="hljs-string">&quot;inserted&quot;</span> : NumberLong(<span class="hljs-number">405822</span>),
+            <span class="hljs-string">&quot;returned&quot;</span> : NumberLong(<span class="hljs-number">2308878</span>),
+            <span class="hljs-string">&quot;updated&quot;</span> : NumberLong(<span class="hljs-number">384755</span>)
+        },
+        <span class="hljs-string">&quot;getLastError&quot;</span> : {
+            <span class="hljs-string">&quot;wtime&quot;</span> : {
+                <span class="hljs-string">&quot;num&quot;</span> : <span class="hljs-number">23</span>,
+                <span class="hljs-string">&quot;totalMillis&quot;</span> : <span class="hljs-number">1307</span>
+            },
+            <span class="hljs-string">&quot;wtimeouts&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        },
+        <span class="hljs-string">&quot;operation&quot;</span> : {
+            <span class="hljs-string">&quot;scanAndOrder&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+            <span class="hljs-string">&quot;writeConflicts&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        },
+        <span class="hljs-string">&quot;queryExecutor&quot;</span> : {
+            <span class="hljs-string">&quot;scanned&quot;</span> : NumberLong(<span class="hljs-number">16</span>),
+            <span class="hljs-string">&quot;scannedObjects&quot;</span> : NumberLong(<span class="hljs-number">118734499</span>)
+        },
+        <span class="hljs-string">&quot;record&quot;</span> : {
+            <span class="hljs-string">&quot;moves&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        },
+        <span class="hljs-string">&quot;repl&quot;</span> : {
+            <span class="hljs-string">&quot;executor&quot;</span> : {
+                <span class="hljs-string">&quot;pool&quot;</span> : {
+                    <span class="hljs-string">&quot;inProgressCount&quot;</span> : <span class="hljs-number">0</span>
+                },
+                <span class="hljs-string">&quot;queues&quot;</span> : {
+                    <span class="hljs-string">&quot;networkInProgress&quot;</span> : <span class="hljs-number">0</span>,
+                    <span class="hljs-string">&quot;sleepers&quot;</span> : <span class="hljs-number">3</span>
+                },
+                <span class="hljs-string">&quot;unsignaledEvents&quot;</span> : <span class="hljs-number">0</span>,
+                <span class="hljs-string">&quot;shuttingDown&quot;</span> : <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&quot;networkInterface&quot;</span> : <span class="hljs-string">&quot;DEPRECATED: getDiagnosticString is deprecated in NetworkInterfaceTL&quot;</span>
+            },
+            <span class="hljs-string">&quot;apply&quot;</span> : {
+                <span class="hljs-string">&quot;attemptsToBecomeSecondary&quot;</span> : NumberLong(<span class="hljs-number">1</span>),
+                <span class="hljs-string">&quot;batches&quot;</span> : {
+                    <span class="hljs-string">&quot;num&quot;</span> : <span class="hljs-number">0</span>,
+                    <span class="hljs-string">&quot;totalMillis&quot;</span> : <span class="hljs-number">0</span>
+                },
+                <span class="hljs-string">&quot;ops&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+            },
+            <span class="hljs-string">&quot;buffer&quot;</span> : {
+                <span class="hljs-string">&quot;count&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;maxSizeBytes&quot;</span> : NumberLong(<span class="hljs-number">268435456</span>),
+                <span class="hljs-string">&quot;sizeBytes&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+            },
+            <span class="hljs-string">&quot;initialSync&quot;</span> : {
+                <span class="hljs-string">&quot;completed&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;failedAttempts&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;failures&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+            },
+            <span class="hljs-string">&quot;network&quot;</span> : {
+                <span class="hljs-string">&quot;bytes&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;getmores&quot;</span> : {
+                    <span class="hljs-string">&quot;num&quot;</span> : <span class="hljs-number">0</span>,
+                    <span class="hljs-string">&quot;totalMillis&quot;</span> : <span class="hljs-number">0</span>
+                },
+                <span class="hljs-string">&quot;ops&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                <span class="hljs-string">&quot;readersCreated&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+            },
+            <span class="hljs-string">&quot;preload&quot;</span> : {
+                <span class="hljs-string">&quot;docs&quot;</span> : {
+                    <span class="hljs-string">&quot;num&quot;</span> : <span class="hljs-number">0</span>,
+                    <span class="hljs-string">&quot;totalMillis&quot;</span> : <span class="hljs-number">0</span>
+                },
+                <span class="hljs-string">&quot;indexes&quot;</span> : {
+                    <span class="hljs-string">&quot;num&quot;</span> : <span class="hljs-number">0</span>,
+                    <span class="hljs-string">&quot;totalMillis&quot;</span> : <span class="hljs-number">0</span>
+                }
+            }
+        },
+        <span class="hljs-string">&quot;storage&quot;</span> : {
+            <span class="hljs-string">&quot;freelist&quot;</span> : {
+                <span class="hljs-string">&quot;search&quot;</span> : {
+                    <span class="hljs-string">&quot;bucketExhausted&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                    <span class="hljs-string">&quot;requests&quot;</span> : NumberLong(<span class="hljs-number">0</span>),
+                    <span class="hljs-string">&quot;scanned&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+                }
+            }
+        },
+        <span class="hljs-string">&quot;ttl&quot;</span> : {
+            <span class="hljs-string">&quot;deletedDocuments&quot;</span> : NumberLong(<span class="hljs-number">3</span>),
+            <span class="hljs-string">&quot;passes&quot;</span> : NumberLong(<span class="hljs-number">52</span>)
+        }
+    },
+    <span class="hljs-string">&quot;ok&quot;</span> : <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;operationTime&quot;</span> : Timestamp(<span class="hljs-number">1569588550</span>, <span class="hljs-number">1</span>),
+    <span class="hljs-string">&quot;$clusterTime&quot;</span> : {
+        <span class="hljs-string">&quot;clusterTime&quot;</span> : Timestamp(<span class="hljs-number">1569588550</span>, <span class="hljs-number">1</span>),
+        <span class="hljs-string">&quot;signature&quot;</span> : {
+            <span class="hljs-string">&quot;hash&quot;</span> : BinData(<span class="hljs-number">0</span>,<span class="hljs-string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;</span>),
+            <span class="hljs-string">&quot;keyId&quot;</span> : NumberLong(<span class="hljs-number">0</span>)
+        }
+    }
+}
+</code></pre>
+<p>It is important to monitor disk I/O metrics and tools like iostat serve that purpose well:</p>
+<pre><code class="lang-bash">iostat -x sda 2
+Linux 4.4.0-1094-aws (&lt;aws_instance&gt;)     09/27/2019     _x86_64_    (4 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          12.07    1.19    5.30   30.88   14.27   36.30
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           6.39    0.00    1.28   48.72    0.13   43.48
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.38    0.00    0.77   50.77    0.13   47.95
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.76    0.00    0.63   50.13    0.13   48.36
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+</code></pre>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongodb_sharding.html">MongoDB Sharding</a></td>
+<td style="text-align:right"><a href="mongodb_storage.html">MongoDB Storage</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongodb_sharding.html" class="navigation navigation-prev " aria-label="Previous page: MongoDB Sharding">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongodb_storage.html" class="navigation navigation-next " aria-label="Next page: MongoDB Storage">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MongoDB Administration","level":"1.4.19","depth":2,"next":{"title":"MongoDB Storage","level":"1.4.20","depth":2,"path":"docs/mongodb_storage.md","ref":"docs/mongodb_storage.md","articles":[]},"previous":{"title":"MongoDB Sharding","level":"1.4.18","depth":2,"path":"docs/mongodb_sharding.md","ref":"docs/mongodb_sharding.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongodb_administration.md","mtime":"2019-09-27T13:03:15.586Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

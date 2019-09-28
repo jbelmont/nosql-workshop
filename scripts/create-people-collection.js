@@ -1,0 +1,13 @@
+"use strict";
+
+db = connect("localhost:27017/nosql_workshop");
+
+var people = [{"name":"Erica Johnson","age":25,"status":"A"},{"name":"Delta Sauer","age":26,"status":"A"},{"name":"Donna Green","age":27,"status":"A"},{"name":"Aniya Hammes","age":28,"status":"A"},{"name":"Jeanette Deckow","age":29,"status":"A"},{"name":"Noel Dicki","age":30,"status":"A"},{"name":"Alexys Adams","age":31,"status":"A"},{"name":"Judson Fahey","age":32,"status":"A"},{"name":"Jeramy Rice","age":33,"status":"A"},{"name":"Maurine Hegmann","age":34,"status":"A"},{"name":"Jordyn McClure","age":35,"status":"A"},{"name":"Gunner Huels","age":36,"status":"A"},{"name":"Lura Gaylord","age":37,"status":"A"},{"name":"Adolfo Donnelly","age":38,"status":"A"},{"name":"Rico Abbott","age":39,"status":"A"},{"name":"Ralph Smitham","age":40,"status":"A"},{"name":"Haskell Lowe","age":41,"status":"A"},{"name":"Alfonzo Wolf","age":42,"status":"A"},{"name":"Betsy Quitzon","age":43,"status":"A"},{"name":"Alexandria King","age":44,"status":"A"},{"name":"Gerda Ernser","age":45,"status":"A"},{"name":"Rowland Murazik","age":46,"status":"A"},{"name":"Cleo Skiles","age":47,"status":"A"},{"name":"Ola McKenzie","age":48,"status":"A"},{"name":"Rodolfo Kozey","age":49,"status":"A"},{"name":"Emanuel Renner","age":50,"status":"A"},{"name":"Scot Lang","age":51,"status":"A"},{"name":"Lucy Lowe","age":52,"status":"A"},{"name":"Autumn Morar","age":53,"status":"A"},{"name":"Jett Gutkowski","age":54,"status":"A"},{"name":"Moriah Hegmann","age":55,"status":"A"},{"name":"Della Luettgen","age":56,"status":"A"},{"name":"Colten Jakubowski","age":57,"status":"A"},{"name":"Samson Boehm","age":58,"status":"A"},{"name":"Tiana Morissette","age":59,"status":"A"},{"name":"Marisa Thiel","age":60,"status":"A"},{"name":"Shanie Volkman","age":61,"status":"A"},{"name":"Amber Hagenes","age":62,"status":"A"},{"name":"Fabian King","age":63,"status":"A"},{"name":"Berenice Homenick","age":64,"status":"A"},{"name":"Damaris Dibbert","age":65,"status":"A"},{"name":"Catharine Runte","age":66,"status":"A"},{"name":"Alfreda Bernier","age":67,"status":"A"},{"name":"Isabella Bergstrom","age":68,"status":"A"},{"name":"Katlyn Rau","age":69,"status":"A"},{"name":"Elinor Runolfsson","age":70,"status":"A"},{"name":"Kenneth Buckridge","age":71,"status":"A"},{"name":"Demario Muller","age":72,"status":"A"},{"name":"Edyth Block","age":73,"status":"A"},{"name":"Uriah Aufderhar","age":74,"status":"A"}]
+for (var i = 0; i < 50; i++) {
+    db.people.insertOne({
+        _id: new ObjectId(),
+        name: people[i].name,
+        age: people[i].age,
+        status: people[i].status
+    });
+}

@@ -1,0 +1,1252 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mongo CRUD Operations · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongo-crud-operations-part2.html" />
+    
+    
+    <link rel="prev" href="mongo-shell.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mongo CRUD Operations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Crud Operations</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#crud-operations">CRUD Operations</a></li>
+<li><a href="#insert-documents">Insert Documents</a></li>
+<li><a href="#query-documents">Query Documents</a></li>
+<li><a href="#update-documents">Update Documents</a></li>
+<li><a href="#delete-documents">Delete Documents</a></li>
+<li><a href="#workshop-questions">Workshop Questions</a></li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p><em>All of this information is gathered from the official mongodb docs in <a href="https://docs.mongodb.com/manual/crud/" target="_blank">https://docs.mongodb.com/manual/crud/</a></em></p>
+<h3 id="crud-operations">CRUD operations</h3>
+<ul>
+<li>CRUD ==&gt; Create, Read, Update, and Delete Documents.</li>
+</ul>
+<p>Create or insert operations add new documents to a collection. </p>
+<p>If the collection does not currently exist, insert operations will create the collection.</p>
+<p>MongoDB provides the following methods to insert documents into a collection:</p>
+<ul>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.insertOne/#db.collection.insertOne" target="_blank">db.collection.insertOne()</a></p>
+</li>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.insertMany/#db.collection.insertMany" target="_blank">db.collection.insertMany()</a></p>
+</li>
+</ul>
+<p>In MongoDB, insert operations target a single collection. </p>
+<p><em>All write operations in MongoDB are atomic on the level of a single document.</em></p>
+<pre><code class="lang-bash">db.people.insertOne( // collection
+    {                        // document
+        name: <span class="hljs-string">&quot;John Rambo&quot;</span>,  // field: value
+        age: 34,             // field: value
+        status: <span class="hljs-string">&quot;MIA&quot;</span>        // field: value
+    }
+)
+</code></pre>
+<h4 id="read-operations">Read Operations</h4>
+<p>Read operations retrieves documents from a collection; i.e. queries a collection for documents. </p>
+<p>MongoDB provides the following methods to read documents from a collection:</p>
+<ul>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.find/#db.collection.find" target="_blank">db.collection.find()</a></li>
+</ul>
+<p>Let us look at an example in the mongo shell:</p>
+<p><img src="../images/db-find.png" alt="find example"></p>
+<p><em>Notice that in the example above we use projection and only age is returned back while the _id is always returned in MongoDB.</em></p>
+<h4 id="update-operations">Update Operations</h4>
+<p>Update operations modify existing documents in a collection. MongoDB provides the following methods to update documents of a collection:</p>
+<ul>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/#db.collection.updateOne" target="_blank">db.collection.updateOne()</a></p>
+</li>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.updateMany/#db.collection.updateMany" target="_blank">db.collection.updateMany()</a></p>
+</li>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/#db.collection.replaceOne" target="_blank">db.collection.replaceOne()</a></p>
+</li>
+</ul>
+<p>Let us look at an example in the mongo shell:</p>
+<p><img src="../images/db-update.png" alt="db update"></p>
+<h4 id="delete-operations">Delete Operations</h4>
+<p>Delete operations remove documents from a collection. MongoDB provides the following methods to delete documents of a collection:</p>
+<ul>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/#db.collection.deleteOne" target="_blank">db.collection.deleteOne()</a></p>
+</li>
+<li><p><a href="https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/#db.collection.deleteMany" target="_blank">db.collection.deleteMany()</a></p>
+</li>
+</ul>
+<p>In MongoDB, delete operations target a single collection. All write operations in MongoDB are atomic on the level of a single document.</p>
+<p>You can specify criteria, or filters, that identify the documents to remove. These filters use the same syntax as read operations.</p>
+<p>Let us look at some examples in the mongo shell:</p>
+<p><img src="../images/db-delete.png" alt="db delete"></p>
+<p><em>Notice that deleteMany deleted more than one document.</em></p>
+<h4 id="bulk-write">Bulk Write</h4>
+<p><em>MongoDB provides the ability to perform write operations in bulk.</em></p>
+<h6 id="insert-documents">Insert Documents</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/insert-documents/" target="_blank">Insert Documents</a></p>
+<p><em>If the collection does not currently exist, insert operations will create the collection.</em></p>
+<p><img src="../images/db-insert-one.png" alt="images/db-insert-one"></p>
+<p><code>db.collection.insertMany()</code> can insert multiple documents into a collection. </p>
+<p>Pass an array of documents to the method.</p>
+<p><img src="../images/db-insertmany.png" alt="images/db-insertmany"></p>
+<p>Notice in the screenshot above that we created arrays in the mongo shell and then passed the numbers array into the insertMany collection method.</p>
+<p>Also notice that the <code>insertMany()</code> method returns a document that includes the newly inserted documents _id field values.</p>
+<p><em>All write operations in MongoDB are atomic on the level of a single document.</em></p>
+<h6 id="insert-methods-in-mongodb">Insert Methods in mongodb</h6>
+<p><img src="../images/db-insert-methods1.png" alt="images/db-insert-methods1"></p>
+<p>Notice that in this screenshot we use insertOne to insert one document and insertMany to insert an array of documents.</p>
+<p><img src="../images/db-insert-methods2.png" alt="images/db-insert-methods2"></p>
+<p>Notice that here we were able to pass an array into the <code>insert()</code> method as well like we did in the <code>insertMany()</code> method.</p>
+<p><img src="../images/db-insert-methods3.png" alt="images/db-insert-methods3"></p>
+<p>Notice that in this screenshot we used an options object with a field of <code>upsert: true</code> to create a document that it did not exist already.</p>
+<p>You can use the upsert option with the other write methods to create a document as well:</p>
+<ul>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/#db.collection.updateOne" target="_blank">db.collection.updateOne()</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.updateMany/#db.collection.updateMany" target="_blank">db.collection.updateMany()</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.findAndModify/#db.collection.findAndModify" target="_blank">db.collection.findAndModify()</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.findOneAndUpdate/#db.collection.findOneAndUpdate" target="_blank">db.collection.findOneAndUpdate()</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.findOneAndReplace/#db.collection.findOneAndReplace" target="_blank">db.collection.findOneAndReplace()</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.save/#db.collection.save" target="_blank">db.collection.save()</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.bulkWrite/#db.collection.bulkWrite" target="_blank">db.collection.bulkWrite()</a></li>
+</ul>
+<h6 id="query-documents">Query Documents</h6>
+<p>The most common method to query documents in mongodb is the <code>find()</code> method.</p>
+<h6 id="select-all-documents-in-a-collection">Select All Documents in a Collection</h6>
+<p>We can select all the documents in the numbers collection with the following query:</p>
+<pre><code class="lang-js">db.numbers.find({})
+</code></pre>
+<p>This command is the equivalent to the following SQL command: <code>SELECT * FROM numbers</code></p>
+<h6 id="specify-equality-condition">Specify Equality Condition</h6>
+<p>You can pass in a query object to specify an equality condition in mongodb.</p>
+<p><img src="../images/db-find-query.png" alt="images/db-find-query"></p>
+<p><em>Notice that we only got back the number documents that match this query.</em></p>
+<h6 id="specify-and-conditions">Specify AND Conditions</h6>
+<p><img src="../images/db-find-query2.png" alt="images/db-find-query2"></p>
+<p>Notice that here we specified an additional condition here and in SQL this would be the equivalent query:</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> numbers <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">type</span> = <span class="hljs-string">&quot;Decimal&quot;</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">value</span> &gt; <span class="hljs-number">4.5</span>
+</code></pre>
+<h6 id="specify-or-conditions">Specify OR Conditions</h6>
+<p><img src="../images/db-find-query3.png" alt="images/db-find-query3"></p>
+<p>Notice that in this query we specified an or condition and in SQL this would be the equivalent query:</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> numbers <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">type</span> = <span class="hljs-string">&quot;Dont know&quot;</span> <span class="hljs-keyword">OR</span> <span class="hljs-string">&quot;val&quot;</span> = <span class="hljs-number">19.8</span>
+</code></pre>
+<h6 id="specify-and-and-or-conditions">Specify AND and OR Conditions</h6>
+<pre><code class="lang-js">db.inventory.find( {
+     <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span>,
+     <span class="hljs-attr">$or</span>: [ { <span class="hljs-attr">qty</span>: { <span class="hljs-attr">$lt</span>: <span class="hljs-number">30</span> } }, { <span class="hljs-attr">item</span>: <span class="hljs-regexp">/^p/</span> } ]
+} )
+</code></pre>
+<p>This query will check the status of A and use the or condition of whether qty is less than 30 or item field starts with p</p>
+<p>In SQL this would be the equivalent query:</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> inventory <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span> <span class="hljs-keyword">AND</span> ( qty &lt; <span class="hljs-number">30</span> <span class="hljs-keyword">OR</span> item <span class="hljs-keyword">LIKE</span> <span class="hljs-string">&quot;p%&quot;</span>)
+</code></pre>
+<p><em>MongoDB supports regular expressions $regex queries to perform string pattern matches.</em></p>
+<h6 id="cursor">Cursor</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/query-documents/#cursor" target="_blank">Cursor</a></p>
+<blockquote>
+<p>The <code>db.collection.find()</code> method returns a cursor to the matching documents.</p>
+</blockquote>
+<h6 id="additional-read-methods">Additional Read Methods</h6>
+<p><code>db.collection.findOne</code> read method:</p>
+<p><img src="../images/db-collection-findone.png" alt="images/db-collection-findone"></p>
+<h6 id="match-an-embeddednested-document">Match an Embedded/Nested Document</h6>
+<p>To specify an equality condition on a field that is an embedded/nested document, use the query filter document 
+{ &lt;field&gt;: &lt;value&gt; } where &lt;value&gt; is the document to match.</p>
+<blockquote>
+<p>Equality matches on the whole embedded document require an exact match of the specified &lt;value&gt; document, including the field order. </p>
+</blockquote>
+<p>For example, the following query does not match any documents in the inventory collection.</p>
+<p>Notice this behavior in the screenshot below:</p>
+<p><img src="../images/subdocument-equality-matches.png" alt="images/subdocument-equality-matches"></p>
+<h6 id="query-on-nested-field">Query on Nested Field</h6>
+<p>You must place nested field queries in double quotes. </p>
+<p>Notice this behavior in the screenshot below:</p>
+<p><img src="../images/nested-field-query.png" alt="images/nested-field-query"></p>
+<h6 id="specify-match-using-query-operator">Specify Match using Query Operator</h6>
+<p>A query filter document can use the query operators to specify conditions in the following form:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$eq</td>
+<td>Matches values that are equal to a specified value.</td>
+</tr>
+<tr>
+<td>$gt</td>
+<td>Matches values that are greater than a specified value.</td>
+</tr>
+<tr>
+<td>$gte</td>
+<td>Matches values that are greater than or equal to a specified value.</td>
+</tr>
+<tr>
+<td>$in</td>
+<td>Matches any of the values specified in an array.</td>
+</tr>
+<tr>
+<td>$lt</td>
+<td>Matches values that are less than a specified value.</td>
+</tr>
+<tr>
+<td>$lte</td>
+<td>Matches values that are less than or equal to a specified value.</td>
+</tr>
+<tr>
+<td>$ne</td>
+<td>Matches all values that are not equal to a specified value.</td>
+</tr>
+<tr>
+<td>$nin</td>
+<td>Matches none of the values specified in an array.</td>
+</tr>
+</tbody>
+</table>
+<p>Look at the screenshot below for an example using <code>$gt</code> query operator in action:</p>
+<p><img src="../images/query-gt-operator.png" alt="images/query-gt-operator"></p>
+<p>We can even chain query operators with an AND condition as the screenshot below demonstrates:</p>
+<p><img src="../images/query-operator-and-condition.png" alt="images/query-operator-and-condition"></p>
+<h6 id="match-an-array">Match an array</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/query-arrays/#match-an-array" target="_blank">Match Array</a></p>
+<p>To specify equality condition on an array, use the query document { &lt;field&gt;&gt;: &lt;value&gt; } 
+where &lt;value&gt; is the exact array to match, including the order of the elements.</p>
+<p>If you don&apos;t use the $all query operator then the equality match in the array must match the order and value.
+Look at the screenshot below for an illustration:</p>
+<p><img src="../images/query-operator-all.png" alt="images/query-operator-all"></p>
+<h6 id="query-an-array-for-a-particular-element">Query an array for a particular element</h6>
+<p>You can query an array for a particular element by doing:</p>
+<p>{ &lt;field&gt;&gt;: &lt;value&gt; } </p>
+<p>Look at the screenshot below:</p>
+<p><img src="../images/query-element-and-at-least-match.png" alt="images/query-element-and-at-least-match"></p>
+<h6 id="query-an-array-with-compound-filter-conditions-on-the-array-elements">Query an Array with Compound Filter Conditions on the Array Elements</h6>
+<blockquote>
+<p>The following example queries for documents where the <em>dim_cm</em> array contains elements that in some combination satisfy the query conditions; e.g., one element can satisfy the greater than 15 condition and another element can satisfy the less than 20 condition, or a single element can satisfy both:</p>
+</blockquote>
+<p><img src="../images/multiple-condition-query.png" alt="images/multiple-condition-query"></p>
+<h6 id="query-for-an-array-element-that-meets-multiple-criteria">Query for an Array Element that Meets Multiple Criteria</h6>
+<blockquote>
+<p>Use <code>$elemMatch</code> operator to specify multiple criteria on the elements of an array such that at least one array element satisfies all the specified criteria.</p>
+</blockquote>
+<p>The following example queries for documents where the dim_cm array contains at least one element that is both greater than ($gt) 22 and less than ($lt) 30:</p>
+<pre><code class="lang-js">db.inventory.find({ <span class="hljs-attr">dim_cm</span>: { <span class="hljs-attr">$elemMatch</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">22</span>, <span class="hljs-attr">$lt</span>: <span class="hljs-number">30</span> } } })
+</code></pre>
+<h6 id="query-for-an-element-by-the-array-index-position">Query for an Element by the Array Index Position</h6>
+<blockquote>
+<p>Using dot notation, you can specify query conditions for an element at a particular index or position of the array. 
+The array uses zero-based indexing.</p>
+</blockquote>
+<p>Look at the screenshot below for an example of this:</p>
+<p><img src="../images/array-index-query.png" alt="images/array-index-query"></p>
+<h6 id="query-an-array-by-array-length">Query an Array by Array Length</h6>
+<blockquote>
+<p>Use the $size operator to query for arrays by number of elements. </p>
+</blockquote>
+<p>For example, the following selects documents where the array tags has 3 elements.</p>
+<p><img src="../images/query-array-size.png" alt="images/query-array-size"></p>
+<h6 id="query-an-array-of-embedded-documents">Query an Array of Embedded Documents</h6>
+<h6 id="query-for-a-document-nested-in-an-array">Query for a Document Nested in an Array</h6>
+<blockquote>
+<p>The following example selects all documents where an element in the instock array matches the specified document:</p>
+</blockquote>
+<p><img src="../images/query-nested-document-in-array.png" alt="images/query-nested-document-in-array"></p>
+<blockquote>
+<p>Equality matches on the whole embedded/nested document require an exact match of the specified document, including the field order. For example, the following query does not match any documents in the inventory collection:</p>
+</blockquote>
+<p>So you can&apos;t do something like this:</p>
+<pre><code class="lang-js">&gt; db.inventory.find( { <span class="hljs-string">&quot;instock&quot;</span>: { <span class="hljs-attr">warehouse</span>: <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-attr">qty</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">30</span> } } } )
+</code></pre>
+<p>since the nested document that would work has the following structure:</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;5c7af040746b1d79ff96c8e5&quot;</span>),
+    <span class="hljs-string">&quot;item&quot;</span> : <span class="hljs-string">&quot;planner&quot;</span>,
+    <span class="hljs-string">&quot;instock&quot;</span> : [
+        {
+            <span class="hljs-string">&quot;warehouse&quot;</span> : <span class="hljs-string">&quot;A&quot;</span>,
+            <span class="hljs-string">&quot;qty&quot;</span> : <span class="hljs-number">40</span>
+        },
+        {
+            <span class="hljs-string">&quot;warehouse&quot;</span> : <span class="hljs-string">&quot;B&quot;</span>,
+            <span class="hljs-string">&quot;qty&quot;</span> : <span class="hljs-number">5</span>
+        }
+    ]
+}
+</code></pre>
+<p><em>Notice how <code>instock</code> has 2 documents where one is greater than 30 but another is less than 30</em></p>
+<h6 id="specify-a-query-condition-on-a-field-in-an-array-of-documents">Specify a Query Condition on a Field in an Array of Documents</h6>
+<blockquote>
+<p>If you do not know the index position of the document nested in the array, concatenate the name of the array field, with a dot (.) and the name of the field in the nested document.</p>
+<p>The following example selects all documents where the instock array has at least one embedded document that contains the field qty whose value is less than or equal to 20:</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.find( { <span class="hljs-string">&apos;instock.qty&apos;</span>: { <span class="hljs-attr">$lte</span>: <span class="hljs-number">20</span> } } )
+</code></pre>
+<h6 id="a-single-nested-document-meets-multiple-query-conditions-on-nested-fields">A Single Nested Document Meets Multiple Query Conditions on Nested Fields</h6>
+<blockquote>
+<p>Use <code>$elemMatch</code> operator to specify multiple criteria on an array of embedded documents such that at least one embedded document satisfies all the specified criteria.</p>
+<p>The following example queries for documents where the instock array has at least one embedded document that contains both the field qty equal to 5 and the field warehouse equal to A:</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.find( { <span class="hljs-string">&quot;instock&quot;</span>: { <span class="hljs-attr">$elemMatch</span>: { <span class="hljs-attr">qty</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">warehouse</span>: <span class="hljs-string">&quot;A&quot;</span> } } } )
+</code></pre>
+<blockquote>
+<p>The following example queries for documents where the instock array has at least one embedded document that contains the field qty that is greater than 10 and less than or equal to 20:</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.find( { <span class="hljs-string">&quot;instock&quot;</span>: { <span class="hljs-attr">$elemMatch</span>: { <span class="hljs-attr">qty</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">$lte</span>: <span class="hljs-number">20</span> } } } } )
+</code></pre>
+<h6 id="combination-of-elements-satisfies-the-criteria">Combination of Elements Satisfies the Criteria</h6>
+<blockquote>
+<p>If the compound query conditions on an array field do not use the $elemMatch operator, the query selects those documents whose array contains any combination of elements that satisfies the conditions.</p>
+<p>For example, the following query matches documents where any document nested in the instock array has the qty field greater than 10 and any document (but not necessarily the same embedded document) in the array has the qty field less than or equal to 20:</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.find( { <span class="hljs-string">&quot;instock.qty&quot;</span>: { <span class="hljs-attr">$gt</span>: <span class="hljs-number">10</span>,  <span class="hljs-attr">$lte</span>: <span class="hljs-number">20</span> } } )
+</code></pre>
+<blockquote>
+<p>The following example queries for documents where the instock array has at least one embedded document that contains the field qty equal to 5 and at least one embedded document (but not necessarily the same embedded document) that contains the field warehouse equal to A:</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.find( { <span class="hljs-string">&quot;instock.qty&quot;</span>: <span class="hljs-number">5</span>, <span class="hljs-string">&quot;instock.warehouse&quot;</span>: <span class="hljs-string">&quot;A&quot;</span> } )
+</code></pre>
+<h6 id="project-fields-to-return-from-query">Project Fields to Return from Query</h6>
+<blockquote>
+<p>By default, queries in MongoDB return all fields in matching documents. </p>
+</blockquote>
+<p>To limit the amount of data that MongoDB sends to applications, you can include a projection document to specify or restrict fields to return.</p>
+<h6 id="return-all-fields-in-matching-documents">Return All Fields in Matching Documents</h6>
+<p><em>If you do not specify a projection document then mongodb will return all fields in a document by default.</em></p>
+<p><img src="../images/all-documents-no-projection.png" alt="images/all-documents-no-projection"></p>
+<p>The operation corresponds to the following SQL statement:</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">from</span> inventory <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+</code></pre>
+<h6 id="return-the-specified-fields-and-the-id-field-only">Return the Specified Fields and the _id Field Only</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/#return-the-specified-fields-and-the-id-field-only" target="_blank">Project Fields from Query Result</a></p>
+<ul>
+<li><p>A projection can explicitly include several fields by setting the &lt;field&gt; to 1 in the projection document. </p>
+</li>
+<li><p>The following operation returns all documents that match the query. </p>
+</li>
+<li><p>In the result set, only the item, status and, by default, the _id fields return in the matching documents.</p>
+</li>
+</ul>
+<h6 id="suppress-id-field">Suppress _id Field</h6>
+<p>You can remove the _id field from the results by setting it to 0 in the projection, as in the following example:</p>
+<pre><code class="lang-js">db.inventory.find( { <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> }, { <span class="hljs-attr">item</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">status</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">_id</span>: <span class="hljs-number">0</span> } )
+</code></pre>
+<blockquote>
+<p>The operation corresponds to the following SQL statement:</p>
+</blockquote>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> item, <span class="hljs-keyword">status</span> <span class="hljs-keyword">from</span> inventory <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">status</span> = <span class="hljs-string">&quot;A&quot;</span>
+</code></pre>
+<h6 id="return-all-but-the-excluded-fields">Return All But the Excluded Fields</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/#return-all-but-the-excluded-fields" target="_blank">Return All But the Excluded Fields</a></p>
+<blockquote>
+<p>Instead of listing the fields to return in the matching document, you can use a projection to exclude specific fields. The following example which returns all fields except for the status and the instock fields in the matching documents:</p>
+</blockquote>
+<pre><code class="lang-js">db.inventory.find( { <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> }, { <span class="hljs-attr">status</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">instock</span>: <span class="hljs-number">0</span> } )
+</code></pre>
+<p><strong>With the exception of the _id field, you cannot combine inclusion and exclusion statements in projection documents.</strong></p>
+<h6 id="return-specific-fields-in-embedded-documents">Return Specific Fields in Embedded Documents</h6>
+<p>You can return specific fields in an embedded document. </p>
+<p>Use the dot notation to refer to the embedded field and set to 1 in the projection document.</p>
+<p>In the screenshot below we return the fields: _id, qty, status, and &quot;size.h&quot;:</p>
+<p><img src="../images/mongo-projection1.png" alt="images/mongo-projection1"></p>
+<h6 id="suppress-specific-fields-in-embedded-documents">Suppress Specific Fields in Embedded Documents</h6>
+<p>You can suppress specific fields in an embedded document. </p>
+<p>Use the dot notation to refer to the embedded field in the projection document and set to 0.</p>
+<p>In the screenshot below we return neither the _id field nor the &quot;size.h&quot; fields:</p>
+<p><img src="../images/mongo-projection2.png" alt="images/mongo-projection2"></p>
+<h6 id="projection-on-embedded-documents-in-an-array">Projection on Embedded Documents in an Array</h6>
+<blockquote>
+<p>Use dot notation to project specific fields inside documents embedded in an array.</p>
+</blockquote>
+<p>In the screenshot below we return only the &quot;instock.warehouse&quot; nested document:</p>
+<p><img src="../images/mongo-projection3.png" alt="images/mongo-projection3"></p>
+<h6 id="project-specific-array-elements-in-the-returned-array">Project Specific Array Elements in the Returned Array</h6>
+<blockquote>
+<p>For fields that contain arrays, MongoDB provides the following projection operators for manipulating arrays: $elemMatch, $slice, and $.</p>
+<p>The following example uses the $slice projection operator to return the last element in the instock array but also checks that the instock array exists:</p>
+</blockquote>
+<p><img src="../images/mongo-projection4.png" alt="images/mongo-projection4"></p>
+<h6 id="query-for-null-or-missing-fields">Query for Null or Missing Fields</h6>
+<h6 id="equality-filter">Equality Filter</h6>
+<p>The { item : null } query matches documents that either contain the item field whose value is null or that do not contain the item field.</p>
+<p><img src="../images/mongo-null-check.png" alt="images/mongo-null-check"></p>
+<h6 id="type-check">Type Check</h6>
+<blockquote>
+<p>The { item : { $type: 10 } } query matches only documents that contain the item field whose value is null; i.e. the value of the item field is of BSON Type Null (type number 10) :</p>
+</blockquote>
+<p><img src="../images/mongo-null-check2.png" alt="images/mongo-null-check2"></p>
+<p><em>The query returns only the document where the item field has a value of null.</em></p>
+<h6 id="existence-check">Existence Check</h6>
+<blockquote>
+<p>The { item : { $exists: false } } query matches documents that do not contain the item field:</p>
+</blockquote>
+<p><img src="../images/mongo-existence-check.png" alt="images/mongo-existence-check"></p>
+<h6 id="iterate-a-cursor-in-the-mongo-shell">Iterate a Cursor in the mongo Shell</h6>
+<blockquote>
+<p>The <code>db.collection.find()</code> method returns a cursor. To access the documents, you need to iterate the cursor. However, in the mongo shell, if the returned cursor is not assigned to a variable using the var keyword, then the cursor is automatically iterated up to 20 times to print up to the first 20 documents in the results.</p>
+</blockquote>
+<h6 id="manually-iterate-the-cursor">Manually Iterate the Cursor</h6>
+<p>In the mongo shell, when you assign the cursor returned from the find() method to a variable using the var keyword, the cursor does not automatically iterate.</p>
+<p><img src="../images/mongo-cursor1.png" alt="images/mongo-cursor1"></p>
+<p>You can also use the cursor method next() to access the documents, as in the following example:</p>
+<p><img src="../images/mongo-cursor2.png" alt="images/mongo-cursor2"></p>
+<h6 id="update-documents">Update Documents</h6>
+<table>
+<thead>
+<tr>
+<th>Update Method</th>
+<th>Description</th>
+<th>Version Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>db.collection.updateOne()</code></td>
+<td>Updates at most a single document that match a specified filter even though multiple documents may match the specified filter.</td>
+<td>New in version 3.2.</td>
+</tr>
+<tr>
+<td><code>db.collection.updateMany()</code></td>
+<td>Update all documents that match a specified filter.</td>
+<td>New in version 3.2.</td>
+</tr>
+<tr>
+<td><code>db.collection.replaceOne()</code></td>
+<td>Replaces at most a single document that match a specified filter even though multiple documents may match the specified filter.</td>
+<td>New in version 3.2.</td>
+</tr>
+<tr>
+<td><code>db.collection.update()</code></td>
+<td>Either updates or replaces a single document that match a specified filter or updates all documents that match a specified filter. By default, the db.collection.update() method updates a single document. To update multiple documents, use the multi option.</td>
+<td>Existing</td>
+</tr>
+</tbody>
+</table>
+<p>Let us add a series of documents to the inventory collection:</p>
+<pre><code class="lang-js">db.inventory.insertMany( [
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;canvas&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">28</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">35.5</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;journal&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">25</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">14</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">21</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;mat&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">85</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">27.9</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">35.5</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;mousepad&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">25</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">19</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">22.85</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;P&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;notebook&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">8.5</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;in&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;P&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;paper&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">8.5</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;in&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;D&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;planner&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">22.85</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;D&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;postcard&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">45</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">15.25</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;sketchbook&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">80</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">14</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">21</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;sketch pad&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">95</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">22.85</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">30.5</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> }
+] );
+</code></pre>
+<h6 id="update-a-single-document">Update a Single Document</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/update-documents/#update-a-single-document" target="_blank">Update a single document</a></p>
+<p>The following example uses the db.collection.updateOne() method on the inventory collection to update the first document where item equals &quot;paper&quot;:</p>
+<p><img src="../images/mongo-updateOne-example.png" alt="images/mongo-updateOne-example"></p>
+<p>The update operation:</p>
+<ul>
+<li><p>uses the $set operator to update the value of the size.uom field to &quot;cm&quot; and the value of the status field to &quot;P&quot;</p>
+</li>
+<li><p>uses the $currentDate operator to update the value of the lastModified field to the current date. </p>
+<ul>
+<li>If lastModified field does not exist, $currentDate will create the field. See $currentDate for details.</li>
+</ul>
+</li>
+</ul>
+<h6 id="update-multiple-documents">Update Multiple Documents</h6>
+<p>The following example uses the db.collection.updateMany() method on the inventory collection to update all documents where qty is less than 50:</p>
+<p><img src="../images/mongo-updatemany.png" alt="images/mongo-updatemany"></p>
+<p>The update operation:</p>
+<ul>
+<li><p>uses the $set operator to update the value of the size.uom field to &quot;in&quot; and the value of the status field to &quot;P&quot;</p>
+</li>
+<li><p>uses the $currentDate operator to update the value of the lastModified field to the current date. </p>
+<ul>
+<li>If lastModified field does not exist, $currentDate will create the field. See $currentDate for details.</li>
+</ul>
+</li>
+</ul>
+<h6 id="replace-a-document">Replace a Document</h6>
+<p>To replace the entire content of a document except for the _id field, pass an entirely new document as the second argument to db.collection.replaceOne().</p>
+<p>When replacing a document, the replacement document must consist of only field/value pairs; i.e. do not include update operators expressions.</p>
+<p>The replacement document can have different fields from the original document. In the replacement document, you can omit the _id field since the _id field is immutable; however, if you do include the _id field, it must have the same value as the current value.</p>
+<p>The following example replaces the first document from the inventory collection where item: &quot;paper&quot;:</p>
+<p><img src="../images/mongodb-replaceone.png" alt="images/mongodb-replaceone"></p>
+<h6 id="write-behavior-in-mongodb">Write behavior in mongodb</h6>
+<p><em>All write operations in MongoDB are atomic on the level of a single document.</em></p>
+<h6 id="id-field">_id Field</h6>
+<p>Once set, you cannot update the value of the _id field nor can you replace an existing document with a replacement document that has a different _id field value.</p>
+<h6 id="delete-documents">Delete Documents</h6>
+<p>Let us insert many documents that will be deleted in inventory collection:</p>
+<pre><code class="lang-js">db.inventory.insertMany( [
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;journal&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">25</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">14</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">21</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;notebook&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">8.5</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;in&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;P&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;paper&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">8.5</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;in&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;D&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;planner&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">22.85</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;D&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;postcard&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">45</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">15.25</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+] );
+</code></pre>
+<h6 id="delete-all-documents">Delete All Documents</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/remove-documents/" target="_blank">Remove Documents</a></p>
+<table>
+<thead>
+<tr>
+<th>Delete Method</th>
+<th>Description</th>
+<th>Version Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>db.collection.deleteOne()</code></td>
+<td>Delete at most a single document that match a specified filter even though multiple documents may match the specified filter.</td>
+<td>New in version 3.2.</td>
+</tr>
+<tr>
+<td><code>db.collection.deleteMany()</code></td>
+<td>Delete all documents that match a specified filter.</td>
+<td>New in version 3.2.</td>
+</tr>
+<tr>
+<td><code>db.collection.remove()</code></td>
+<td>Delete a single document or all documents that match a specified filter.</td>
+<td>Available in Early versions of mongodb.</td>
+</tr>
+</tbody>
+</table>
+<p>To delete all documents from a collection, pass an empty filter document {} to the db.collection.deleteMany() method.</p>
+<p>The following example deletes all documents from the inventory collection:</p>
+<p><img src="../images/mongodb-deletemany.png" alt="images/mongodb-deletemany"></p>
+<p>The method returns a document with the status of the operation. For more information and examples, see deleteMany().</p>
+<p>Let us reinsert inventory documents:</p>
+<pre><code class="lang-js">db.inventory.insertMany( [
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;journal&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">25</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">14</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">21</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;notebook&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">8.5</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;in&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;P&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;paper&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">8.5</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;in&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;D&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;planner&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">75</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">22.85</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">30</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;D&quot;</span> },
+   { <span class="hljs-attr">item</span>: <span class="hljs-string">&quot;postcard&quot;</span>, <span class="hljs-attr">qty</span>: <span class="hljs-number">45</span>, <span class="hljs-attr">size</span>: { <span class="hljs-attr">h</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">w</span>: <span class="hljs-number">15.25</span>, <span class="hljs-attr">uom</span>: <span class="hljs-string">&quot;cm&quot;</span> }, <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;A&quot;</span> },
+] );
+</code></pre>
+<h6 id="delete-all-documents-that-match-a-condition">Delete All Documents that Match a Condition</h6>
+<p>You can specify criteria, or filters, that identify the documents to delete. </p>
+<p>The filters use the same syntax as read operations.</p>
+<p>To specify equality conditions, use &lt;field&gt;:&lt;value&gt; expressions in the query filter document:</p>
+<p><code>{ &lt;field1&gt;: &lt;value1&gt;, ... }</code></p>
+<p>A query filter document can use the query operators to specify conditions in the following form:</p>
+<p><code>{ &lt;field1&gt;: { &lt;operator1&gt;: &lt;value1&gt; }, ... }</code></p>
+<p><em>To delete all documents that match a deletion criteria, pass a filter parameter to the deleteMany() method.</em></p>
+<p>The following example removes all documents from the inventory collection where the status field equals &quot;A&quot;:</p>
+<p><img src="../images/mongodb-deletemany-with-filter.png" alt="images/mongodb-deletemany-with-filter"></p>
+<p>The method returns a document with the status of the operation.</p>
+<h6 id="delete-only-one-document-that-matches-a-condition">Delete Only One Document that Matches a Condition</h6>
+<p>To delete at most a single document that matches a specified filter (even though multiple documents may match the specified filter) use the db.collection.deleteOne() method.</p>
+<p>The following example deletes the first document where status is &quot;D&quot;:</p>
+<pre><code class="lang-js">db.inventory.deleteOne( { <span class="hljs-attr">status</span>: <span class="hljs-string">&quot;D&quot;</span> } )
+</code></pre>
+<h6 id="delete-behavior">Delete Behavior</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/remove-documents/#delete-behavior" target="_blank">Delete Behavior</a></p>
+<p><em>Delete operations do not drop indexes, even if deleting all documents from a collection.</em></p>
+<blockquote>
+<p>All write operations in MongoDB are atomic on the level of a single document. For more information on MongoDB and atomicity, see Atomicity and Transactions.</p>
+</blockquote>
+<h4 id="workshop-questions">Workshop Questions</h4>
+<p>Run the following script in your terminal:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># At the base of the repository</span>
+mongo scripts/create-numbers-collection.js
+</code></pre>
+<h6 id="write-a-mongodb-query-using-the-numbers-collection-to-find-numbers-between-150-and-175-151-till-174">Write a MongoDB query using the numbers collection to find numbers between 150 and 175 (151 till 174).</h6>
+<p><em>Hint checkout these <a href="https://docs.mongodb.com/manual/reference/operator/query-comparison/" target="_blank">Operators in MongoDB Docs</a></em></p>
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.numbers.find({ count: { $gt: 150, $lt: 175 } })
+   </pre>
+</details>
+
+<h6 id="write-a-mongodb-query-using-the-numbers-collection-to-update-number-561-and-add-a-field-called-word-and-set-the-value-to-workshop">Write a MongoDB query using the numbers collection to update number 561 and add a field called word and set the value to &quot;workshop&quot;</h6>
+<p><em>Hint checkout these <a href="https://docs.mongodb.com/manual/reference/operator/update/" target="_blank">Update Operators in MongoDB Docs</a></em></p>
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.numbers.update(
+      { count: 561 },
+      { $set: { word: &quot;workshop&quot; } 
+   )
+   </pre>
+</details>
+
+<h6 id="write-a-mongodb-query-using-the-orders-collection-that-finds-a-status-of-either-d-or-e">Write a MongoDB query using the orders collection that finds a status of either &quot;D&quot; or &quot;E&quot;</h6>
+<p>Run the following script in your terminal:</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># At the base of the repository</span>
+mongo scripts/create-orders-collection.js
+</code></pre>
+<p><em>Hint checkout these <a href="https://docs.mongodb.com/manual/reference/operator/query-comparison/" target="_blank">Query Operators in MongoDB Docs</a></em></p>
+<details>
+   <summary>Answer</summary>
+   <pre>
+   db.orders.find({ status: { $in: [&quot;D&quot;, &quot;E&quot; ] } })
+   </pre>
+</details>
+
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongo-shell.html">Mongo Shell</a></td>
+<td style="text-align:right"><a href="mongo-crud-operations-part2.html">Mongo CRUD Operations Part II</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongo-shell.html" class="navigation navigation-prev " aria-label="Previous page: Mongo Shell">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongo-crud-operations-part2.html" class="navigation navigation-next " aria-label="Next page: Mongo CRUD Operations Part II">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mongo CRUD Operations","level":"1.4.4","depth":2,"next":{"title":"Mongo CRUD Operations Part II","level":"1.4.5","depth":2,"path":"docs/mongo-crud-operations-part2.md","ref":"docs/mongo-crud-operations-part2.md","articles":[]},"previous":{"title":"Mongo Shell","level":"1.4.3","depth":2,"path":"docs/mongo-shell.md","ref":"docs/mongo-shell.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongo-crud-operations.md","mtime":"2019-04-27T12:21:58.586Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

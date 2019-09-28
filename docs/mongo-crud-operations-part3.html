@@ -1,0 +1,1195 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mongo CRUD Operations Part III · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mongo-crud-concepts.html" />
+    
+    
+    <link rel="prev" href="mongo-crud-operations-part2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="database-theory.html">
+            
+                <a href="database-theory.html">
+            
+                    
+                    Database Theory
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data-modeling.html">
+            
+                <a href="data-modeling.html">
+            
+                    
+                    Data Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="data-normalization.html">
+            
+                <a href="data-normalization.html">
+            
+                    
+                    Data Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="acid.html">
+            
+                <a href="acid.html">
+            
+                    
+                    ACID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="cap.html">
+            
+                <a href="cap.html">
+            
+                    
+                    CAP Thereom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="eventual-consistency.html">
+            
+                <a href="eventual-consistency.html">
+            
+                    
+                    Eventual Consistency
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="nosql-databases.html">
+            
+                <a href="nosql-databases.html">
+            
+                    
+                    NoSQL Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="types-of-nosql-databases.html">
+            
+                <a href="types-of-nosql-databases.html">
+            
+                    
+                    Types of NoSQL Databases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="key-value-database.html">
+            
+                <a href="key-value-database.html">
+            
+                    
+                    Key-Value Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="column-database.html">
+            
+                <a href="column-database.html">
+            
+                    
+                    Column Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="document-database.html">
+            
+                <a href="document-database.html">
+            
+                    
+                    Document Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="graph-database.html">
+            
+                <a href="graph-database.html">
+            
+                    
+                    Graph Database
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="bson-specification.html">
+            
+                <a href="bson-specification.html">
+            
+                    
+                    BSON Specification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="bson-data-types.html">
+            
+                <a href="bson-data-types.html">
+            
+                    
+                    BSON Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="mongo-shell.html">
+            
+                <a href="mongo-shell.html">
+            
+                    
+                    Mongo Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mongo-crud-operations.html">
+            
+                <a href="mongo-crud-operations.html">
+            
+                    
+                    Mongo CRUD Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="mongo-crud-operations-part2.html">
+            
+                <a href="mongo-crud-operations-part2.html">
+            
+                    
+                    Mongo CRUD Operations Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="mongo-crud-operations-part3.html">
+            
+                <a href="mongo-crud-operations-part3.html">
+            
+                    
+                    Mongo CRUD Operations Part III
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="mongo-crud-concepts.html">
+            
+                <a href="mongo-crud-concepts.html">
+            
+                    
+                    Mongo CRUD Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="mongodb-aggregation.html">
+            
+                <a href="mongodb-aggregation.html">
+            
+                    
+                    MongoDB Aggregation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="mongodb_data_models_part_I.html">
+            
+                <a href="mongodb_data_models_part_I.html">
+            
+                    
+                    MongoDB Data Models Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="mongodb_data_models_part_II.html">
+            
+                <a href="mongodb_data_models_part_II.html">
+            
+                    
+                    MongoDB Data Models Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="mongodb_transactions.html">
+            
+                <a href="mongodb_transactions.html">
+            
+                    
+                    MongoDB Transactions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="mongodb_indexes_partI.html">
+            
+                <a href="mongodb_indexes_partI.html">
+            
+                    
+                    MongoDB Indexes Part I
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="mongodb_indexes_partII.html">
+            
+                <a href="mongodb_indexes_partII.html">
+            
+                    
+                    MongoDB Indexes Part II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="mongodb-query-performance.html">
+            
+                <a href="mongodb-query-performance.html">
+            
+                    
+                    MongoDB Query Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="mongodb_security.html">
+            
+                <a href="mongodb_security.html">
+            
+                    
+                    MongoDB Security
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="mongodb_change_streams.html">
+            
+                <a href="mongodb_change_streams.html">
+            
+                    
+                    MongoDB Change Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="mongodb_replication.html">
+            
+                <a href="mongodb_replication.html">
+            
+                    
+                    MongoDB Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="mongodb_sharding.html">
+            
+                <a href="mongodb_sharding.html">
+            
+                    
+                    MongoDB Sharding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="mongodb_administration.html">
+            
+                <a href="mongodb_administration.html">
+            
+                    
+                    MongoDB Administration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="mongodb_storage.html">
+            
+                <a href="mongodb_storage.html">
+            
+                    
+                    MongoDB Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Mongo CRUD Operations Part III</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <p>NoSQL Workshop - Mongo Crud Operations Part III</p>
+<h2 id="sections">Sections:</h2>
+<ul>
+<li><a href="#text-search">Text Search</a></li>
+<li><a href="#geospatial-queries">Geospatial Queries</a></li>
+<li><a href="#read-isolation-(read-concern">Read Isolation (Read Concern)</a>)</li>
+<li><a href="#write-acknowledgement-(write-concern">Write Acknowledgement (Write Concern)</a>)</li>
+<li><a href="#bread-crumb-navigation">Bread Crumb Navigation</a></li>
+</ul>
+<p><em>All of this information is gathered from the official mongodb docs in <a href="https://docs.mongodb.com/manual/crud/" target="_blank">https://docs.mongodb.com/manual/crud/</a></em></p>
+<h4 id="text-search">Text Search</h4>
+<p>MongoDB supports query operations that perform a text search of string content. </p>
+<p>To perform text search, MongoDB uses a text index and the $text operator.</p>
+<h6 id="mongo-script-to-populate-stores-collection">Mongo Script to populate stores collection</h6>
+<p>We will create a new stores collection and use the node.js repl and faker.js to generate dummy data.</p>
+<p><img src="../images/node-repl-faker.png" alt="images/node-repl-faker"></p>
+<p>We will then use the data in the system clipboard and use the following script to populate the new stores collection:</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-keyword">let</span> db = connect(<span class="hljs-string">&quot;localhost:27017/nosql_workshop&quot;</span>);
+
+<span class="hljs-keyword">let</span> stores = [
+    {<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Quigley - Gutmann&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;well-modulated&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Christiansen LLC&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;attitude-oriented&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Streich - Larkin&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;multimedia&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Homenick - Rau&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;methodical&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Beatty, Schmitt and Daugherty&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;content-based&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Leannon - Kuvalis&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;background&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Schiller and Sons&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;coherent&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Leffler, Schamberger and Little&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;bi-directional&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Feeney Group&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;discrete&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Blick Group&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;tertiary&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Mohr Group&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;analyzing&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Marquardt - Mosciski&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;stable&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Pfeffer LLC&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;interactive&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Berge, Skiles and Nienow&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;zero defect&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Hansen - Eichmann&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;human-resource&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Osinski - Yost&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;context-sensitive&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Jacobi - Zboncak&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;transitional&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Schulist - Monahan&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;dedicated&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Mills - Harvey&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;needs-based&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Cummings Inc&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;6th generation&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Sporer Group&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;mission-critical&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Breitenberg, Hane and Auer&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;grid-enabled&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Marquardt - Orn&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;maximized&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Wintheiser - Grimes&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;full-range&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Frami, Wolff and White&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;stable&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Collier - Waelchi&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;executive&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Homenick LLC&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;next generation&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Shields, Oberbrunner and Johnson&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;modular&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Bashirian Inc&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;uniform&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Erdman Inc&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;zero tolerance&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Zieme - Grant&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;neutral&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Breitenberg - O&apos;Connell&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;optimizing&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Schumm, Kuhn and Streich&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;maximized&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;McClure, Grant and Kuhlman&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;global&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Miller - Flatley&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;client-server&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Zieme, Bauch and Ziemann&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;5th generation&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Altenwerth Inc&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;actuating&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Quitzon Inc&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;value-added&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Douglas - Schiller&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;eco-centric&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Breitenberg - Oberbrunner&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;static&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Jacobs - Kub&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;24/7&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Aufderhar, Nikolaus and Breitenberg&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;intermediate&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Leannon, Crist and Weimann&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;optimal&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Brown - Lind&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;clear-thinking&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Hudson - Schroeder&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;needs-based&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Frami and Sons&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;asynchronous&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Padberg Inc&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;grid-enabled&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Heathcote - Spinka&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;mission-critical&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Little, Thompson and Lockman&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;clear-thinking&quot;</span>},{<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;Johnston Inc&quot;</span>,<span class="hljs-string">&quot;description&quot;</span>:<span class="hljs-string">&quot;solution-oriented&quot;</span>}
+];
+
+stores.map(<span class="hljs-function"><span class="hljs-params">store</span> =&gt;</span> {
+    db.stores.insertOne({
+        <span class="hljs-attr">_id</span>: <span class="hljs-keyword">new</span> ObjectId(),
+        <span class="hljs-attr">name</span>: store.name,
+        <span class="hljs-attr">description</span>: store.description
+    });
+});
+</code></pre>
+<p>Remember to run the script from the root of the github repository and run it like this:</p>
+<pre><code class="lang-bash">mongo scripts/create-stores-collection.js
+</code></pre>
+<p>You should have 50 store documents in the stores collection now which you can confirm with the following query:</p>
+<pre><code class="lang-js">db.stores.count()
+<span class="hljs-number">50</span>
+</code></pre>
+<h6 id="text-index">Text Index</h6>
+<p><a href="https://docs.mongodb.com/manual/text-search/#text-index" target="_blank">Text Index</a></p>
+<blockquote>
+<p>MongoDB provides text indexes to support text search queries on string content. Text indexes can include any field whose value is a string or an array of string elements.</p>
+<p>To perform text search queries, you must have a text index on your collection. A collection can only have one text search index, but that index can cover multiple fields.</p>
+</blockquote>
+<p><img src="../images/mongo-text-index.png" alt="images/mongo-text-index"></p>
+<ul>
+<li><p>Notice that the stores collection already had an index. </p>
+</li>
+<li><p>Each MongoDB collection has a default index on the _id field by default. </p>
+</li>
+<li><p>So that is why we now have 2 indexes on the stores collection.</p>
+</li>
+</ul>
+<h6 id="text-operator">$text operator</h6>
+<p><a href="https://docs.mongodb.com/manual/text-search/#text-operator" target="_blank">Text Operator</a></p>
+<p>Now that we have created a text index with the previous mongoDB command we can actually use the text index by using the $text query operator to perform text searches on a collection with a text index.</p>
+<blockquote>
+<p>$text will tokenize the search string using whitespace and most punctuation as delimiters, and perform a logical OR of all such tokens in the search string.</p>
+</blockquote>
+<p><img src="../images/mongo-text-search.png" alt="images/mongo-text-search"></p>
+<p>Notice that here we use the <a href="https://docs.mongodb.com/manual/reference/operator/query/text/#op._S_text" target="_blank">$text operator</a> and the <a href="https://docs.mongodb.com/manual/reference/operator/query/text/#op._S_text" target="_blank">$search operator</a></p>
+<p>We get only one search result with the text search of &quot;multimedia&quot;.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$search</code></td>
+<td>string</td>
+<td>A string of terms that MongoDB parses and uses to query the text index. MongoDB performs a logical OR search of the terms unless specified as a phrase. See Behavior for more information on the field.</td>
+</tr>
+<tr>
+<td><code>$language</code></td>
+<td>string</td>
+<td>Optional. The language that determines the list of stop words for the search and the rules for the stemmer and tokenizer. If not specified, the search uses the default language of the index. For supported languages, see Text Search Languages. If you specify a language value of &quot;none&quot;, then the text search uses simple tokenization with no list of stop words and no stemming.</td>
+</tr>
+<tr>
+<td><code>$caseSensitive</code></td>
+<td>boolean</td>
+<td>Optional. A boolean flag to enable or disable case sensitive search. Defaults to false; i.e. the search defers to the case insensitivity of the text index. For more information, see Case Insensitivity. New in version 3.2.</td>
+</tr>
+<tr>
+<td><code>$diacriticSensitive</code></td>
+<td>boolean</td>
+<td>Optional. A boolean flag to enable or disable diacritic sensitive search against version 3 text indexes. Defaults to false; i.e. the search defers to the diacritic insensitivity of the text index. Text searches against earlier versions of the text index are inherently diacritic sensitive and cannot be diacritic insensitive. As such, the $diacriticSensitive option has no effect with earlier versions of the text index. For more information, see Diacritic Insensitivity. New in version 3.2.</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the <code>$search</code> operator does a logical OR search let us look at this in detail in the following screenshot:</p>
+<p><img src="../images/mongo-text-index2.png" alt="images/mongo-text-index2"></p>
+<p>Notice that we inserted 4 new documents into the stores collection and then we searched for &quot;Brewing&quot;, and &quot;Tasting&quot; and only got 1 result but when we searched for &quot;Tasting&quot; and &quot;Brewery&quot; in the <code>$search</code> text we got 2 documents back.</p>
+<h6 id="exact-phrase-mongo-text-search">Exact Phrase Mongo Text Search</h6>
+<p><a href="https://docs.mongodb.com/manual/text-search/#exact-phrase" target="_blank">Exact Phrase</a></p>
+<blockquote>
+<p>You can also search for exact phrases by wrapping them in double-quotes. If the $search string includes a phrase and individual terms, text search will only match documents that include the phrase.</p>
+</blockquote>
+<p>Remember that you must escape the double quotes in order to include them as part of the search.</p>
+<p><img src="../images/mongo-text-index3.png" alt="images/mongo-text-index3"></p>
+<p>Notice here that we wrapped the text in double quotes and we got an exact search for just a company that does &quot;Tasting&quot; and &quot;Brewery&quot;.</p>
+<h6 id="term-exclusion-in-mongo-text-search">Term Exclusion in Mongo Text Search</h6>
+<p><a href="https://docs.mongodb.com/manual/text-search/#term-exclusion" target="_blank">Term Exclusion</a></p>
+<blockquote>
+<p>To exclude a word, you can prepend a &quot;-&quot; character. </p>
+</blockquote>
+<p><img src="../images/mongo-text-search-exclude.png" alt="images/mongo-text-search-exclude"></p>
+<p>Notice here that we 2 results and in our term exclusion we explicitly told MongoDB to exclude any search result with the word &quot;stable&quot;.</p>
+<h6 id="sorting-in-mongo-text-search"># Sorting in Mongo Text Search</h6>
+<p><a href="https://docs.mongodb.com/manual/text-search/#sorting" target="_blank">Sorting</a></p>
+<blockquote>
+<p>MongoDB will return its results in unsorted order by default. However, text search queries will compute a relevance score for each document that specifies how well a document matches the query.</p>
+</blockquote>
+<p>To sort the results in order of relevance score, you must explicitly project the <a href="https://docs.mongodb.com/manual/reference/operator/projection/meta/#proj._S_meta" target="_blank">$meta</a> textScore field and sort on it:</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+<th>Sort Order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;textScore&quot;</td>
+<td>Returns the score associated with the corresponding $text query for each matching document. The text score signifies how well the document matched the search term or terms. If not used in conjunction with a $text query, returns a score of 0.</td>
+<td>Descending</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../images/mongo-text-search-sorting.png" alt="images/mongo-text-search-sorting"></p>
+<p>Notice that we get a score of 1 for the document with <code>&quot;description&quot; : &quot;interactive&quot;</code> as it is matched exactly while <code>&quot;description&quot; : &quot;Brewery Distillery&quot;</code> and <code>&quot;description&quot; : &quot;Tasting Brewery&quot;</code> documents both got a score of <em>0.75</em> for a close match but not an exact match.</p>
+<p><em>Text search is also available in the aggregation pipeline.</em></p>
+<h6 id="text-search-in-the-aggregation-pipeline">Text Search in the Aggregation Pipeline</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/text-search-in-aggregation/#text-search-in-the-aggregation-pipeline" target="_blank">Text Search in the Aggregation Pipeline</a></p>
+<blockquote>
+<p>In the aggregation pipeline, text search is available via the use of the $text query operator in the $match stage.</p>
+</blockquote>
+<p><em>Restrictions</em></p>
+<blockquote>
+<p>text search in the aggregation pipeline has the following restrictions in addition to <a href="https://docs.mongodb.com/manual/reference/operator/query/text/#text-query-operator-behavior" target="_blank">$text operator restrictions</a>:</p>
+</blockquote>
+<ul>
+<li>The <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/match/#pipe._S_match" target="_blank">$match</a> stage that includes a <a href="https://docs.mongodb.com/manual/reference/operator/query/text/#op._S_text" target="_blank">$text</a> must be the first stage in the pipeline.</li>
+<li>A text operator can only occur once in the stage.</li>
+<li>The text operator expression cannot appear in <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/or/#exp._S_or" target="_blank">$or</a> or <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/not/#exp._S_not" target="_blank">$not</a> expressions.</li>
+<li>The text search, by default, does not return the matching documents in order of matching scores. * Use the <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/meta/#exp._S_meta" target="_blank">$meta</a> aggregation expression in the $sort stage.</li>
+</ul>
+<p>Let us create a new collection with the following mongo script:</p>
+<pre><code class="lang-js"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-keyword">let</span> db = connect(<span class="hljs-string">&quot;localhost:27017/nosql_workshop&quot;</span>);
+
+<span class="hljs-keyword">let</span> articles = [{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Abshire LLC&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Intuitive system-worthy conglomeration&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Murphy LLC&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Programmable grid-enabled methodology&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Torp, Block and Effertz&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Progressive foreground benchmark&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Mraz, Wunsch and McClure&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Operative attitude-oriented application&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Kemmer, Murphy and Boyer&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Re-engineered demand-driven orchestration&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Zieme, Weimann and Barton&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Advanced didactic pricing structure&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Nader LLC&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Multi-lateral regional groupware&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Lakin, Kshlerin and Fritsch&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Synergized mission-critical firmware&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Durgan - Walker&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Synergized foreground artificial intelligence&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Lang, Howe and Marks&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Adaptive web-enabled middleware&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Heller, Huels and Rice&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Balanced contextually-based model&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Keebler, Kiehn and Moore&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Intuitive responsive moderator&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Purdy, Keebler and Rogahn&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Cloned fresh-thinking core&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Walsh, Emmerich and Conroy&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Profit-focused bi-directional migration&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Upton - Hermiston&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Secured multimedia open system&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;VonRueden, Roberts and Schultz&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Virtual mission-critical pricing structure&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Mayert Inc&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Optional 5th generation firmware&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Kulas, Sawayn and Dickinson&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Innovative upward-trending solution&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Kilback, Tillman and Franecki&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Fully-configurable static challenge&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Abshire - Kris&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Reduced optimal firmware&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Waters, Bode and Windler&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Centralized 6th generation Graphical User Interface&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Oberbrunner, Steuber and Stiedemann&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;User-friendly foreground customer loyalty&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Koch LLC&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Team-oriented explicit complexity&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;O&apos;Conner - Cummerata&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Persevering tangible attitude&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Bashirian and Sons&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Fully-configurable bandwidth-monitored instruction set&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Will and Sons&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Seamless mobile middleware&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Parker, Purdy and Wehner&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Fundamental mission-critical software&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Grant Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Seamless 24 hour definition&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Stokes Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Advanced executive middleware&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Mosciski Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Realigned even-keeled initiative&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Lockman - Walker&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Innovative high-level workforce&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Mertz Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Ameliorated scalable extranet&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Skiles, Stoltenberg and Dooley&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Persevering optimizing Graphic Interface&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;McCullough and Sons&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Centralized regional attitude&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Glover - Howe&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Self-enabling next generation core&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Mohr, Funk and Zulauf&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Realigned high-level customer loyalty&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Dietrich - O&apos;Conner&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Fundamental exuding software&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Ruecker, Ebert and Quigley&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Organic 3rd generation hierarchy&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Price - Nitzsche&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Adaptive systematic parallelism&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Reichert Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Vision-oriented heuristic knowledge user&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Green - Jakubowski&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Synergized next generation alliance&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Feil and Sons&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Sharable multi-state capacity&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Cassin - Terry&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Team-oriented reciprocal open system&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Hudson Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Intuitive solution-oriented functionalities&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Sanford Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Enhanced actuating initiative&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Carter, Christiansen and Bins&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Cloned exuding adapter&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;O&apos;Keefe Group&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Business-focused static database&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Price - Aufderhar&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Expanded methodical architecture&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Goodwin, Hansen and Carter&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Down-sized local analyzer&quot;</span>},{<span class="hljs-string">&quot;text&quot;</span>:<span class="hljs-string">&quot;Hartmann, Baumbach and Nicolas&quot;</span>,<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Automated web-enabled ability&quot;</span>}];
+
+articles.map(<span class="hljs-function"><span class="hljs-params">article</span> =&gt;</span> {
+    db.articles.insertOne({
+        <span class="hljs-attr">_id</span>: <span class="hljs-keyword">new</span> ObjectId(),
+        <span class="hljs-attr">text</span>: article.text,
+        <span class="hljs-attr">title</span>: article.title
+    });
+});
+
+<span class="hljs-comment">// create the text index on the text field.</span>
+db.articles.createIndex({ <span class="hljs-attr">subject</span>: <span class="hljs-string">&quot;text&quot;</span> });
+</code></pre>
+<p>Remember to run the script at the root of the repository like this:</p>
+<pre><code class="lang-bash">mongo scripts/create-articles-collection.js
+</code></pre>
+<h6 id="calculate-the-total-views-for-articles-that-contains-a-word">Calculate the Total Views for Articles that Contains a Word</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/text-search-in-aggregation/#calculate-the-total-views-for-articles-that-contains-a-word" target="_blank">Calculate the Total Views for Articles that Contains a Word</a></p>
+<p>The following aggregation searches for the term &quot;foreground&quot; in the $match stage and calculates the total views for the matching documents in the $group stage.</p>
+<h6 id="return-results-sorted-by-text-search-score">Return Results Sorted by Text Search Score</h6>
+<blockquote>
+<p>To sort by the text search score, include a <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/meta/#exp._S_meta" target="_blank">$meta</a> expression in the <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/sort/#pipe._S_sort" target="_blank">$sort</a> stage. </p>
+</blockquote>
+<p>The following example matches on either the term cake or tea, sorts by the textScore in descending order, and returns only the title field in the results set.</p>
+<p><img src="../images/mongo-text-search-aggregate.png" alt="images/mongo-text-search-aggregate"></p>
+<p>Notice that in the first query we used $project and returned one document that matched the query and the second query we got zero views</p>
+<h6 id="match-on-text-score">Match on Text Score</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/text-search-in-aggregation/#match-on-text-score" target="_blank">Match on Text Score</a></p>
+<blockquote>
+<p>The &quot;textScore&quot; metadata is available for projections, sorts, and conditions subsequent the $match stage that includes the $text operation.</p>
+</blockquote>
+<p>The following example matches on either the term cake or tea, projects the title and the score fields, and then returns only those documents with a score greater than 1.0.</p>
+<p><img src="../images/mongo-text-search-aggregate2.png" alt="images/mongo-text-search-aggregate2"></p>
+<h6 id="specify-a-language-for-text-search">Specify a Language for Text Search</h6>
+<p><a href="https://docs.mongodb.com/manual/tutorial/text-search-in-aggregation/#specify-a-language-for-text-search" target="_blank">Specify a Language for Text Search</a></p>
+<p>Let us add another document to the articles collection to do aggregate search in spanish:</p>
+<pre><code class="lang-js">db.articles.insertOne({
+    <span class="hljs-attr">_id</span>: <span class="hljs-keyword">new</span> ObjectId(),
+    <span class="hljs-string">&quot;subject&quot;</span>: <span class="hljs-string">&quot;sabor tener&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;tengo hambre&quot;</span>
+})
+</code></pre>
+<p><img src="../images/mongo-text-search-aggregate3.png" alt="images/mongo-text-search-aggregate3"></p>
+<p>Notice that we didn&apos;t get any views for this query</p>
+<h4 id="geospatial-queries">Geospatial Queries</h4>
+<p><em>MongoDB supports query operations on geospatial data.</em></p>
+<h6 id="geospatial-data">Geospatial Data</h6>
+<p>In MongoDB, you can store geospatial data as GeoJSON objects or as legacy coordinate pairs.</p>
+<h6 id="geojson-data">GeoJSON Data</h6>
+<p><a href="https://docs.mongodb.com/manual/geospatial-queries/#geospatial-geojson" target="_blank">GeoJSON</a></p>
+<blockquote>
+<p>To specify GeoJSON data, use an embedded document with:</p>
+</blockquote>
+<ul>
+<li><p>a field named type that specifies the GeoJSON object type and</p>
+</li>
+<li><p>a field named coordinates that specifies the object&#x2019;s coordinates.</p>
+</li>
+</ul>
+<p>If specifying latitude and longitude coordinates, list the longitude first and then latitude:</p>
+<ul>
+<li>Valid longitude values are between -180 and 180, both inclusive.</li>
+<li>Valid latitude values are between -90 and 90 (both inclusive).</li>
+</ul>
+<h6 id="geospatial-indexes">Geospatial Indexes</h6>
+<p>MongoDB provides the following geospatial index types to support the geospatial queries.</p>
+<p><a href="https://docs.mongodb.com/manual/geospatial-queries/#dsphere" target="_blank">2d sphere</a></p>
+<blockquote>
+<p>2dsphere indexes support queries that calculate geometries on an earth-like sphere.</p>
+</blockquote>
+<p>To create a 2dsphere index, use the db.collection.createIndex() method and specify the string literal &quot;2dsphere&quot; as the index type:</p>
+<p><code>db.collection.createIndex( { &lt;location field&gt; : &quot;2dsphere&quot; } )</code></p>
+<p>where the &lt;location field&gt; is a field whose value is either a GeoJSON object or a legacy coordinates pair.</p>
+<p>For more information on the 2dsphere index, see 2dsphere Indexes.</p>
+<p><a href="https://docs.mongodb.com/manual/geospatial-queries/#d" target="_blank">2d</a></p>
+<p>2d indexes support queries that calculate geometries on a two-dimensional plane. Although the index can support $nearSphere queries that calculate on a sphere, if possible, use the 2dsphere index for spherical queries.</p>
+<p>To create a 2d index, use the <code>db.collection.createIndex()</code> method, specifying the location field as the key and the string literal &quot;2d&quot; as the index type:</p>
+<p><code>db.collection.createIndex( { &lt;location field&gt; : &quot;2d&quot; } )</code></p>
+<p><a href="https://docs.mongodb.com/manual/geospatial-queries/#geospatial-indexes-and-sharded-collections" target="_blank">Geospatial Indexes and Sharded Collections</a></p>
+<blockquote>
+<p>You cannot use a geospatial index as a shard key when sharding a collection. However, you can create a geospatial index on a sharded collection by using a different field as the shard key.</p>
+</blockquote>
+<h6 id="geospatial-queries">Geospatial Queries</h6>
+<p><em>Geospatial Query Operators:</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$geoIntersects</td>
+<td>Selects geometries that intersect with a GeoJSON geometry. The 2dsphere index supports $geoIntersects.</td>
+</tr>
+<tr>
+<td>$geoWithin</td>
+<td>Selects geometries within a bounding GeoJSON geometry. The 2dsphere and 2d indexes support $geoWithin.</td>
+</tr>
+<tr>
+<td>$near</td>
+<td>Returns geospatial objects in proximity to a point. Requires a geospatial index. The 2dsphere and 2d indexes support $near.</td>
+</tr>
+<tr>
+<td>$nearSphere</td>
+<td>Returns geospatial objects in proximity to a point on a sphere. Requires a geospatial index. The 2dsphere and 2d indexes support $nearSphere.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://docs.mongodb.com/manual/geospatial-queries/#geospatial-command" target="_blank">Geospatial Command</a></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>geoNear (Deprecated in MongoDB 4.0)</td>
+<td>Performs a geospatial query that returns the documents closest to a given point. The deprecated geoNear command requires a geospatial index.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://docs.mongodb.com/manual/geospatial-queries/#geospatial-aggregation-stage" target="_blank">Geospatial Aggregation Stage</a></p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$geoNear</td>
+<td>Returns an ordered stream of documents based on the proximity to a geospatial point. Incorporates the functionality of $match, $sort, and $limit for geospatial data. The output documents include an additional distance field and can include a location identifier field.  $geoNear requires a geospatial index.</td>
+</tr>
+</tbody>
+</table>
+<h6 id="geospatial-models">Geospatial Models</h6>
+<blockquote>
+<p>MongoDB geospatial queries can interpret geometry on a flat surface or a sphere.</p>
+<p>2dsphere indexes support only spherical queries (i.e. queries that interpret geometries on a spherical surface).</p>
+<p>2d indexes support flat queries (i.e. queries that interpret geometries on a flat surface) and some spherical queries. While 2d indexes support some spherical queries, the use of 2d indexes for these spherical queries can result in error. If possible, use 2dsphere indexes for spherical queries.</p>
+</blockquote>
+<h6 id="geospatial-query-examples">GeoSpatial Query Examples</h6>
+<p>Let us populate a new mongodb collection called geospatial with some geospatial data:</p>
+<p>Please run the following mongo script in the root of the repository:</p>
+<pre><code class="lang-bash">mongo scripts/create-geospatial-collection.js
+</code></pre>
+<h6 id="find-restaurants-with-geospatial-queries">Find Restaurants with Geospatial Queries</h6>
+<p>Let us use the datasets provided by <a href="https://docs.mongodb.com/manual/tutorial/geospatial-tutorial/" target="_blank">Geospatial Tutorial in MongoDB Site</a></p>
+<p>I have added the 2 datasets in the datasets directory in the root of the repository.</p>
+<p>Please make sure that mongo is running by running the following script:</p>
+<pre><code class="lang-bash">sh scripts/run-mongo-shell.sh
+</code></pre>
+<p>Next to import the 2 datasets run the following commands:</p>
+<p><img src="../images/mongo-datasets.png" alt="images/mongo-datasets"></p>
+<p>Notice that we should have 2 new collections in the nosql_workshop database now.</p>
+<p>Now run the following mongo script to create indexes for the new collections:</p>
+<pre><code class="lang-bash">mongo scripts/create-restaurants-neighborhoods-indexes.js
+</code></pre>
+<p>Now let us look at one particular document in the restaurants collection:</p>
+<pre><code class="lang-js">&gt; db.restaurants.findOne()
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;55cba2476c522cafdb053ae4&quot;</span>),
+    <span class="hljs-string">&quot;location&quot;</span> : {
+        <span class="hljs-string">&quot;coordinates&quot;</span> : [
+            <span class="hljs-number">-74.00528899999999</span>,
+            <span class="hljs-number">40.628886</span>
+        ],
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;Point&quot;</span>
+    },
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Regina Caterers&quot;</span>
+}
+</code></pre>
+<p>Now let us look at one particular document in the restaurants collection:</p>
+<pre><code class="lang-js">db.neighborhoods.findOne()
+{
+    <span class="hljs-string">&quot;_id&quot;</span> : ObjectId(<span class="hljs-string">&quot;55cb9c666c522cafdb053a1b&quot;</span>),
+    <span class="hljs-string">&quot;geometry&quot;</span> : {
+        <span class="hljs-string">&quot;coordinates&quot;</span> : [
+            [
+                [
+                    <span class="hljs-number">-73.94732672160579</span>,
+                    <span class="hljs-number">40.62916656720943</span>
+                ],
+                .......................
+                [
+                    <span class="hljs-number">-73.94732672160579</span>,
+                    <span class="hljs-number">40.62916656720943</span>
+                ]
+            ]
+        ],
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;Polygon&quot;</span>
+    },
+    <span class="hljs-string">&quot;name&quot;</span> : <span class="hljs-string">&quot;Midwood&quot;</span>
+}
+</code></pre>
+<h6 id="find-the-current-neighborhood">Find the Current Neighborhood</h6>
+<p>Assuming the user&#x2019;s mobile device can give a reasonably accurate location for the user, it is simple to find the user&#x2019;s current neighborhood with $geoIntersects.</p>
+<blockquote>
+<p>Suppose the user is located at -73.93414657 longitude and 40.82302903 latitude. To find the current neighborhood, you will specify a point using the special $geometry field in GeoJSON format:</p>
+</blockquote>
+<p><img src="../images/mongo-geointersects.png" alt="images/mongo-geointersects"></p>
+<blockquote>
+<p>This query will tell you that there are 127 restaurants in the requested neighborhood, visualized in the following figure:</p>
+</blockquote>
+<p><a href="https://docs.mongodb.com/manual/tutorial/geospatial-tutorial/#find-all-restaurants-in-the-neighborhood" target="_blank">Find all restaurants in the neighborhood Mongo Picture</a></p>
+<h6 id="find-restaurants-within-a-distance">Find Restaurants within a Distance</h6>
+<p>To find restaurants within a specified distance of a point, you can use either $geoWithin with $centerSphere to return results in unsorted order, or nearSphere with $maxDistance if you need results sorted by distance.</p>
+<h6 id="unsorted-with-geowithin">Unsorted with $geoWithin</h6>
+<p>To find restaurants within a circular region, use $geoWithin with $centerSphere. $centerSphere is a MongoDB-specific syntax to denote a circular region by specifying the center and the radius in radians.</p>
+<p>$geoWithin does not return the documents in any specific order, so it may show the user the furthest documents first.</p>
+<p>The following will find all restaurants within five miles of the user:</p>
+<pre><code class="lang-js">db.restaurants.find({ <span class="hljs-attr">location</span>:
+   { <span class="hljs-attr">$geoWithin</span>:
+      { <span class="hljs-attr">$centerSphere</span>: [ [ <span class="hljs-number">-73.93414657</span>, <span class="hljs-number">40.82302903</span> ], <span class="hljs-number">5</span> / <span class="hljs-number">3963.2</span> ] } } })
+</code></pre>
+<h6 id="sorted-with-nearsphere">Sorted with $nearSphere</h6>
+<p>You may also use $nearSphere and specify a $maxDistance term in meters. This will return all restaurants within five miles of the user in sorted order from nearest to farthest:</p>
+<p><img src="../images/mongo-geointersects-sorted.png" alt="images/mongo-geointersects-sorted"></p>
+<h6 id="geojson-objects">GeoJSON Objects</h6>
+<p><a href="https://docs.mongodb.com/manual/reference/geojson/#geojson-objects" target="_blank">GeoJSON Objects MongoDB Docs</a></p>
+<ul>
+<li>Point</li>
+</ul>
+<pre><code class="lang-js">{ <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;Point&quot;</span>, <span class="hljs-attr">coordinates</span>: [ <span class="hljs-number">40</span>, <span class="hljs-number">5</span> ] }
+</code></pre>
+<ul>
+<li>LineString</li>
+</ul>
+<pre><code class="lang-js">{ <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;LineString&quot;</span>, <span class="hljs-attr">coordinates</span>: [ [ <span class="hljs-number">40</span>, <span class="hljs-number">5</span> ], [ <span class="hljs-number">41</span>, <span class="hljs-number">6</span> ] ] }
+</code></pre>
+<ul>
+<li>Polygon</li>
+</ul>
+<blockquote>
+<p>Polygons consist of an array of GeoJSON LinearRing coordinate arrays. These LinearRings are closed LineStrings. Closed LineStrings have at least four coordinate pairs and specify the same position as the first and last coordinates.</p>
+</blockquote>
+<pre><code class="lang-js">{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;Polygon&quot;</span>,
+  <span class="hljs-attr">coordinates</span>: [ [ [ <span class="hljs-number">0</span> , <span class="hljs-number">0</span> ] , [ <span class="hljs-number">3</span> , <span class="hljs-number">6</span> ] , [ <span class="hljs-number">6</span> , <span class="hljs-number">1</span> ] , [ <span class="hljs-number">0</span> , <span class="hljs-number">0</span>  ] ] ]
+}
+</code></pre>
+<ul>
+<li>MultiPoint</li>
+</ul>
+<pre><code class="lang-js">{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;MultiPoint&quot;</span>,
+  <span class="hljs-attr">coordinates</span>: [
+     [ <span class="hljs-number">-73.9580</span>, <span class="hljs-number">40.8003</span> ],
+     [ <span class="hljs-number">-73.9498</span>, <span class="hljs-number">40.7968</span> ],
+     [ <span class="hljs-number">-73.9737</span>, <span class="hljs-number">40.7648</span> ],
+     [ <span class="hljs-number">-73.9814</span>, <span class="hljs-number">40.7681</span> ]
+  ]
+}
+</code></pre>
+<ul>
+<li>MultiLineString</li>
+</ul>
+<pre><code class="lang-js">{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;MultiLineString&quot;</span>,
+  <span class="hljs-attr">coordinates</span>: [
+     [ [ <span class="hljs-number">-73.96943</span>, <span class="hljs-number">40.78519</span> ], [ <span class="hljs-number">-73.96082</span>, <span class="hljs-number">40.78095</span> ] ],
+     [ [ <span class="hljs-number">-73.96415</span>, <span class="hljs-number">40.79229</span> ], [ <span class="hljs-number">-73.95544</span>, <span class="hljs-number">40.78854</span> ] ],
+     [ [ <span class="hljs-number">-73.97162</span>, <span class="hljs-number">40.78205</span> ], [ <span class="hljs-number">-73.96374</span>, <span class="hljs-number">40.77715</span> ] ],
+     [ [ <span class="hljs-number">-73.97880</span>, <span class="hljs-number">40.77247</span> ], [ <span class="hljs-number">-73.97036</span>, <span class="hljs-number">40.76811</span> ] ]
+  ]
+}
+</code></pre>
+<ul>
+<li>MultiPolygon</li>
+</ul>
+<pre><code class="lang-js">{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;MultiPolygon&quot;</span>,
+  <span class="hljs-attr">coordinates</span>: [
+     [ [ [ <span class="hljs-number">-73.958</span>, <span class="hljs-number">40.8003</span> ], [ <span class="hljs-number">-73.9498</span>, <span class="hljs-number">40.7968</span> ], [ <span class="hljs-number">-73.9737</span>, <span class="hljs-number">40.7648</span> ], [ <span class="hljs-number">-73.9814</span>, <span class="hljs-number">40.7681</span> ], [ <span class="hljs-number">-73.958</span>, <span class="hljs-number">40.8003</span> ] ] ],
+     [ [ [ <span class="hljs-number">-73.958</span>, <span class="hljs-number">40.8003</span> ], [ <span class="hljs-number">-73.9498</span>, <span class="hljs-number">40.7968</span> ], [ <span class="hljs-number">-73.9737</span>, <span class="hljs-number">40.7648</span> ], [ <span class="hljs-number">-73.958</span>, <span class="hljs-number">40.8003</span> ] ] ]
+  ]
+}
+</code></pre>
+<ul>
+<li>GeometryCollection</li>
+</ul>
+<pre><code class="lang-js">{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;GeometryCollection&quot;</span>,
+  <span class="hljs-attr">geometries</span>: [
+     {
+       <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;MultiPoint&quot;</span>,
+       <span class="hljs-attr">coordinates</span>: [
+          [ <span class="hljs-number">-73.9580</span>, <span class="hljs-number">40.8003</span> ],
+          [ <span class="hljs-number">-73.9498</span>, <span class="hljs-number">40.7968</span> ],
+          [ <span class="hljs-number">-73.9737</span>, <span class="hljs-number">40.7648</span> ],
+          [ <span class="hljs-number">-73.9814</span>, <span class="hljs-number">40.7681</span> ]
+       ]
+     },
+     {
+       <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;MultiLineString&quot;</span>,
+       <span class="hljs-attr">coordinates</span>: [
+          [ [ <span class="hljs-number">-73.96943</span>, <span class="hljs-number">40.78519</span> ], [ <span class="hljs-number">-73.96082</span>, <span class="hljs-number">40.78095</span> ] ],
+          [ [ <span class="hljs-number">-73.96415</span>, <span class="hljs-number">40.79229</span> ], [ <span class="hljs-number">-73.95544</span>, <span class="hljs-number">40.78854</span> ] ],
+          [ [ <span class="hljs-number">-73.97162</span>, <span class="hljs-number">40.78205</span> ], [ <span class="hljs-number">-73.96374</span>, <span class="hljs-number">40.77715</span> ] ],
+          [ [ <span class="hljs-number">-73.97880</span>, <span class="hljs-number">40.77247</span> ], [ <span class="hljs-number">-73.97036</span>, <span class="hljs-number">40.76811</span> ] ]
+       ]
+     }
+  ]
+}
+</code></pre>
+<h4 id="read-isolation-read-concern">Read Isolation (Read Concern)</h4>
+<p><strong>This table information comes from mongodb site</strong></p>
+<p><a href="https://docs.mongodb.com/manual/reference/read-concern/#read-concern-levels" target="_blank">Read Concern Levels</a></p>
+<p>Read Concert Levels:</p>
+<table>
+<thead>
+<tr>
+<th>level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;local&quot;</td>
+<td>The query returns data from the instance with no guarantee that the data has been written to a majority of the replica set members (i.e. may be rolled back). \nDefault \n for: </td>
+</tr>
+</tbody>
+</table>
+<p>reads against primary reads against secondaries if the reads are associated with causally consistent sessions. Read concern local is available for use with causally consistent sessions and transactions.
+| For more information, see the &quot;local&quot; reference page. |
+| &quot;available&quot; | The query returns data from the instance with no guarantee that the data has been written to a majority of the replica set members (i.e. may be rolled back). \nDefault for reads against secondaries if the reads are not associated with causally consistent sessions.\nFor sharded collections, &quot;available&quot; read concern provides the lowest latency reads possible among the various read concerns but at the expense of consistency as &quot;available&quot; read concern can return orphaned documents. Read concern available is unavailable for use with causally consistent sessions. For more information, see the &quot;available&quot; reference page. |
+| &quot;majority&quot; | The query returns the data that has been acknowledged by a majority of the replica set members. The documents returned by the read operation are durable, even in the event of failure. To use read concern level of &quot;majority&quot;, replica sets must use WiredTiger storage engine.\nFor MongoDB 4.0.3+ (and 3.6.1+), you can disable read concern &quot;majority&quot;. For more information, see Disable Read Concern Majority. | 
+| &quot;linearizable&quot; | The query returns data that reflects all successful majority-acknowledged writes that completed prior to the start of the read operation. The query may wait for concurrently executing writes to propagate to a majority of replica set members before returning results.\nIf a majority of your replica set members crash and restart after the read operation, documents returned by the read operation are durable if writeConcernMajorityJournalDefault is set to the default state of true. With writeConcernMajorityJournalDefault set to false, MongoDB does not wait for w: &quot;majority&quot; writes to be written to the on-disk journal before acknowledging the writes. As such, majority write operations could possibly roll back in the event of a transient loss (e.g. crash and restart) of a majority of nodes in a given replica set. You can specify linearizable read concern for read operations on the primary only. Read concern linearizable is unavailable for use with causally consistent sessions. | 
+| Linearizable | read concern guarantees only apply if read operations specify a query filter that uniquely identifies a single document. For more information, see the &quot;linearizable&quot; reference page. |
+| &quot;snapshot&quot; | Only available for operations within multi-document transactions. If the transaction is not part of a causally consistent session, upon transaction commit with write concern &quot;majority&quot;, the transaction operations are guaranteed to have read from a snapshot of majority-committed data. If the transaction is part of a causally consistent session, upon transaction commit with write concern &quot;majority&quot;, the transaction operations are guaranteed to have read from a snapshot of majority-committed data that provides causal consistency with the operation immediately preceding the transaction start. | </p>
+<pre><code class="lang-js">db.restaurants.find({ <span class="hljs-attr">_id</span>: <span class="hljs-number">5</span> }).readConcern(<span class="hljs-string">&quot;linearizable&quot;</span>).maxTimeMS(<span class="hljs-number">10000</span>)
+
+db.runCommand({
+     <span class="hljs-attr">find</span>: <span class="hljs-string">&quot;restaurants&quot;</span>,
+     <span class="hljs-attr">filter</span>: { <span class="hljs-attr">_id</span>: <span class="hljs-number">5</span> },
+     <span class="hljs-attr">readConcern</span>: { <span class="hljs-attr">level</span>: <span class="hljs-string">&quot;linearizable&quot;</span> },
+     <span class="hljs-attr">maxTimeMS</span>: <span class="hljs-number">10000</span>
+})
+</code></pre>
+<h4 id="write-acknowledgement-write-concern">Write Acknowledgement (Write Concern)</h4>
+<p><a href="https://docs.mongodb.com/manual/reference/write-concern/" target="_blank">Write Concern</a></p>
+<blockquote>
+<p>Write concern describes the level of acknowledgment requested from MongoDB for write operations to a standalone mongod or to replica sets or to sharded clusters. In sharded clusters, mongos instances will pass the write concern on to the shards.</p>
+</blockquote>
+<h6 id="write-concern-specification">Write Concern Specification</h6>
+<p><a href="https://docs.mongodb.com/manual/reference/write-concern/#write-concern-specification" target="_blank">Write Concern Specification</a></p>
+<p><code>{ w: &lt;value&gt;, j: &lt;boolean&gt;, wtimeout: &lt;number&gt; }</code></p>
+<ul>
+<li><p>the w option to request acknowledgment that the write operation has propagated to a specified number of mongod instances or to mongod instances with specified tags.</p>
+</li>
+<li><p>the j option to request acknowledgment that the write operation has been written to the on-disk journal, and</p>
+</li>
+<li><p>the wtimeout option to specify a time limit to prevent write operations from blocking indefinitely.</p>
+</li>
+</ul>
+<h4 id="bread-crumb-navigation">Bread Crumb Navigation</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Previous</th>
+<th style="text-align:right">Next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x2190; <a href="mongo-crud-operations-part2.html">Mongo CRUD Operations Part II</a> &#x2192;</td>
+<td style="text-align:right"><a href="mongo-crud-concepts.html">Mongo Crud Concepts</a> &#x2192;</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mongo-crud-operations-part2.html" class="navigation navigation-prev " aria-label="Previous page: Mongo CRUD Operations Part II">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mongo-crud-concepts.html" class="navigation navigation-next " aria-label="Next page: Mongo CRUD Concepts">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mongo CRUD Operations Part III","level":"1.4.6","depth":2,"next":{"title":"Mongo CRUD Concepts","level":"1.4.7","depth":2,"path":"docs/mongo-crud-concepts.md","ref":"docs/mongo-crud-concepts.md","articles":[]},"previous":{"title":"Mongo CRUD Operations Part II","level":"1.4.5","depth":2,"path":"docs/mongo-crud-operations-part2.md","ref":"docs/mongo-crud-operations-part2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["include-codeblock","advanced-emoji","highlight","copy-code-button"],"pluginsConfig":{"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/mongo-crud-operations-part3.md","mtime":"2019-03-15T14:59:14.533Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-28T03:03:21.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
