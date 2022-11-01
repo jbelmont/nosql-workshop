@@ -26,7 +26,7 @@
     "chance": "^1.0.18",
     "chance-cli": "^1.0.7",
     "faker": "^4.1.0",
-    "gitbook": "^2.6.9",
+    "gitbook": "^3.2.3",
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-advanced-emoji": "^0.2.2",
     "gitbook-plugin-copy-code-button": "0.0.2",
